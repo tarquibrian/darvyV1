@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Fonts from "./fonts";
+import bgimage from "../images/layer-min.png";
 
 export const GlobalStyle = createGlobalStyle`
   ${Fonts}
@@ -25,14 +26,16 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Oswald', sans-serif;
-    line-height: 1.2;
-    /* color: #e5e5e5; */
-    color: #000;
+    line-height: 1.3;
+    /* color: rgba(229,229,229,1.0); */
+    /* color: #000; */
+    color: #fff;
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    /* background-image: url(${bgimage}) no-repeat; */
   }
 
   main {
