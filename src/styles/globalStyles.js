@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Fonts from "./fonts";
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   ${Fonts}
 
   html {
@@ -68,7 +68,5 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const Main__Section = styled.section`
-  background-color: red;
+  /* background-color: red; */
 `;
-
-export default GlobalStyle;

@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-
-const Hero__Section = styled.section``;
+import { Main__Section } from "@styles";
 
 const Hero = () => {
-  return <Hero__Section>Hero</Hero__Section>;
+  return <Main__Section>Hero</Main__Section>;
 };
 
 export default Hero;
