@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Main__Section } from "@styles";
 
-export const HeroStyled = styled.section`
+const HeroStyled = styled.section`
   height: 100vh;
   width: 100%;
   color: #e5e5e5;
@@ -21,69 +21,68 @@ export const HeroStyled = styled.section`
     /* margin: 0 auto 0 0; */
     transform: translate(50%, 0%);
   }
-`;
 
-export const HeroContainer = styled.div`
-  /* margin: 0 auto; */
-  /* background: blue; */
-  /* width: 95%; */
-  /* min-height: 100vh; */
-  height: 85%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-`;
-
-export const CardHero = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 920px;
-  border-radius: 4px;
-  font-family: "DM Sans", sans-serif;
-  font-weight: normal;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  /* background: rgba(255, 255, 255, 0.05)
-    linear-gradient(to top right, rgba(255, 235, 0, 0.15)); */
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  /* border: 1px solid rgba(255, 255, 255, 0.4); */
-  z-index: 9;
-
-  h1 {
-    font-size: 20px;
-    font-weight: 400;
+  .hero__container {
+    /* margin: 0 auto; */
+    /* background: blue; */
+    /* width: 95%; */
+    /* min-height: 100vh; */
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
   }
 
-  h2 {
-    font-family: "Oswald", sans-serif;
-    font-size: 5rem;
-    font-weight: 400;
-    color: #eae2b7;
-    margin-left: -4px;
-  }
-
-  h3 {
-    font-family: "Oswald", sans-serif;
-    font-size: 5rem;
-    font-weight: 200;
-    margin-bottom: 20px;
-    /* color: #dfdfdf; */
-    margin-left: -4px;
-    color: transparent;
-    text-shadow: 0 0 5px rgba(255 255 255 / 1);
-    -webkit-text-stroke: 1px white;
-  }
-
-  P {
-    font-size: 18px;
+  .hero__container-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 920px;
+    border-radius: 4px;
+    font-family: "DM Sans", sans-serif;
     font-weight: normal;
-    line-height: 1.5;
-  }
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    /* background: rgba(255, 255, 255, 0.05)
+    linear-gradient(to top right, rgba(255, 235, 0, 0.15)); */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    /* border: 1px solid rgba(255, 255, 255, 0.4); */
+    z-index: 9;
 
-  &:hover {
-    /* background: -webkit-linear-gradient(
+    h1 {
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-family: "Oswald", sans-serif;
+      font-size: 5rem;
+      font-weight: 400;
+      color: #eae2b7;
+      margin-left: -4px;
+    }
+
+    h3 {
+      font-family: "Oswald", sans-serif;
+      font-size: 5rem;
+      font-weight: 200;
+      margin-bottom: 20px;
+      /* color: #dfdfdf; */
+      margin-left: -4px;
+      color: transparent;
+      text-shadow: 0 0 5px rgba(255 255 255 / 1);
+      -webkit-text-stroke: 1px white;
+    }
+
+    P {
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 1.5;
+    }
+
+    &:hover {
+      /* background: -webkit-linear-gradient(
       bottom left,
       rgba(255, 255, 255, 0),
       rgba(255, 235, 0, 2)
@@ -93,12 +92,13 @@ export const CardHero = styled.div`
       rgba(255, 255, 255, 0),
       rgba(255, 235, 0, 2)
     ); */
-    background: rgba(255, 255, 255, 0.05)
-      linear-gradient(
-        to top right,
-        rgba(255, 255, 255, 0),
-        rgba(255, 235, 0, 0.15)
-      );
+      background: rgba(255, 255, 255, 0.05)
+        linear-gradient(
+          to top right,
+          rgba(255, 255, 255, 0),
+          rgba(255, 235, 0, 0.15)
+        );
+    }
   }
 `;
 
@@ -121,7 +121,8 @@ const Hero = () => {
     </p>
   );
   return (
-    <Main__Section>
+    // <Main__Section>
+    <HeroStyled>
       <div className="hero__container">
         <div className="hero__container-card">
           {afterTitle}
@@ -130,7 +131,8 @@ const Hero = () => {
           {Description}
         </div>
       </div>
-    </Main__Section>
+    </HeroStyled>
+    // </Main__Section>
   );
 };
 
