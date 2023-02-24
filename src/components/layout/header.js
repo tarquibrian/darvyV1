@@ -1,5 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
+import darvyImg from "../../images/darvy-icon.png";
 
 const NavbarHeader = styled.header`
   position: fixed;
@@ -79,7 +82,45 @@ export const ResumeLink = styled.a`
 `;
 
 const Header = () => {
-  return <nav>Header</nav>;
+  const Logo = (
+    <LogoContainer>
+      <Link href={`/`}>
+        <Image src={darvyImg} alt="portfolio icon" />
+      </Link>
+    </LogoContainer>
+  );
+
+  const Links = (
+    <LinksContainer>
+      <ol>
+        <li>.About</li>
+        <li>.Experience</li>
+        <li>.Projects</li>
+        <li>hola</li>
+        <Link href={"/"}>Adios</Link>
+      </ol>
+    </LinksContainer>
+  );
+
+  const Resume = (
+    <ResumeLink>
+      <a href="./resumeV1.pdf" target="_blank" rel="noopener noreferrer">
+        Resume &gt;
+      </a>
+    </ResumeLink>
+  );
+
+  return (
+    <NavbarHeader>
+      <NavbarContent>
+        {Logo}
+        <span>
+          {Links}
+          {Resume}
+        </span>
+      </NavbarContent>
+    </NavbarHeader>
+  );
 };
 
 export default Header;
