@@ -5,6 +5,7 @@ import { IconInstagram, IconExternal } from "@components";
 
 import imgProject from "../../images/project-img1.png";
 import styled from "styled-components";
+import Image from "next/image";
 
 const title = <h1 className="headerTitle">.Projects</h1>;
 
@@ -119,6 +120,7 @@ const ProjectImg = styled.div`
     vertical-align: middle;
     border-radius: 4px;
     position: relative;
+    height: auto;
     /* mix-blend-mode: multiply; */
     /* filter: grayscale(100%) contrast(1); */
     object-fit: cover;
@@ -162,7 +164,7 @@ const Projects = () => {
           </ul>
         </ProjectContent>
         <ProjectImg>
-          <img src={imgProject} alt="thumbnail of the project" />
+          <Image src={imgProject} alt="thumbnail of the project" />
         </ProjectImg>
       </ProjectsContainer>
     </ProjectsStyled>
