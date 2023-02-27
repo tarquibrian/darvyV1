@@ -164,7 +164,11 @@ const Projects = () => {
           </ul>
         </ProjectContent>
         <ProjectImg>
-          <Image src={imgProject} alt="thumbnail of the project" />
+          <Image
+            src={imgProject}
+            alt="thumbnail of the project"
+            title="thumbnail of the project"
+          />
         </ProjectImg>
       </ProjectsContainer>
     </ProjectsStyled>
