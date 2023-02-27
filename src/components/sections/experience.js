@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Main__Section } from "@styles";
 import styled from "styled-components";
 
@@ -6,6 +6,7 @@ const ExperienceStyled = styled.section`
   display: grid;
   place-content: center;
   color: #e5e5e5;
+  /* line-height: 1.5; */
 `;
 
 const ExperienceCard = styled.div`
@@ -63,6 +64,7 @@ const CardContent = styled.div`
   grid-template-columns: 200px 1fr;
   gap: 2rem;
   margin-top: 1rem;
+  line-height: 1.5;
 `;
 
 const ContentList = styled.div`
@@ -245,8 +247,88 @@ const data = [
   },
 ];
 
+const title = <h1 className="headerTitle">.Experience</h1>;
+
 const Experience = () => {
-  return <Main__Section>Experience</Main__Section>;
+  const [activeId, setActiveId] = useState(0);
+  return (
+    <ExperienceStyled>
+      <ExperienceCard>
+        {title}
+        <CardContent>
+          <ContentList>
+            {data.map((item, i) => {
+              const { id, title } = item;
+              const { name, year } = title;
+              return (
+                <>
+                  <TabList
+                    onClick={() => setActiveId(id)}
+                    isActive={activeId === i}
+                  >
+                    <h2>{year}</h2>
+                    <h3>{name}</h3>
+                  </TabList>
+                </>
+              );
+            })}
+          </ContentList>
+          <ContentBody>
+            {data.map(({ id, body, title }, i) => {
+              const { header, description, features, path, type } = body;
+              const { name } = title;
+              if (id === activeId) {
+                return (
+                  <>
+                    <span className="type">
+                      {/* {type} */}
+                      {/* <span className="vertical-line">&#124;</span> */}
+                      <span className="entity">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="icon icon-tabler icon-tabler-at"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path
+                            stroke="none"
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          ></path>
+                          <circle cx="12" cy="12" r="4"></circle>
+                          <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path>
+                        </svg>
+                        <a href={path} target="_blank" rel="noreferrer">
+                          {name}
+                        </a>
+                      </span>
+                    </span>
+                    <h1>{header}</h1>
+
+                    <p>{description}</p>
+
+                    <ul>
+                      {features.map((feature) => (
+                        <>
+                          <li>{feature}</li>
+                        </>
+                      ))}
+                    </ul>
+                  </>
+                );
+              }
+            })}
+          </ContentBody>
+        </CardContent>
+      </ExperienceCard>
+    </ExperienceStyled>
+  );
 };
 
 export default Experience;
