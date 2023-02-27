@@ -1,5 +1,6 @@
 import React from "react";
 import { Main__Section } from "@styles";
+import styled from "styled-components";
 
 const ExperienceStyled = styled.section`
   display: grid;
