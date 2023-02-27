@@ -75,7 +75,7 @@ const HeroStyled = styled.section`
       -webkit-text-stroke: 1px white;
     }
 
-    P {
+    p {
       font-size: 18px;
       font-weight: normal;
       line-height: 1.5;

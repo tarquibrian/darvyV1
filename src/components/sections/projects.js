@@ -1,13 +1,9 @@
 import React from "react";
 import { Main__Section } from "@styles";
-
 import { IconInstagram, IconExternal } from "@components";
-
 import imgProject from "../../images/project-img1.png";
 import styled from "styled-components";
 import Image from "next/image";
-
-const title = <h1 className="headerTitle">.Projects</h1>;
 
 const ProjectsStyled = styled.section`
   min-height: 500px;
@@ -15,7 +11,7 @@ const ProjectsStyled = styled.section`
   place-content: center;
   /* background: rgba(0 0 0 /0.2); */
   .headerTitle {
-    font-family: "Oswald", sans-serif;
+    /* font-family: "Oswald", sans-serif; */
     font-size: 5rem;
     font-weight: 400;
     color: #eae2b7;
@@ -44,6 +40,8 @@ const ProjectsContainer = styled.div`
   grid-template-rows: repeat(6, 1fr);
   align-items: center;
   gap: 1rem;
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.5;
 `;
 
 const ProjectContent = styled.div`
@@ -126,6 +124,8 @@ const ProjectImg = styled.div`
     object-fit: cover;
   }
 `;
+
+const title = <h1 className="headerTitle">.Projects</h1>;
 
 const Projects = () => {
   return (
