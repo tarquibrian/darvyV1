@@ -65,7 +65,7 @@ const LinksContainer = styled.div`
     }
   }
 `;
-export const ResumeLink = styled.a`
+export const ResumeLink = styled.div`
   padding: 8px 14px;
   display: grid;
   place-content: center;
