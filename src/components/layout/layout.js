@@ -30,7 +30,10 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <SEO title="Brian Tarqui Rojas" />
       <Header />
-      <main>{children}</main>
+      <>
+        <main>{children}</main>
+      </>
+
       <BGImage>
         <Image
           priority
