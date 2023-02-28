@@ -71,7 +71,7 @@ export const ResumeLink = styled.div`
   place-content: center;
   border: 1px solid rgba(255, 255, 255, 0.4);
   /* border: 1px solid var(--fg-primary-F3); */
-  border-radius: var(--border-radius);
+  border-radius: 4px;
   /* color: var(--fg-primary-F3); */
 
   &:hover {
