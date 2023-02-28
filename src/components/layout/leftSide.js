@@ -13,40 +13,6 @@ const SideStyle = styled.div`
   align-items: end;
   overflow: hidden;
 
-  .rectangle {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background: var(--fg-primary-F3);
-    clip-path: polygon(0 50%, 100% 70%, 100% 100%, 0% 100%);
-    overflow: hidden;
-    z-index: 9;
-    /* border: 1px solid white; */
-  }
-
-  .rectangle2 {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    /* background: rgb(30,30,30); */
-    background: white;
-    /* background: #2b2c28; */
-    clip-path: polygon(0 20%, 100% 60%, 100% 70%, 0% 50%);
-    /* z-index: 999; */
-    /* overflow: hidden; */
-  }
-
-  .rectangle3 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #2b2c28;
-    /* background: white; */
-    clip-path: polygon(0 35%, 100% 65%, 100% 75%, 0% 50%);
-    /* overflow: hidden; */
-    /* z-index:99; */
-  }
-
   ol {
     z-index: 999;
     /* width: 100%; */
@@ -89,13 +55,13 @@ const SideStyle = styled.div`
       width: 1px;
       height: 40vh;
       margin: 0 auto;
-      /* background-color: rgba(255, 255, 255, 0.5); */
+      background-color: rgba(255, 255, 255, 0.5);
     }
   }
 `;
 
 const LeftSide = () => {
-  const Social = (
+  const social = (
     <ol>
       <li>
         <a
