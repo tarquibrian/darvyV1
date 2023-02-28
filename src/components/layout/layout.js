@@ -1,7 +1,7 @@
 import { GlobalStyle } from "@styles";
 import React from "react";
 import SEO from "./seo";
-import { Footer, Header } from "@components";
+import { Footer, Header, LeftSide, RightSide } from "@components";
 import styled from "styled-components";
 import Image from "next/image";
 import noiseIMG from "../../images/layer-min.png";
@@ -33,6 +33,9 @@ const Layout = ({ children }) => {
       <>
         <main>{children}</main>
       </>
+
+      <RightSide />
+      <LeftSide />
 
       <BGImage>
         <Image
