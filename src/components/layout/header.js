@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import darvyImg from "../../images/darvy-icon.png";
 
@@ -82,6 +82,9 @@ export const ResumeLink = styled.div`
 `;
 
 const Header = () => {
+  const [scrollIsTop, setIscrollIsTop] = useState(true);
+  const [scrollIsBottom, setIscrollIsBottom] = useState(false);
+
   const Logo = (
     <LogoContainer>
       <Link href={`/`}>
@@ -96,8 +99,8 @@ const Header = () => {
         <li>.About</li>
         <li>.Experience</li>
         <li>.Projects</li>
-        <li>hola</li>
-        <Link href={"/"}>Adios</Link>
+        <li>.Contact</li>
+        {/* <Link href={"/"}>Adios</Link> */}
       </ol>
     </LinksContainer>
   );
@@ -109,6 +112,26 @@ const Header = () => {
       </a>
     </ResumeLink>
   );
+
+  const handleScroll = () => {};
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      // if (window.scrollY === 0) {
+      // console.log("is top");
+      setIscrollIsTop(window.scrollY === 0);
+      // }
+      // if (
+      // window.innerHeight + window.pageYOffset >=
+      // document.body.offsetHeight
+      // ) {
+      // console.log("is bottom");
+      setIscrollIsBottom(
+        window.innerHeight + window.pageYOffset >= document.body.offsetHeight
+      );
+      // }
+    });
+  }, [scrollIsBottom, scrollIsTop]);
 
   return (
     <NavbarHeader>

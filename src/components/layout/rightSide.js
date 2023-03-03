@@ -22,12 +22,12 @@ const EmailStyle = styled.div`
     height: 100vh;
 
     a {
+      font-family: "DMSans", sans-serif;
+      /* font-weight: 300; */
+      /* letter-spacing: 1px; */
       font-size: 1.2rem;
-      /* margin: auto; */
       writing-mode: vertical-lr;
       color: white;
-      /* display: grid; */
-      /* place-content: center; */
       transition: 0.2s ease;
       &:hover {
         text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
