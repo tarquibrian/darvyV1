@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import darvyImg from "../../images/darvy-icon.png";
+import { useScrollDirection } from "@hooks";
 
 const NavbarHeader = styled.header`
   position: fixed;
@@ -38,6 +39,12 @@ const NavbarHeader = styled.header`
       `};
     ${({ scrollIsBottom }) =>
       scrollIsBottom &&
+      css`
+        /* height: 3.5rem; */
+        transform: translateY(0);
+      `};
+    ${({ scrollDirection }) =>
+      scrollDirection === "up" &&
       css`
         /* height: 3.5rem; */
         transform: translateY(0);
@@ -100,6 +107,7 @@ export const ResumeLink = styled.div`
 const Header = () => {
   const [scrollIsTop, setIscrollIsTop] = useState(true);
   const [scrollIsBottom, setIscrollIsBottom] = useState(false);
+  const scrollDirection = useScrollDirection("up");
 
   const Logo = (
     <LogoContainer>
@@ -147,10 +155,15 @@ const Header = () => {
       );
       // }
     });
-  }, [scrollIsBottom, scrollIsTop]);
+    console.log(scrollDirection);
+  }, [scrollIsBottom, scrollIsTop, scrollDirection]);
 
   return (
-    <NavbarHeader scrollIsTop={scrollIsTop} scrollIsBottom={scrollIsBottom}>
+    <NavbarHeader
+      scrollIsTop={scrollIsTop}
+      scrollIsBottom={scrollIsBottom}
+      scrollDirection={scrollDirection}
+    >
       <NavbarContent>
         {Logo}
         <span>
