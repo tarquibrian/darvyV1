@@ -129,7 +129,7 @@ const title = <h1 className="headerTitle">.Projects</h1>;
 
 const Projects = () => {
   return (
-    <ProjectsStyled>
+    <ProjectsStyled id="projects">
       {title}
       <ProjectsContainer>
         <ProjectContent>

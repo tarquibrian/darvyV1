@@ -136,7 +136,7 @@ const description = (
 const About = () => {
   return (
     // <Main__Section>
-    <AboutStyled>
+    <AboutStyled id="about">
       <AboutCard>
         {title}
         {description}

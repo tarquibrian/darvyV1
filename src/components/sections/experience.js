@@ -252,7 +252,7 @@ const title = <h1 className="headerTitle">.Experience</h1>;
 const Experience = () => {
   const [activeId, setActiveId] = useState(0);
   return (
-    <ExperienceStyled>
+    <ExperienceStyled id="experience">
       <ExperienceCard>
         {title}
         <CardContent>

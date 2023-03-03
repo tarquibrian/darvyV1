@@ -77,7 +77,7 @@ const Contact = () => {
   const button = <a href="mailto:tarquibrian@gmail.com">Contact Me</a>;
 
   return (
-    <ContactStyled>
+    <ContactStyled id="contact">
       <ContactContainer>
         {title}
         <CardContent>

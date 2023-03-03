@@ -76,6 +76,11 @@ const LogoContainer = styled.div`
     height: 100%;
     object-fit: cover;
   }
+  a {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
 const LinksContainer = styled.div`
   ol {
@@ -109,21 +114,29 @@ const Header = () => {
   const [scrollIsBottom, setIscrollIsBottom] = useState(false);
   const scrollDirection = useScrollDirection("up");
 
-  const Logo = (
-    <LogoContainer>
-      <Link href={`/`}>
-        <Image src={darvyImg} alt="portfolio icon" />
-      </Link>
-    </LogoContainer>
-  );
+  // const Logo = (
+  //   <LogoContainer>
+  //     <a>
+  //       <Image src={darvyImg} alt="portfolio icon" />
+  //     </a>
+  //   </LogoContainer>
+  // );
 
   const Links = (
     <LinksContainer>
       <ol>
-        <li>.About</li>
-        <li>.Experience</li>
-        <li>.Projects</li>
-        <li>.Contact</li>
+        <li>
+          <a href="#about">.About</a>
+        </li>
+        <li>
+          <a href="#experience">.Experience</a>
+        </li>
+        <li>
+          <a href="#projects">.Projects</a>
+        </li>
+        <li>
+          <a href="#contact">.Contact</a>
+        </li>
         {/* <Link href={"/"}>Adios</Link> */}
       </ol>
     </LinksContainer>
@@ -137,7 +150,11 @@ const Header = () => {
     </ResumeLink>
   );
 
-  const handleScroll = () => {};
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -165,7 +182,12 @@ const Header = () => {
       scrollDirection={scrollDirection}
     >
       <NavbarContent>
-        {Logo}
+        {/* {Logo} */}
+        <LogoContainer>
+          <a onClick={scrollTop}>
+            <Image src={darvyImg} alt="portfolio icon" />
+          </a>
+        </LogoContainer>
         <span>
           {Links}
           {Resume}
