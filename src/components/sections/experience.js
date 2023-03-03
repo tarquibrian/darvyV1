@@ -261,15 +261,14 @@ const Experience = () => {
               const { id, title } = item;
               const { name, year } = title;
               return (
-                <>
-                  <TabList
-                    onClick={() => setActiveId(id)}
-                    isActive={activeId === i}
-                  >
-                    <h2>{year}</h2>
-                    <h3>{name}</h3>
-                  </TabList>
-                </>
+                <TabList
+                  onClick={() => setActiveId(id)}
+                  isActive={activeId === i}
+                  key={id}
+                >
+                  <h2>{year}</h2>
+                  <h3>{name}</h3>
+                </TabList>
               );
             })}
           </ContentList>
@@ -279,22 +278,22 @@ const Experience = () => {
               const { name } = title;
               if (id === activeId) {
                 return (
-                  <>
+                  <div key={id}>
                     <span className="type">
                       {/* {type} */}
                       {/* <span className="vertical-line">&#124;</span> */}
                       <span className="entity">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          class="icon icon-tabler icon-tabler-at"
+                          // class="icon icon-tabler icon-tabler-at"
                           width="20"
                           height="20"
                           viewBox="0 0 24 24"
-                          stroke-width="2"
+                          strokeWidth="2"
                           stroke="currentColor"
                           fill="none"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         >
                           <path
                             stroke="none"
@@ -314,13 +313,11 @@ const Experience = () => {
                     <p>{description}</p>
 
                     <ul>
-                      {features.map((feature) => (
-                        <>
-                          <li>{feature}</li>
-                        </>
+                      {features.map((feature, i) => (
+                        <li key={i}>{feature}</li>
                       ))}
                     </ul>
-                  </>
+                  </div>
                 );
               }
             })}

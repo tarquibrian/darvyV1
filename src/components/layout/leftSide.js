@@ -10,8 +10,46 @@ const SideStyle = styled.div`
   left: 0;
   min-height: 100vh;
   display: grid;
-  align-items: end;
-  overflow: hidden;
+  place-content: center;
+  /* overflow: hidden; */
+  div {
+    /* margin: auto; */
+    display: grid;
+    grid-template-rows: auto max-content auto;
+    gap: 1rem;
+    height: 100vh;
+
+    a {
+      font-size: 1.2rem;
+      /* margin: auto; */
+      writing-mode: vertical-lr;
+      color: white;
+      /* display: grid; */
+      /* place-content: center; */
+      transition: 0.2s ease;
+      &:hover {
+        text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
+        transform: scale(1.1);
+      }
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 100%;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 100%;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
 
   ol {
     z-index: 999;
@@ -49,45 +87,47 @@ const SideStyle = styled.div`
       background-color: #2b2c28;
       background-color: white;
     } */
-    &::after {
+    /* &::after {
       content: "";
       display: block;
       width: 1px;
       height: 40vh;
       margin: 0 auto;
       background-color: rgba(255, 255, 255, 0.5);
-    }
+    } */
   }
 `;
 
 const LeftSide = () => {
   const social = (
-    <ol>
-      <li>
-        <a
-          href="https://github.com/tarquibrian"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <IconGitHub />
-        </a>
-      </li>
-      <li>
-        <a href="/" target="_blank" rel="noreferrer">
-          <IconInstagram />
-        </a>
-      </li>
-      <li>
-        <a href="/" target="_blank" rel="noreferrer">
-          <IconLinkedIn />
-        </a>
-      </li>
-      <li>
-        <a href="/" target="_blank" rel="noreferrer">
-          <IconGitHub />
-        </a>
-      </li>
-    </ol>
+    <div>
+      <ol>
+        <li>
+          <a
+            href="https://github.com/tarquibrian"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconGitHub />
+          </a>
+        </li>
+        <li>
+          <a href="/" target="_blank" rel="noreferrer">
+            <IconInstagram />
+          </a>
+        </li>
+        <li>
+          <a href="/" target="_blank" rel="noreferrer">
+            <IconLinkedIn />
+          </a>
+        </li>
+        <li>
+          <a href="/" target="_blank" rel="noreferrer">
+            <IconGitHub />
+          </a>
+        </li>
+      </ol>
+    </div>
   );
   return <SideStyle>{social}</SideStyle>;
 };
