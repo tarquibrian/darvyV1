@@ -30,7 +30,7 @@ const NavbarHeader = styled.header`
   z-index: 999;
   transition: 0.3s ease-in;
   @media (prefers-reduced-motion: no-preference) {
-    ${({ scrollIsTop, scrollIsBottom }) =>
+    ${({ scrollIsTop }) =>
       !scrollIsTop &&
       css`
         /* height: 3.5rem; */
