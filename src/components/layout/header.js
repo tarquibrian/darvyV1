@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import darvyImg from "../../images/darvy-icon.png";
 
 const NavbarHeader = styled.header`
@@ -28,6 +28,21 @@ const NavbarHeader = styled.header`
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   z-index: 999;
+  transition: 0.3s ease-in;
+  @media (prefers-reduced-motion: no-preference) {
+    ${({ scrollIsTop, scrollIsBottom }) =>
+      !scrollIsTop &&
+      css`
+        /* height: 3.5rem; */
+        transform: translateY(200px);
+      `};
+    ${({ scrollIsBottom }) =>
+      scrollIsBottom &&
+      css`
+        /* height: 3.5rem; */
+        transform: translateY(0);
+      `};
+  }
 `;
 const NavbarContent = styled.div`
   margin: 0 auto;
@@ -43,6 +58,7 @@ const NavbarContent = styled.div`
     align-items: center;
     gap: 40px;
   }
+  /* background-color: red; */
 `;
 
 const LogoContainer = styled.div`
@@ -134,7 +150,7 @@ const Header = () => {
   }, [scrollIsBottom, scrollIsTop]);
 
   return (
-    <NavbarHeader>
+    <NavbarHeader scrollIsTop={scrollIsTop} scrollIsBottom={scrollIsBottom}>
       <NavbarContent>
         {Logo}
         <span>
