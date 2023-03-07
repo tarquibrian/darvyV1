@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
           placeholder="blur"
         />
       </BGImage>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

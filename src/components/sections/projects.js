@@ -42,6 +42,7 @@ const ProjectsContainer = styled.div`
   gap: 1rem;
   font-family: "DM Sans", sans-serif;
   line-height: 1.5;
+  /* margin-bottom: 10rem; */
 `;
 
 const ProjectContent = styled.div`
@@ -125,52 +126,101 @@ const ProjectImg = styled.div`
   }
 `;
 
+const ProjectWraper = styled.div`
+  display: grid;
+  gap: 5rem;
+`;
+
 const title = <h1 className="headerTitle">.Projects</h1>;
 
 const Projects = () => {
   return (
     <ProjectsStyled id="projects">
       {title}
-      <ProjectsContainer>
-        <ProjectContent>
-          <div className="label">Extensions Project</div>
-          <h2>Darvy Theme</h2>
-          <p>
-            Darvy Theme es un tema de color para Visual Estudio Code y muy
-            pronto para otros editores como Atom o Sublime Text. La paleta de
-            colores esta inspirado en temas populares como One Dark Pro y Tokyo
-            Night, por lo que puede que éste tema vaya a encantarte.
-          </p>
-          <ul>
-            <li>VS Code</li>
-            <li>Sublime Text</li>
-            <li>Atom</li>
-          </ul>
-          <ul>
-            <li>
-              <a
-                href="https://marketplace.visualstudio.com/items?itemName=darvy.darvypro"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <IconExternal />
-              </a>
-            </li>
-            {/* <li>
+      <ProjectWraper>
+        <ProjectsContainer>
+          <ProjectContent>
+            <div className="label">Extensions Project</div>
+            <h2>Darvy Theme</h2>
+            <p>
+              Darvy Theme es un tema de color para Visual Estudio Code y muy
+              pronto para otros editores como Atom o Sublime Text. La paleta de
+              colores esta inspirado en temas populares como One Dark Pro y
+              Tokyo Night, por lo que puede que éste tema vaya a encantarte.
+            </p>
+            <ul>
+              <li>VS Code</li>
+              <li>Sublime Text</li>
+              <li>Atom</li>
+            </ul>
+            <ul>
+              <li>
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=darvy.darvypro"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <IconExternal />
+                </a>
+              </li>
+              {/* <li>
           <a href="/" target="_blank" rel="noreferrer">
             <IconInstagram />
           </a>
         </li> */}
-          </ul>
-        </ProjectContent>
-        <ProjectImg>
-          <Image
-            src={imgProject}
-            alt="thumbnail of the project"
-            title="thumbnail of the project"
-          />
-        </ProjectImg>
-      </ProjectsContainer>
+            </ul>
+          </ProjectContent>
+
+          <ProjectImg>
+            <Image
+              src={imgProject}
+              alt="thumbnail of the project"
+              title="thumbnail of the project"
+            />
+          </ProjectImg>
+        </ProjectsContainer>
+        <ProjectsContainer>
+          <ProjectContent>
+            <div className="label">Extensions Project</div>
+            <h2>Darvy Theme</h2>
+            <p>
+              Darvy Theme es un tema de color para Visual Estudio Code y muy
+              pronto para otros editores como Atom o Sublime Text. La paleta de
+              colores esta inspirado en temas populares como One Dark Pro y
+              Tokyo Night, por lo que puede que éste tema vaya a encantarte.
+            </p>
+            <ul>
+              <li>VS Code</li>
+              <li>Sublime Text</li>
+              <li>Atom</li>
+            </ul>
+            <ul>
+              <li>
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=darvy.darvypro"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <IconExternal />
+                </a>
+              </li>
+              {/* <li>
+          <a href="/" target="_blank" rel="noreferrer">
+            <IconInstagram />
+          </a>
+        </li> */}
+            </ul>
+          </ProjectContent>
+
+          <ProjectImg>
+            <Image
+              src={imgProject}
+              alt="thumbnail of the project"
+              title="thumbnail of the project"
+            />
+          </ProjectImg>
+        </ProjectsContainer>
+      </ProjectWraper>
     </ProjectsStyled>
   );
 };
