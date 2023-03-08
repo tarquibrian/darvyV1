@@ -1,6 +1,6 @@
 import React from "react";
 import { Main__Section } from "@styles";
-import { IconInstagram, IconExternal } from "@components";
+import { IconInstagram, IconExternal, IconFigma } from "@components";
 import imgProject from "../../images/project-img1.png";
 import imgProject2 from "../../images/project-img2.png";
 import styled from "styled-components";
@@ -26,12 +26,12 @@ const projectsData = [
     id: "2",
     label: "Web Project",
     title: "Business Website",
-    desc: "Aplicación web sobre Landing Page de una empresa que ofrece sus servicios tecnológicos.",
+    desc: "Aplicación web sobre Landing Page de una empresa que ofrece sus servicios tecnológicos, relacionados con la informática, programación y soluciones en el área de sistemas.",
     features: [
       { name: " NextJS" },
       { name: "React" },
       { name: "Styled Components" },
-      { name: "Framer Motion" },
+      { name: "Figma+" },
     ],
     links: [
       {
@@ -40,7 +40,7 @@ const projectsData = [
       },
       {
         path: "https://www.figma.com/community/file/1215090916589711588",
-        svg: 1,
+        svg: 3,
       },
     ],
     img: imgProject2,
@@ -206,6 +206,7 @@ const Projects = () => {
                         >
                           {linkname.svg === 1 && <IconExternal />}
                           {linkname.svg === 2 && <IconInstagram />}
+                          {linkname.svg === 3 && <IconFigma />}
                         </a>
                       </li>
                     );
