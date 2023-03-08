@@ -1,6 +1,11 @@
 import React from "react";
 import { Main__Section } from "@styles";
-import { IconInstagram, IconExternal, IconFigma } from "@components";
+import {
+  IconInstagram,
+  IconExternal,
+  IconFigma,
+  IconGitHub,
+} from "@components";
 import imgProject from "../../images/project-img1.png";
 import imgProject2 from "../../images/project-img2.png";
 import styled from "styled-components";
@@ -18,6 +23,10 @@ const projectsData = [
       {
         path: "https://marketplace.visualstudio.com/items?itemName=darvy.darvypro",
         svg: 1,
+      },
+      {
+        path: "https://github.com/tarquibrian/darvypro-theme",
+        svg: 2,
       },
     ],
     img: imgProject,
@@ -37,6 +46,10 @@ const projectsData = [
       {
         path: "https://sonustech-business-website.vercel.app/",
         svg: 1,
+      },
+      {
+        path: "https://github.com/tarquibrian/sonustech-business-website",
+        svg: 2,
       },
       {
         path: "https://www.figma.com/community/file/1215090916589711588",
@@ -205,7 +218,7 @@ const Projects = () => {
                           // key={linkname.id}
                         >
                           {linkname.svg === 1 && <IconExternal />}
-                          {linkname.svg === 2 && <IconInstagram />}
+                          {linkname.svg === 2 && <IconGitHub />}
                           {linkname.svg === 3 && <IconFigma />}
                         </a>
                       </li>
