@@ -2,8 +2,50 @@ import React from "react";
 import { Main__Section } from "@styles";
 import { IconInstagram, IconExternal } from "@components";
 import imgProject from "../../images/project-img1.png";
+import imgProject2 from "../../images/project-img2.png";
 import styled from "styled-components";
 import Image from "next/image";
+import { m } from "framer-motion";
+
+const projectsData = [
+  {
+    id: "1",
+    label: "Extensions Project",
+    title: "Darvy Theme",
+    desc: "Darvy Theme es un tema de color para Visual Estudio Code y muy pronto para otros editores como Atom o Sublime Text. La paleta de colores esta inspirado en temas populares como One Dark Pro y Tokyo Night, por lo que puede que éste tema vaya a encantarte.",
+    features: [{ name: "VS Code" }, { name: "Sublime Text" }, { name: "Atom" }],
+    links: [
+      {
+        path: "https://marketplace.visualstudio.com/items?itemName=darvy.darvypro",
+        svg: 1,
+      },
+    ],
+    img: imgProject,
+  },
+  {
+    id: "2",
+    label: "Web Project",
+    title: "Business Website",
+    desc: "Aplicación web sobre Landing Page de una empresa que ofrece sus servicios tecnológicos.",
+    features: [
+      { name: " NextJS" },
+      { name: "React" },
+      { name: "Styled Components" },
+      { name: "Framer Motion" },
+    ],
+    links: [
+      {
+        path: "https://sonustech-business-website.vercel.app/",
+        svg: 1,
+      },
+      {
+        path: "https://www.figma.com/community/file/1215090916589711588",
+        svg: 1,
+      },
+    ],
+    img: imgProject2,
+  },
+];
 
 const ProjectsStyled = styled.section`
   min-height: 500px;
@@ -138,7 +180,49 @@ const Projects = () => {
     <ProjectsStyled id="projects">
       {title}
       <ProjectWraper>
-        <ProjectsContainer>
+        {projectsData.map((project, i) => {
+          const { id, label, title, desc, features, links, img } = project;
+          return (
+            <ProjectsContainer key={id}>
+              <ProjectContent>
+                <div className="label">{label}</div>
+                <h2>{title}</h2>
+                <p>{desc}</p>
+                <ul>
+                  {features.map((feature, i) => {
+                    const { name } = feature;
+                    return <li key={i}>{name}</li>;
+                  })}
+                </ul>
+                <ul>
+                  {links.map((linkname, i) => {
+                    return (
+                      <li key={i}>
+                        <a
+                          href={linkname.path}
+                          target="_blank"
+                          rel="noreferrer"
+                          // key={linkname.id}
+                        >
+                          {linkname.svg === 1 && <IconExternal />}
+                          {linkname.svg === 2 && <IconInstagram />}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </ProjectContent>
+              <ProjectImg>
+                <Image
+                  src={img}
+                  alt="thumbnail of the project"
+                  title="thumbnail of the project"
+                />
+              </ProjectImg>
+            </ProjectsContainer>
+          );
+        })}
+        {/* <ProjectsContainer>
           <ProjectContent>
             <div className="label">Extensions Project</div>
             <h2>Darvy Theme</h2>
@@ -163,38 +247,6 @@ const Projects = () => {
                   <IconExternal />
                 </a>
               </li>
-              {/* <li>
-          <a href="/" target="_blank" rel="noreferrer">
-            <IconInstagram />
-          </a>
-        </li> */}
-            </ul>
-          </ProjectContent>
-
-          <ProjectImg>
-            <Image
-              src={imgProject}
-              alt="thumbnail of the project"
-              title="thumbnail of the project"
-            />
-          </ProjectImg>
-        </ProjectsContainer>
-        <ProjectsContainer>
-          <ProjectContent>
-            <div className="label">Extensions Project</div>
-            <h2>Darvy Theme</h2>
-            <p>
-              Darvy Theme es un tema de color para Visual Estudio Code y muy
-              pronto para otros editores como Atom o Sublime Text. La paleta de
-              colores esta inspirado en temas populares como One Dark Pro y
-              Tokyo Night, por lo que puede que éste tema vaya a encantarte.
-            </p>
-            <ul>
-              <li>VS Code</li>
-              <li>Sublime Text</li>
-              <li>Atom</li>
-            </ul>
-            <ul>
               <li>
                 <a
                   href="https://marketplace.visualstudio.com/items?itemName=darvy.darvypro"
@@ -204,14 +256,13 @@ const Projects = () => {
                   <IconExternal />
                 </a>
               </li>
-              {/* <li>
-          <a href="/" target="_blank" rel="noreferrer">
-            <IconInstagram />
-          </a>
-        </li> */}
+              <li>
+                <a href="/" target="_blank" rel="noreferrer">
+                  <IconInstagram />
+                </a>
+              </li>
             </ul>
           </ProjectContent>
-
           <ProjectImg>
             <Image
               src={imgProject}
@@ -219,7 +270,7 @@ const Projects = () => {
               title="thumbnail of the project"
             />
           </ProjectImg>
-        </ProjectsContainer>
+        </ProjectsContainer> */}
       </ProjectWraper>
     </ProjectsStyled>
   );
