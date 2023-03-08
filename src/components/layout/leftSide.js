@@ -96,6 +96,10 @@ const SideStyle = styled.div`
       background-color: rgba(255, 255, 255, 0.5);
     } */
   }
+
+  @media screen and (max-width: 1080px) {
+    min-width: 80px;
+  }
 `;
 
 const LeftSide = () => {

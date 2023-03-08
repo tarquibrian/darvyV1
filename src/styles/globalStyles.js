@@ -1,9 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Fonts from "./fonts";
 import bgimage from "../images/layer-min.png";
+import variables from "./variables";
 
 export const GlobalStyle = createGlobalStyle`
   ${Fonts}
+  ${variables}
 
   html {
     box-sizing: border-box;

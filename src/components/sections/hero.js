@@ -4,7 +4,8 @@ import { Main__Section } from "@styles";
 
 const HeroStyled = styled.section`
   height: 100vh;
-  width: 100%;
+  width: 80%;
+  margin: auto;
   color: #e5e5e5;
   svg {
     overflow: hidden;
@@ -57,7 +58,8 @@ const HeroStyled = styled.section`
 
     h2 {
       font-family: "Oswald", sans-serif;
-      font-size: 5rem;
+      /* font-size: 5rem; */
+      font-size: clamp(40px, 8vw, 80px);
       font-weight: 400;
       color: #eae2b7;
       margin-left: -4px;
@@ -65,7 +67,8 @@ const HeroStyled = styled.section`
 
     h3 {
       font-family: "Oswald", sans-serif;
-      font-size: 5rem;
+      /* font-size: 5rem; */
+      font-size: clamp(40px, 8vw, 80px);
       font-weight: 200;
       margin-bottom: 20px;
       /* color: #dfdfdf; */
@@ -77,6 +80,7 @@ const HeroStyled = styled.section`
 
     p {
       font-size: 18px;
+      font-size: clamp(14px, 2vw, 18px);
       font-weight: normal;
       line-height: 1.5;
     }
