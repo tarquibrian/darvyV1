@@ -100,6 +100,9 @@ const SideStyle = styled.div`
   @media screen and (max-width: 1080px) {
     min-width: 80px;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const LeftSide = () => {

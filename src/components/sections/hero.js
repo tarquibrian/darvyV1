@@ -53,6 +53,7 @@ const HeroStyled = styled.section`
 
     h1 {
       font-size: 20px;
+      font-size: clamp(var(--fz-md), 2vw, var(--fz-lg));
       font-weight: 400;
     }
 

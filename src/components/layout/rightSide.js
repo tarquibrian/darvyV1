@@ -59,6 +59,9 @@ const EmailStyle = styled.div`
   @media screen and (max-width: 1000px) {
     /* display: none; */
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const RightSide = () => {
