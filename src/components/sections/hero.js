@@ -127,7 +127,7 @@ const Hero = () => {
   );
   return (
     // <Main__Section>
-    <HeroStyled>
+    <HeroStyled id="hero">
       <div className="hero__container">
         <div className="hero__container-card">
           {afterTitle}

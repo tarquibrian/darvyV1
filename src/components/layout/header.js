@@ -13,8 +13,8 @@ const NavbarHeader = styled.header`
   height: 100px;
 
   /* bottom: 0;
-  left:0;
-  width:100%;
+  left: 0;
+  width: 100%;
   height: 100%; */
 
   display: flex;
