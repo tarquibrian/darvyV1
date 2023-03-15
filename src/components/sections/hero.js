@@ -48,7 +48,6 @@ const HeroStyled = styled.section`
     linear-gradient(to top right, rgba(255, 235, 0, 0.15)); */
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    /* border: 1px solid rgba(255, 255, 255, 0.4); */
     z-index: 9;
 
     h1 {
