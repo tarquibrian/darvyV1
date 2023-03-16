@@ -184,7 +184,7 @@ const Header = () => {
       <NavbarContent>
         {/* {Logo} */}
         <LogoContainer>
-          <a onClick={scrollTop} href={`/`}>
+          <a onClick={scrollTop} href={`#`}>
             <Image src={darvyImg} alt="portfolio icon" />
           </a>
         </LogoContainer>
