@@ -20,6 +20,7 @@ const ContactContainer = styled.div`
     font-size: 5rem;
     font-weight: 400;
     color: #eae2b7;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     margin: 0 0 15px -4px;
     display: grid;
     grid-template-columns: max-content auto;

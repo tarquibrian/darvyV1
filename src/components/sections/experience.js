@@ -5,7 +5,7 @@ import styled from "styled-components";
 const ExperienceStyled = styled.section`
   display: grid;
   place-content: center;
-  color: #e5e5e5;
+  /* color: #e5e5e5; */
   /* line-height: 1.5; */
 `;
 
@@ -92,7 +92,7 @@ const TabList = styled.div`
     font-size: 1rem;
     font-weight: normal;
     /* margin-top: 7px; */
-    color: ${({ isActive }) => (isActive ? "white" : "#e5e5e5")};
+    color: ${({ isActive }) => (isActive ? "#fff" : "#e5e5e5")};
   }
   h2 {
     /* background-color: red; */
@@ -171,7 +171,7 @@ const ContentBody = styled.div`
   }
   p {
     font-size: var(--fz-lg);
-    color: #e5e5e5;
+    /* color: #e5e5e5; */
     margin-bottom: 10px;
   }
   ul {

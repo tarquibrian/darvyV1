@@ -6,7 +6,6 @@ const HeroStyled = styled.section`
   height: 100vh;
   width: 80%;
   margin: auto;
-  color: #e5e5e5;
   svg {
     overflow: hidden;
     fill: #ff101f;
@@ -62,6 +61,7 @@ const HeroStyled = styled.section`
       font-size: clamp(40px, 8vw, 80px);
       font-weight: 400;
       color: #eae2b7;
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
       margin-left: -4px;
     }
 
