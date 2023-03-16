@@ -180,16 +180,24 @@ const Header = () => {
     <LinksContainer>
       <ol>
         <li>
-          <a href="#about">.About</a>
+          <a href="#about" onClick={() => toggle()}>
+            .About
+          </a>
         </li>
         <li>
-          <a href="#experience">.Experience</a>
+          <a href="#experience" onClick={() => toggle()}>
+            .Experience
+          </a>
         </li>
         <li>
-          <a href="#projects">.Projects</a>
+          <a href="#projects" onClick={() => toggle()}>
+            .Projects
+          </a>
         </li>
         <li>
-          <a href="#contact">.Contact</a>
+          <a href="#contact" onClick={() => toggle()}>
+            .Contact
+          </a>
         </li>
         {/* <Link href={"/"}>Adios</Link> */}
       </ol>
