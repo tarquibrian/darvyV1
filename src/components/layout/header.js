@@ -21,18 +21,13 @@ const NavbarHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  /* color: var(--fg-primary-F3); */
-  /* background: var(--bg-primary-B1); */
-  /* border: 1px solid var(--fg-primary-F3); */
-  border-radius: 4px;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
   z-index: 999;
+
   transition: 0.3s ease-in;
   @media (prefers-reduced-motion: no-preference) {
-    ${({ scrollIsTop }) =>
+    ${({ scrollIsTop, isOpen }) =>
       !scrollIsTop &&
+      isOpen === false &&
       css`
         /* height: 3.5rem; */
         transform: translateY(200px);
@@ -49,23 +44,56 @@ const NavbarHeader = styled.header`
         /* height: 3.5rem; */
         transform: translateY(0);
       `};
+    ${({ isOpen }) =>
+      isOpen &&
+      css`
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        ${LinksContainer} {
+          display: flex;
+          ol {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+          }
+        }
+        ${NavbarContentResponsive} {
+          width: 100%;
+        }
+      `};
   }
 `;
 const NavbarContent = styled.div`
   margin: 0 auto;
   height: 100%;
-  width: 92%;
+  width: 100%;
+  padding: 0 4%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   z-index: 999;
+
   span {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 40px;
   }
-  /* background-color: red; */
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    /* width: fit-content; */
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -92,6 +120,9 @@ const LinksContainer = styled.div`
       margin: 0 1rem;
     }
   }
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 export const ResumeLink = styled.div`
   padding: 8px 14px;
@@ -107,11 +138,34 @@ export const ResumeLink = styled.div`
     background: rgba(255, 255, 255, 0.2);
     cursor: pointer;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const NavbarContentResponsive = styled.div`
+  margin: 0 auto;
+  height: 100%;
+  /* width: 100%; */
+  padding: 0 4%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  z-index: 999;
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 const Header = () => {
   const [scrollIsTop, setIscrollIsTop] = useState(true);
   const [scrollIsBottom, setIscrollIsBottom] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const scrollDirection = useScrollDirection("up");
 
   // const Logo = (
@@ -156,6 +210,11 @@ const Header = () => {
     });
   };
 
+  const toggle = () => {
+    setIsOpen(!isOpen);
+    console.log(isOpen);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       // if (window.scrollY === 0) {
@@ -172,7 +231,6 @@ const Header = () => {
       );
       // }
     });
-    console.log(scrollDirection);
   }, [scrollIsBottom, scrollIsTop, scrollDirection]);
 
   return (
@@ -180,6 +238,7 @@ const Header = () => {
       scrollIsTop={scrollIsTop}
       scrollIsBottom={scrollIsBottom}
       scrollDirection={scrollDirection}
+      isOpen={isOpen}
     >
       <NavbarContent>
         {/* {Logo} */}
@@ -193,6 +252,17 @@ const Header = () => {
           {Resume}
         </span>
       </NavbarContent>
+      <NavbarContentResponsive>
+        <LogoContainer>
+          <a onClick={toggle}>
+            <Image src={darvyImg} alt="portfolio icon" />
+          </a>
+        </LogoContainer>
+        <span>
+          {Links}
+          {Resume}
+        </span>
+      </NavbarContentResponsive>
     </NavbarHeader>
   );
 };
