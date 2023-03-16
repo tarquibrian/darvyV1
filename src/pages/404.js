@@ -25,6 +25,33 @@ const FourOhFourStyled = styled.section`
       color: #eae2b7;
       font-size: clamp(40px, 8vw, 80px);
     }
+
+    h2 {
+      font-family: "Oswald", sans-serif;
+      /* font-size: 5rem; */
+      font-size: clamp(40px, 8vw, 80px);
+      font-weight: 200;
+      margin-bottom: 20px;
+      /* color: #dfdfdf; */
+      margin-left: -4px;
+      color: transparent;
+      text-shadow: 0 0 5px rgba(255 255 255 / 1);
+      -webkit-text-stroke: 1px white;
+    }
+
+    .links {
+      .container__arrow-left {
+        font-size: 1.4rem;
+        margin-right: 0.5rem;
+      }
+      &:hover {
+        color: rgba(255, 255, 255, 0.6);
+        .container__arrow-left {
+          margin-right: 0.35rem;
+        }
+      }
+    }
+
     &:hover {
       background: rgba(255, 255, 255, 0.05)
         linear-gradient(
@@ -41,8 +68,11 @@ export default function FourOhFour() {
     <Layout>
       <FourOhFourStyled>
         <div className="container">
-          <h1>404 - Page Not Found</h1>
-          <Link href="/">Go back home</Link>
+          <h1>404!</h1>
+          <h2>Oh dude. Are you lost?</h2>
+          <Link href="/" className="links">
+            <span className="container__arrow-left">←</span> Go back home
+          </Link>
         </div>
       </FourOhFourStyled>
     </Layout>
