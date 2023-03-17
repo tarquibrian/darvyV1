@@ -16,7 +16,7 @@ const AboutStyled = styled.section`
   gap: 2rem;
   justify-content: center;
   /* align-items: center; */
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 750px) {
     grid-template-columns: repeat(1, auto);
   }
 `;

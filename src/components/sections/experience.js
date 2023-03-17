@@ -5,8 +5,8 @@ import styled from "styled-components";
 const ExperienceStyled = styled.section`
   display: grid;
   place-content: center;
-  /* color: #e5e5e5; */
-  /* line-height: 1.5; */
+  width: 80%;
+  margin: auto;
 `;
 
 const ExperienceCard = styled.div`
@@ -25,7 +25,7 @@ const ExperienceCard = styled.div`
 
   .headerTitle {
     font-family: "Oswald", sans-serif;
-    font-size: 5rem;
+    font-size: clamp(40px, 8vw, 80px);
     font-weight: 400;
     color: #eae2b7;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
@@ -45,7 +45,7 @@ const ExperienceCard = styled.div`
   }
 
   p {
-    font-size: 20px;
+    font-size: clamp(14px, 2vw, 18px);
     font-weight: 400;
   }
 
@@ -93,6 +93,7 @@ const TabList = styled.div`
     font-weight: normal;
     /* margin-top: 7px; */
     color: ${({ isActive }) => (isActive ? "#fff" : "#e5e5e5")};
+    font-size: clamp(14px, 2vw, 18px);
   }
   h2 {
     /* background-color: red; */
@@ -162,6 +163,7 @@ const ContentBody = styled.div`
   }
   h1 {
     font-size: var(--fz-xxl);
+    font-size: clamp(14px, 3vw, 22px);
     color: white;
     margin-top: 2px;
     margin-bottom: 5px;
@@ -170,13 +172,13 @@ const ContentBody = styled.div`
     }
   }
   p {
-    font-size: var(--fz-lg);
-    /* color: #e5e5e5; */
+    font-size: clamp(14px, 2vw, 18px);
     margin-bottom: 10px;
   }
   ul {
     li {
       position: relative;
+      font-size: clamp(14px, 2vw, 18px);
       padding-left: 30px;
       margin-bottom: 10px;
       margin-bottom: 5px;
