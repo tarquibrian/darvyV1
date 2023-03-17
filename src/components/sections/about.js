@@ -7,6 +7,8 @@ import Image from "next/image";
 const AboutStyled = styled.section`
   /* background: rgba(0 0 0 / 0.2); */
   /* color: #e5e5e5; */
+  width: 80%;
+  margin: auto;
   padding: initial;
   padding-bottom: 100px;
   display: grid;
@@ -14,6 +16,9 @@ const AboutStyled = styled.section`
   gap: 2rem;
   justify-content: center;
   /* align-items: center; */
+  @media screen and (max-width: 550px) {
+    grid-template-columns: repeat(1, auto);
+  }
 `;
 
 const AboutCard = styled.div`
@@ -32,7 +37,7 @@ const AboutCard = styled.div`
 
   h1 {
     font-family: "Oswald", sans-serif;
-    font-size: 5rem;
+    font-size: clamp(40px, 8vw, 80px);
     font-weight: 400;
     color: #eae2b7;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
@@ -52,7 +57,7 @@ const AboutCard = styled.div`
   }
 
   p {
-    font-size: 18px;
+    font-size: clamp(14px, 2vw, 18px);
     font-weight: 400;
     line-height: 1.5;
   }
