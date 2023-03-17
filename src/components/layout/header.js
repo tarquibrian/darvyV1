@@ -23,19 +23,16 @@ const NavbarHeader = styled.header`
       !scrollIsTop &&
       isOpen === false &&
       css`
-        /* height: 3.5rem; */
         transform: translateY(200px);
       `};
     ${({ scrollIsBottom }) =>
       scrollIsBottom &&
       css`
-        /* height: 3.5rem; */
         transform: translateY(0);
       `};
     ${({ scrollDirection }) =>
       scrollDirection === "up" &&
       css`
-        /* height: 3.5rem; */
         transform: translateY(0);
       `};
     ${({ isOpen }) =>
@@ -212,19 +209,10 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      // if (window.scrollY === 0) {
-      // console.log("is top");
       setIscrollIsTop(window.scrollY === 0);
-      // }
-      // if (
-      // window.innerHeight + window.pageYOffset >=
-      // document.body.offsetHeight
-      // ) {
-      // console.log("is bottom");
       setIscrollIsBottom(
         window.innerHeight + window.pageYOffset >= document.body.offsetHeight
       );
-      // }
     });
   }, [scrollIsBottom, scrollIsTop, scrollDirection]);
 
@@ -236,7 +224,6 @@ const Header = () => {
       isOpen={isOpen}
     >
       <NavbarContent>
-        {/* {Logo} */}
         <LogoContainer>
           <a onClick={scrollTop} href={`#`}>
             <Image src={darvyImg} alt="portfolio icon" />
