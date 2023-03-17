@@ -117,13 +117,15 @@ const Hero = () => {
 
   const Description = (
     <p>
-      Soy un ingeniero de sistemas que se enfoca en crear y diseñar aplicaciones
-      web modernas para la web, priorizando siempre en entregar experiencias
-      digitales excepcionales. <br /> En la actulidad me encuentro en la ruta de
+      Ingeniero de sistemas especializado en el desarrollo web FullStack,
+      enfocado en crear y diseñar aplicaciones web modernas, priorizando siempre
+      en entregar experiencias digitales excepcionales.
+      {/* <br /> En la actulidad
+      me encuentro en la ruta de
       aprendizaje para ser desarrollador Senior FullStack cualificado, capaz de
       resolver grandes problemáticas y brindar soluciones de nivel (el camino es
       largo, pero con esfuerzo y disciplina se que me divertire durante el
-      proceso).
+      proceso). */}
     </p>
   );
   return (
