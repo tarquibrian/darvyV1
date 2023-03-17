@@ -225,7 +225,6 @@ const Header = () => {
     if (isOpen) {
       setIsOpen(!isOpen);
     }
-    console.log(isOpen);
   };
 
   useEffect(() => {
