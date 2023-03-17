@@ -19,6 +19,9 @@ const AboutStyled = styled.section`
   @media screen and (max-width: 750px) {
     grid-template-columns: repeat(1, auto);
   }
+  @media screen and (max-width: 400px) {
+    width: 90%;
+  }
 `;
 
 const AboutCard = styled.div`
@@ -73,25 +76,20 @@ const AboutCard = styled.div`
 `;
 
 const ImgProfile = styled.div`
+  min-width: 200px;
+  min-height: 200px;
   width: 300px;
   height: 300px;
-  background: #eae2b7;
-  border-radius: 4px;
-  /* overflow: hidden; */
+  /* background: #eae2b7; */
   position: relative;
   z-index: 9;
-  /* background: rgba(100, 0, 255, 0.6); */
-  /* filter: brightness(50%); */
-  /* mix-blend-mode: multiply; */
   img {
     display: block;
+    border-radius: 4px;
+    min-width: 200px;
     width: 300px;
     height: auto;
     object-fit: cover;
-    /* background: rgba(0 0 0 / 0.5); */
-    /* opacity: 0.5; */
-    /* filter: drop-shadow(10 0 0 blue);op */
-
     z-index: 99;
   }
   &:hover {
@@ -99,7 +97,7 @@ const ImgProfile = styled.div`
       opacity: 1;
     }
     &::after {
-      background-color: #eae2b7;
+      background-color: rgba(234, 226, 183, 0.3);
     }
   }
   &::after {
