@@ -4,6 +4,7 @@ import styled from "styled-components";
 const ContactStyled = styled.section``;
 
 const ContactContainer = styled.div`
+  width: 80%;
   max-width: 850px;
   margin: auto;
   font-family: "DM Sans", sans-serif;
@@ -20,6 +21,8 @@ const ContactContainer = styled.div`
     font-size: 5rem;
     font-weight: 400;
     color: #eae2b7;
+
+    font-size: clamp(40px, 8vw, 80px);
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     margin: 0 0 15px -4px;
     display: grid;
@@ -43,12 +46,19 @@ const ContactContainer = styled.div`
         rgba(255, 235, 0, 0.15)
       );
   }
+  @media screen and (max-width: 400px) {
+    width: 90%;
+  }
 `;
 
 const CardContent = styled.div`
   line-height: 1.5;
   display: grid;
   gap: 1rem;
+
+  p {
+    font-size: clamp(14px, 2vw, 18px);
+  }
 
   a {
     padding: 16px 28px;
