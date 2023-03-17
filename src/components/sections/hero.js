@@ -103,6 +103,9 @@ const HeroStyled = styled.section`
         );
     }
   }
+  @media screen and (max-width: 400px) {
+    width: 90%;
+  }
 `;
 
 const Hero = () => {
