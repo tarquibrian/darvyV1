@@ -85,6 +85,9 @@ const ProjectsStyled = styled.section`
       background: #eae2b7;
     }
   }
+  @media screen and (max-width: 400px) {
+    width: 90%;
+  }
 `;
 
 const ProjectsContainer = styled.div`
@@ -98,6 +101,9 @@ const ProjectsContainer = styled.div`
   font-family: "DM Sans", sans-serif;
   line-height: 1.5;
   /* margin-bottom: 10rem; */
+  @media screen and (max-width: 768px) {
+    min-width: 200px;
+  }
 `;
 
 const ProjectContent = styled.div`
