@@ -57,6 +57,9 @@ const ExperienceCard = styled.div`
         rgba(255, 235, 0, 0.15)
       );
   }
+  @media screen and (max-width: 768px) {
+    min-width: fit-content;
+  }
 `;
 
 const CardContent = styled.div`
@@ -65,11 +68,19 @@ const CardContent = styled.div`
   gap: 2rem;
   margin-top: 1rem;
   line-height: 1.5;
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, auto);
+  }
 `;
 
 const ContentList = styled.div`
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 768px) {
+    overflow-x: scroll;
+    flex-direction: row;
+  }
 `;
 
 const TabList = styled.div`
@@ -93,6 +104,8 @@ const TabList = styled.div`
     font-weight: normal;
     /* margin-top: 7px; */
     color: ${({ isActive }) => (isActive ? "#fff" : "#e5e5e5")};
+    text-shadow: ${({ isActive }) =>
+      isActive ? "0 0 5px rgba(255 255 255 / 0.5)" : "initial"};
     font-size: clamp(14px, 2vw, 18px);
   }
   h2 {
@@ -134,59 +147,72 @@ const TabList = styled.div`
     background-color: ${({ isActive }) =>
       isActive ? "rgba(234,226,176,.3)" : "rgba(234,226,176,.1)"};
   }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, auto);
+    place-content: center;
+    h2 {
+      display: none;
+    }
+    &::after {
+      display: none;
+    }
+  }
 `;
 
 const ContentBody = styled.div`
-  /* background: rgba(0 0 0 / 0.2); */
-  border-radius: 4px;
-  .type {
-    font-size: 18px;
-    color: #cbc0d3;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  .contentbody__container {
     display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    .entity {
-      font-weight: bold;
-      transition: 0.1s ease;
+    flex-direction: column;
+    gap: 0.2rem;
+    .type {
+      font-size: 18px;
+      color: #cbc0d3;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
       display: flex;
       align-items: center;
-      svg {
-        margin-left: -2px;
-      }
+      /* justify-content: center; */
+      .entity {
+        font-weight: bold;
+        transition: 0.1s ease;
+        display: flex;
+        align-items: center;
+        svg {
+          margin-left: -2px;
+        }
 
+        &:hover {
+          color: white;
+          text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
+        }
+      }
+    }
+    h1 {
+      font-size: var(--fz-xxl);
+      font-size: clamp(14px, 3vw, 22px);
+      color: white;
+      margin-top: 2px;
+      margin-bottom: 5px;
       &:hover {
-        color: white;
         text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
       }
     }
-  }
-  h1 {
-    font-size: var(--fz-xxl);
-    font-size: clamp(14px, 3vw, 22px);
-    color: white;
-    margin-top: 2px;
-    margin-bottom: 5px;
-    &:hover {
-      text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
-    }
-  }
-  p {
-    font-size: clamp(14px, 2vw, 18px);
-    margin-bottom: 10px;
-  }
-  ul {
-    li {
-      position: relative;
+    p {
       font-size: clamp(14px, 2vw, 18px);
-      padding-left: 30px;
       margin-bottom: 10px;
-      margin-bottom: 5px;
-      &::before {
-        content: "▹";
-        position: absolute;
-        left: 0;
-        color: rgba(234, 226, 176, 1);
+    }
+    ul {
+      li {
+        position: relative;
+        font-size: clamp(14px, 2vw, 18px);
+        padding-left: 30px;
+        margin-bottom: 10px;
+        margin-bottom: 5px;
+        &::before {
+          content: "▹";
+          position: absolute;
+          left: 0;
+          color: rgba(234, 226, 176, 1);
+        }
       }
     }
   }
@@ -280,7 +306,7 @@ const Experience = () => {
               const { name } = title;
               if (id === activeId) {
                 return (
-                  <div key={id}>
+                  <div key={id} className="contentbody__container">
                     <span className="type">
                       {/* {type} */}
                       {/* <span className="vertical-line">&#124;</span> */}
