@@ -11,12 +11,6 @@ const NavbarHeader = styled.header`
   left: 8%;
   right: 8%;
   height: 100px;
-
-  /* bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; */
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -129,12 +123,9 @@ export const ResumeLink = styled.div`
   display: grid;
   place-content: center;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  /* border: 1px solid var(--fg-primary-F3); */
   border-radius: 4px;
-  /* color: var(--fg-primary-F3); */
 
   &:hover {
-    /* background: var(--fg-primary-F1); */
     background: rgba(255, 255, 255, 0.2);
     cursor: pointer;
   }
@@ -167,14 +158,6 @@ const Header = () => {
   const [scrollIsBottom, setIscrollIsBottom] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const scrollDirection = useScrollDirection("up");
-
-  // const Logo = (
-  //   <LogoContainer>
-  //     <a>
-  //       <Image src={darvyImg} alt="portfolio icon" />
-  //     </a>
-  //   </LogoContainer>
-  // );
 
   const Links = (
     <LinksContainer>
