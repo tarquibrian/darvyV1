@@ -219,7 +219,12 @@ const Header = () => {
   };
 
   const toggle = () => {
-    setIsOpen(!isOpen);
+    if (scrollDirection === "up") {
+      setIsOpen(isOpen);
+    }
+    if (isOpen) {
+      setIsOpen(!isOpen);
+    }
     console.log(isOpen);
   };
 
@@ -262,7 +267,7 @@ const Header = () => {
       </NavbarContent>
       <NavbarContentResponsive>
         <LogoContainer>
-          <a onClick={toggle}>
+          <a onClick={() => setIsOpen(!isOpen)}>
             <Image src={darvyImg} alt="portfolio icon" />
           </a>
         </LogoContainer>
