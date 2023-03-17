@@ -61,13 +61,13 @@ const projectsData = [
 ];
 
 const ProjectsStyled = styled.section`
-  min-height: 500px;
+  width: 80%;
+  margin: auto;
   display: grid;
   place-content: center;
   /* background: rgba(0 0 0 /0.2); */
   .headerTitle {
-    /* font-family: "Oswald", sans-serif; */
-    font-size: 5rem;
+    font-size: clamp(40px, 8vw, 80px);
     font-weight: 400;
     color: #eae2b7;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
@@ -106,15 +106,18 @@ const ProjectContent = styled.div`
   grid-row: 1 / -1;
 
   .label {
+    font-size: clamp(14px, 2vw, 16px);
     margin-bottom: 0.5rem;
   }
 
   h2 {
     margin-bottom: 1rem;
+    font-size: clamp(20px, 3vw, 24px);
   }
 
   p {
     padding: 1.5rem;
+    font-size: clamp(14px, 2vw, 16px);
     /* text-align: justify; */
     /* background: #da2c38; */
     background: rgba(234, 226, 176, 0.1);
@@ -122,9 +125,7 @@ const ProjectContent = styled.div`
     backdrop-filter: blur(100px);
     -webkit-backdrop-filter: blur(100px);
     border-radius: 4px;
-    /* -webkit-backdrop-filter: blur(10px); */
     margin-bottom: 1rem;
-    /* backdrop-filter: blur(10px); */
     &:hover {
       background: rgba(255, 255, 255, 0.05)
         linear-gradient(
@@ -140,6 +141,7 @@ const ProjectContent = styled.div`
     justify-content: start;
     gap: 1rem;
     margin-bottom: 0.5rem;
+    font-size: clamp(14px, 2vw, 16px);
 
     li {
       a {
@@ -157,6 +159,31 @@ const ProjectContent = styled.div`
           height: 25px;
           width: 25px;
         }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    grid-column: 1/-1;
+    padding: 2rem;
+    display: grid;
+    place-content: center;
+    /* background-color: rgba(38, 70, 83, 0.9); */
+    /* background-color: rgba(255, 48, 79, 0.9); */
+    /* background-color: rgba(226, 67, 75, 0.9); */
+    background-color: rgba(8, 40, 53, 0.9);
+
+    backdrop-filter: blur(2px);
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+
+    p {
+      box-shadow: initial;
+      backdrop-filter: initial;
+      background: initial;
+      padding: initial;
+      &:hover {
+        background: none;
       }
     }
   }
@@ -179,11 +206,20 @@ const ProjectImg = styled.div`
     /* filter: grayscale(100%) contrast(1); */
     object-fit: cover;
   }
+  @media screen and (max-width: 768px) {
+    grid-column: 1/-1;
+    img {
+      /* display: none; */
+    }
+  }
 `;
 
 const ProjectWraper = styled.div`
   display: grid;
   gap: 5rem;
+  .wrapper__container {
+    position: relative;
+  }
 `;
 
 const title = <h1 className="headerTitle">.Projects</h1>;
@@ -196,95 +232,48 @@ const Projects = () => {
         {projectsData.map((project, i) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
-            <ProjectsContainer key={id}>
-              <ProjectContent>
-                <div className="label">{label}</div>
-                <h2>{title}</h2>
-                <p>{desc}</p>
-                <ul>
-                  {features.map((feature, i) => {
-                    const { name } = feature;
-                    return <li key={i}>{name}</li>;
-                  })}
-                </ul>
-                <ul>
-                  {links.map((linkname, i) => {
-                    return (
-                      <li key={i}>
-                        <a
-                          href={linkname.path}
-                          target="_blank"
-                          rel="noreferrer"
-                          // key={linkname.id}
-                        >
-                          {linkname.svg === 1 && <IconExternal />}
-                          {linkname.svg === 2 && <IconGitHub />}
-                          {linkname.svg === 3 && <IconFigma />}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </ProjectContent>
-              <ProjectImg>
-                <Image
-                  src={img}
-                  alt="thumbnail of the project"
-                  title="thumbnail of the project"
-                />
-              </ProjectImg>
-            </ProjectsContainer>
+            <div className="wrapper__container" key={id}>
+              <ProjectsContainer>
+                <ProjectContent>
+                  <div className="label">{label}</div>
+                  <h2>{title}</h2>
+                  <p>{desc}</p>
+                  <ul>
+                    {features.map((feature, i) => {
+                      const { name } = feature;
+                      return <li key={i}>{name}</li>;
+                    })}
+                  </ul>
+                  <ul>
+                    {links.map((linkname, i) => {
+                      return (
+                        <li key={i}>
+                          <a
+                            href={linkname.path}
+                            target="_blank"
+                            rel="noreferrer"
+                            // key={linkname.id}
+                          >
+                            {linkname.svg === 1 && <IconExternal />}
+                            {linkname.svg === 2 && <IconGitHub />}
+                            {linkname.svg === 3 && <IconFigma />}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ProjectContent>
+                <ProjectImg>
+                  <Image
+                    src={img}
+                    alt="thumbnail of the project"
+                    title="thumbnail of the project"
+                  />
+                </ProjectImg>
+              </ProjectsContainer>
+            </div>
           );
         })}
-        {/* <ProjectsContainer>
-          <ProjectContent>
-            <div className="label">Extensions Project</div>
-            <h2>Darvy Theme</h2>
-            <p>
-              Darvy Theme es un tema de color para Visual Estudio Code y muy
-              pronto para otros editores como Atom o Sublime Text. La paleta de
-              colores esta inspirado en temas populares como One Dark Pro y
-              Tokyo Night, por lo que puede que éste tema vaya a encantarte.
-            </p>
-            <ul>
-              <li>VS Code</li>
-              <li>Sublime Text</li>
-              <li>Atom</li>
-            </ul>
-            <ul>
-              <li>
-                <a
-                  href="https://marketplace.visualstudio.com/items?itemName=darvy.darvypro"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <IconExternal />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://marketplace.visualstudio.com/items?itemName=darvy.darvypro"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <IconExternal />
-                </a>
-              </li>
-              <li>
-                <a href="/" target="_blank" rel="noreferrer">
-                  <IconInstagram />
-                </a>
-              </li>
-            </ul>
-          </ProjectContent>
-          <ProjectImg>
-            <Image
-              src={imgProject}
-              alt="thumbnail of the project"
-              title="thumbnail of the project"
-            />
-          </ProjectImg>
-        </ProjectsContainer> */}
       </ProjectWraper>
     </ProjectsStyled>
   );
