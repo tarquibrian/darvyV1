@@ -58,7 +58,7 @@ const HeroStyled = styled.section`
     h2 {
       font-family: "Oswald", sans-serif;
       /* font-size: 5rem; */
-      font-size: clamp(40px, 8vw, 80px);
+      font-size: clamp(30px, 8vw, 80px);
       font-weight: 400;
       color: #eae2b7;
       text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
@@ -68,7 +68,7 @@ const HeroStyled = styled.section`
     h3 {
       font-family: "Oswald", sans-serif;
       /* font-size: 5rem; */
-      font-size: clamp(40px, 8vw, 80px);
+      font-size: clamp(30px, 8vw, 80px);
       font-weight: 200;
       margin-bottom: 20px;
       /* color: #dfdfdf; */
