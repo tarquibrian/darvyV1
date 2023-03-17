@@ -7,6 +7,9 @@ const ExperienceStyled = styled.section`
   place-content: center;
   width: 80%;
   margin: auto;
+  @media screen and (max-width: 400px) {
+    width: 90%;
+  }
 `;
 
 const ExperienceCard = styled.div`
