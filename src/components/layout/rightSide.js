@@ -7,11 +7,6 @@ const EmailStyle = styled.div`
   right: 0;
   width: 100px;
   height: 100vh;
-  /* display: grid; */
-  /* place-content: center; */
-  /* transform: translateY(-50%); */
-  /* height: 100vh; */
-  /* display: flex; */
   display: grid;
   place-content: center;
   div {
@@ -23,15 +18,12 @@ const EmailStyle = styled.div`
 
     a {
       font-family: "DMSans", sans-serif;
-      /* font-weight: 300; */
-      /* letter-spacing: 1px; */
       font-size: 1.2rem;
       writing-mode: vertical-lr;
       color: white;
       transition: 0.2s ease;
       &:hover {
-        text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
-        transform: scale(1.1);
+        text-shadow: 0 0 3px rgba(255 255 255 / 0.8);
       }
     }
 
