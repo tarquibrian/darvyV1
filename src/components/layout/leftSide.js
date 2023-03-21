@@ -21,15 +21,11 @@ const SideStyle = styled.div`
 
     a {
       font-size: 1.2rem;
-      /* margin: auto; */
       writing-mode: vertical-lr;
       color: white;
-      /* display: grid; */
-      /* place-content: center; */
       transition: 0.2s ease;
       &:hover {
-        text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
-        transform: scale(1.1);
+        filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
       }
     }
 
@@ -70,7 +66,8 @@ const SideStyle = styled.div`
         transition: 0.2s ease;
         &:hover {
           /* color: rgba(255, 255, 255, 0.7); */
-          transform: scale(1.2);
+          /* transform: scale(1.2); */
+          text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
         }
         svg {
           height: 24px;
@@ -78,23 +75,6 @@ const SideStyle = styled.div`
         }
       }
     }
-    /* &::before {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 159px;
-      margin: 0 auto;
-      background-color: #2b2c28;
-      background-color: white;
-    } */
-    /* &::after {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 40vh;
-      margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.5);
-    } */
   }
 
   @media screen and (max-width: 1080px) {
