@@ -16,8 +16,8 @@ const NavbarHeader = styled.header`
   align-items: center;
   color: white;
   z-index: 999;
-
   transition: 0.3s ease-in;
+
   @media (prefers-reduced-motion: no-preference) {
     ${({ scrollIsTop, isOpen }) =>
       !scrollIsTop &&
