@@ -154,12 +154,12 @@ const ProjectContent = styled.div`
         text-align: center;
         width: 100%;
         padding: 6px 0;
-        &:hover {
-          /* color: rgb(30, 30, 30); */
-        }
         svg {
           height: 24px;
           width: 24px;
+          &:hover {
+            filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
+          }
         }
         .feather-external-link {
           height: 25px;
