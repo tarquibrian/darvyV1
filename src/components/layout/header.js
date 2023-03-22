@@ -8,8 +8,8 @@ import { useScrollDirection } from "@hooks";
 const NavbarHeader = styled.header`
   position: fixed;
   bottom: 5%;
-  left: 8%;
-  right: 8%;
+  left: 10%;
+  right: 10%;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -109,6 +109,10 @@ const LinksContainer = styled.div`
 
     li {
       margin: 0 1rem;
+      transition: 0.1s ease;
+      &:hover {
+        text-shadow: 0 0 5px rgba(255 255 255 / 0.8);
+      }
     }
   }
   @media (max-width: 500px) {

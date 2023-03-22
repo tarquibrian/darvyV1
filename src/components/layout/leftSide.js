@@ -99,18 +99,21 @@ const LeftSide = () => {
           </a>
         </li>
         <li>
-          <a href="/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.instagram.com/tarqui_brian"
+            target="_blank"
+            rel="noreferrer"
+          >
             <IconInstagram />
           </a>
         </li>
         <li>
-          <a href="/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.linkedin.com/in/tarquibrian"
+            target="_blank"
+            rel="noreferrer"
+          >
             <IconLinkedIn />
-          </a>
-        </li>
-        <li>
-          <a href="/" target="_blank" rel="noreferrer">
-            <IconGitHub />
           </a>
         </li>
       </ol>

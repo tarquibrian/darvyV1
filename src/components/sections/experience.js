@@ -173,7 +173,6 @@ const ContentBody = styled.div`
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
       display: flex;
       align-items: center;
-      /* justify-content: center; */
       .entity {
         font-weight: bold;
         transition: 0.1s ease;
