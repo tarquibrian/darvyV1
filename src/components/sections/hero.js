@@ -100,6 +100,7 @@ const HeroStyled = styled.section`
         &:hover {
           border: 1px solid rgba(255, 255, 255, 0.4);
           cursor: pointer;
+          filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
         }
       }
 
@@ -110,13 +111,8 @@ const HeroStyled = styled.section`
           rgba(236, 80, 80, 1) 21.5%,
           rgba(255, 97, 29, 1) 93.9%
         );
-
         &:hover {
-          /* background-image: linear-gradient(
-            93.3deg,
-            rgba(206, 60, 60, 1) 21.5%,
-            rgba(235, 77, 9, 1) 93.9%
-          ); */
+          text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
         }
       }
       .button__contact {
