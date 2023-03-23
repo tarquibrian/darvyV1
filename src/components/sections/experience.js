@@ -183,7 +183,7 @@ const ContentBody = styled.div`
         }
 
         &:hover {
-          color: white;
+          color: #fff;
           text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
         }
       }

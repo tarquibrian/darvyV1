@@ -11,7 +11,6 @@ const SideStyle = styled.div`
   min-height: 100vh;
   display: grid;
   place-content: center;
-  /* overflow: hidden; */
   div {
     /* margin: auto; */
     display: grid;
@@ -100,20 +99,20 @@ const LeftSide = () => {
         </li>
         <li>
           <a
-            href="https://www.instagram.com/tarqui_brian"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <IconInstagram />
-          </a>
-        </li>
-        <li>
-          <a
             href="https://www.linkedin.com/in/tarquibrian"
             target="_blank"
             rel="noreferrer"
           >
             <IconLinkedIn />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/tarqui_brian"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconInstagram />
           </a>
         </li>
       </ol>

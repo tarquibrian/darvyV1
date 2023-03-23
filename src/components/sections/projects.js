@@ -110,15 +110,18 @@ const ProjectContent = styled.div`
   position: relative;
   grid-column: 1 / 7;
   grid-row: 1 / -1;
+  z-index: 9;
 
   .label {
     font-size: clamp(14px, 2vw, 16px);
     margin-bottom: 0.5rem;
+    color: #eae2b7;
   }
 
   h2 {
     margin-bottom: 1rem;
     font-size: clamp(20px, 3vw, 24px);
+    text-shadow: 0 0 3px rgba(255 255 255 / 0.8);
   }
 
   p {
@@ -148,6 +151,9 @@ const ProjectContent = styled.div`
     gap: 1rem;
     margin-bottom: 0.5rem;
     font-size: clamp(14px, 2vw, 16px);
+    .features {
+      /* color: #cbc0d3; */
+    }
 
     li {
       a {
@@ -196,27 +202,26 @@ const ProjectContent = styled.div`
 `;
 
 const ProjectImg = styled.div`
-  position: relative;
   grid-column: 6 / -1;
   grid-row: 1 / -1;
-  z-index: -1;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
   img {
     width: 100%;
-    max-width: 100%;
+    /* max-width: 100%; */
     vertical-align: middle;
     border-radius: 4px;
-    position: relative;
+    /* position: relative; */
     height: auto;
-    /* mix-blend-mode: multiply; */
-    /* filter: grayscale(100%) contrast(1); */
     object-fit: cover;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
+
   @media screen and (max-width: 768px) {
     grid-column: 1/-1;
-    img {
-      /* display: none; */
-    }
   }
 `;
 
@@ -247,7 +252,11 @@ const Projects = () => {
                   <ul>
                     {features.map((feature, i) => {
                       const { name } = feature;
-                      return <li key={i}>{name}</li>;
+                      return (
+                        <li key={i} className="features">
+                          {name}
+                        </li>
+                      );
                     })}
                   </ul>
                   <ul>
