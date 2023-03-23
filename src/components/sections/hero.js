@@ -98,7 +98,7 @@ const HeroStyled = styled.section`
         border-radius: 4px;
 
         &:hover {
-          background: rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.4);
           cursor: pointer;
         }
       }
@@ -112,13 +112,16 @@ const HeroStyled = styled.section`
         );
 
         &:hover {
-          border: 1px solid rgba(255, 255, 255, 0.4);
-          background-image: linear-gradient(
+          /* background-image: linear-gradient(
             93.3deg,
             rgba(206, 60, 60, 1) 21.5%,
             rgba(235, 77, 9, 1) 93.9%
-          );
+          ); */
         }
+      }
+      .button__contact {
+        border: 1px solid transparent;
+        background-color: rgba(255, 255, 255, 0.2);
       }
     }
 
