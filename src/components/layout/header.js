@@ -128,6 +128,7 @@ export const ResumeLink = styled.div`
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);
+    filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
     cursor: pointer;
   }
   @media (max-width: 768px) {
