@@ -72,6 +72,7 @@ const CardContent = styled.div`
     &:hover {
       background: rgba(255, 255, 255, 0.2);
       cursor: pointer;
+      filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
     }
   }
 `;
