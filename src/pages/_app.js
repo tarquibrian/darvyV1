@@ -8,5 +8,5 @@ export default function App({ Component, pageProps }) {
     setTimeout(() => setLoading(true), 6000);
   }, []);
 
-  return <>{!loading ? <Component {...pageProps} /> : <Loader />}</>;
+  return <>{loading ? <Component {...pageProps} /> : <Loader />}</>;
 }
