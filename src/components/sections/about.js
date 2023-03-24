@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Main__Section } from "@styles";
 import styled from "styled-components";
 import img from "../../images/profile.jpg";
@@ -162,10 +162,28 @@ const description = (
 );
 
 const About = () => {
+  const ref = useRef(null);
+
+  const handleOnMouseMove = (e) => {
+    const { currentTarget: target } = e;
+
+    // const rect = target.getBoundingClientRect(),
+    const rect = ref.current.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
+
+    e.target.style.setProperty("--mouse-x", `${x}px`);
+    e.target.style.setProperty("--mouse-y", `${y}px`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleOnMouseMove);
+  }, []);
+
   return (
     // <Main__Section>
     <AboutStyled id="about">
-      <AboutCard>
+      <AboutCard ref={ref} id="card">
         {title}
         {description}
       </AboutCard>

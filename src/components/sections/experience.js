@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Main__Section } from "@styles";
 import styled from "styled-components";
 
@@ -305,9 +305,26 @@ const title = <h1 className="headerTitle">.Experience</h1>;
 
 const Experience = () => {
   const [activeId, setActiveId] = useState(0);
+  const ref = useRef(null);
+
+  const handleOnMouseMove = (e) => {
+    const { currentTarget: target } = e;
+
+    // const rect = target.getBoundingClientRect(),
+    const rect = ref.current.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
+
+    e.target.style.setProperty("--mouse-x", `${x}px`);
+    e.target.style.setProperty("--mouse-y", `${y}px`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleOnMouseMove);
+  }, []);
   return (
     <ExperienceStyled id="experience">
-      <ExperienceCard>
+      <ExperienceCard ref={ref} id="card">
         {title}
         <CardContent>
           <ContentList>
