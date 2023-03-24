@@ -142,14 +142,16 @@ const HeroStyled = styled.section`
       transition: opacity 500ms;
       z-index: 0;
     }
-    /* &:hover {
-      background: rgba(255, 255, 255, 0.05)
+    &:hover {
+      /* background: rgba(255, 255, 255, 0.05)
         linear-gradient(
           to top right,
           rgba(255, 255, 255, 0),
           rgba(255, 235, 0, 0.15)
-        );
-    } */
+        ); */
+
+      background: rgba(255, 232, 167, 0.1);
+    }
   }
 
   @media screen and (max-width: 400px) {
