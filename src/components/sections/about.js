@@ -71,7 +71,7 @@ const AboutCard = styled.div`
 
   &::before {
     background: radial-gradient(
-      800px circle at var(--mouse-x) var(--mouse-y),
+      800px circle at var(--mouse2-x) var(--mouse2-y),
       rgba(255, 255, 255, 0.15),
       transparent 40%
     );
@@ -172,8 +172,8 @@ const About = () => {
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
 
-    e.target.style.setProperty("--mouse-x", `${x}px`);
-    e.target.style.setProperty("--mouse-y", `${y}px`);
+    e.target.style.setProperty("--mouse2-x", `${x}px`);
+    e.target.style.setProperty("--mouse2-y", `${y}px`);
   };
 
   useEffect(() => {
