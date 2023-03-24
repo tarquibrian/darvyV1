@@ -183,7 +183,7 @@ const About = () => {
   return (
     // <Main__Section>
     <AboutStyled id="about">
-      <AboutCard ref={ref} id="card">
+      <AboutCard ref={ref} id="about-card">
         {title}
         {description}
       </AboutCard>

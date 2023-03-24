@@ -160,13 +160,13 @@ const HeroStyled = styled.section`
 `;
 
 const Hero = () => {
-  const ref = useRef(null);
+  const heroref = useRef(null);
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
 
     // const rect = target.getBoundingClientRect(),
-    const rect = ref.current.getBoundingClientRect(),
+    const rect = heroref.current.getBoundingClientRect(),
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
 
@@ -201,7 +201,7 @@ const Hero = () => {
     // <Main__Section>
     <HeroStyled id="hero">
       <div className="hero__container">
-        <div className="hero__container-card" id="card" ref={ref}>
+        <div className="hero__container-card" id="hero-card" ref={heroref}>
           {afterTitle}
           {Title}
           {SubTitle}
