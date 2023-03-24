@@ -124,7 +124,7 @@ const HeroStyled = styled.section`
     &::before {
       background: radial-gradient(
         800px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 255, 255, 0.11),
+        rgba(255, 255, 255, 0.15),
         transparent 40%
       );
       border-radius: inherit;
