@@ -127,7 +127,7 @@ const HeroStyled = styled.section`
 
     &::before {
       background: radial-gradient(
-        800px circle at var(--mouse-x) var(--mouse-y),
+        800px circle at var(--mouse1-x) var(--mouse1-y),
         rgba(255, 255, 255, 0.15),
         transparent 40%
       );
@@ -158,7 +158,25 @@ const HeroStyled = styled.section`
     width: 90%;
   }
 `;
+const afterTitle = <h1>Me presento, mi nombre es</h1>;
 
+const Title = <h2>Brian Tarqui Rojas.</h2>;
+
+const SubTitle = <h3>Construyo cosas para la web.</h3>;
+
+const Description = (
+  <p>
+    Ingeniero de sistemas especializado en el desarrollo web FullStack, enfocado
+    en crear y diseñar aplicaciones web modernas, priorizando siempre en
+    entregar experiencias digitales excepcionales.
+    {/* <br /> En la actulidad
+      me encuentro en la ruta de
+      aprendizaje para ser desarrollador Senior FullStack cualificado, capaz de
+      resolver grandes problemáticas y brindar soluciones de nivel (el camino es
+      largo, pero con esfuerzo y disciplina se que me divertire durante el
+      proceso). */}
+  </p>
+);
 const Hero = () => {
   const heroref = useRef(null);
 
@@ -170,33 +188,14 @@ const Hero = () => {
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
 
-    e.target.style.setProperty("--mouse-x", `${x}px`);
-    e.target.style.setProperty("--mouse-y", `${y}px`);
+    e.target.style.setProperty("--mouse1-x", `${x}px`);
+    e.target.style.setProperty("--mouse1-y", `${y}px`);
   };
 
   useEffect(() => {
     window.addEventListener("mousemove", handleOnMouseMove);
   }, []);
 
-  const afterTitle = <h1>Me presento, mi nombre es</h1>;
-
-  const Title = <h2>Brian Tarqui Rojas.</h2>;
-
-  const SubTitle = <h3>Construyo cosas para la web.</h3>;
-
-  const Description = (
-    <p>
-      Ingeniero de sistemas especializado en el desarrollo web FullStack,
-      enfocado en crear y diseñar aplicaciones web modernas, priorizando siempre
-      en entregar experiencias digitales excepcionales.
-      {/* <br /> En la actulidad
-      me encuentro en la ruta de
-      aprendizaje para ser desarrollador Senior FullStack cualificado, capaz de
-      resolver grandes problemáticas y brindar soluciones de nivel (el camino es
-      largo, pero con esfuerzo y disciplina se que me divertire durante el
-      proceso). */}
-    </p>
-  );
   return (
     // <Main__Section>
     <HeroStyled id="hero">
