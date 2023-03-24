@@ -150,7 +150,7 @@ const HeroStyled = styled.section`
           rgba(255, 235, 0, 0.15)
         ); */
 
-      background: rgba(255, 232, 167, 0.1);
+      background: rgba(255, 225, 142, 0.1);
     }
   }
 
