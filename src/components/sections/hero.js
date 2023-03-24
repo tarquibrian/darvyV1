@@ -160,8 +160,6 @@ const HeroStyled = styled.section`
 `;
 
 const Hero = () => {
-  const [varX, setVarX] = useState(0);
-  const [varY, setVarY] = useState(0);
   const ref = useRef(null);
 
   const handleOnMouseMove = (e) => {
@@ -203,13 +201,7 @@ const Hero = () => {
     // <Main__Section>
     <HeroStyled id="hero">
       <div className="hero__container">
-        <div
-          className="hero__container-card"
-          id="card"
-          ref={ref}
-          varX={`${varX}px`}
-          varY={varY}
-        >
+        <div className="hero__container-card" id="card" ref={ref}>
           {afterTitle}
           {Title}
           {SubTitle}
