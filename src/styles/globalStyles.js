@@ -59,16 +59,20 @@ export const GlobalStyle = createGlobalStyle`
     display: inline-block;
     text-decoration: none;
     text-decoration-skip-ink: auto;
-    color: inherit;
+    color: #fff;
     position: relative;
   }
   p {
     margin: 0 0 15px 0;
+    color: #fff;
 
     &:last-child,
     &:last-of-type {
       margin: 0;
     }
+  }
+  h1, h2,h3,h4,h5 {
+    color: #fff;
   }
 `;
 
