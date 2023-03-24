@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Main__Section } from "@styles";
 import {
   IconInstagram,
@@ -135,27 +135,6 @@ const ProjectContent = styled.div`
     -webkit-backdrop-filter: blur(100px);
     border-radius: 4px;
     margin-bottom: 1rem;
-    &:hover::before {
-      opacity: 1;
-    }
-
-    &::before {
-      background: radial-gradient(
-        800px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 255, 255, 0.15),
-        transparent 40%
-      );
-      border-radius: inherit;
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0%;
-      left: 0%;
-      opacity: 0;
-      transition: opacity 500ms;
-      z-index: 0;
-    }
 
     &:hover {
       /* background: rgba(255, 255, 255, 0.05)
@@ -165,7 +144,7 @@ const ProjectContent = styled.div`
           rgba(255, 235, 0, 0.15)
         ); */
 
-      background: rgba(255, 225, 142, 0.1);
+      background: rgba(255, 225, 142, 0.14);
     }
   }
   ul {
@@ -260,6 +239,23 @@ const ProjectWraper = styled.div`
 const title = <h1 className="headerTitle">.Projects</h1>;
 
 const Projects = () => {
+  const ref = useRef(null);
+
+  const handleOnMouseMove = (e) => {
+    const { currentTarget: target } = e;
+
+    // const rect = target.getBoundingClientRect(),
+    const rect = ref.current.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
+
+    e.target.style.setProperty("--mouse4-x", `${x}px`);
+    e.target.style.setProperty("--mouse4-y", `${y}px`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleOnMouseMove);
+  }, []);
   return (
     <ProjectsStyled id="projects">
       {title}
@@ -272,7 +268,7 @@ const Projects = () => {
                 <ProjectContent>
                   <div className="label">{label}</div>
                   <h2>{title}</h2>
-                  <p>{desc}</p>
+                  <p ref={ref}>{desc}</p>
                   <ul>
                     {features.map((feature, i) => {
                       const { name } = feature;

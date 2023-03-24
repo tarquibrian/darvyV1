@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const ContactStyled = styled.section``;
@@ -44,7 +44,7 @@ const ContactContainer = styled.div`
 
   &::before {
     background: radial-gradient(
-      800px circle at var(--mouse-x) var(--mouse-y),
+      800px circle at var(--mouse5-x) var(--mouse5-y),
       rgba(255, 255, 255, 0.15),
       transparent 40%
     );
@@ -102,6 +102,23 @@ const CardContent = styled.div`
 `;
 
 const Contact = () => {
+  const ref = useRef(null);
+
+  const handleOnMouseMove = (e) => {
+    const { currentTarget: target } = e;
+
+    // const rect = target.getBoundingClientRect(),
+    const rect = ref.current.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
+
+    e.target.style.setProperty("--mouse5-x", `${x}px`);
+    e.target.style.setProperty("--mouse5-y", `${y}px`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleOnMouseMove);
+  }, []);
   const title = <h1>.Contact</h1>;
 
   const description = (
@@ -115,7 +132,7 @@ const Contact = () => {
 
   return (
     <ContactStyled id="contact">
-      <ContactContainer>
+      <ContactContainer ref={ref}>
         {title}
         <CardContent>
           {description}

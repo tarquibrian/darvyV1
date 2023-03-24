@@ -58,7 +58,7 @@ const ExperienceCard = styled.div`
 
   &::before {
     background: radial-gradient(
-      800px circle at var(--mouse-x) var(--mouse-y),
+      800px circle at var(--mouse3-x) var(--mouse3-y),
       rgba(255, 255, 255, 0.15),
       transparent 40%
     );
@@ -315,8 +315,8 @@ const Experience = () => {
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
 
-    e.target.style.setProperty("--mouse-x", `${x}px`);
-    e.target.style.setProperty("--mouse-y", `${y}px`);
+    e.target.style.setProperty("--mouse3-x", `${x}px`);
+    e.target.style.setProperty("--mouse3-y", `${y}px`);
   };
 
   useEffect(() => {
