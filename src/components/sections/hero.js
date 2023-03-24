@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Main__Section } from "@styles";
 
@@ -139,13 +139,54 @@ const HeroStyled = styled.section`
           rgba(255, 235, 0, 0.15)
         );
     }
+
+    &::before {
+      background: radial-gradient(
+        800px circle at ${({ varX }) => varX} 100px,
+        rgba(255, 255, 255, 0.6),
+        transparent 40%
+      );
+      border-radius: inherit;
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0%;
+      left: 0%;
+      z-index: 9999;
+    }
   }
+
   @media screen and (max-width: 400px) {
     width: 90%;
   }
 `;
 
 const Hero = () => {
+  const [varX, setVarX] = useState(0);
+  const [varY, setVarY] = useState(0);
+  const ref = useRef(null);
+
+  const handleOnMouseMove = (e) => {
+    const { currentTarget: target } = e;
+
+    // const rect = target.getBoundingClientRect(),
+    const rect = ref.current.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
+
+    // ref.current.styled.setProperty("--mouse-x", `${x}px`);
+    // ref.current.styled.setProperty("--mouse-y", `1${y}px`);
+    setVarX(x);
+    setVarY(y);
+  };
+
+  useEffect(() => {
+    // const card = ref.current.getBoundingClientRect();
+    window.addEventListener("mousemove", handleOnMouseMove);
+    console.log({ varX, varY });
+  }, [varX, varY]);
+
   const afterTitle = <h1>Me presento, mi nombre es</h1>;
 
   const Title = <h2>Brian Tarqui Rojas.</h2>;
@@ -169,7 +210,13 @@ const Hero = () => {
     // <Main__Section>
     <HeroStyled id="hero">
       <div className="hero__container">
-        <div className="hero__container-card">
+        <div
+          className="hero__container-card"
+          id="card"
+          ref={ref}
+          varX={`${varX}px`}
+          varY={varY}
+        >
           {afterTitle}
           {Title}
           {SubTitle}
