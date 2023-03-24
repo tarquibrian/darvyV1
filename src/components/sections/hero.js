@@ -121,6 +121,10 @@ const HeroStyled = styled.section`
       }
     }
 
+    &:hover::before {
+      opacity: 1;
+    }
+
     &::before {
       background: radial-gradient(
         800px circle at var(--mouse-x) var(--mouse-y),
@@ -134,26 +138,18 @@ const HeroStyled = styled.section`
       width: 100%;
       top: 0%;
       left: 0%;
+      opacity: 0;
+      transition: opacity 500ms;
       z-index: 0;
     }
-    &:hover {
-      /* background: -webkit-linear-gradient(
-      bottom left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 235, 0, 2)
-    );
-    background: -moz-linear-gradient(
-      bottom left,
-      rgba(255, 255, 255, 0),
-      rgba(255, 235, 0, 2)
-    ); */
+    /* &:hover {
       background: rgba(255, 255, 255, 0.05)
         linear-gradient(
           to top right,
           rgba(255, 255, 255, 0),
           rgba(255, 235, 0, 0.15)
         );
-    }
+    } */
   }
 
   @media screen and (max-width: 400px) {
