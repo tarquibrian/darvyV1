@@ -121,6 +121,21 @@ const HeroStyled = styled.section`
       }
     }
 
+    &::before {
+      background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.11),
+        transparent 40%
+      );
+      border-radius: inherit;
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0%;
+      left: 0%;
+      z-index: 0;
+    }
     &:hover {
       /* background: -webkit-linear-gradient(
       bottom left,
@@ -138,22 +153,6 @@ const HeroStyled = styled.section`
           rgba(255, 255, 255, 0),
           rgba(255, 235, 0, 0.15)
         );
-    }
-
-    &::before {
-      background: radial-gradient(
-        800px circle at ${({ varX }) => varX} 100px,
-        rgba(255, 255, 255, 0.6),
-        transparent 40%
-      );
-      border-radius: inherit;
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0%;
-      left: 0%;
-      z-index: 9999;
     }
   }
 
@@ -175,17 +174,13 @@ const Hero = () => {
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
 
-    // ref.current.styled.setProperty("--mouse-x", `${x}px`);
-    // ref.current.styled.setProperty("--mouse-y", `1${y}px`);
-    setVarX(x);
-    setVarY(y);
+    e.target.style.setProperty("--mouse-x", `${x}px`);
+    e.target.style.setProperty("--mouse-y", `${y}px`);
   };
 
   useEffect(() => {
-    // const card = ref.current.getBoundingClientRect();
     window.addEventListener("mousemove", handleOnMouseMove);
-    console.log({ varX, varY });
-  }, [varX, varY]);
+  }, []);
 
   const afterTitle = <h1>Me presento, mi nombre es</h1>;
 
