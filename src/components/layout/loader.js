@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import anime from "animejs";
 // import anime from "animejs"
 // import "./loader.css"
 
 const LoaderSection = styled.div`
-  position: fixed;
-  inset: 0 0 0 0;
+  /* position: fixed; */
+  /* inset: 0 0 0 0; */
   width: 100vw;
   height: 100vh;
-  background-color: #e1e5ef;
-  display: grid;
-  place-content: center;
+  /* background-color: #e1e5ef; */
+  /* display: grid; */
+  /* place-content: center; */
+
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background-color: #252525;
+  transform: translatex(0%);
+  transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1) 0.5s;
+  will-change: transform;
 `;
 
 const LogoContainer = styled.div`
@@ -203,6 +212,36 @@ const HeaderLoader = styled.div`
 
 const Loader = ({ finishLoading }) => {
   const [isLoading, setIsLoading] = useState(false);
+  let myTimeline = anime.timeline({
+    duration: 500,
+  });
+
+  myTimeline
+    .add({
+      targets: "#box1",
+      translateY: 50,
+    })
+    .add({
+      targets: "#box2",
+      translateY: 100,
+    })
+    .add({
+      targets: "#box3",
+      translateY: 150,
+    })
+    .add({
+      targets: "#box4",
+      translateY: 200,
+    })
+    .add({
+      targets: "#box5",
+      translateY: 250,
+    })
+    .add({
+      targets: "#box6",
+      translateY: 300,
+      duration: 6000,
+    });
 
   // anime({
   //   targets: ".name",
@@ -214,20 +253,39 @@ const Loader = ({ finishLoading }) => {
 
   return (
     <LoaderSection>
-      <HeaderLoader>
+      {/* <HeaderLoader>
         <div className="ipl-progress-indicator-head">
           <div className="first-indicator"></div>
           <div className="second-indicator"></div>
         </div>
       </HeaderLoader>
-
+asdfg
       <LogoContainer>
         <div className="title">
           <h1 className="name">T</h1>
         </div>
         <SpinerLoader />
-        {/* <span></span> */}
-      </LogoContainer>
+      </LogoContainer> */}
+      <div class="container">
+        <div class="box" id="box1">
+          1
+        </div>
+        <div class="box" id="box2">
+          2
+        </div>
+        <div class="box" id="box3">
+          3
+        </div>
+        <div class="box" id="box4">
+          4
+        </div>
+        <div class="box" id="box5">
+          5
+        </div>
+        <div class="box" id="box6">
+          6
+        </div>
+      </div>
     </LoaderSection>
   );
 };

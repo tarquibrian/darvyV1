@@ -5,6 +5,7 @@ import { Footer, Header, LeftSide, RightSide } from "@components";
 import styled from "styled-components";
 import Image from "next/image";
 import noiseIMG from "../../images/layer-min.png";
+import { motion } from "framer-motion";
 
 const BGImage = styled.div`
   position: fixed;
@@ -26,7 +27,16 @@ const BGImage = styled.div`
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <motion.div
+      initial={{ x: 300, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 300, opacity: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      }}
+    >
       <GlobalStyle />
       <SEO title="Brian Tarqui Rojas" />
       <Header />
@@ -46,7 +56,7 @@ const Layout = ({ children }) => {
         />
       </BGImage>
       {/* <Footer /> */}
-    </>
+    </motion.div>
   );
 };
 
