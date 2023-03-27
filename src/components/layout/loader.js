@@ -212,36 +212,6 @@ const HeaderLoader = styled.div`
 
 const Loader = ({ finishLoading }) => {
   const [isLoading, setIsLoading] = useState(false);
-  let myTimeline = anime.timeline({
-    duration: 500,
-  });
-
-  myTimeline
-    .add({
-      targets: "#box1",
-      translateY: 50,
-    })
-    .add({
-      targets: "#box2",
-      translateY: 100,
-    })
-    .add({
-      targets: "#box3",
-      translateY: 150,
-    })
-    .add({
-      targets: "#box4",
-      translateY: 200,
-    })
-    .add({
-      targets: "#box5",
-      translateY: 250,
-    })
-    .add({
-      targets: "#box6",
-      translateY: 300,
-      duration: 6000,
-    });
 
   // anime({
   //   targets: ".name",
@@ -266,26 +236,6 @@ asdfg
         </div>
         <SpinerLoader />
       </LogoContainer> */}
-      <div class="container">
-        <div class="box" id="box1">
-          1
-        </div>
-        <div class="box" id="box2">
-          2
-        </div>
-        <div class="box" id="box3">
-          3
-        </div>
-        <div class="box" id="box4">
-          4
-        </div>
-        <div class="box" id="box5">
-          5
-        </div>
-        <div class="box" id="box6">
-          6
-        </div>
-      </div>
     </LoaderSection>
   );
 };

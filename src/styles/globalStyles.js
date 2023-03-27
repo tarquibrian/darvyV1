@@ -32,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
     /* color: rgba(229,229,229,1.0); */
     /* color: #000; */
     color: #fff;
+    background-color: #252525;
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
