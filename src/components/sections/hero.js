@@ -180,7 +180,7 @@ const Description = (
   </p>
 );
 const variants = {
-  visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.4 } },
   hidden: { y: 200, opacity: 0, scale: 1 },
 };
 const Hero = () => {
