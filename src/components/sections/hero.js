@@ -180,8 +180,8 @@ const Description = (
   </p>
 );
 const squareVariants = {
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
-  hidden: { opacity: 0, scale: 0.7 },
+  visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { y: 200, opacity: 0, scale: 1 },
 };
 const Hero = () => {
   const controls = useAnimation();
@@ -217,7 +217,6 @@ const Hero = () => {
       animate={controls}
       initial="hidden"
       variants={squareVariants}
-      className="square"
     >
       <div className="hero__container">
         <div className="hero__container-card" id="hero-card" ref={heroref}>
