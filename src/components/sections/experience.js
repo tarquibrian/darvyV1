@@ -73,7 +73,7 @@ const ExperienceCard = styled.div`
     left: 0%;
     opacity: 0;
     transition: opacity 500ms;
-    z-index: 0;
+    z-index: -1;
   }
 
   &:hover {
