@@ -49,7 +49,6 @@ const HeroStyled = styled(motion.section)`
     linear-gradient(to top right, rgba(255, 235, 0, 0.15)); */
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    z-index: 9;
 
     h1 {
       font-size: 20px;
@@ -142,7 +141,7 @@ const HeroStyled = styled(motion.section)`
       left: 0%;
       opacity: 0;
       transition: opacity 500ms;
-      z-index: 0;
+      z-index: -1;
     }
     &:hover {
       /* background: rgba(255, 255, 255, 0.05)
