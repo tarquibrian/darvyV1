@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Main__Section } from "@styles";
 import styled from "styled-components";
 import img from "../../images/profile.jpg";
+import img1 from "../../images/darvy-icon.png";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -208,7 +209,7 @@ const About = () => {
       <ImgProfile>
         <div>
           <Image
-            src={img}
+            src={img1}
             alt={`profile picture`}
             width={200}
             height={`auto`}
