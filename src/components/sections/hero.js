@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Main__Section } from "@styles";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const HeroStyled = styled(motion.section)`
   height: 100vh;
@@ -178,8 +179,19 @@ const Description = (
       proceso). */}
   </p>
 );
+const squareVariants = {
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+  hidden: { opacity: 0, scale: 0.7 },
+};
 const Hero = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
   const heroref = useRef(null);
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
@@ -201,9 +213,11 @@ const Hero = () => {
     // <Main__Section>
     <HeroStyled
       id="hero"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -100 }}
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={squareVariants}
+      className="square"
     >
       <div className="hero__container">
         <div className="hero__container-card" id="hero-card" ref={heroref}>
