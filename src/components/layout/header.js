@@ -100,6 +100,10 @@ const LogoContainer = styled.div`
       cursor: pointer;
     }
   }
+  button {
+    background-color: transparent;
+    border-style: none;
+  }
 `;
 const LinksContainer = styled.div`
   ol {
@@ -241,9 +245,9 @@ const Header = () => {
       </NavbarContent>
       <NavbarContentResponsive>
         <LogoContainer>
-          <a onClick={() => setIsOpen(!isOpen)}>
+          <button onClick={() => setIsOpen(!isOpen)}>
             <Image src={darvyImg} alt="portfolio icon" />
-          </a>
+          </button>
         </LogoContainer>
         <span>
           {Links}
