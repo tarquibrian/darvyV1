@@ -163,6 +163,11 @@ const description = (
   </>
 );
 
+const variants = {
+  visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { y: 200, opacity: 0, scale: 1 },
+};
+
 const About = () => {
   const ref = useRef(null);
 
