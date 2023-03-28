@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { IconGitHub, IconInstagram, IconLinkedIn } from "@components";
+import { motion } from "framer-motion";
 
-const SideStyle = styled.div`
+const SideStyle = styled(motion.div)`
   min-width: 100px;
   /* width: 3%; */
   position: fixed;
@@ -118,7 +119,11 @@ const LeftSide = () => {
       </ol>
     </div>
   );
-  return <SideStyle>{social}</SideStyle>;
+  return (
+    <SideStyle initial={{ x: -100 }} animate={{ x: 0 }}>
+      {social}
+    </SideStyle>
+  );
 };
 
 export default LeftSide;
