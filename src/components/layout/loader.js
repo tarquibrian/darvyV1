@@ -10,17 +10,19 @@ const LoaderSection = styled.div`
   inset: 0 0 0 0;
   /* width: 100vw; */
   /* height: 100vh; */
-  background-color: #e1e5ef;
+  background-color: rgba(217, 4, 41, 1);
   display: grid;
+  background-image: linear-gradient(
+    112.4deg,
+    rgba(170, 0, 0, 1) -5.8%,
+    rgba(128, 0, 0, 1) 100.2%
+  );
+  background-image: radial-gradient(
+    circle 863px at 49.1% 0%,
+    rgba(170, 0, 0, 1) -5.8%,
+    rgba(128, 0, 0, 1) 100.2%
+  );
   place-content: center;
-
-  /* position: absolute;
-  inset: 0;
-  z-index: 5;
-  background-color: #252525;
-  transform: translatex(0%);
-  transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1) 0.5s;
-  will-change: transform; */
 `;
 
 const LogoContainer = styled.div`
@@ -44,7 +46,6 @@ const LogoContainer = styled.div`
 
     h1 {
       color: #ee2e31;
-      /* background: yellow; */
       font-size: 3rem;
       font-weight: bolder;
     }
@@ -56,15 +57,16 @@ const SpinerLoader = styled.span`
   height: 100%;
   border: 4px solid #fff;
   border-radius: 50%;
-  display: inline-block;
+  /* display: inline-block; */
+  display: grid;
+  place-content: center;
   position: relative;
   box-sizing: border-box;
 
   &::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0 0 0 0;
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -74,19 +76,6 @@ const SpinerLoader = styled.span`
   }
 
   @keyframes rotation {
-    /* 0% {
-      transform: translateX(0%)
-    }
-    100% {
-      transform: translateX(100%)
-    } */
-    /* 0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    } */
-
     0% {
       transform: rotate(0);
     }
@@ -224,12 +213,12 @@ const Loader = ({ finishLoading }) => {
 
   return (
     <LoaderSection>
-      <HeaderLoader>
+      {/* <HeaderLoader>
         <div className="ipl-progress-indicator-head">
           <div className="first-indicator"></div>
           <div className="second-indicator"></div>
         </div>
-      </HeaderLoader>
+      </HeaderLoader> */}
       <LogoContainer>
         <div className="title">
           <h1 className="name">T</h1>

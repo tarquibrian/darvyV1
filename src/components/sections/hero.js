@@ -191,7 +191,7 @@ const Hero = () => {
     const { currentTarget: target } = e;
 
     // const rect = target.getBoundingClientRect(),
-    const rect = heroref.current.getBoundingClientRect(),
+    const rect = null || heroref.current.getBoundingClientRect(),
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
 
