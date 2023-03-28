@@ -10,7 +10,8 @@ import imgProject from "../../images/project-img1.png";
 import imgProject2 from "../../images/project-img2.png";
 import styled from "styled-components";
 import Image from "next/image";
-import { m } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const projectsData = [
   {
@@ -237,6 +238,11 @@ const ProjectWraper = styled.div`
 `;
 
 const title = <h1 className="headerTitle">.Projects</h1>;
+
+const variants = {
+  visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { y: 200, opacity: 0, scale: 1 },
+};
 
 const Projects = () => {
   const ref = useRef(null);
