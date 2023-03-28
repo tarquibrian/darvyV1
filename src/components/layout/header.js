@@ -100,10 +100,6 @@ const LogoContainer = styled.div`
       cursor: pointer;
     }
   }
-  button {
-    background-color: transparent;
-    border-style: none;
-  }
 `;
 const LinksContainer = styled.div`
   ol {
