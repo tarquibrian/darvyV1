@@ -59,10 +59,10 @@ const CreateFontFaces = (family) => {
       styles += `
       @font-face {
         font-family: '${family.name}';
-        src: url('/fonts/${family.name}/${family.name}-${type}.ttf');
+        src: url('/fonts/${family.name}/${family.name}-${type}.ttf' format('ttf'));
         font-weight: ${weight};
         font-style: normal;
-        font-display: auto;
+        font-display: block;
       }
     `;
     }
@@ -75,10 +75,10 @@ const CreateFontFaces = (family) => {
       styles += `
       @font-face {
         font-family: '${family.name}';
-        src: url('/fonts/${family.name}/${family.name}-${type}.ttf');
+        src: url('/fonts/${family.name}/${family.name}-${type}.ttf' format('ttf'));
         font-weight: ${weight};
         font-style: italic;
-        font-display: auto;
+        font-display: block;
       }
     `;
     }
