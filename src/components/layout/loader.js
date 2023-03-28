@@ -5,22 +5,22 @@ import { motion } from "framer-motion";
 // import anime from "animejs"
 // import "./loader.css"
 
-const LoaderSection = styled(motion.div)`
-  /* position: fixed; */
-  /* inset: 0 0 0 0; */
-  width: 100vw;
-  height: 100vh;
-  /* background-color: #e1e5ef; */
-  /* display: grid; */
-  /* place-content: center; */
+const LoaderSection = styled.div`
+  position: fixed;
+  inset: 0 0 0 0;
+  /* width: 100vw; */
+  /* height: 100vh; */
+  background-color: #e1e5ef;
+  display: grid;
+  place-content: center;
 
-  position: absolute;
+  /* position: absolute;
   inset: 0;
   z-index: 5;
   background-color: #252525;
   transform: translatex(0%);
   transition: transform 0.9s cubic-bezier(0.76, 0, 0.24, 1) 0.5s;
-  will-change: transform;
+  will-change: transform; */
 `;
 
 const LogoContainer = styled.div`
@@ -223,25 +223,19 @@ const Loader = ({ finishLoading }) => {
   // })
 
   return (
-    <LoaderSection
-      key={"loader"}
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
-      exit="exit"
-    >
-      {/* <HeaderLoader>
+    <LoaderSection>
+      <HeaderLoader>
         <div className="ipl-progress-indicator-head">
           <div className="first-indicator"></div>
           <div className="second-indicator"></div>
         </div>
       </HeaderLoader>
-asdfg
       <LogoContainer>
         <div className="title">
           <h1 className="name">T</h1>
         </div>
         <SpinerLoader />
-      </LogoContainer> */}
+      </LogoContainer>
     </LoaderSection>
   );
 };

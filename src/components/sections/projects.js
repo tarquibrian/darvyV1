@@ -66,6 +66,7 @@ const ProjectsStyled = styled(motion.section)`
   margin: auto;
   display: grid;
   place-content: center;
+  overflow: hidden;
   /* background: rgba(0 0 0 /0.2); */
   .headerTitle {
     font-size: clamp(40px, 8vw, 80px);
@@ -92,7 +93,7 @@ const ProjectsStyled = styled(motion.section)`
 `;
 
 const ProjectsContainer = styled(motion.div)`
-  min-width: 500px;
+  min-width: 400px;
   max-width: 1100px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
