@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const EmailStyle = styled.div`
+const EmailStyle = styled(motion.div)`
   position: fixed;
   top: 0;
   right: 0;
@@ -62,7 +63,11 @@ const RightSide = () => {
       <a href="mailto:tarquibrian@gmail.com">tarquibrian@gmail.com</a>
     </div>
   );
-  return <EmailStyle>{emailName}</EmailStyle>;
+  return (
+    <EmailStyle initial={{ x: 100 }} animate={{ x: 0 }}>
+      {emailName}
+    </EmailStyle>
+  );
 };
 
 export default RightSide;
