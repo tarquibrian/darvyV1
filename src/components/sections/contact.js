@@ -104,7 +104,7 @@ const CardContent = styled.div`
 `;
 
 const variants = {
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
   hidden: { opacity: 0, scale: 1 },
 };
 
