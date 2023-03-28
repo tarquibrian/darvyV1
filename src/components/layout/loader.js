@@ -22,18 +22,27 @@ const LoaderSection = styled.div`
     rgba(170, 0, 0, 1) -5.8%,
     rgba(128, 0, 0, 1) 100.2%
   );
+  background-image: radial-gradient(
+    circle farthest-corner at 1.3% 2.8%,
+    rgba(239, 249, 249, 1) 0%,
+    rgba(182, 199, 226, 1) 100.2%
+  );
+  background-image: radial-gradient(
+    circle farthest-corner at 50% 50%,
+    rgba(222, 226, 230, 1) 0%,
+    rgba(152, 193, 217, 1) 100.2%
+  );
+
   place-content: center;
 `;
 
 const LogoContainer = styled.div`
-  /* margin: auto; */
   width: 100px;
   height: 100px;
-  /* width: 100%; */
-  /* height: 100%; */
   position: relative;
-  /* display: grid; */
-  /* place-content: center; */
+  /* overflow: hidden; */
+  display: grid;
+  place-content: center;
 
   .title {
     position: absolute;
@@ -46,31 +55,36 @@ const LogoContainer = styled.div`
 
     h1 {
       color: #ee2e31;
-      font-size: 3rem;
+      /* font-size: 3rem; */
       font-weight: bolder;
+      font-family: "Oswald";
     }
   }
 `;
 
-const SpinerLoader = styled.span`
-  width: 100%;
-  height: 100%;
+const SpinerLoader = styled.div`
+  width: 100px;
+  height: 100px;
   border: 4px solid #fff;
   border-radius: 50%;
   /* display: inline-block; */
-  display: grid;
-  place-content: center;
+  /* display: grid; */
+  /* place-content: center; */
   position: relative;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 
   &::after {
     content: "";
     position: absolute;
-    inset: 0 0 0 0;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+    /* height: 100%; */
+    width: 88px;
+    height: 88px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
     border-radius: 50%;
-    border: 5px solid;
+    border: 6px solid;
     border-color: #ee2e31 transparent;
     animation: rotation 1s linear infinite;
   }
