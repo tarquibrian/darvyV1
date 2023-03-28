@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import anime from "animejs";
+import { motion } from "framer-motion";
 // import anime from "animejs"
 // import "./loader.css"
 
-const LoaderSection = styled.div`
+const LoaderSection = styled(motion.div)`
   /* position: fixed; */
   /* inset: 0 0 0 0; */
   width: 100vw;
@@ -222,7 +223,12 @@ const Loader = ({ finishLoading }) => {
   // })
 
   return (
-    <LoaderSection>
+    <LoaderSection
+      key={"loader"}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit="exit"
+    >
       {/* <HeaderLoader>
         <div className="ipl-progress-indicator-head">
           <div className="first-indicator"></div>

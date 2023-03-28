@@ -33,9 +33,9 @@ const Layout = ({ children }) => {
       <Header />
       <>
         <motion.main
-          initial={{ x: 300, opacity: 1 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: 300, opacity: 1 }}
+          exit={{ opacity: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
         >
           {children}
         </motion.main>
