@@ -4,8 +4,9 @@ import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import darvyImg from "../../images/darvy-icon.png";
 import { useScrollDirection } from "@hooks";
+import { motion } from "framer-motion";
 
-const NavbarHeader = styled.header`
+const NavbarHeader = styled(motion.header)`
   position: fixed;
   bottom: 5%;
   left: 10%;
@@ -58,7 +59,7 @@ const NavbarHeader = styled.header`
       `};
   }
 `;
-const NavbarContent = styled.div`
+const NavbarContent = styled(motion.div)`
   margin: 0 auto;
   height: 100%;
   width: 100%;
@@ -228,7 +229,11 @@ const Header = () => {
       scrollDirection={scrollDirection}
       isOpen={isOpen}
     >
-      <NavbarContent>
+      <NavbarContent
+        initial={{ y: 100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <LogoContainer>
           <a onClick={scrollTop} href={`#`}>
             <Image src={darvyImg} alt="portfolio icon" />
