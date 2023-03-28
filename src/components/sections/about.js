@@ -169,6 +169,10 @@ const variants = {
 };
 
 const About = () => {
+  const controls = useAnimation();
+  const [refView, inView] = useInView();
+  const heroref = useRef(null);
+
   const ref = useRef(null);
 
   const handleOnMouseMove = (e) => {
@@ -184,16 +188,20 @@ const About = () => {
   };
 
   useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
     window.addEventListener("mousemove", handleOnMouseMove);
-  }, []);
+  }, [controls, inView]);
 
   return (
     // <Main__Section>
     <AboutStyled
       id="about"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -100 }}
+      ref={refView}
+      animate={controls}
+      initial="hidden"
+      variants={variants}
     >
       <AboutCard ref={ref} id="about-card">
         {title}

@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Main__Section } from "@styles";
 import styled from "styled-components";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-const ExperienceStyled = styled.section`
+const ExperienceStyled = styled(motion.section)`
   display: grid;
   place-content: center;
   width: 80%;
@@ -303,9 +305,17 @@ const data = [
 
 const title = <h1 className="headerTitle">.Experience</h1>;
 
+const variants = {
+  visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { y: 200, opacity: 0, scale: 1 },
+};
+
 const Experience = () => {
   const [activeId, setActiveId] = useState(0);
   const ref = useRef(null);
+  const controls = useAnimation();
+  const [refView, inView] = useInView();
+  const heroref = useRef(null);
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
@@ -320,10 +330,19 @@ const Experience = () => {
   };
 
   useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
     window.addEventListener("mousemove", handleOnMouseMove);
-  }, []);
+  }, [controls, inView]);
   return (
-    <ExperienceStyled id="experience">
+    <ExperienceStyled
+      id="experience"
+      ref={refView}
+      animate={controls}
+      initial="hidden"
+      variants={variants}
+    >
       <ExperienceCard ref={ref} id="card">
         {title}
         <CardContent>
