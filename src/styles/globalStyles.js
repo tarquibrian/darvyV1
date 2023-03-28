@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none; 
     text-decoration: none;
     transition: .2s ease;
+
   }
 
   *::selection {
@@ -32,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     /* color: rgba(229,229,229,1.0); */
     /* color: #000; */
     color: #fff;
+    background-color: #404040;
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;

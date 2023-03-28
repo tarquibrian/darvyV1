@@ -10,16 +10,17 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="sync">
       {loading ? (
         <Component {...pageProps} />
       ) : (
         <motion.div
           key="loading"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          initial={{}}
+          animate={{ y: 0 }}
+          exit={{ y: -1000 }}
+          // transition={{ duration: 1 }}
+          // style={{ background: "#404040" }}
         >
           <Loader />
         </motion.div>

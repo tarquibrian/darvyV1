@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 const LoaderSection = styled.div`
   position: fixed;
   inset: 0 0 0 0;
-  /* width: 100vw; */
-  /* height: 100vh; */
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(217, 4, 41, 1);
   display: grid;
   background-image: linear-gradient(
@@ -34,6 +34,7 @@ const LoaderSection = styled.div`
   );
 
   place-content: center;
+  z-index: 999999;
 `;
 
 const LogoContainer = styled.div`

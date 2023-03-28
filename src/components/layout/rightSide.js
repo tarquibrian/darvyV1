@@ -64,7 +64,11 @@ const RightSide = () => {
     </div>
   );
   return (
-    <EmailStyle initial={{ x: 100 }} animate={{ x: 0 }}>
+    <EmailStyle
+      initial={{ x: 100 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       {emailName}
     </EmailStyle>
   );

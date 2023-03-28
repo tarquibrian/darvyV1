@@ -120,7 +120,11 @@ const LeftSide = () => {
     </div>
   );
   return (
-    <SideStyle initial={{ x: -100 }} animate={{ x: 0 }}>
+    <SideStyle
+      initial={{ x: -100 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       {social}
     </SideStyle>
   );
