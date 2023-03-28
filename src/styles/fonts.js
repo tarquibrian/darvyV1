@@ -62,7 +62,7 @@ const CreateFontFaces = (family) => {
         src: url('/fonts/${family.name}/${family.name}-${type}.ttf' format('ttf'));
         font-weight: ${weight};
         font-style: normal;
-        font-display: block;
+        font-display: auto;
       }
     `;
     }
@@ -78,7 +78,7 @@ const CreateFontFaces = (family) => {
         src: url('/fonts/${family.name}/${family.name}-${type}.ttf' format('ttf'));
         font-weight: ${weight};
         font-style: italic;
-        font-display: block;
+        font-display: auto;
       }
     `;
     }

@@ -104,8 +104,8 @@ const CardContent = styled.div`
 `;
 
 const variants = {
-  visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
-  hidden: { y: 200, opacity: 0, scale: 1 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, scale: 1 },
 };
 
 const Contact = () => {
