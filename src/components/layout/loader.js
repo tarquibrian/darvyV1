@@ -225,7 +225,7 @@ const Loader = ({ finishLoading }) => {
   return (
     <LoaderSection
       key={"loader"}
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit="exit"
     >

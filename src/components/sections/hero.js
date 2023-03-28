@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Main__Section } from "@styles";
+import { motion } from "framer-motion";
 
-const HeroStyled = styled.section`
+const HeroStyled = styled(motion.section)`
   height: 100vh;
   width: 80%;
   margin: auto;
@@ -198,7 +199,12 @@ const Hero = () => {
 
   return (
     // <Main__Section>
-    <HeroStyled id="hero">
+    <HeroStyled
+      id="hero"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -100 }}
+    >
       <div className="hero__container">
         <div className="hero__container-card" id="hero-card" ref={heroref}>
           {afterTitle}
