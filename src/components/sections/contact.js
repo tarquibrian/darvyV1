@@ -46,7 +46,7 @@ const ContactContainer = styled.div`
 
   &::before {
     background: radial-gradient(
-      800px circle at var(--mouse5-x) var(--mouse5-y),
+      800px circle at var(--mouse1-x) var(--mouse1-y),
       rgba(255, 255, 255, 0.15),
       transparent 40%
     );
@@ -109,7 +109,7 @@ const variants = {
 };
 
 const Contact = () => {
-  const ref = useRef(null);
+  const cardref = useRef(null);
   const controls = useAnimation();
   const [refView, inView] = useInView();
 
@@ -117,12 +117,12 @@ const Contact = () => {
     const { currentTarget: target } = e;
 
     // const rect = target.getBoundingClientRect(),
-    const rect = ref.current.getBoundingClientRect(),
+    const rect = cardref.current.getBoundingClientRect(),
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
 
-    e.target.style.setProperty("--mouse5-x", `${x}px`);
-    e.target.style.setProperty("--mouse5-y", `${y}px`);
+    cardref.current.style.setProperty("--mouse1-x", `${x}px`);
+    cardref.current.style.setProperty("--mouse1-y", `${y}px`);
   };
 
   useEffect(() => {
@@ -150,7 +150,7 @@ const Contact = () => {
       initial="hidden"
       variants={variants}
     >
-      <ContactContainer ref={ref}>
+      <ContactContainer ref={cardref}>
         {title}
         <CardContent>
           {description}

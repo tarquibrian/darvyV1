@@ -254,9 +254,6 @@ const Projects = () => {
     const rect = ref.current.getBoundingClientRect(),
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
-
-    e.target.style.setProperty("--mouse4-x", `${x}px`);
-    e.target.style.setProperty("--mouse4-y", `${y}px`);
   };
 
   useEffect(() => {

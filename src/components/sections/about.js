@@ -73,7 +73,7 @@ const AboutCard = styled.div`
 
   &::before {
     background: radial-gradient(
-      800px circle at var(--mouse2-x) var(--mouse2-y),
+      800px circle at var(--mouse1-x) var(--mouse1-y),
       rgba(255, 255, 255, 0.15),
       transparent 40%
     );
@@ -171,20 +171,18 @@ const variants = {
 const About = () => {
   const controls = useAnimation();
   const [refView, inView] = useInView();
-  const heroref = useRef(null);
-
-  const ref = useRef(null);
+  const aboutref = useRef(null);
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
 
     // const rect = target.getBoundingClientRect(),
-    const rect = ref.current.getBoundingClientRect(),
+    const rect = aboutref.current.getBoundingClientRect(),
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
 
-    e.target.style.setProperty("--mouse2-x", `${x}px`);
-    e.target.style.setProperty("--mouse2-y", `${y}px`);
+    aboutref.current.style.setProperty("--mouse1-x", `${x}px`);
+    aboutref.current.style.setProperty("--mouse1-y", `${y}px`);
   };
 
   useEffect(() => {
@@ -203,7 +201,7 @@ const About = () => {
       initial="hidden"
       variants={variants}
     >
-      <AboutCard ref={ref} id="about-card">
+      <AboutCard ref={aboutref} id="about-card">
         {title}
         {description}
       </AboutCard>

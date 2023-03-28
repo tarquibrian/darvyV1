@@ -187,11 +187,6 @@ const Hero = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const heroref = useRef(null);
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
@@ -201,13 +196,16 @@ const Hero = () => {
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
 
-    e.target.style.setProperty("--mouse1-x", `${x}px`);
-    e.target.style.setProperty("--mouse1-y", `${y}px`);
+    heroref.current.style.setProperty("--mouse1-x", `${x}px`);
+    heroref.current.style.setProperty("--mouse1-y", `${y}px`);
   };
 
   useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
     window.addEventListener("mousemove", handleOnMouseMove);
-  }, []);
+  }, [controls, inView]);
 
   return (
     // <Main__Section>
