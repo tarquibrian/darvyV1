@@ -3,7 +3,8 @@ import { Main__Section } from "@styles";
 import styled from "styled-components";
 import img from "../../images/profile.jpg";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const AboutStyled = styled(motion.section)`
   /* background: rgba(0 0 0 / 0.2); */

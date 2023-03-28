@@ -179,7 +179,7 @@ const Description = (
       proceso). */}
   </p>
 );
-const squareVariants = {
+const variants = {
   visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
   hidden: { y: 200, opacity: 0, scale: 1 },
 };
@@ -216,7 +216,7 @@ const Hero = () => {
       ref={ref}
       animate={controls}
       initial="hidden"
-      variants={squareVariants}
+      variants={variants}
     >
       <div className="hero__container">
         <div className="hero__container-card" id="hero-card" ref={heroref}>
