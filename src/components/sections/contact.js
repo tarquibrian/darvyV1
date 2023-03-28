@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-const ContactStyled = styled.section``;
+const ContactStyled = styled(motion.section)``;
 
 const ContactContainer = styled.div`
   width: 80%;
@@ -101,8 +103,15 @@ const CardContent = styled.div`
   }
 `;
 
+const variants = {
+  visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { y: 200, opacity: 0, scale: 1 },
+};
+
 const Contact = () => {
   const ref = useRef(null);
+  const controls = useAnimation();
+  const [refView, inView] = useInView();
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
@@ -117,8 +126,11 @@ const Contact = () => {
   };
 
   useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
     window.addEventListener("mousemove", handleOnMouseMove);
-  }, []);
+  }, [controls, inView]);
   const title = <h1>.Contact</h1>;
 
   const description = (
@@ -131,7 +143,13 @@ const Contact = () => {
   const button = <a href="mailto:tarquibrian@gmail.com">Contact Me</a>;
 
   return (
-    <ContactStyled id="contact">
+    <ContactStyled
+      id="contact"
+      ref={refView}
+      animate={controls}
+      initial="hidden"
+      variants={variants}
+    >
       <ContactContainer ref={ref}>
         {title}
         <CardContent>

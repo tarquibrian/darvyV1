@@ -61,7 +61,7 @@ const projectsData = [
   },
 ];
 
-const ProjectsStyled = styled.section`
+const ProjectsStyled = styled(motion.section)`
   width: 80%;
   margin: auto;
   display: grid;
@@ -91,7 +91,7 @@ const ProjectsStyled = styled.section`
   }
 `;
 
-const ProjectsContainer = styled.div`
+const ProjectsContainer = styled(motion.div)`
   min-width: 500px;
   max-width: 1100px;
   display: grid;
@@ -232,20 +232,19 @@ const ProjectImg = styled.div`
 const ProjectWraper = styled.div`
   display: grid;
   gap: 5rem;
-  .wrapper__container {
-    position: relative;
-  }
 `;
 
 const title = <h1 className="headerTitle">.Projects</h1>;
 
 const variants = {
-  visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.5 } },
-  hidden: { y: 200, opacity: 0, scale: 1 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, scale: 1 },
 };
 
 const Projects = () => {
   const ref = useRef(null);
+  const controls = useAnimation();
+  const [refView, inView] = useInView();
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
@@ -260,59 +259,80 @@ const Projects = () => {
   };
 
   useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
     window.addEventListener("mousemove", handleOnMouseMove);
-  }, []);
+  }, [controls, inView]);
   return (
-    <ProjectsStyled id="projects">
+    <ProjectsStyled
+      id="projects"
+      ref={refView}
+      animate={controls}
+      initial="hidden"
+      variants={variants}
+    >
       {title}
       <ProjectWraper>
         {projectsData.map((project, i) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
-            <div className="wrapper__container" key={id}>
-              <ProjectsContainer>
-                <ProjectContent>
-                  <div className="label">{label}</div>
-                  <h2>{title}</h2>
-                  <p ref={ref}>{desc}</p>
-                  <ul>
-                    {features.map((feature, i) => {
-                      const { name } = feature;
-                      return (
-                        <li key={i} className="features">
-                          {name}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <ul>
-                    {links.map((linkname, i) => {
-                      return (
-                        <li key={i}>
-                          <a
-                            href={linkname.path}
-                            target="_blank"
-                            rel="noreferrer"
-                            // key={linkname.id}
-                          >
-                            {linkname.svg === 1 && <IconExternal />}
-                            {linkname.svg === 2 && <IconGitHub />}
-                            {linkname.svg === 3 && <IconFigma />}
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </ProjectContent>
-                <ProjectImg>
-                  <Image
-                    src={img}
-                    alt="thumbnail of the project"
-                    title="thumbnail of the project"
-                  />
-                </ProjectImg>
-              </ProjectsContainer>
-            </div>
+            <ProjectsContainer
+              key={id}
+              ref={refView}
+              animate={controls}
+              initial="hidden"
+              variants={{
+                visible: {
+                  x: 0,
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.5 },
+                },
+                hidden: { x: 100, opacity: 0, scale: 1 },
+              }}
+            >
+              <ProjectContent>
+                <div className="label">{label}</div>
+                <h2>{title}</h2>
+                <p ref={ref}>{desc}</p>
+                <ul>
+                  {features.map((feature, i) => {
+                    const { name } = feature;
+                    return (
+                      <li key={i} className="features">
+                        {name}
+                      </li>
+                    );
+                  })}
+                </ul>
+                <ul>
+                  {links.map((linkname, i) => {
+                    return (
+                      <li key={i}>
+                        <a
+                          href={linkname.path}
+                          target="_blank"
+                          rel="noreferrer"
+                          // key={linkname.id}
+                        >
+                          {linkname.svg === 1 && <IconExternal />}
+                          {linkname.svg === 2 && <IconGitHub />}
+                          {linkname.svg === 3 && <IconFigma />}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </ProjectContent>
+              <ProjectImg>
+                <Image
+                  src={img}
+                  alt="thumbnail of the project"
+                  title="thumbnail of the project"
+                />
+              </ProjectImg>
+            </ProjectsContainer>
           );
         })}
       </ProjectWraper>
