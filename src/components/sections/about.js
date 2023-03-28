@@ -3,8 +3,9 @@ import { Main__Section } from "@styles";
 import styled from "styled-components";
 import img from "../../images/profile.jpg";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-const AboutStyled = styled.section`
+const AboutStyled = styled(motion.section)`
   /* background: rgba(0 0 0 / 0.2); */
   /* color: #e5e5e5; */
   width: 80%;
@@ -182,7 +183,12 @@ const About = () => {
 
   return (
     // <Main__Section>
-    <AboutStyled id="about">
+    <AboutStyled
+      id="about"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -100 }}
+    >
       <AboutCard ref={ref} id="about-card">
         {title}
         {description}
