@@ -74,6 +74,10 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2,h3,h4,h5 {
     color: #fff;
   }
+  button {
+    background-color: transparent;
+    border-style: none;
+  }
 `;
 
 export const Main__Section = styled.section`
