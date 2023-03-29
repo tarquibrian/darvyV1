@@ -1,6 +1,7 @@
 import { Loader } from "@components";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { AppProvider } from "src/context/app.context";
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
@@ -12,7 +13,9 @@ export default function App({ Component, pageProps }) {
   return (
     <AnimatePresence mode="sync">
       {loading ? (
-        <Component {...pageProps} />
+        <AppProvider>
+          <Component {...pageProps} />
+        </AppProvider>
       ) : (
         <motion.div
           key="loading"
