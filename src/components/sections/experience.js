@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
+import { experienceData } from "@data";
 
 const ExperienceStyled = styled(motion.section)`
   display: grid;
@@ -247,75 +248,26 @@ const ContentBody = styled.div`
   }
 `;
 
-const data = [
-  {
-    id: 0,
-    title: {
-      name: "Villa Rivero",
-      year: "2022",
-    },
-    body: {
-      header: "Desarrollo de una Aplicación Web de Turismo",
-      type: "FullStack Proyect",
-      path: "https://www.municipio.com.bo/municipio-villa-rivero.html",
-      description:
-        "Desarrollo de una aplicación web enfocada hacia la gestión del turismo regional, describiendo detalles como:",
-      features: [
-        "Analisis de la situacion problematica",
-        "Desarrollo y despliegue del fron y back",
-        "Uso de geolocalizacion para el posicionamiento, geocodificaion y geoetiquetado",
-        "Integracion de funcionalidades progresivas",
-      ],
-    },
-  },
-  {
-    id: 1,
-    title: {
-      name: "Coming soon..",
-      year: "2023",
-    },
-    body: {
-      header: "header",
-      description: "description2",
-      features: [
-        "Analisis de la situacion problematica",
-        "Desarrollo y despliegue del fron y back",
-        "Uso de geolocalizacion para el posicionamiento, geocodificaion y geoetiquetado",
-        "Integracion de funcionalidades progresivas",
-      ],
-    },
-  },
-  {
-    id: 2,
-    title: {
-      name: "Coming soon..",
-      year: "2024",
-    },
-    body: {
-      header: "header",
-      description: "description3",
-      features: [
-        "Analisis de la situacion problematica",
-        "Desarrollo y despliegue del fron y back",
-        "Uso de geolocalizacion para el posicionamiento, geocodificaion y geoetiquetado",
-        "Integracion de funcionalidades progresivas",
-      ],
-    },
-  },
-];
-
 const title = <h1 className="headerTitle">.Experience</h1>;
 
 const variants = {
   visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.6 } },
   hidden: { y: 200, opacity: 0, scale: 1 },
 };
-
+const languages = {
+  es: experienceData.es,
+  en: experienceData.en,
+};
 const Experience = () => {
   const [activeId, setActiveId] = useState(0);
   const controls = useAnimation();
   const [refView, inView] = useInView();
+  const { state, toggleLanguage } = useAppContext();
   const cardref = useRef(null);
+
+  const currentLanguage = {
+    lenguage: languages[state.currentLanguage],
+  };
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
@@ -335,6 +287,7 @@ const Experience = () => {
     }
     window.addEventListener("mousemove", handleOnMouseMove);
   }, [controls, inView]);
+  console.log(currentLanguage);
   return (
     <ExperienceStyled
       id="experience"
@@ -347,7 +300,7 @@ const Experience = () => {
         {title}
         <CardContent>
           <ContentList>
-            {data.map((item, i) => {
+            {currentLanguage.lenguage.items.map((item, i) => {
               const { id, title } = item;
               const { name, year } = title;
               return (
@@ -363,7 +316,7 @@ const Experience = () => {
             })}
           </ContentList>
           <ContentBody>
-            {data.map(({ id, body, title }, i) => {
+            {currentLanguage.lenguage.items.map(({ id, body, title }, i) => {
               const { header, description, features, path, type } = body;
               const { name } = title;
               if (id === activeId) {
