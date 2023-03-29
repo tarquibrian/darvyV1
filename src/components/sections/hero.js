@@ -182,12 +182,11 @@ const Hero = () => {
   const currentLanguage = {
     lenguage: languages[state.currentLanguage],
   };
-  console.log(currentLanguage);
 
   const handleOnMouseMove = (e) => {
-    let rect = "" || heroref.current.getBoundingClientRect(),
+    let rect = heroref.current.getBoundingClientRect(),
       x = e.clientX - rect.left,
-      y = e.clientY - rect.top;
+      y = e.clientY - rect.top || "";
 
     heroref.current.style.setProperty("--mouse1-x", `${x}px`);
     heroref.current.style.setProperty("--mouse1-y", `${y}px`);
@@ -213,18 +212,8 @@ const Hero = () => {
         <div className="hero__container-card" id="hero-card" ref={heroref}>
           <h1>{currentLanguage.lenguage[1]}</h1>
           <h2>Brian Tarqui Rojas.</h2>
-          <h3>Construyo cosas para la web.</h3>
-          <p>
-            Ingeniero de sistemas especializado en el desarrollo web FullStack,
-            enfocado en crear y diseñar aplicaciones web modernas, priorizando
-            siempre en entregar experiencias digitales excepcionales.
-            {/* <br /> En la actulidad
-      me encuentro en la ruta de
-      aprendizaje para ser desarrollador Senior FullStack cualificado, capaz de
-      resolver grandes problemáticas y brindar soluciones de nivel (el camino es
-      largo, pero con esfuerzo y disciplina se que me divertire durante el
-      proceso). */}
-          </p>
+          <h3>{currentLanguage.lenguage[3]}</h3>
+          <p>{currentLanguage.lenguage[4]}</p>
           <div className="hero__container-buttons">
             <a
               className="button__resume"
@@ -232,10 +221,10 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Descargar CV
+              {currentLanguage.lenguage[5]}
             </a>
             <a href="mailto:tarquibrian@gmail.com" className="button__contact">
-              Contact
+              {currentLanguage.lenguage[6]}
             </a>
           </div>
         </div>

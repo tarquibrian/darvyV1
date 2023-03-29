@@ -1,18 +1,18 @@
 export const heroData = {
   es: {
-    1: "Me presento, mi nombre es",
+    1: "Hola, mi nombre es",
     2: "Brian Tarqui Rojas",
-    3: "Construyo cosas para la web",
+    3: "Desarrollador FullStack",
     4: "Ingeniero de sistemas especializado en el desarrollo web FullStack, enfocado en crear y diseñar aplicaciones web modernas, priorizando siempre en entregar experiencias digitales excepcionales.",
     5: "Descargar CV",
-    6: "Contactame",
+    6: "Contacto",
   },
   en: {
-    1: "Present me, mi nombre es",
+    1: "Hi, mi name is",
     2: "Brian Tarqui Rojas",
-    3: "Construyo cosas para la web",
-    4: "Ingeniero de sistemas especializado en el desarrollo web FullStack, enfocado en crear y diseñar aplicaciones web modernas, priorizando siempre en entregar experiencias digitales excepcionales.",
-    5: "Descargar CV",
-    6: "Contactame",
+    3: "FullStack Developer",
+    4: "Systems Engineer specialized in FullStack web development, focused on creating and designing modern web applications, always prioritizing delivering exceptional digital experiences.",
+    5: "Download CV",
+    6: "Contact",
   },
 };
