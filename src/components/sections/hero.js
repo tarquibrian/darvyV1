@@ -159,25 +159,7 @@ const HeroStyled = styled(motion.section)`
     width: 90%;
   }
 `;
-const afterTitle = <h1>Me presento, mi nombre es</h1>;
 
-const Title = <h2>Brian Tarqui Rojas.</h2>;
-
-const SubTitle = <h3>Construyo cosas para la web.</h3>;
-
-const Description = (
-  <p>
-    Ingeniero de sistemas especializado en el desarrollo web FullStack, enfocado
-    en crear y diseñar aplicaciones web modernas, priorizando siempre en
-    entregar experiencias digitales excepcionales.
-    {/* <br /> En la actulidad
-      me encuentro en la ruta de
-      aprendizaje para ser desarrollador Senior FullStack cualificado, capaz de
-      resolver grandes problemáticas y brindar soluciones de nivel (el camino es
-      largo, pero con esfuerzo y disciplina se que me divertire durante el
-      proceso). */}
-  </p>
-);
 const variants = {
   visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.6 } },
   hidden: { y: 200, opacity: 0, scale: 1 },
@@ -214,10 +196,20 @@ const Hero = () => {
     >
       <div className="hero__container">
         <div className="hero__container-card" id="hero-card" ref={heroref}>
-          {afterTitle}
-          {Title}
-          {SubTitle}
-          {Description}
+          <h1>Me presento, mi nombre es</h1>
+          <h2>Brian Tarqui Rojas.</h2>
+          <h3>Construyo cosas para la web.</h3>
+          <p>
+            Ingeniero de sistemas especializado en el desarrollo web FullStack,
+            enfocado en crear y diseñar aplicaciones web modernas, priorizando
+            siempre en entregar experiencias digitales excepcionales.
+            {/* <br /> En la actulidad
+      me encuentro en la ruta de
+      aprendizaje para ser desarrollador Senior FullStack cualificado, capaz de
+      resolver grandes problemáticas y brindar soluciones de nivel (el camino es
+      largo, pero con esfuerzo y disciplina se que me divertire durante el
+      proceso). */}
+          </p>
           <div className="hero__container-buttons">
             <a
               className="button__resume"
