@@ -4,6 +4,7 @@ import { Main__Section } from "@styles";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { heroData } from "@data";
+import { useAppContext } from "src/context/app.context";
 
 const HeroStyled = styled(motion.section)`
   height: 100vh;
@@ -173,18 +174,18 @@ const languages = {
 
 const Hero = () => {
   // const [language, setLanguage] = useState({});
-  const [toggleLanguage, setToggleLanguage] = useState("en");
+  const { state, toggleLanguage } = useAppContext();
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const heroref = useRef(null);
 
   const currentLanguage = {
-    lenguage: languages[toggleLanguage],
+    lenguage: languages[state.currentLanguage],
   };
   console.log(currentLanguage);
 
   const handleOnMouseMove = (e) => {
-    let rect = heroref.current.getBoundingClientRect(),
+    let rect = "" || heroref.current.getBoundingClientRect(),
       x = e.clientX - rect.left,
       y = e.clientY - rect.top;
 
@@ -233,17 +234,9 @@ const Hero = () => {
             >
               Descargar CV
             </a>
-
             <a href="mailto:tarquibrian@gmail.com" className="button__contact">
               Contact
             </a>
-            <button
-              onClick={() =>
-                setToggleLanguage(toggleLanguage === "es" ? "en" : "es")
-              }
-            >
-              toggle
-            </button>
           </div>
         </div>
       </div>

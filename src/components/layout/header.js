@@ -5,6 +5,7 @@ import styled, { css } from "styled-components";
 import darvyImg from "../../images/darvy-icon.png";
 import { useScrollDirection } from "@hooks";
 import { motion } from "framer-motion";
+import { useAppContext } from "src/context/app.context";
 
 const NavbarHeader = styled(motion.header)`
   position: fixed;
@@ -157,46 +158,11 @@ const NavbarContentResponsive = styled.div`
 `;
 
 const Header = () => {
+  const { state, toggleLanguage } = useAppContext();
   const [scrollIsTop, setIscrollIsTop] = useState(true);
   const [scrollIsBottom, setIscrollIsBottom] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const scrollDirection = useScrollDirection("up");
-
-  const Links = (
-    <LinksContainer>
-      <ol>
-        <li>
-          <a href="#about" onClick={() => toggle()}>
-            .About
-          </a>
-        </li>
-        <li>
-          <a href="#experience" onClick={() => toggle()}>
-            .Experience
-          </a>
-        </li>
-        <li>
-          <a href="#projects" onClick={() => toggle()}>
-            .Projects
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => toggle()}>
-            .Contact
-          </a>
-        </li>
-        {/* <Link href={"/"}>Adios</Link> */}
-      </ol>
-    </LinksContainer>
-  );
-
-  const Resume = (
-    <ResumeLink>
-      <a href="./resumeV1.pdf" target="_blank" rel="noopener noreferrer">
-        Resume &gt;
-      </a>
-    </ResumeLink>
-  );
 
   const scrollTop = () => {
     window.scrollTo({
@@ -222,6 +188,8 @@ const Header = () => {
     });
   }, [scrollIsBottom, scrollIsTop, scrollDirection]);
 
+  console.log({ state });
+
   return (
     <NavbarHeader
       scrollIsTop={scrollIsTop}
@@ -239,9 +207,40 @@ const Header = () => {
             <Image src={darvyImg} alt="portfolio icon" />
           </a>
         </LogoContainer>
+        <button onClick={() => toggleLanguage()}>
+          Language {state.currentLanguage}
+        </button>
         <span>
-          {Links}
-          {Resume}
+          <LinksContainer>
+            <ol>
+              <li>
+                <a href="#about" onClick={() => toggle()}>
+                  .About
+                </a>
+              </li>
+              <li>
+                <a href="#experience" onClick={() => toggle()}>
+                  .Experience
+                </a>
+              </li>
+              <li>
+                <a href="#projects" onClick={() => toggle()}>
+                  .Projects
+                </a>
+              </li>
+              <li>
+                <a href="#contact" onClick={() => toggle()}>
+                  .Contact
+                </a>
+              </li>
+              {/* <Link href={"/"}>Adios</Link> */}
+            </ol>
+          </LinksContainer>
+          <ResumeLink>
+            <a href="./resumeV1.pdf" target="_blank" rel="noopener noreferrer">
+              Resume &gt;
+            </a>
+          </ResumeLink>
         </span>
       </NavbarContent>
       <NavbarContentResponsive>
@@ -251,8 +250,36 @@ const Header = () => {
           </button>
         </LogoContainer>
         <span>
-          {Links}
-          {Resume}
+          <LinksContainer>
+            <ol>
+              <li>
+                <a href="#about" onClick={() => toggle()}>
+                  .About
+                </a>
+              </li>
+              <li>
+                <a href="#experience" onClick={() => toggle()}>
+                  .Experience
+                </a>
+              </li>
+              <li>
+                <a href="#projects" onClick={() => toggle()}>
+                  .Projects
+                </a>
+              </li>
+              <li>
+                <a href="#contact" onClick={() => toggle()}>
+                  .Contact
+                </a>
+              </li>
+              {/* <Link href={"/"}>Adios</Link> */}
+            </ol>
+          </LinksContainer>
+          <ResumeLink>
+            <a href="./resumeV1.pdf" target="_blank" rel="noopener noreferrer">
+              Resume &gt;
+            </a>
+          </ResumeLink>
         </span>
       </NavbarContentResponsive>
     </NavbarHeader>
