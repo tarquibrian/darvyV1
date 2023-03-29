@@ -1,1 +1,1 @@
-export { default as heroData } from "./heroData";
+export * from "./heroData";

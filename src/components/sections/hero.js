@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Main__Section } from "@styles";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { heroData } from "@data";
 
 const HeroStyled = styled(motion.section)`
   height: 100vh;
@@ -164,10 +165,23 @@ const variants = {
   visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.6 } },
   hidden: { y: 200, opacity: 0, scale: 1 },
 };
+
+const languages = {
+  es: heroData.es,
+  en: heroData.en,
+};
+
 const Hero = () => {
+  // const [language, setLanguage] = useState({});
+  const [toggleLanguage, setToggleLanguage] = useState("en");
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const heroref = useRef(null);
+
+  const currentLanguage = {
+    lenguage: languages[toggleLanguage],
+  };
+  console.log(currentLanguage);
 
   const handleOnMouseMove = (e) => {
     let rect = heroref.current.getBoundingClientRect(),
@@ -196,7 +210,7 @@ const Hero = () => {
     >
       <div className="hero__container">
         <div className="hero__container-card" id="hero-card" ref={heroref}>
-          <h1>Me presento, mi nombre es</h1>
+          <h1>{currentLanguage.lenguage[1]}</h1>
           <h2>Brian Tarqui Rojas.</h2>
           <h3>Construyo cosas para la web.</h3>
           <p>
@@ -223,6 +237,13 @@ const Hero = () => {
             <a href="mailto:tarquibrian@gmail.com" className="button__contact">
               Contact
             </a>
+            <button
+              onClick={() =>
+                setToggleLanguage(toggleLanguage === "es" ? "en" : "es")
+              }
+            >
+              toggle
+            </button>
           </div>
         </div>
       </div>
