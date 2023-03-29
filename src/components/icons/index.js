@@ -4,3 +4,4 @@ export { default as IconInstagram } from "./instagram";
 export { default as IconLinkedIn } from "./linkedin";
 export { default as IconExternal } from "./link";
 export { default as IconFigma } from "./figma";
+export { default as IconCodepen } from "./codepen";

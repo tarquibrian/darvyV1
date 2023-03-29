@@ -16,8 +16,8 @@ export default function App({ Component, pageProps }) {
       ) : (
         <motion.div
           key="loading"
-          initial={{}}
-          animate={{ y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           exit={{ y: -1000 }}
           // transition={{ duration: 1 }}
           // style={{ background: "#404040" }}

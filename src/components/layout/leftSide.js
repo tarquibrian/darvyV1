@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { IconGitHub, IconInstagram, IconLinkedIn } from "@components";
+import {
+  IconCodepen,
+  IconGitHub,
+  IconInstagram,
+  IconLinkedIn,
+} from "@components";
 import { motion } from "framer-motion";
 
 const SideStyle = styled(motion.div)`
@@ -114,6 +119,15 @@ const LeftSide = () => {
             rel="noreferrer"
           >
             <IconInstagram />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://codepen.io/tarquibrian"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconCodepen />
           </a>
         </li>
       </ol>
