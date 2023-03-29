@@ -6,6 +6,8 @@ import img1 from "../../images/darvy-icon.png";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useAppContext } from "src/context/app.context";
+import { aboutData } from "@data";
 
 const AboutStyled = styled(motion.section)`
   /* background: rgba(0 0 0 / 0.2); */
@@ -140,39 +142,25 @@ const ImgProfile = styled.div`
   }
 `;
 
-const title = <h1>.About-Me</h1>;
-
-const description = (
-  <>
-    <p>
-      Mi nombre es Brian pero usualmente me llaman por mi apellido (Tarqui), soy
-      una persona que tiene mucha pasión por el mundo de la tecnología y
-      recientemente obtuve mi título en Ingeniería de Sistemas.
-    </p>
-    <p>
-      Durante los últimos años de mi carrera estuve formándome con más
-      profundidad de forma autodidacta en el desarrollo web y ahora busco mi
-      primera oportunidad laboral. Soy responsable, curioso y detallista, además
-      de ser capaz de desenvolverme trabajando en equipo, bajo presión y por
-      objetivos.
-    </p>
-    <p>
-      En un futuro sueño con ser un gran desarrollador Senior capáz de resolver
-      grandes problemáticas y estar altamente cualificado para brindar
-      soluciones de nivel.
-    </p>
-  </>
-);
-
 const variants = {
   visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.6 } },
   hidden: { y: 200, opacity: 0, scale: 1 },
+};
+
+const languages = {
+  es: aboutData.es,
+  en: aboutData.en,
 };
 
 const About = () => {
   const controls = useAnimation();
   const [refView, inView] = useInView();
   const aboutref = useRef(null);
+  const { state, toggleLanguage } = useAppContext();
+
+  const currentLanguage = {
+    lenguage: languages[state.currentLanguage],
+  };
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
@@ -180,7 +168,7 @@ const About = () => {
     // const rect = target.getBoundingClientRect(),
     const rect = aboutref.current.getBoundingClientRect(),
       x = e.clientX - rect.left,
-      y = e.clientY - rect.top;
+      y = e.clientY - rect.top || "";
 
     aboutref.current.style.setProperty("--mouse1-x", `${x}px`);
     aboutref.current.style.setProperty("--mouse1-y", `${y}px`);
@@ -203,8 +191,11 @@ const About = () => {
       variants={variants}
     >
       <AboutCard ref={aboutref} id="about-card">
-        {title}
-        {description}
+        <h1>{currentLanguage.lenguage[1]}</h1>
+
+        {currentLanguage.lenguage[2].map((item, i) => {
+          return <p key={i}>{item}</p>;
+        })}
       </AboutCard>
       <ImgProfile>
         <div>
