@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useAppContext } from "src/context/app.context";
 
 const ContactStyled = styled(motion.section)``;
 
@@ -108,10 +109,16 @@ const variants = {
   hidden: { opacity: 0, scale: 1 },
 };
 
+const languages = {
+  es: contactData.es,
+  en: contactDate.en,
+};
+
 const Contact = () => {
   const cardref = useRef(null);
   const controls = useAnimation();
   const [refView, inView] = useInView();
+  const { state, toggleLenguage } = useAppContext();
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
