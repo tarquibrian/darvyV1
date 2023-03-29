@@ -1,5 +1,6 @@
 export const experienceData = {
   es: {
+    title: ".Experiencia",
     items: [
       {
         id: 0,
@@ -58,6 +59,7 @@ export const experienceData = {
     ],
   },
   en: {
+    title: ".Experience",
     items: [
       {
         id: 0,

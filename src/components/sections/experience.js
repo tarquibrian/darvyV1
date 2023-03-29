@@ -248,8 +248,6 @@ const ContentBody = styled.div`
   }
 `;
 
-const title = <h1 className="headerTitle">.Experience</h1>;
-
 const variants = {
   visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.6 } },
   hidden: { y: 200, opacity: 0, scale: 1 },
@@ -297,7 +295,7 @@ const Experience = () => {
       variants={variants}
     >
       <ExperienceCard ref={cardref} id="card">
-        {title}
+        <h1 className="headerTitle">{currentLanguage.lenguage.title}</h1>
         <CardContent>
           <ContentList>
             {currentLanguage.lenguage.items.map((item, i) => {
