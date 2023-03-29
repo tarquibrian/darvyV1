@@ -12,54 +12,56 @@ import styled from "styled-components";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useAppContext } from "src/context/app.context";
+import { projectsData } from "@data";
 
-const projectsData = [
-  {
-    id: "1",
-    label: "Extensions Project",
-    title: "Darvy Theme",
-    desc: "Darvy Theme es un tema de color para Visual Estudio Code y muy pronto para otros editores como Atom o Sublime Text. La paleta de colores esta inspirado en temas populares como One Dark Pro y Tokyo Night, por lo que puede que éste tema vaya a encantarte.",
-    features: [{ name: "VS Code" }, { name: "Sublime Text" }, { name: "Atom" }],
-    links: [
-      {
-        path: "https://marketplace.visualstudio.com/items?itemName=darvy.darvypro",
-        svg: 1,
-      },
-      {
-        path: "https://github.com/tarquibrian/darvypro-theme",
-        svg: 2,
-      },
-    ],
-    img: imgProject,
-  },
-  {
-    id: "2",
-    label: "Web Project",
-    title: "Business Website",
-    desc: "Aplicación web sobre Landing Page de una empresa que ofrece sus servicios tecnológicos, relacionados con la informática, programación y soluciones en el área de sistemas.",
-    features: [
-      { name: " NextJS" },
-      { name: "React" },
-      { name: "Styled Components" },
-      { name: "Figma+" },
-    ],
-    links: [
-      {
-        path: "https://sonustech-business-website.vercel.app/",
-        svg: 1,
-      },
-      {
-        path: "https://github.com/tarquibrian/sonustech-business-website",
-        svg: 2,
-      },
-      {
-        path: "https://www.figma.com/community/file/1215090916589711588",
-        svg: 3,
-      },
-    ],
-    img: imgProject2,
-  },
-];
+// const projectsData = [
+//   {
+//     id: "1",
+//     label: "Extensions Project",
+//     title: "Darvy Theme",
+//     desc: "Darvy Theme es un tema de color para Visual Estudio Code y muy pronto para otros editores como Atom o Sublime Text. La paleta de colores esta inspirado en temas populares como One Dark Pro y Tokyo Night, por lo que puede que éste tema vaya a encantarte.",
+//     features: [{ name: "VS Code" }, { name: "Sublime Text" }, { name: "Atom" }],
+//     links: [
+//       {
+//         path: "https://marketplace.visualstudio.com/items?itemName=darvy.darvypro",
+//         svg: 1,
+//       },
+//       {
+//         path: "https://github.com/tarquibrian/darvypro-theme",
+//         svg: 2,
+//       },
+//     ],
+//     img: imgProject,
+//   },
+//   {
+//     id: "2",
+//     label: "Web Project",
+//     title: "Business Website",
+//     desc: "Aplicación web sobre Landing Page de una empresa que ofrece sus servicios tecnológicos, relacionados con la informática, programación y soluciones en el área de sistemas.",
+//     features: [
+//       { name: " NextJS" },
+//       { name: "React" },
+//       { name: "Styled Components" },
+//       { name: "Figma+" },
+//     ],
+//     links: [
+//       {
+//         path: "https://sonustech-business-website.vercel.app/",
+//         svg: 1,
+//       },
+//       {
+//         path: "https://github.com/tarquibrian/sonustech-business-website",
+//         svg: 2,
+//       },
+//       {
+//         path: "https://www.figma.com/community/file/1215090916589711588",
+//         svg: 3,
+//       },
+//     ],
+//     img: imgProject2,
+//   },
+// ];
 
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
@@ -235,17 +237,25 @@ const ProjectWraper = styled.div`
   gap: 5rem;
 `;
 
-const title = <h1 className="headerTitle">.Projects</h1>;
-
 const variants = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
   hidden: { opacity: 0, scale: 1 },
 };
 
+const languages = {
+  es: projectsData.es,
+  en: projectsData.en,
+};
+
 const Projects = () => {
   const ref = useRef(null);
+  const { state, toggleLanguage } = useAppContext();
   const controls = useAnimation();
   const [refView, inView] = useInView();
+
+  const currentLanguage = {
+    lenguage: languages[state.currentLanguage],
+  };
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
@@ -270,9 +280,9 @@ const Projects = () => {
       initial="hidden"
       variants={variants}
     >
-      {title}
+      <h1 className="headerTitle">{currentLanguage.lenguage.title}</h1>
       <ProjectWraper>
-        {projectsData.map((project, i) => {
+        {currentLanguage.lenguage.items.map((project, i) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
             <ProjectsContainer
