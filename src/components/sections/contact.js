@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
+import { contactData } from "@data";
 
 const ContactStyled = styled(motion.section)``;
 
@@ -111,7 +112,7 @@ const variants = {
 
 const languages = {
   es: contactData.es,
-  en: contactDate.en,
+  en: contactData.en,
 };
 
 const Contact = () => {
@@ -119,6 +120,10 @@ const Contact = () => {
   const controls = useAnimation();
   const [refView, inView] = useInView();
   const { state, toggleLenguage } = useAppContext();
+
+  const currentLanguage = {
+    lenguage: languages[state.currentLanguage],
+  };
 
   const handleOnMouseMove = (e) => {
     const { currentTarget: target } = e;
@@ -138,16 +143,6 @@ const Contact = () => {
     }
     window.addEventListener("mousemove", handleOnMouseMove);
   }, [controls, inView]);
-  const title = <h1>.Contact</h1>;
-
-  const description = (
-    <p>
-      Si tiene algo que conversar o preguntarme, no dude en ponerse en contacto
-      con mi persona.
-    </p>
-  );
-
-  const button = <a href="mailto:tarquibrian@gmail.com">Contact Me</a>;
 
   return (
     <ContactStyled
@@ -158,10 +153,12 @@ const Contact = () => {
       variants={variants}
     >
       <ContactContainer ref={cardref}>
-        {title}
+        <h1>{currentLanguage.lenguage.title}</h1>
         <CardContent>
-          {description}
-          {button}
+          <p>{currentLanguage.lenguage.description}</p>
+          <a href="mailto:tarquibrian@gmail.com">
+            {currentLanguage.lenguage.button}
+          </a>
         </CardContent>
       </ContactContainer>
     </ContactStyled>
