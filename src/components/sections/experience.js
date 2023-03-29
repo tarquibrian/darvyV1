@@ -3,6 +3,7 @@ import { Main__Section } from "@styles";
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useAppContext } from "src/context/app.context";
 
 const ExperienceStyled = styled(motion.section)`
   display: grid;
