@@ -194,9 +194,8 @@ const ContentBody = styled.div`
   .contentbody__container {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
     .type {
-      font-size: 18px;
+      /* font-size: 18px; */
       color: #cbc0d3;
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
       display: flex;
@@ -220,15 +219,13 @@ const ContentBody = styled.div`
       font-size: var(--fz-xxl);
       font-size: clamp(14px, 3vw, 22px);
       color: white;
-      margin-top: 2px;
-      margin-bottom: 5px;
       &:hover {
         text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
       }
     }
     p {
       font-size: clamp(14px, 2vw, 18px);
-      margin-bottom: 10px;
+      margin-bottom: 1.4rem;
     }
     ul {
       li {
