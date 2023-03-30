@@ -13,6 +13,7 @@ const IconCodepen = () => {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
+      <title>Codepen</title>
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M3 15l9 6l9 -6l-9 -6l-9 6"></path>
       <path d="M3 9l9 6l9 -6l-9 -6l-9 6"></path>
