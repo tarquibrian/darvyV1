@@ -90,12 +90,25 @@ const NavbarContent = styled(motion.div)`
 `;
 
 const LogoContainer = styled.div`
-  width: 50px;
-  height: 50px;
+  display: flex;
+  gap: 40px;
   img {
     width: 100%;
+    width: 50px;
+    height: 50px;
     height: 100%;
     object-fit: cover;
+  }
+  button {
+    font-size: 1rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    &:hover {
+      cursor: pointer;
+      text-shadow: 0 0 5px rgba(255 255 255 / 0.8);
+    }
   }
   a {
     &:hover {
@@ -204,10 +217,11 @@ const Header = () => {
           <a onClick={scrollTop} href={`#`}>
             <Image src={darvyImg} alt="portfolio icon" />
           </a>
+          <button onClick={() => toggleLanguage()}>
+            {state.currentLanguage}
+          </button>
         </LogoContainer>
-        <button onClick={() => toggleLanguage()}>
-          Language {state.currentLanguage}
-        </button>
+
         <span>
           <LinksContainer>
             <ol>
@@ -245,6 +259,9 @@ const Header = () => {
         <LogoContainer>
           <button onClick={() => setIsOpen(!isOpen)}>
             <Image src={darvyImg} alt="portfolio icon" />
+          </button>
+          <button onClick={() => toggleLanguage()}>
+            {state.currentLanguage}
           </button>
         </LogoContainer>
         <span>
