@@ -163,12 +163,12 @@ const About = () => {
   };
 
   const handleOnMouseMove = (e) => {
-    const rect = aboutref.current.getBoundingClientRect(),
-      x = e.clientX - rect.left,
-      y = e.clientY - rect.top || "";
+    const rect = aboutref?.current?.getBoundingClientRect(),
+      x = e?.clientX - rect?.left,
+      y = e?.clientY - rect?.top || "";
 
-    aboutref.current.style.setProperty("--mouse1-x", `${x}px`);
-    aboutref.current.style.setProperty("--mouse1-y", `${y}px`);
+    aboutref?.current?.style?.setProperty("--mouse1-x", `${x}px`);
+    aboutref?.current?.style?.setProperty("--mouse1-y", `${y}px`);
   };
 
   useEffect(() => {
