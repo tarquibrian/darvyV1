@@ -188,8 +188,6 @@ const Header = () => {
     });
   }, [scrollIsBottom, scrollIsTop, scrollDirection]);
 
-  console.log({ state });
-
   return (
     <NavbarHeader
       scrollIsTop={scrollIsTop}

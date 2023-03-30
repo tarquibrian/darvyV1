@@ -285,7 +285,6 @@ const Experience = () => {
     }
     window.addEventListener("mousemove", handleOnMouseMove);
   }, [controls, inView]);
-  console.log(currentLanguage);
   return (
     <ExperienceStyled
       id="experience"
