@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 
 const SideStyle = styled(motion.div)`
   min-width: 100px;
-  /* width: 3%; */
   position: fixed;
   bottom: 0;
   left: 0;
@@ -18,7 +17,6 @@ const SideStyle = styled(motion.div)`
   display: grid;
   place-content: center;
   div {
-    /* margin: auto; */
     display: grid;
     grid-template-rows: auto max-content auto;
     gap: 1rem;
@@ -70,8 +68,6 @@ const SideStyle = styled(motion.div)`
         padding: 6px 0;
         transition: 0.2s ease;
         &:hover {
-          /* color: rgba(255, 255, 255, 0.7); */
-          /* transform: scale(1.2); */
           text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
         }
         svg {
