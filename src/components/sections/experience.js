@@ -268,12 +268,12 @@ const Experience = () => {
   };
 
   const handleOnMouseMove = (e) => {
-    const rect = cardref.current.getBoundingClientRect(),
-      x = e.clientX - rect.left,
-      y = e.clientY - rect.top;
+    const rect = cardref?.current?.getBoundingClientRect(),
+      x = e?.clientX - rect?.left,
+      y = e?.clientY - rect?.top;
 
-    cardref.current.style.setProperty("--mouse1-x", `${x}px`);
-    cardref.current.style.setProperty("--mouse1-y", `${y}px`);
+    cardref?.current?.style?.setProperty("--mouse1-x", `${x}px`);
+    cardref?.current?.style?.setProperty("--mouse1-y", `${y}px`);
   };
 
   useEffect(() => {
