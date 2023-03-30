@@ -163,9 +163,6 @@ const About = () => {
   };
 
   const handleOnMouseMove = (e) => {
-    const { currentTarget: target } = e;
-
-    // const rect = target.getBoundingClientRect(),
     const rect = aboutref.current.getBoundingClientRect(),
       x = e.clientX - rect.left,
       y = e.clientY - rect.top || "";
