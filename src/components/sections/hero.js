@@ -173,7 +173,6 @@ const languages = {
 };
 
 const Hero = () => {
-  // const [language, setLanguage] = useState({});
   const { state, toggleLanguage } = useAppContext();
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -184,12 +183,12 @@ const Hero = () => {
   };
 
   const handleOnMouseMove = (e) => {
-    let rect = heroref.current.getBoundingClientRect(),
-      x = e.clientX - rect.left,
-      y = e.clientY - rect.top || "";
+    let rect = heroref?.current?.getBoundingClientRect(),
+      x = e?.clientX - rect?.left,
+      y = e?.clientY - rect?.top;
 
-    heroref.current.style.setProperty("--mouse1-x", `${x}px`);
-    heroref.current.style.setProperty("--mouse1-y", `${y}px`);
+    heroref?.current?.style?.setProperty("--mouse1-x", `${x}px`);
+    heroref?.current?.style?.setProperty("--mouse1-y", `${y}px`);
   };
 
   useEffect(() => {
