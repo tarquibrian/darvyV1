@@ -1,5 +1,6 @@
 import { Layout } from "@components";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const FourOhFourStyled = styled.section`
@@ -52,22 +53,60 @@ const FourOhFourStyled = styled.section`
       }
     }
 
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &::before {
+      background: radial-gradient(
+        800px circle at var(--mouse1-x) var(--mouse1-y),
+        rgba(255, 255, 255, 0.15),
+        transparent 40%
+      );
+      border-radius: inherit;
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0%;
+      left: 0%;
+      opacity: 0;
+      transition: opacity 500ms;
+      z-index: -1;
+    }
     &:hover {
-      background: rgba(255, 255, 255, 0.05)
+      /* background: rgba(255, 255, 255, 0.05)
         linear-gradient(
           to top right,
           rgba(255, 255, 255, 0),
           rgba(255, 235, 0, 0.15)
-        );
+        ); */
+
+      background: rgba(255, 225, 142, 0.1);
     }
   }
 `;
 
 export default function FourOhFour() {
+  const ref = useRef(null);
+
+  const handleOnMouseMove = (e) => {
+    let rect = ref?.current?.getBoundingClientRect(),
+      x = e?.clientX - rect?.left,
+      y = e?.clientY - rect?.top;
+
+    ref?.current?.style?.setProperty("--mouse1-x", `${x}px`);
+    ref?.current?.style?.setProperty("--mouse1-y", `${y}px`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleOnMouseMove);
+  }, []);
+
   return (
     <Layout>
       <FourOhFourStyled>
-        <div className="container">
+        <div className="container" ref={ref}>
           <h1>404!</h1>
           <h2>Oh dude. Are you lost?</h2>
           <Link href="/" className="links">
