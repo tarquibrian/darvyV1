@@ -245,7 +245,6 @@ const Header = () => {
                   .Contact
                 </a>
               </li>
-              {/* <Link href={"/"}>Adios</Link> */}
             </ol>
           </LinksContainer>
           <ResumeLink>
