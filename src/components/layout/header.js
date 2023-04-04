@@ -6,6 +6,7 @@ import darvyImg from "../../images/darvy-icon.png";
 import { useScrollDirection } from "@hooks";
 import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
+import Head from "next/head";
 
 const NavbarHeader = styled(motion.header)`
   position: fixed;

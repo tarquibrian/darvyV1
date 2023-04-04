@@ -25,7 +25,7 @@ export const experienceData = {
       {
         id: 1,
         title: {
-          name: "Coming soon..",
+          name: "Pronto...",
           year: "2023",
         },
         body: {
@@ -42,7 +42,7 @@ export const experienceData = {
       {
         id: 2,
         title: {
-          name: "Coming soon..",
+          name: "Pronto...",
           year: "2024",
         },
         body: {
@@ -68,16 +68,16 @@ export const experienceData = {
           year: "2022",
         },
         body: {
-          header: "Desarrollo de una Aplicación Web de Turismo",
+          header: "Development of a Tourism Web Application",
           type: "FullStack Proyect",
           path: "https://www.municipio.com.bo/municipio-villa-rivero.html",
           description:
-            "Desarrollo de una aplicación web enfocada hacia la gestión del turismo regional, describiendo detalles como:",
+            "Development of a web application focused on the management of regional tourism, describing details such as:",
           features: [
-            "Analisis de la situacion problematica",
-            "Desarrollo y despliegue del fron y back",
-            "Uso de geolocalizacion para el posicionamiento, geocodificaion y geoetiquetado",
-            "Integracion de funcionalidades progresivas",
+            "Analysis of the problematic situation",
+            "Development and deployment of the fron and back",
+            "Use of geolocation for positioning, geocoding and geotagging",
+            "Integration of progressive functionalities",
           ],
         },
       },

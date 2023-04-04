@@ -1,5 +1,5 @@
 export const initialState = {
-  currentLanguage: "es",
+  currentLanguage: "en",
 };
 
 const AppReducer = (state, action) => {
@@ -7,6 +7,7 @@ const AppReducer = (state, action) => {
   switch (type) {
     case "TOGGLE LANGUAGE":
       const toggleLanguage = state.currentLanguage === "es" ? "en" : "es";
+      document.documentElement.lang = toggleLanguage;
       return {
         ...state,
         currentLanguage: toggleLanguage,
