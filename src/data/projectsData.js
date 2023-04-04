@@ -62,7 +62,7 @@ export const projectsData = {
         id: "1",
         label: "Extensions Project",
         title: "Darvy Theme",
-        desc: "Darvy Theme es un tema de color para Visual Estudio Code y muy pronto para otros editores como Atom o Sublime Text. La paleta de colores esta inspirado en temas populares como One Dark Pro y Tokyo Night, por lo que puede que éste tema vaya a encantarte.",
+        desc: "Darvy Theme is a color theme for Visual Studio Code and very soon for other editors like Atom or Sublime Text. The color palette is inspired by popular themes like One Dark Pro and Tokyo Night, so you might love this theme.",
         features: [
           { name: "VS Code" },
           { name: "Sublime Text" },
@@ -84,7 +84,7 @@ export const projectsData = {
         id: "2",
         label: "Web Project",
         title: "Business Website",
-        desc: "Aplicación web sobre Landing Page de una empresa que ofrece sus servicios tecnológicos, relacionados con la informática, programación y soluciones en el área de sistemas.",
+        desc: "Web application on Landing Page of a company that offers its technological services, related to computing, programming and solutions in the systems area.",
         features: [
           { name: " NextJS" },
           { name: "React" },
