@@ -8,7 +8,7 @@ export const contactData = {
   en: {
     title: ".Contact",
     description:
-      "Si tiene algo que conversar o preguntarme, no dude en ponerse en contacto con mi persona.",
+      "If you have anything to discuss or ask me, don't hesitate to contact me.",
     button: "Contact Me",
   },
 };
