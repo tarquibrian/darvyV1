@@ -33,6 +33,10 @@ const ProjectsStyled = styled(motion.section)`
       background: #eae2b7;
     }
   }
+  h2 {
+    margin: 3rem auto 0;
+    font-size: clamp(10px, 3vw, 24px);
+  }
   @media screen and (max-width: 400px) {
     width: 90%;
   }
@@ -284,6 +288,7 @@ const Projects = () => {
           );
         })}
       </ProjectWraper>
+      <h2>+12 projects. Preparing for deployment and preview.</h2>
     </ProjectsStyled>
   );
 };

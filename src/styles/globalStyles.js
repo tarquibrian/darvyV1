@@ -29,10 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Oswald', sans-serif;
     line-height: 1.3;
-    /* color: rgba(229,229,229,1.0); */
-    /* color: #000; */
     color: #fff;
-    background-color: #404040;
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
