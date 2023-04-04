@@ -3,6 +3,7 @@ import imgProject2 from "../images/project-img2.png";
 export const projectsData = {
   es: {
     title: ".Proyectos",
+    desc: "+12 Proyectos. Preparando el despliegue y previsualización.",
     items: [
       {
         id: "1",
@@ -57,6 +58,7 @@ export const projectsData = {
   },
   en: {
     title: ".Projects",
+    desc: "+12 Projects. Preparing for deployment and preview.",
     items: [
       {
         id: "1",

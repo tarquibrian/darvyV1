@@ -33,9 +33,11 @@ const ProjectsStyled = styled(motion.section)`
       background: #eae2b7;
     }
   }
-  h2 {
+  .footerTitle {
+    font-family: "DM Sans";
+    font-weight: 400;
     margin: 3rem auto 0;
-    font-size: clamp(10px, 3vw, 24px);
+    font-size: clamp(10px, 2vw, 18px);
   }
   @media screen and (max-width: 400px) {
     width: 90%;
@@ -226,7 +228,7 @@ const Projects = () => {
     >
       <h1 className="headerTitle">{currentLanguage.lenguage.title}</h1>
       <ProjectWraper>
-        {currentLanguage.lenguage.items.map((project, i) => {
+        {currentLanguage.lenguage.items.map((project) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
             <ProjectsContainer
@@ -288,7 +290,7 @@ const Projects = () => {
           );
         })}
       </ProjectWraper>
-      <h2>+12 projects. Preparing for deployment and preview.</h2>
+      <p className="footerTitle">{currentLanguage.lenguage.desc}</p>
     </ProjectsStyled>
   );
 };
