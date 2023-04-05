@@ -11,7 +11,6 @@ const EmailStyle = styled(motion.div)`
   display: grid;
   place-content: center;
   div {
-    /* margin: auto; */
     display: grid;
     grid-template-rows: auto max-content auto;
     gap: 1rem;
@@ -49,9 +48,6 @@ const EmailStyle = styled(motion.div)`
     width: 80px;
   }
 
-  @media screen and (max-width: 1000px) {
-    /* display: none; */
-  }
   @media (max-width: 768px) {
     display: none;
   }
