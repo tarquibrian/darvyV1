@@ -41,7 +41,6 @@ const LogoContainer = styled.div`
   width: 100px;
   height: 100px;
   position: relative;
-  /* overflow: hidden; */
   display: grid;
   place-content: center;
 
@@ -56,7 +55,6 @@ const LogoContainer = styled.div`
 
     h1 {
       color: #ee2e31;
-      /* font-size: 3rem; */
       font-weight: bolder;
       font-family: "Oswald";
     }
@@ -68,22 +66,15 @@ const SpinerLoader = styled.div`
   height: 100px;
   border: 4px solid #fff;
   border-radius: 50%;
-  /* display: inline-block; */
-  /* display: grid; */
-  /* place-content: center; */
   position: relative;
-  /* box-sizing: border-box; */
 
   &::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    /* width: 100%; */
-    /* height: 100%; */
     width: 88px;
     height: 88px;
-    /* background-color: rgba(0, 0, 0, 0.5); */
     border-radius: 50%;
     border: 6px solid;
     border-color: #ee2e31 transparent;
@@ -217,14 +208,6 @@ const HeaderLoader = styled.div`
 
 const Loader = ({ finishLoading }) => {
   const [isLoading, setIsLoading] = useState(false);
-
-  // anime({
-  //   targets: ".name",
-  //   duration: 700,
-  //   easing: "easeInOutQuart",
-  //   // easing: 'ease',
-  //   opacity: 1,
-  // })
 
   return (
     <LoaderSection>
