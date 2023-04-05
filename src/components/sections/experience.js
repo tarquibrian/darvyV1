@@ -194,26 +194,6 @@ const ContentBody = styled.div`
   .contentbody__container {
     display: flex;
     flex-direction: column;
-    .skeleton {
-      color: transparent;
-      border-radius: 4px;
-      background: linear-gradient(
-        90deg,
-        rgba(229, 229, 229, 0.1) 20%,
-        rgba(240, 240, 240, 0.5) 38%,
-        rgba(240, 240, 240, 0.5) 40%,
-        rgba(229, 229, 229, 0.1) 48%
-      );
-      background-size: 200% 100%;
-      background-position: 100% 0;
-      animation: load 2s infinite;
-
-      @keyframes load {
-        100% {
-          background-position: -100% 0;
-        }
-      }
-    }
     .type {
       /* font-size: 18px; */
       color: #cbc0d3;
@@ -235,6 +215,35 @@ const ContentBody = styled.div`
         }
       }
     }
+    .skeleton {
+      a {
+        color: transparent;
+      }
+      svg {
+        color: rgba(255, 255, 255, 0.1);
+        filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.9));
+      }
+      color: transparent;
+      text-shadow: 0 0 5px rgba(255 255 255 / 0.7);
+      border-radius: 4px;
+      background: linear-gradient(
+        90deg,
+        rgba(229, 229, 229, 0.1) 20%,
+        rgba(240, 240, 240, 0.5) 38%,
+        rgba(240, 240, 240, 0.5) 40%,
+        rgba(229, 229, 229, 0.1) 48%
+      );
+      background-size: 200% 100%;
+      background-position: 100% 0;
+      animation: load 2s infinite;
+
+      @keyframes load {
+        100% {
+          background-position: -100% 0;
+        }
+      }
+    }
+
     h1 {
       font-size: var(--fz-xxl);
       font-size: clamp(14px, 3vw, 22px);
