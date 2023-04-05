@@ -195,6 +195,7 @@ const ContentBody = styled.div`
     display: flex;
     flex-direction: column;
     .skeleton {
+      color: transparent;
       border-radius: 4px;
       background: linear-gradient(
         90deg,
@@ -332,7 +333,7 @@ const Experience = () => {
               if (id === activeId) {
                 return (
                   <div key={id} className="contentbody__container">
-                    <span className="type skeleton">
+                    <span className={`type ${id !== 0 ? "skeleton" : ""}`}>
                       {/* {type} */}
                       {/* <span className="vertical-line">&#124;</span> */}
                       <span className="entity">
@@ -361,13 +362,17 @@ const Experience = () => {
                         </a>
                       </span>
                     </span>
-                    <h1 className="skeleton">{header}</h1>
+                    <h1 className={`${id !== 0 ? "skeleton" : ""}`}>
+                      {header}
+                    </h1>
 
-                    <p className="skeleton">{description}</p>
+                    <p className={`${id !== 0 ? "skeleton" : ""}`}>
+                      {description}
+                    </p>
 
                     <ul>
                       {features.map((feature, i) => (
-                        <li key={i} className="skeleton">
+                        <li key={i} className={`${id !== 0 ? "skeleton" : ""}`}>
                           {feature}
                         </li>
                       ))}
