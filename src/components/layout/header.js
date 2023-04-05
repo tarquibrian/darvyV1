@@ -84,7 +84,6 @@ const NavbarContent = styled(motion.div)`
   }
   @media screen and (max-width: 768px) {
     justify-content: center;
-    /* width: fit-content; */
   }
   @media screen and (max-width: 768px) {
     display: none;
@@ -156,7 +155,6 @@ export const ResumeLink = styled.div`
 const NavbarContentResponsive = styled.div`
   margin: 0 auto;
   height: 100%;
-  /* width: 100%; */
   padding: 0 4%;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 4px;
