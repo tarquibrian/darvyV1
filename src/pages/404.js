@@ -6,7 +6,6 @@ import styled from "styled-components";
 const FourOhFourStyled = styled.section`
   width: 80%;
   margin: auto;
-  /* background-color: red; */
   display: grid;
   place-content: center;
   height: 100vh;
@@ -29,11 +28,9 @@ const FourOhFourStyled = styled.section`
 
     h2 {
       font-family: "Oswald", sans-serif;
-      /* font-size: 5rem; */
       font-size: clamp(40px, 8vw, 80px);
       font-weight: 200;
       margin-bottom: 20px;
-      /* color: #dfdfdf; */
       margin-left: -4px;
       color: transparent;
       text-shadow: 0 0 5px rgba(255 255 255 / 1);

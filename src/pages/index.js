@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   Layout,
   Hero,
@@ -7,7 +6,6 @@ import {
   Projects,
   Contact,
 } from "@components";
-import styled from "styled-components";
 
 export default function Home() {
   return (
