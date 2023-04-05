@@ -13,7 +13,6 @@ const ProjectsStyled = styled(motion.section)`
   display: grid;
   place-content: center;
   overflow: hidden;
-  /* background: rgba(0 0 0 /0.2); */
   .headerTitle {
     font-size: clamp(40px, 8vw, 80px);
     font-weight: 400;
@@ -54,7 +53,6 @@ const ProjectsContainer = styled(motion.div)`
   gap: 1rem;
   font-family: "DM Sans", sans-serif;
   line-height: 1.5;
-  /* margin-bottom: 10rem; */
   @media screen and (max-width: 768px) {
     min-width: 200px;
   }
@@ -165,10 +163,8 @@ const ProjectImg = styled.div`
   overflow: hidden;
   img {
     width: 100%;
-    /* max-width: 100%; */
     vertical-align: middle;
     border-radius: 4px;
-    /* position: relative; */
     height: auto;
     object-fit: cover;
     &:hover {
