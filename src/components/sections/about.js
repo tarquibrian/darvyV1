@@ -10,8 +10,6 @@ import { useAppContext } from "src/context/app.context";
 import { aboutData } from "@data";
 
 const AboutStyled = styled(motion.section)`
-  /* background: rgba(0 0 0 / 0.2); */
-  /* color: #e5e5e5; */
   width: 80%;
   margin: auto;
   padding: initial;
@@ -179,7 +177,6 @@ const About = () => {
   }, [controls, inView]);
 
   return (
-    // <Main__Section>
     <AboutStyled
       id="about"
       ref={refView}
@@ -205,7 +202,6 @@ const About = () => {
         </div>
       </ImgProfile>
     </AboutStyled>
-    // </Main__Section>
   );
 };
 
