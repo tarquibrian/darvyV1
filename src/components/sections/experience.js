@@ -138,11 +138,9 @@ const TabList = styled.div`
     font-size: clamp(12px, 2vw, 16px);
   }
   h2 {
-    /* background-color: red; */
     justify-self: end;
   }
   h3 {
-    /* background-color: yellow; */
     justify-self: start;
   }
 
@@ -340,8 +338,6 @@ const Experience = () => {
                 return (
                   <div key={id} className="contentbody__container">
                     <span className={`type ${id !== 0 ? "skeleton" : ""}`}>
-                      {/* {type} */}
-                      {/* <span className="vertical-line">&#124;</span> */}
                       <span className="entity">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
