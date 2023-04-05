@@ -21,7 +21,6 @@ const BGImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* transform: translate3d(0, 0, -1px) scale(2); */
   }
 `;
 
@@ -52,7 +51,6 @@ const Layout = ({ children }) => {
           placeholder="blur"
         />
       </BGImage>
-      {/* <Footer /> */}
     </>
   );
 };
