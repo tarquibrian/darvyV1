@@ -131,13 +131,11 @@ const TabList = styled.div`
 
   h2,
   h3 {
-    font-size: 1rem;
     font-weight: normal;
-    /* margin-top: 7px; */
     color: ${({ isActive }) => (isActive ? "#fff" : "#e5e5e5")};
     text-shadow: ${({ isActive }) =>
       isActive ? "0 0 5px rgba(255 255 255 / 0.5)" : "initial"};
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: clamp(12px, 2vw, 16px);
   }
   h2 {
     /* background-color: red; */
@@ -195,7 +193,6 @@ const ContentBody = styled.div`
     display: flex;
     flex-direction: column;
     .type {
-      /* font-size: 18px; */
       color: #cbc0d3;
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
       display: flex;
@@ -221,10 +218,10 @@ const ContentBody = styled.div`
       }
       svg {
         color: rgba(255, 255, 255, 0.1);
-        filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.9));
+        filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.5));
       }
       color: transparent;
-      text-shadow: 0 0 5px rgba(255 255 255 / 0.7);
+      text-shadow: 0 0 8px rgba(255 255 255 / 0.7);
       border-radius: 4px;
       background: linear-gradient(
         90deg,
