@@ -199,7 +199,6 @@ const Hero = () => {
   }, [controls, inView]);
 
   return (
-    // <Main__Section>
     <HeroStyled
       id="hero"
       ref={ref}
@@ -229,7 +228,6 @@ const Hero = () => {
         </div>
       </div>
     </HeroStyled>
-    // </Main__Section>
   );
 };
 
