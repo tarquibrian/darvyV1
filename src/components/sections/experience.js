@@ -125,7 +125,6 @@ const TabList = styled.div`
   position: relative;
   background: ${({ isActive }) =>
     isActive ? "rgba(234,226,176,.3)" : "transparent"};
-  /* background-color: rgba(0 0 0 / 0.3); */
   /* transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) */
   transition: 0.3s ease;
 

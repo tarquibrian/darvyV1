@@ -7,6 +7,7 @@ import { useScrollDirection } from "@hooks";
 import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const NavbarHeader = styled(motion.header)`
   position: fixed;
