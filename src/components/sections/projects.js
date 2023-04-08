@@ -102,6 +102,7 @@ const ProjectContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: start;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 0.5rem;
     font-size: clamp(14px, 2vw, 16px);
