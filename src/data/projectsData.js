@@ -1,5 +1,7 @@
 import imgProject from "../images/project-img1.png";
 import imgProject2 from "../images/project-img2.png";
+import imgProject3 from "../images/project-img3.png";
+
 export const projectsData = {
   es: {
     title: ".Proyectos",
@@ -53,6 +55,35 @@ export const projectsData = {
           },
         ],
         img: imgProject2,
+      },
+      {
+        id: "3",
+        label: "Web Project",
+        title: "Ecommerce Website",
+        desc: "Aplicación web de ecommerce de ropa moderna que ofrece una amplia selección de ropa y accesorios de moda para clientes exigentes, con opciones para filtrar y encontrar fácilmente lo que están buscando y se actualiza con las últimas tendencias.",
+        features: [
+          { name: " NextJS" },
+          { name: "React" },
+          { name: "Sass" },
+          { name: "ChatGPT" },
+          { name: "APhotoshop" },
+          { name: "Figma+" },
+        ],
+        links: [
+          {
+            path: "https://ecommerce-website-zeta-one.vercel.app/",
+            svg: 1,
+          },
+          {
+            path: "https://github.com/tarquibrian/ecommerce-website",
+            svg: 2,
+          },
+          {
+            path: "https://www.figma.com/community/file/1226407145403745837/Ecommerce",
+            svg: 3,
+          },
+        ],
+        img: imgProject3,
       },
     ],
   },
@@ -108,6 +139,35 @@ export const projectsData = {
           },
         ],
         img: imgProject2,
+      },
+      {
+        id: "3",
+        label: "Web Project",
+        title: "Business Website",
+        desc: "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+        features: [
+          { name: " NextJS" },
+          { name: "React" },
+          { name: "Sass" },
+          { name: "ChatGPT" },
+          { name: "APhotoshop" },
+          { name: "Figma+" },
+        ],
+        links: [
+          {
+            path: "https://ecommerce-website-zeta-one.vercel.app/",
+            svg: 1,
+          },
+          {
+            path: "https://github.com/tarquibrian/ecommerce-website",
+            svg: 2,
+          },
+          {
+            path: "https://www.figma.com/community/file/1226407145403745837/Ecommerce",
+            svg: 3,
+          },
+        ],
+        img: imgProject3,
       },
     ],
   },
