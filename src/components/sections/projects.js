@@ -93,8 +93,6 @@ const ProjectContent = styled.div`
   p {
     padding: 1.5rem;
     font-size: clamp(14px, 2vw, 16px);
-    /* background: #212a37; */
-    /* background: rgba(234, 226, 176, 0.3); */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(100px);
@@ -103,14 +101,6 @@ const ProjectContent = styled.div`
     z-index: 999;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.05)
-        linear-gradient(
-          to top right,
-          rgba(255, 255, 255, 0),
-          rgba(255, 235, 0, 0.15)
-        );
-
-      /* background: rgba(255, 225, 142, 0.3); */
       background-color: rgba(141, 153, 174, 0.3);
     }
   }
@@ -155,7 +145,7 @@ const ProjectContent = styled.div`
     /* background-color: rgba(38, 70, 83, 0.9); */
     /* background-color: rgba(255, 48, 79, 0.9); */
     /* background-color: rgba(226, 67, 75, 0.9); */
-    background-color: rgba(8, 40, 53, 0.9);
+    background-color: rgba(8, 40, 53, 0.8);
 
     backdrop-filter: blur(2px);
     height: 100%;
@@ -167,6 +157,7 @@ const ProjectContent = styled.div`
       backdrop-filter: initial;
       background: initial;
       padding: initial;
+      padding: 0.6rem;
       &:hover {
         background: none;
       }
@@ -180,11 +171,8 @@ const ProjectImg = styled.div`
   grid-row: 1 / -1;
   z-index: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  /* overflow: hidden; */
-  /* background-color: red; */
   img {
     width: 100%;
-    /* height: auto; */
     vertical-align: middle;
     border-radius: 4px;
     height: auto;
