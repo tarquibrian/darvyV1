@@ -55,7 +55,7 @@ const ProjectsContainer = styled(motion.div)`
   line-height: 1.5;
   &:nth-child(1) {
     p {
-      background-color: rgba(33, 42, 55, 1);
+      background-color: #233d4d;
     }
   }
   &:nth-child(2) {
@@ -175,19 +175,22 @@ const ProjectContent = styled.div`
 `;
 
 const ProjectImg = styled.div`
+  display: flex;
   grid-column: 6 / -1;
   grid-row: 1 / -1;
   z-index: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* background-color: red; */
   img {
     width: 100%;
+    /* height: auto; */
     vertical-align: middle;
     border-radius: 4px;
     height: auto;
     object-fit: cover;
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
   }
 
