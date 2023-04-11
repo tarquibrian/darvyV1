@@ -18,26 +18,20 @@ export default function App({ Component, pageProps }) {
 
   return (
     <AnimatePresence mode="sync">
-      <AppProvider>
-        <Component {...pageProps} />
-      </AppProvider>
+      {!loading ? (
+        <motion.div
+          key="loading"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ y: -1000 }}
+        >
+          <Loader />
+        </motion.div>
+      ) : (
+        <AppProvider>
+          <Component {...pageProps} />
+        </AppProvider>
+      )}
     </AnimatePresence>
-
-    // <AnimatePresence mode="sync">
-    //   {!loading ? (
-    //     <motion.div
-    //       key="loading"
-    //       initial={{ opacity: 0 }}
-    //       animate={{ opacity: 1, y: 0 }}
-    //       exit={{ y: -1000 }}
-    //     >
-    //       <Loader />
-    //     </motion.div>
-    //   ) : (
-    //     <AppProvider>
-    //       <Component {...pageProps} />
-    //     </AppProvider>
-    //   )}
-    // </AnimatePresence>
   );
 }
