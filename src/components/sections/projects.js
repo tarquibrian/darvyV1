@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { IconExternal, IconFigma, IconGitHub } from "@components";
 import styled from "styled-components";
 import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
+import { animate, motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
 import { projectsData } from "@data";
@@ -53,6 +53,21 @@ const ProjectsContainer = styled(motion.div)`
   gap: 1rem;
   font-family: "DM Sans", sans-serif;
   line-height: 1.5;
+  &:nth-child(1) {
+    p {
+      background-color: rgba(33, 42, 55, 1);
+    }
+  }
+  &:nth-child(2) {
+    p {
+      background-color: #27a69c;
+    }
+  }
+  &:nth-child(3) {
+    p {
+      background-color: #e24e50;
+    }
+  }
   @media screen and (max-width: 768px) {
     min-width: 200px;
   }
@@ -75,29 +90,31 @@ const ProjectContent = styled.div`
     font-size: clamp(20px, 3vw, 24px);
     text-shadow: 0 0 3px rgba(255 255 255 / 0.8);
   }
-
   p {
     padding: 1.5rem;
     font-size: clamp(14px, 2vw, 16px);
-    /* background: #da2c38; */
-    background: rgba(234, 226, 176, 0.1);
+    /* background: #212a37; */
+    /* background: rgba(234, 226, 176, 0.3); */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(100px);
     border-radius: 4px;
     margin-bottom: 1rem;
+    z-index: 999;
 
     &:hover {
-      /* background: rgba(255, 255, 255, 0.05)
+      background: rgba(255, 255, 255, 0.05)
         linear-gradient(
           to top right,
           rgba(255, 255, 255, 0),
           rgba(255, 235, 0, 0.15)
-        ); */
+        );
 
-      background: rgba(255, 225, 142, 0.14);
+      /* background: rgba(255, 225, 142, 0.3); */
+      background-color: rgba(141, 153, 174, 0.3);
     }
   }
+
   ul {
     display: flex;
     align-items: center;
@@ -129,6 +146,7 @@ const ProjectContent = styled.div`
       }
     }
   }
+
   @media screen and (max-width: 768px) {
     grid-column: 1/-1;
     padding: 2rem;
@@ -159,7 +177,7 @@ const ProjectContent = styled.div`
 const ProjectImg = styled.div`
   grid-column: 6 / -1;
   grid-row: 1 / -1;
-  z-index: 1;
+  z-index: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   img {
@@ -178,7 +196,7 @@ const ProjectImg = styled.div`
   }
 `;
 
-const ProjectWraper = styled.div`
+const ProjectWraper = styled(motion.div)`
   display: grid;
   gap: 5rem;
 `;
@@ -191,6 +209,15 @@ const variants = {
 const languages = {
   es: projectsData.es,
   en: projectsData.en,
+};
+
+const animateElement = {
+  hidden: { x: 100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", bounce: 0.4, duration: 1 },
+  },
 };
 
 const Projects = () => {
@@ -224,24 +251,30 @@ const Projects = () => {
       variants={variants}
     >
       <h1 className="headerTitle">{currentLanguage.lenguage.title}</h1>
-      <ProjectWraper>
+      <ProjectWraper
+        initial={"hidden"}
+        // whileInView={"visible"}
+        animate={controls}
+        transition={{ staggerChildren: 0.8 }}
+      >
         {currentLanguage.lenguage.items.map((project) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
             <ProjectsContainer
               key={id}
-              ref={refView}
-              animate={controls}
-              initial="hidden"
-              variants={{
-                visible: {
-                  x: 0,
-                  opacity: 1,
-                  scale: 1,
-                  transition: { duration: 0.5 },
-                },
-                hidden: { x: 100, opacity: 0, scale: 1 },
-              }}
+              // animate={controls}
+              variants={animateElement}
+              // animate={controls}
+              // initial="hidden"
+              // variants={{
+              //   visible: {
+              //     x: 0,
+              //     opacity: 1,
+              //     scale: 1,
+              //     transition: { duration: 0.5 },
+              //   },
+              //   hidden: { x: 100, opacity: 0, scale: 1 },
+              // }}
             >
               <ProjectContent>
                 <div className="label">{label}</div>
