@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import anime from "animejs";
 import { motion } from "framer-motion";
-// import anime from "animejs"
-// import "./loader.css"
 
 const LoaderSection = styled.div`
   position: fixed;
@@ -35,6 +33,9 @@ const LoaderSection = styled.div`
 
   place-content: center;
   z-index: 999999;
+  .dinone {
+    display: none;
+  }
 `;
 
 const LogoContainer = styled.div`

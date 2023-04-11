@@ -15,8 +15,17 @@ export const AppProvider = ({ children }) => {
     });
   };
 
+  const loadingComplete = (loading) => {
+    dispatch({
+      type: "LOADING",
+      payload: {
+        loading,
+      },
+    });
+  };
+
   return (
-    <AppContext.Provider value={{ state, toggleLanguage }}>
+    <AppContext.Provider value={{ state, toggleLanguage, loadingComplete }}>
       {children}
     </AppContext.Provider>
   );
