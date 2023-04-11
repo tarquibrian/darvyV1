@@ -1,6 +1,7 @@
 import imgProject from "../images/project-img1.png";
 import imgProject2 from "../images/project-img2.png";
 import imgProject3 from "../images/project-img3.png";
+import imgProject4 from "../images/project-img4.png";
 
 export const projectsData = {
   es: {
@@ -84,6 +85,32 @@ export const projectsData = {
         ],
         img: imgProject3,
       },
+      {
+        id: "4",
+        label: "Web Project",
+        title: "Tourism Website",
+        desc: "Aplicacion web de gestión de información turistica, empleando modulos de Artículos Biográficos, Gestión y notificación de eventos culturales, Visualizacion y direccionamiento de sitios turísticos mediante Google Maps en base a coordenadas específicas.",
+        features: [
+          { name: "React" },
+          { name: "Redux" },
+          { name: "Express" },
+          { name: "MongoDB" },
+          { name: "Google Maps Platform" },
+          { name: "PWA" },
+          { name: "Push Notifications" },
+        ],
+        links: [
+          {
+            path: "https://villa-turismo.herokuapp.com/",
+            svg: 1,
+          },
+          {
+            path: "https://github.com/tarquibrian/VT-backend",
+            svg: 2,
+          },
+        ],
+        img: imgProject4,
+      },
     ],
   },
   en: {
@@ -166,6 +193,33 @@ export const projectsData = {
           },
         ],
         img: imgProject3,
+      },
+      {
+        id: "4",
+        label: "Web Project",
+        title: "Tourism Website",
+        desc: "Web application for tourist information management, using modules of Biographical Articles, Management and notification of cultural events, Visualization and addressing of tourist sites through Google Maps based on specific coordinates.",
+
+        features: [
+          { name: "React" },
+          { name: "Redux" },
+          { name: "Express" },
+          { name: "MongoDB" },
+          { name: "Google Maps Platform" },
+          { name: "PWA" },
+          { name: "Push Notifications" },
+        ],
+        links: [
+          {
+            path: "https://villa-turismo.herokuapp.com/",
+            svg: 1,
+          },
+          {
+            path: "https://github.com/tarquibrian/VT-backend",
+            svg: 2,
+          },
+        ],
+        img: imgProject4,
       },
     ],
   },

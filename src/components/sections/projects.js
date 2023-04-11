@@ -68,6 +68,11 @@ const ProjectsContainer = styled(motion.div)`
       background-color: #e24e50;
     }
   }
+  &:nth-child(4) {
+    p {
+      background-color: #072f3a;
+    }
+  }
   @media screen and (max-width: 768px) {
     min-width: 200px;
   }
@@ -101,7 +106,7 @@ const ProjectContent = styled.div`
     z-index: 999;
 
     &:hover {
-      background-color: rgba(141, 153, 174, 0.3);
+      background-color: rgba(141, 153, 174, 0.6);
     }
   }
 
