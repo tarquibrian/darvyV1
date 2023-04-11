@@ -108,6 +108,10 @@ export const projectsData = {
             path: "https://github.com/tarquibrian/VT-backend",
             svg: 2,
           },
+          {
+            path: "https://github.com/tarquibrian/proyecto-villa-frontend",
+            svg: 2,
+          },
         ],
         img: imgProject4,
       },
@@ -216,6 +220,10 @@ export const projectsData = {
           },
           {
             path: "https://github.com/tarquibrian/VT-backend",
+            svg: 2,
+          },
+          {
+            path: "https://github.com/tarquibrian/proyecto-villa-frontend",
             svg: 2,
           },
         ],
