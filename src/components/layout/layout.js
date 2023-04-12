@@ -8,6 +8,7 @@ import noiseIMG from "../../images/layer-min.png";
 import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const BGImage = styled.div`
   position: fixed;
@@ -43,6 +44,23 @@ const Layout = ({ children }) => {
       <GlobalStyle />
 
       {/* <SEO title="Brian Tarqui Rojas" /> */}
+      <Head>
+        <title>Brian Tarqui Rojas | Web Developer</title>
+        <meta
+          name="description"
+          content="My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content="Brian Tarqui Rojas | Web Developer"
+        />
+        <meta
+          property="og:description"
+          content="My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
+        />
+        <meta property="og:image" content="https://tarquibrian.com/og.png" />
+      </Head>
 
       <Header />
       <>
