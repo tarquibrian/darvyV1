@@ -53,6 +53,16 @@ const SEO = ({
         content="https://tarquibrian.com/og.png"
         data-react-helmet="true"
       ></meta>
+      <meta
+        property="og:url"
+        content="https://tarquibrian.com/"
+        data-react-helmet="true"
+      ></meta>
+      <meta
+        name="image"
+        content="https://tarquibrian.com/og.png"
+        data-react-helmet="true"
+      ></meta>
     </Head>
   );
 };
