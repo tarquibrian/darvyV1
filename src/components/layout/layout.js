@@ -45,10 +45,10 @@ const Layout = ({ children }) => {
 
       {/* <SEO title="Brian Tarqui Rojas" /> */}
       <Head>
-        <title>Brian Tarqui Rojas | Web Developer</title>
+        <title>Portfolio Brian Tarqui | Darvy</title>
         <meta
           name="description"
-          content="My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
+          content="Hi🤘, My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
           key="desc"
         />
         <meta
@@ -57,7 +57,7 @@ const Layout = ({ children }) => {
         />
         <meta
           property="og:description"
-          content="My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
+          content="Hi🤘, My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
         />
         <meta property="og:image" content="https://tarquibrian.com/og.png" />
       </Head>
