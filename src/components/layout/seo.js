@@ -2,14 +2,14 @@ import Head from "next/head";
 import React from "react";
 
 const SEO = ({
-  description = "portfolio website",
+  description = "Brian Tarqui Rojas | Web Developer",
   author = "Darvy",
   meta,
-  title = "portfolio website",
+  title = "Brian Tarqui Rojas",
 }) => {
   const metaData = [
     {
-      name: `description`,
+      name: `Brian Tarqui Rojas | Web Developer`,
       content: description,
     },
     {
@@ -48,6 +48,11 @@ const SEO = ({
       {metaData.map(({ name, content }, i) => (
         <meta key={i} name={name} content={content} />
       ))}
+      <meta
+        property="og:image"
+        content="https://tarquibrian.com/og.png"
+        data-react-helmet="true"
+      ></meta>
     </Head>
   );
 };
