@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyle />
 
-      <SEO title="Brian Tarqui Rojas" />
+      {/* <SEO title="Brian Tarqui Rojas" /> */}
 
       <Header />
       <>
