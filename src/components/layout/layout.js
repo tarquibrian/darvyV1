@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
       {/* <SEO title="Brian Tarqui Rojas" /> */}
       <Head>
         <title>Portfolio Brian Tarqui | Darvy</title>
-        <meta
+        {/* 
           name="description"
           content="Hi🤘, My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
           key="desc"
@@ -59,7 +59,40 @@ const Layout = ({ children }) => {
           property="og:description"
           content="Hi🤘, My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
         />
+        <meta property="og:image" content="https://tarquibrian.com/og.png" /> */}
+
+        <meta
+          name="description"
+          content="Hi🤘, My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
+        />
+
+        <meta property="og:url" content="https://www.tarquibrian.com/" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Brian Tarqui Rojas | Web Developer"
+        />
+        <meta
+          property="og:description"
+          content="Hi🤘, My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
+        />
         <meta property="og:image" content="https://tarquibrian.com/og.png" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="tarquibrian.com" />
+        <meta property="twitter:url" content="https://www.tarquibrian.com/" />
+        <meta
+          name="twitter:title"
+          content="Brian Tarqui Rojas | Web Developer"
+        />
+        <meta
+          name="twitter:description"
+          content="Brian Tarqui Rojas | Web Developer"
+        />
+        <meta
+          name="twitter:image"
+          content="https://tarquibrian.com/og.png"
+        ></meta>
       </Head>
 
       <Header />
