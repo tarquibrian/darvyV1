@@ -7,7 +7,7 @@ import { heroData } from "@data";
 import { useAppContext } from "src/context/app.context";
 
 const HeroStyled = styled(motion.section)`
-  height: 100vh;
+  height: calc(100vh - 150px);
   width: 80%;
   margin: auto;
   svg {
@@ -31,7 +31,7 @@ const HeroStyled = styled(motion.section)`
     /* background: blue; */
     /* width: 95%; */
     /* min-height: 100vh; */
-    height: 85%;
+    height: 110%;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -38,6 +38,51 @@ const ProjectsStyled = styled(motion.section)`
     margin: 3rem auto 0;
     font-size: clamp(10px, 2vw, 18px);
   }
+
+  .project__container {
+    min-height: 900px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* grid-template-rows: repeat(10, 1fr); */
+    gap: 2rem;
+
+    &-picture {
+      grid-column: 1/7;
+      width: 100%;
+      /* background-color: rgba(0, 0, 0, 0.5); */
+      display: flex;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &-main {
+      grid-column: 7/-1;
+
+      .main__body {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        &-desc {
+          padding: 1.5rem;
+          background: rgba(255, 255, 255, 0.1);
+        }
+        &-features {
+          display: flex;
+          flex-wrap: wrap;
+          white-space: nowrap;
+          gap: 1rem;
+          .feature {
+            flex: 1 0 100px;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
   @media screen and (max-width: 400px) {
     width: 90%;
   }
@@ -208,11 +253,11 @@ const languages = {
 };
 
 const animateElement = {
-  hidden: { x: 100, opacity: 0 },
+  hidden: { x: 1000, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
-    transition: { type: "spring", bounce: 0.4, duration: 1 },
+    transition: { type: "spring", bounce: 0.1, duration: 2 },
   },
 };
 
@@ -247,31 +292,65 @@ const Projects = () => {
       variants={variants}
     >
       <h1 className="headerTitle">{currentLanguage.lenguage.title}</h1>
+      <div className="project__container">
+        {currentLanguage.lenguage.items.map((project) => {
+          const { id, label, title, desc, features, links, img } = project;
+          return (
+            <>
+              <div className="project__container-picture">
+                <Image src={img} alt="img from portfolio" />
+              </div>
+              <div className="project__container-main">
+                <header>
+                  <span>{label}</span>
+                  <h1>{title}</h1>
+                </header>
+                <div className="main__body">
+                  <div className="main__body-desc">
+                    <p>{desc}</p>
+                  </div>
+                  <div className="main__body-features">
+                    {features.map((feature, i) => {
+                      const { name } = feature;
+                      return (
+                        <span key={i} className="feature">
+                          {name}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+                <footer>
+                  {links.map((linkname, i) => {
+                    return (
+                      <span key={i}>
+                        <a
+                          href={linkname.path}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {linkname.svg === 1 && <IconExternal />}
+                          {linkname.svg === 2 && <IconGitHub />}
+                          {linkname.svg === 3 && <IconFigma />}
+                        </a>
+                      </span>
+                    );
+                  })}
+                </footer>
+              </div>
+            </>
+          );
+        })}
+      </div>
       <ProjectWraper
         initial={"hidden"}
-        // whileInView={"visible"}
         animate={controls}
         transition={{ staggerChildren: 0.8 }}
       >
         {currentLanguage.lenguage.items.map((project) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
-            <ProjectsContainer
-              key={id}
-              // animate={controls}
-              variants={animateElement}
-              // animate={controls}
-              // initial="hidden"
-              // variants={{
-              //   visible: {
-              //     x: 0,
-              //     opacity: 1,
-              //     scale: 1,
-              //     transition: { duration: 0.5 },
-              //   },
-              //   hidden: { x: 100, opacity: 0, scale: 1 },
-              // }}
-            >
+            <ProjectsContainer key={id} variants={animateElement}>
               <ProjectContent>
                 <div className="label">{label}</div>
                 <h2>{title}</h2>
@@ -294,7 +373,6 @@ const Projects = () => {
                           href={linkname.path}
                           target="_blank"
                           rel="noreferrer"
-                          // key={linkname.id}
                         >
                           {linkname.svg === 1 && <IconExternal />}
                           {linkname.svg === 2 && <IconGitHub />}

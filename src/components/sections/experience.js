@@ -11,6 +11,7 @@ const ExperienceStyled = styled(motion.section)`
   place-content: center;
   width: 80%;
   margin: auto;
+  /* background-color: red; */
   @media screen and (max-width: 400px) {
     width: 90%;
   }
@@ -20,7 +21,7 @@ const ExperienceCard = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 600px;
-  max-width: 850px;
+  max-width: 950px;
   border-radius: 4px;
   font-family: "DM Sans", sans-serif;
   font-weight: normal;
@@ -96,7 +97,7 @@ const ExperienceCard = styled.div`
 const CardContent = styled.div`
   display: grid;
   grid-template-columns: 200px 1fr;
-  gap: 2rem;
+  gap: 4rem;
   margin-top: 1rem;
   line-height: 1.5;
   overflow: hidden;
@@ -257,6 +258,7 @@ const ContentBody = styled.div`
         padding-left: 30px;
         margin-bottom: 10px;
         margin-bottom: 5px;
+        color: #fff;
         &::before {
           content: "▹";
           position: absolute;

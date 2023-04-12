@@ -14,11 +14,13 @@ const AboutStyled = styled(motion.section)`
   margin: auto;
   padding: initial;
   padding-bottom: 100px;
+  padding-top: 150px;
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 2rem;
   justify-content: center;
   /* align-items: center; */
+  /* background-color: red; */
   @media screen and (max-width: 750px) {
     grid-template-columns: repeat(1, auto);
   }
