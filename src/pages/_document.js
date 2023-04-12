@@ -20,10 +20,10 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head title="Brian Tarqui Rojas - Web Developer">
+        <Head title="Brian Tarqui Rojas | Web Developer">
           <meta
             name="description"
-            content="Brian Tarqui Rojas | Web Developer"
+            content="Brian Tarqui Rojas | Web Developer | System Engineer"
           />
 
           <meta property="og:url" content="https://www.tarquibrian.com/" />
