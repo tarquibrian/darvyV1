@@ -44,25 +44,13 @@ const SEO = ({
 
   return (
     <Head>
-      <title>{title}</title>
+      {/* <title>{title}</title> */}
       {metaData.map(({ name, content }, i) => (
         <meta key={i} name={name} content={content} />
       ))}
-      <meta
-        property="og:image"
-        content="https://tarquibrian.com/og.png"
-        data-react-helmet="true"
-      ></meta>
-      <meta
-        property="og:url"
-        content="https://tarquibrian.com/"
-        data-react-helmet="true"
-      ></meta>
-      <meta
-        name="image"
-        content="https://tarquibrian.com/og.png"
-        data-react-helmet="true"
-      ></meta>
+      <meta property="og:url" content="https://tarquibrian.com/" />
+      <meta property="og:image" content="https://tarquibrian.com/og.png" />
+      <meta name="image" content="https://tarquibrian.com/og.png" />
     </Head>
   );
 };
