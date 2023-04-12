@@ -20,7 +20,40 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head></Head>
+        <Head title="Brian Tarqui Rojas - Web Developer">
+          <meta
+            name="description"
+            content="Brian Tarqui Rojas | Web Developer"
+          />
+
+          <meta property="og:url" content="https://www.tarquibrian.com/" />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Brian Tarqui Rojas | Web Developer"
+          />
+          <meta
+            property="og:description"
+            content="Brian Tarqui Rojas | Web Developer"
+          />
+          <meta property="og:image" content="https://tarquibrian.com/og.png" />
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="tarquibrian.com" />
+          <meta property="twitter:url" content="https://www.tarquibrian.com/" />
+          <meta
+            name="twitter:title"
+            content="Brian Tarqui Rojas | Web Developer"
+          />
+          <meta
+            name="twitter:description"
+            content="Brian Tarqui Rojas | Web Developer"
+          />
+          <meta
+            name="twitter:image"
+            content="https://tarquibrian.com/og.png"
+          ></meta>
+        </Head>
         <body>
           <Main />
           <NextScript />
