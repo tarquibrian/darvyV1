@@ -68,10 +68,7 @@ const Layout = ({ children }) => {
 
         <meta property="og:url" content="https://www.tarquibrian.com/" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Brian Tarqui Rojas | Web Developer"
-        />
+        <meta property="og:title" content="Portfolio Brian Tarqui | Darvy" />
         <meta
           property="og:description"
           content="Hi🤘, My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
@@ -81,13 +78,10 @@ const Layout = ({ children }) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="tarquibrian.com" />
         <meta property="twitter:url" content="https://www.tarquibrian.com/" />
-        <meta
-          name="twitter:title"
-          content="Brian Tarqui Rojas | Web Developer"
-        />
+        <meta name="twitter:title" content="Portfolio Brian Tarqui | Darvy" />
         <meta
           name="twitter:description"
-          content="Brian Tarqui Rojas | Web Developer"
+          content="Portfolio Brian Tarqui | Darvy"
         />
         <meta
           name="twitter:image"
