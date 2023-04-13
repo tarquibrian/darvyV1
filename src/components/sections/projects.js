@@ -395,7 +395,7 @@ export const projectsData = {
 
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
-  max-width: 1040px;
+  max-width: 1080px;
   margin: auto;
   /* display: grid; */
   /* place-content: center; */
@@ -444,6 +444,7 @@ const ProjectsStyled = styled(motion.section)`
       /* grid-template-rows: repeat(6, 1fr); */
       /* background-color: red; */
       gap: 1rem;
+      /* border: 1px solid rgba(255, 255, 255, 0.5); */
 
       &-picture {
         /* grid-column: 1/9; */
@@ -584,7 +585,6 @@ const Feature = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  max-width: 250px;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   font-size: 12px;
@@ -801,8 +801,6 @@ const Projects = () => {
     window.addEventListener("mousemove", handleOnMouseMove);
   }, [controls, inView]);
 
-  const { iconE } = currentLanguage.lenguage;
-
   return (
     <ProjectsStyled
       id="projects"
@@ -816,12 +814,7 @@ const Projects = () => {
         {currentLanguage.lenguage?.items?.map((project) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
-            <div
-              className={`project__container ${
-                id % 2 === 11 ? "horizontal" : ""
-              }`}
-              key={id + 2}
-            >
+            <div className={`project__container`} key={id + 2}>
               <div className="project__container-picture">
                 <Image src={img} alt="img from portfolio" />
               </div>
@@ -836,10 +829,27 @@ const Projects = () => {
                   </div>
                   <div className="main__body-features">
                     {features.map((feature, i) => {
-                      const { name, icon, bgColor } = feature;
+                      const { name, bgColor } = feature;
                       return (
                         <Feature key={i} className="feature" bgColor={bgColor}>
-                          <IconPWA />
+                          {name === "VS Code" && <IconVS />}
+                          {name === "Sublime Text" && <IconST />}
+                          {name === "Atom" && <IconAtom />}
+                          {name === "NextJS" && <IconNextjs />}
+                          {name === "React" && <ReactIcon />}
+                          {name === "Styled Components" && <IconSC />}
+                          {name === "Adobe Illustrator" && <IconAI />}
+                          {name === "Figma+" && <IconFigmaImg />}
+                          {name === "Sass" && <IconSass />}
+                          {name === "Adobe Photoshop" && <IconAP />}
+                          {name === "Redux" && <IconRedux />}
+                          {name === "Express" && <IconExpress />}
+                          {name === "MongoDB" && <IconMongo />}
+                          {name === "Google Maps Platform" && <IconMaps />}
+                          {name === "Push Notifications" && (
+                            <IconPushNotification />
+                          )}
+                          {name === "PWA" && <IconPWA />}
                           <span>{name}</span>
                         </Feature>
                       );
