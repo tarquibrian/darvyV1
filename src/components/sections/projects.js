@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import {
   IconAtom,
+  IconExpress,
   IconExternal,
   IconFigma,
   IconFigmaImg,
@@ -365,6 +366,7 @@ const Projects = () => {
                           {feature.name === "Figma+" && <IconFigmaImg />}
                           {feature.name === "Sass" && <IconSass />}
                           {feature.name === "Redux" && <IconRedux />}
+                          {feature.name === "Express" && <IconExpress />}
                           <span>{name}</span>
                         </div>
                       );
