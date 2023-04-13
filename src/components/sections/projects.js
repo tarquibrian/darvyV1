@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import {
+  IconAI,
+  IconAP,
   IconAtom,
   IconExpress,
   IconExternal,
@@ -9,6 +11,7 @@ import {
   IconMaps,
   IconMongo,
   IconNextjs,
+  IconPushNotification,
   IconRedux,
   IconSC,
   IconSass,
@@ -16,13 +19,18 @@ import {
   IconVim,
   ReactIcon,
 } from "@components";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Image from "next/image";
 import { animate, motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
 import { projectsData } from "@data";
 import IconPWA from "../icons/pwa";
+
+const Colors = {
+  React: "rgba(3,163,215,.6)",
+  NextJS: "rgba(0,0,0,.6)",
+};
 
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
@@ -92,21 +100,6 @@ const ProjectsStyled = styled(motion.section)`
           white-space: nowrap;
           gap: 1rem;
           .feature {
-            flex: 1 0 100px;
-            padding: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            max-width: 250px;
-            img,
-            svg {
-              height: 50px;
-              width: auto;
-            }
-            span {
-              margin-right: 1rem;
-            }
           }
         }
         &-links {
@@ -131,6 +124,34 @@ const ProjectsStyled = styled(motion.section)`
   }
   @media screen and (max-width: 400px) {
     width: 90%;
+  }
+`;
+
+const Feature = styled.div`
+  /* @media (prefers-reduced-motion: no-preference) {
+    ${({ bgColor }) =>
+    bgColor === "React" &&
+    css`
+      background-color: blue;
+    `};
+  } */
+  background-color: ${({ bgColor }) =>
+    bgColor ? bgColor : "rgba(255, 255, 255, 0.1)"};
+  flex: 1 0 100px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* background: rgba(255, 255, 255, 0.1); */
+  max-width: 250px;
+
+  img,
+  svg {
+    height: 50px;
+    width: auto;
+  }
+  span {
+    margin-right: 1rem;
   }
 `;
 
@@ -355,12 +376,20 @@ const Projects = () => {
                   <div className="main__body-desc">
                     <p>{desc}</p>
                   </div>
+                  {/* <div className="ej">hola {projectsData.icon}</div> */}
                   <div className="main__body-features">
                     {features.map((feature, i) => {
-                      const { name } = feature;
+                      const { name, icon } = feature;
+                      // const currentFeature = () => {
+                      //   return
+                      // }
                       return (
-                        <div key={i} className="feature">
-                          {feature.name === "React" && <ReactIcon />}
+                        <Feature
+                          key={i}
+                          className="feature"
+                          bgColor={Colors.React}
+                        >
+                          {/* {feature.name === "React" && <ReactIcon />}
                           {feature.name === "VS Code" && <IconVS />}
                           {feature.name === "Sublime Text" && <IconVim />}
                           {feature.name === "Atom" && <IconAtom />}
@@ -375,8 +404,14 @@ const Projects = () => {
                             <IconMaps />
                           )}
                           {feature.name === "PWA" && <IconPWA />}
+                          {feature.name === "Push Notifications" && (
+                            <IconPushNotification />
+                          )}
+                          {feature.name === "Adobe Photoshop" && <IconAP />}
+                          {feature.name === "Adobe Illustrator" && <IconAI />} */}
+                          {icon}
                           <span>{name}</span>
-                        </div>
+                        </Feature>
                       );
                     })}
                   </div>

@@ -19,3 +19,6 @@ export { default as IconExpress } from "./express";
 export { default as IconMongo } from "./mongo";
 export { default as IconMaps } from "./maps";
 export { default as IconPushNotification } from "./push";
+export { default as IconAP } from "./ap";
+export { default as IconAI } from "./ai";
+export { default as IconST } from "./st";
