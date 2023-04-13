@@ -13,3 +13,4 @@ export { default as IconAtom } from "./atom";
 export { default as IconNextjs } from "./next";
 export { default as IconSC } from "./sc";
 export { default as IconFigmaImg } from "./figmaIcon";
+export { default as IconSass } from "./sass";
