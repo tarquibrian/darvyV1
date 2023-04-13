@@ -86,9 +86,9 @@ export default class MyDocument extends Document {
             content="Hi🤘, My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
           />
 
-          {/* <meta property="og:url" content="https://www.tarquibrian.com/" /> */}
+          <meta property="og:url" content="https://www.tarquibrian.com/" />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="Portfolio Brian Tarqui | Darvy" />
+          <meta property="og:title" content="Darvy Portfolio" />
           <meta
             property="og:description"
             content="Hi🤘, My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
@@ -98,11 +98,8 @@ export default class MyDocument extends Document {
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="twitter:domain" content="tarquibrian.com" />
           <meta property="twitter:url" content="https://www.tarquibrian.com/" />
-          <meta name="twitter:title" content="Portfolio Brian Tarqui | Darvy" />
-          <meta
-            name="twitter:description"
-            content="Portfolio Brian Tarqui | Darvy"
-          />
+          <meta name="twitter:title" content="Darvy Portfolio" />
+          <meta name="twitter:description" content="Darvy Portfolio" />
           <meta
             name="twitter:image"
             content="https://tarquibrian.com/og.png"

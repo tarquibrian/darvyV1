@@ -45,6 +45,7 @@ const Layout = ({ children }) => {
 
       {/* <SEO title="Brian Tarqui Rojas" /> */}
       <Head>
+        <title>Darvy Portfolio</title>
         {/* 
           name="description"
           content="Hi🤘, My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
