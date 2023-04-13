@@ -8,3 +8,5 @@ export { default as IconCodepen } from "./codepen";
 export { default as ReactIcon } from "./react";
 export { default as IconJavascript } from "./javascript";
 export { default as IconVS } from "./vscode";
+export { default as IconVim } from "./vim";
+export { default as IconAtom } from "./atom";

@@ -4,6 +4,7 @@ import {
   IconFigma,
   IconGitHub,
   IconVS,
+  IconVim,
   ReactIcon,
 } from "@components";
 import styled from "styled-components";
@@ -351,6 +352,7 @@ const Projects = () => {
                         <div key={i} className="feature">
                           {feature.name === "React" && <ReactIcon />}
                           {feature.name === "VS Code" && <IconVS />}
+                          {feature.name === "Sublime Text" && <IconVim />}
                           <span>{name}</span>
                         </div>
                       );
