@@ -14,3 +14,4 @@ export { default as IconNextjs } from "./next";
 export { default as IconSC } from "./sc";
 export { default as IconFigmaImg } from "./figmaIcon";
 export { default as IconSass } from "./sass";
+export { default as IconRedux } from "./redux";

@@ -6,6 +6,7 @@ import {
   IconFigmaImg,
   IconGitHub,
   IconNextjs,
+  IconRedux,
   IconSC,
   IconSass,
   IconVS,
@@ -363,6 +364,7 @@ const Projects = () => {
                           {feature.name === "Styled Components" && <IconSC />}
                           {feature.name === "Figma+" && <IconFigmaImg />}
                           {feature.name === "Sass" && <IconSass />}
+                          {feature.name === "Redux" && <IconRedux />}
                           <span>{name}</span>
                         </div>
                       );
