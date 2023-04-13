@@ -7,3 +7,4 @@ export { default as IconFigma } from "./figma";
 export { default as IconCodepen } from "./codepen";
 export { default as ReactIcon } from "./react";
 export { default as IconJavascript } from "./javascript";
+export { default as IconVS } from "./vscode";

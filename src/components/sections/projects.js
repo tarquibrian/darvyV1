@@ -1,5 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import { IconExternal, IconFigma, IconGitHub, ReactIcon } from "@components";
+import {
+  IconExternal,
+  IconFigma,
+  IconGitHub,
+  IconVS,
+  ReactIcon,
+} from "@components";
 import styled from "styled-components";
 import Image from "next/image";
 import { animate, motion, useAnimation, Variants } from "framer-motion";
@@ -343,7 +349,9 @@ const Projects = () => {
                       const { name } = feature;
                       return (
                         <div key={i} className="feature">
-                          <ReactIcon /> <span>{name}</span>
+                          {feature.name === "React" && <ReactIcon />}
+                          {feature.name === "VS Code" && <IconVS />}
+                          <span>{name}</span>
                         </div>
                       );
                     })}
