@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { IconExternal, IconFigma, IconGitHub } from "@components";
+import { IconExternal, IconFigma, IconGitHub, ReactIcon } from "@components";
 import styled from "styled-components";
 import Image from "next/image";
 import { animate, motion, useAnimation, Variants } from "framer-motion";
@@ -76,8 +76,37 @@ const ProjectsStyled = styled(motion.section)`
           gap: 1rem;
           .feature {
             flex: 1 0 100px;
-            padding: 1.5rem;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             background: rgba(255, 255, 255, 0.1);
+            max-width: 250px;
+            img,
+            svg {
+              height: 50px;
+              width: auto;
+            }
+            span {
+              margin-right: 1rem;
+            }
+          }
+        }
+        &-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+
+          a {
+            background: rgba(255, 255, 255, 0);
+            padding: 0.3rem 0;
+            svg {
+              width: 24px;
+              height: 24px;
+              &:hover {
+                filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
+              }
+            }
           }
         }
       }
@@ -313,30 +342,30 @@ const Projects = () => {
                     {features.map((feature, i) => {
                       const { name } = feature;
                       return (
-                        <span key={i} className="feature">
-                          {name}
+                        <div key={i} className="feature">
+                          <ReactIcon /> <span>{name}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="main__body-links">
+                    {links.map((linkname, i) => {
+                      return (
+                        <span key={i}>
+                          <a
+                            href={linkname.path}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {linkname.svg === 1 && <IconExternal />}
+                            {linkname.svg === 2 && <IconGitHub />}
+                            {linkname.svg === 3 && <IconFigma />}
+                          </a>
                         </span>
                       );
                     })}
                   </div>
                 </div>
-                <footer>
-                  {links.map((linkname, i) => {
-                    return (
-                      <span key={i}>
-                        <a
-                          href={linkname.path}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {linkname.svg === 1 && <IconExternal />}
-                          {linkname.svg === 2 && <IconGitHub />}
-                          {linkname.svg === 3 && <IconFigma />}
-                        </a>
-                      </span>
-                    );
-                  })}
-                </footer>
               </div>
             </>
           );

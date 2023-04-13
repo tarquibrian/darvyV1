@@ -36,7 +36,7 @@ export const projectsData = {
         title: "Business Website",
         desc: "Aplicación web sobre Landing Page de una empresa que ofrece sus servicios tecnológicos, relacionados con la informática, programación y soluciones en el área de sistemas.",
         features: [
-          { name: " NextJS" },
+          { name: "NextJS" },
           { name: "React" },
           { name: "Styled Components" },
           { name: "Figma+" },
@@ -63,7 +63,7 @@ export const projectsData = {
         title: "Ecommerce Website",
         desc: "Aplicación web de ecommerce de ropa moderna que ofrece una amplia selección de ropa y accesorios de moda para clientes exigentes, con opciones para filtrar y encontrar fácilmente lo que están buscando y se actualiza con las últimas tendencias.",
         features: [
-          { name: " NextJS" },
+          { name: "NextJS" },
           { name: "React" },
           { name: "Sass" },
           { name: "APhotoshop" },
@@ -149,7 +149,7 @@ export const projectsData = {
         title: "Business Website",
         desc: "Web application on Landing Page of a company that offers its technological services, related to computing, programming and solutions in the systems area.",
         features: [
-          { name: " NextJS" },
+          { name: "NextJS" },
           { name: "React" },
           { name: "Styled Components" },
           { name: "Figma+" },
@@ -176,7 +176,7 @@ export const projectsData = {
         title: "Ecommerce Website",
         desc: "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
         features: [
-          { name: " NextJS" },
+          { name: "NextJS" },
           { name: "React" },
           { name: "Sass" },
           { name: "APhotoshop" },
