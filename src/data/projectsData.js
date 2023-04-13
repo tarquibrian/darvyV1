@@ -1,3 +1,4 @@
+"use client";
 import {
   IconAI,
   IconAP,
@@ -32,9 +33,13 @@ export const projectsData = {
         title: "Darvy Theme",
         desc: "Darvy Theme es un tema de color para Visual Estudio Code y muy pronto para otros editores como Atom o Sublime Text. La paleta de colores esta inspirado en temas populares como One Dark Pro y Tokyo Night, por lo que puede que éste tema vaya a encantarte.",
         features: [
-          { name: "VS Code", icon: <IconVS /> },
-          { name: "Sublime Text", icon: <IconST /> },
-          { name: "Atom", icon: <IconAtom /> },
+          { name: "VS Code", icon: <IconVS />, bgColor: "rgba(31,192,241,.5)" },
+          {
+            name: "Sublime Text",
+            icon: <IconST />,
+            bgColor: "rgba(255,165,0,.3)",
+          },
+          { name: "Atom", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
         ],
         links: [
           {
@@ -54,11 +59,31 @@ export const projectsData = {
         title: "Business Website",
         desc: "Aplicación web sobre Landing Page de una empresa que ofrece sus servicios tecnológicos, relacionados con la informática, programación y soluciones en el área de sistemas.",
         features: [
-          { name: "NextJS", icon: <IconNextjs /> },
-          { name: "React", icon: <ReactIcon /> },
-          { name: "Styled Components", icon: <IconSC /> },
-          { name: "Adobe Illustrator", icon: <IconAI /> },
-          { name: "Figma+", icon: <IconFigmaImg /> },
+          {
+            name: "NextJS",
+            icon: <IconNextjs />,
+            bgColor: "rgba(25,25,25,.3)",
+          },
+          {
+            name: "React",
+            icon: <ReactIcon />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
+          {
+            name: "Styled Components",
+            icon: <IconSC />,
+            bgColor: "rgba(231,62,250,.4)",
+          },
+          {
+            name: "Adobe Illustrator",
+            icon: <IconAI />,
+            bgColor: "rgba(234,226,183,.6)",
+          },
+          {
+            name: "Figma+",
+            icon: <IconFigmaImg />,
+            bgColor: "rgba(255,0,0,.2)",
+          },
         ],
         links: [
           {
@@ -82,11 +107,27 @@ export const projectsData = {
         title: "Ecommerce Website",
         desc: "Aplicación web de ecommerce de ropa moderna que ofrece una amplia selección de ropa y accesorios de moda para clientes exigentes, con opciones para filtrar y encontrar fácilmente lo que están buscando y se actualiza con las últimas tendencias.",
         features: [
-          { name: "NextJS", icon: <IconNextjs /> },
-          { name: "React", icon: <ReactIcon /> },
-          { name: "Sass", icon: <IconSass /> },
-          { name: "Adobe Photoshop", icon: <IconAP /> },
-          { name: "Figma+", icon: <IconFigmaImg /> },
+          {
+            name: "NextJS",
+            icon: <IconNextjs />,
+            bgColor: "rgba(25,25,25,.3)",
+          },
+          {
+            name: "React",
+            icon: <ReactIcon />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
+          { name: "Sass", icon: <IconSass />, bgColor: "rgba(231,62,250,.4)" },
+          {
+            name: "Adobe Photoshop",
+            icon: <IconAP />,
+            bgColor: "rgba(21,71,100,.6)",
+          },
+          {
+            name: "Figma+",
+            icon: <IconFigmaImg />,
+            bgColor: "rgba(255,0,0,.2)",
+          },
         ],
         links: [
           {
@@ -110,13 +151,37 @@ export const projectsData = {
         title: "Tourism Website",
         desc: "Aplicacion web de gestión de información turistica, empleando modulos de Artículos Biográficos, Gestión y notificación de eventos culturales, Visualizacion y direccionamiento de sitios turísticos mediante Google Maps en base a coordenadas específicas.",
         features: [
-          { name: "React", icon: <ReactIcon /> },
-          { name: "Redux", icon: <IconRedux /> },
-          { name: "Express", icon: <IconExpress /> },
-          { name: "MongoDB", icon: <IconMongo /> },
-          { name: "Google Maps Platform", icon: <IconMaps /> },
-          { name: "PWA", icon: <IconPWA /> },
-          { name: "Push Notifications", icon: <IconPushNotification /> },
+          {
+            name: "React",
+            icon: <ReactIcon />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
+          {
+            name: "Redux",
+            icon: <IconRedux />,
+            bgColor: "rgba(231,62,250,.3)",
+          },
+          {
+            name: "Express",
+            icon: <IconExpress />,
+            bgColor: "rgba(222,222,222,.5)",
+          },
+          {
+            name: "MongoDB",
+            icon: <IconMongo />,
+            bgColor: "rgba(56,176,68,.5)",
+          },
+          {
+            name: "Google Maps Platform",
+            icon: <IconMaps />,
+            bgColor: "rgba(56,176,68,.5)",
+          },
+          { name: "PWA", icon: <IconPWA />, bgColor: "rgba(231,62,250,.3)" },
+          {
+            name: "Push Notifications",
+            icon: <IconPushNotification />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
         ],
         links: [
           {
@@ -146,9 +211,13 @@ export const projectsData = {
         title: "Darvy Theme",
         desc: "Darvy Theme is a color theme for Visual Studio Code and very soon for other editors like Atom or Sublime Text. The color palette is inspired by popular themes like One Dark Pro and Tokyo Night, so you might love this theme.",
         features: [
-          { name: "VS Code", icon: <IconVS /> },
-          { name: "Sublime Text", icon: <IconST /> },
-          { name: "Atom", icon: <IconAtom /> },
+          { name: "VS Code", icon: <IconVS />, bgColor: "rgba(31,192,241,.5)" },
+          {
+            name: "Sublime Text",
+            icon: <IconST />,
+            bgColor: "rgba(255,165,0,.3)",
+          },
+          { name: "Atom", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
         ],
         links: [
           {
@@ -168,11 +237,31 @@ export const projectsData = {
         title: "Business Website",
         desc: "Web application on Landing Page of a company that offers its technological services, related to computing, programming and solutions in the systems area.",
         features: [
-          { name: "NextJS", icon: <IconNextjs /> },
-          { name: "React", icon: <ReactIcon /> },
-          { name: "Styled Components", icon: <IconSC /> },
-          { name: "Adobe Illustrator", icon: <IconAI /> },
-          { name: "Figma+", icon: <IconFigmaImg /> },
+          {
+            name: "NextJS",
+            icon: <IconNextjs />,
+            bgColor: "rgba(25,25,25,.3)",
+          },
+          {
+            name: "React",
+            icon: <ReactIcon />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
+          {
+            name: "Styled Components",
+            icon: <IconSC />,
+            bgColor: "rgba(231,62,250,.4)",
+          },
+          {
+            name: "Adobe Illustrator",
+            icon: <IconAI />,
+            bgColor: "rgba(234,226,183,.6)",
+          },
+          {
+            name: "Figma+",
+            icon: <IconFigmaImg />,
+            bgColor: "rgba(255,0,0,.2)",
+          },
         ],
         links: [
           {
@@ -196,11 +285,27 @@ export const projectsData = {
         title: "Ecommerce Website",
         desc: "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
         features: [
-          { name: "NextJS", icon: <IconNextjs /> },
-          { name: "React", icon: <ReactIcon /> },
-          { name: "Sass", icon: <IconSass /> },
-          { name: "Adobe Photoshop", icon: <IconAP /> },
-          { name: "Figma+", icon: <IconFigmaImg /> },
+          {
+            name: "NextJS",
+            icon: <IconNextjs />,
+            bgColor: "rgba(25,25,25,.3)",
+          },
+          {
+            name: "React",
+            icon: <ReactIcon />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
+          { name: "Sass", icon: <IconSass />, bgColor: "rgba(231,62,250,.4)" },
+          {
+            name: "Adobe Photoshop",
+            icon: <IconAP />,
+            bgColor: "rgba(21,71,100,.6)",
+          },
+          {
+            name: "Figma+",
+            icon: <IconFigmaImg />,
+            bgColor: "rgba(255,0,0,.2)",
+          },
         ],
         links: [
           {
@@ -225,13 +330,37 @@ export const projectsData = {
         desc: "Web application for tourist information management, using modules of Biographical Articles, Management and notification of cultural events, Visualization and addressing of tourist sites through Google Maps based on specific coordinates.",
 
         features: [
-          { name: "React", icon: <ReactIcon /> },
-          { name: "Redux", icon: <IconRedux /> },
-          { name: "Express", icon: <IconExpress /> },
-          { name: "MongoDB", icon: <IconMongo /> },
-          { name: "Google Maps Platform", icon: <IconMaps /> },
-          { name: "PWA", icon: <IconPWA /> },
-          { name: "Push Notifications", icon: <IconPushNotification /> },
+          {
+            name: "React",
+            icon: <ReactIcon />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
+          {
+            name: "Redux",
+            icon: <IconRedux />,
+            bgColor: "rgba(231,62,250,.3)",
+          },
+          {
+            name: "Express",
+            icon: <IconExpress />,
+            bgColor: "rgba(222,222,222,.5)",
+          },
+          {
+            name: "MongoDB",
+            icon: <IconMongo />,
+            bgColor: "rgba(56,176,68,.5)",
+          },
+          {
+            name: "Google Maps Platform",
+            icon: <IconMaps />,
+            bgColor: "rgba(56,176,68,.5)",
+          },
+          { name: "PWA", icon: <IconPWA />, bgColor: "rgba(231,62,250,.3)" },
+          {
+            name: "Push Notifications",
+            icon: <IconPushNotification />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
         ],
         links: [
           {

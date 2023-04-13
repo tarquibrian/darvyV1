@@ -25,18 +25,14 @@ import { animate, motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
 import { projectsData } from "@data";
-import IconPWA from "../icons/pwa";
-
-const Colors = {
-  React: "rgba(3,163,215,.6)",
-  NextJS: "rgba(0,0,0,.6)",
-};
+// import { projectsData } from "../../data/projectsData";
 
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
+  max-width: 1040px;
   margin: auto;
-  display: grid;
-  place-content: center;
+  /* display: grid; */
+  /* place-content: center; */
   overflow: hidden;
   .headerTitle {
     font-size: clamp(40px, 8vw, 80px);
@@ -60,67 +56,152 @@ const ProjectsStyled = styled(motion.section)`
   .footerTitle {
     font-family: "DM Sans";
     font-weight: 400;
-    margin: 3rem auto 0;
+    margin-top: 2rem;
+    text-align: center;
+    /* margin: 3rem auto 0; */
     font-size: clamp(10px, 2vw, 18px);
   }
 
-  .project__container {
-    min-height: 900px;
+  .project {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    /* grid-template-rows: repeat(10, 1fr); */
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    /* grid-template-columns: repeat(2, minmax(200px, auto)); */
+    /* grid-template-rows: masonry; */
+    gap: 3rem;
 
-    &-picture {
-      grid-column: 1/7;
-      width: 100%;
-      /* background-color: rgba(0, 0, 0, 0.5); */
-      display: flex;
+    .project__container {
+      display: grid;
+      grid-template-columns: 4fr 3fr;
+      /* grid-template-rows: repeat(6, 1fr); */
+      /* grid-template-columns: repeat(15, 1fr); */
+      /* grid-template-rows: repeat(6, 1fr); */
+      /* grid-template-rows: repeat(6, 1fr); */
+      /* background-color: red; */
+      gap: 1rem;
 
-      img {
+      &-picture {
+        /* grid-column: 1/9; */
+        /* grid-row: 1/-1; */
+        /* display: flex; */
         width: 100%;
-        height: auto;
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 4px;
+          /* filter: brightness(80%) contrast(80%); */
+        }
       }
-    }
 
-    &-main {
-      grid-column: 7/-1;
-
-      .main__body {
+      &-main {
+        width: 100%;
+        /* grid-column: 9/-1; */
+        /* grid-row: 1/-1; */
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        &-desc {
-          padding: 1.5rem;
-          background: rgba(255, 255, 255, 0.1);
-        }
-        &-features {
-          display: flex;
-          flex-wrap: wrap;
-          white-space: nowrap;
-          gap: 1rem;
-          .feature {
+
+        header {
+          span {
+            color: #eae2b7;
+            font-size: clamp(14px, 2vw, 16px);
+          }
+          h1 {
+            margin-top: 0.4rem;
+            font-size: clamp(20px, 3vw, 24px);
           }
         }
-        &-links {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
 
-          a {
-            background: rgba(255, 255, 255, 0);
-            padding: 0.3rem 0;
-            svg {
-              width: 24px;
-              height: 24px;
-              &:hover {
-                filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
+        .main__body {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          &-desc {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            font-size: clamp(14px, 2vw, 16px);
+            &:hover {
+              background: rgba(200, 200, 200, 0.2);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+          }
+          &-features {
+            display: flex;
+            flex-wrap: wrap;
+            white-space: nowrap;
+            gap: 1rem;
+          }
+          &-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            a {
+              background: rgba(255, 255, 255, 0);
+              padding: 0.3rem 0;
+              svg {
+                width: 24px;
+                height: 24px;
+                &:hover {
+                  filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
+                }
               }
             }
           }
         }
       }
     }
+    .horizontal {
+      grid-column: span 2;
+      grid-template-columns: repeat(2, minmax(200px, auto));
+      /* display: flex; */
+      .project__container-main {
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+    @media screen and (max-width: 1280px) {
+    }
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2, minmax(200px, auto));
+      .project__container {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media screen and (max-width: 640px) {
+      grid-template-columns: 1fr;
+      .project__container {
+        &-picture {
+          grid-column: 1/-1;
+          grid-row: 1/-1;
+          /* height: 100%; */
+          /* width: 100%; */
+          z-index: 0;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        &-main {
+          grid-column: 1/-1;
+          grid-row: 1/-1;
+          background-color: rgba(8, 40, 53, 0.8);
+          padding: 1rem;
+          border-radius: 4px;
+          overflow: hidden;
+          -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+          z-index: 999;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    width: 90%;
   }
   @media screen and (max-width: 400px) {
     width: 90%;
@@ -128,30 +209,33 @@ const ProjectsStyled = styled(motion.section)`
 `;
 
 const Feature = styled.div`
-  /* @media (prefers-reduced-motion: no-preference) {
-    ${({ bgColor }) =>
-    bgColor === "React" &&
-    css`
-      background-color: blue;
-    `};
-  } */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
   background-color: ${({ bgColor }) =>
     bgColor ? bgColor : "rgba(255, 255, 255, 0.1)"};
-  flex: 1 0 100px;
+  flex: 1 0 content;
   padding: 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  /* background: rgba(255, 255, 255, 0.1); */
   max-width: 250px;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  font-size: 12px;
+  font-size: clamp(12px, 2vw, 16px);
 
   img,
   svg {
-    height: 50px;
+    height: 30px;
     width: auto;
   }
   span {
     margin-right: 1rem;
+  }
+
+  &:hover {
+    background: rgba(200, 200, 200, 0.2);
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6));
   }
 `;
 
@@ -350,6 +434,9 @@ const Projects = () => {
     }
     window.addEventListener("mousemove", handleOnMouseMove);
   }, [controls, inView]);
+
+  const { iconE } = currentLanguage.lenguage;
+
   return (
     <ProjectsStyled
       id="projects"
@@ -359,11 +446,16 @@ const Projects = () => {
       variants={variants}
     >
       <h1 className="headerTitle">{currentLanguage.lenguage.title}</h1>
-      <div className="project__container">
-        {currentLanguage.lenguage.items.map((project) => {
+      <div className="project">
+        {currentLanguage.lenguage?.items?.map((project) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
-            <>
+            <div
+              className={`project__container ${
+                id % 2 === 11 ? "horizontal" : ""
+              }`}
+              key={id + 2}
+            >
               <div className="project__container-picture">
                 <Image src={img} alt="img from portfolio" />
               </div>
@@ -376,40 +468,12 @@ const Projects = () => {
                   <div className="main__body-desc">
                     <p>{desc}</p>
                   </div>
-                  {/* <div className="ej">hola {projectsData.icon}</div> */}
                   <div className="main__body-features">
                     {features.map((feature, i) => {
-                      const { name, icon } = feature;
-                      // const currentFeature = () => {
-                      //   return
-                      // }
+                      const { name, bgColor } = feature;
                       return (
-                        <Feature
-                          key={i}
-                          className="feature"
-                          bgColor={Colors.React}
-                        >
-                          {/* {feature.name === "React" && <ReactIcon />}
-                          {feature.name === "VS Code" && <IconVS />}
-                          {feature.name === "Sublime Text" && <IconVim />}
-                          {feature.name === "Atom" && <IconAtom />}
-                          {feature.name === "NextJS" && <IconNextjs />}
-                          {feature.name === "Styled Components" && <IconSC />}
-                          {feature.name === "Figma+" && <IconFigmaImg />}
-                          {feature.name === "Sass" && <IconSass />}
-                          {feature.name === "Redux" && <IconRedux />}
-                          {feature.name === "Express" && <IconExpress />}
-                          {feature.name === "MongoDB" && <IconMongo />}
-                          {feature.name === "Google Maps Platform" && (
-                            <IconMaps />
-                          )}
-                          {feature.name === "PWA" && <IconPWA />}
-                          {feature.name === "Push Notifications" && (
-                            <IconPushNotification />
-                          )}
-                          {feature.name === "Adobe Photoshop" && <IconAP />}
-                          {feature.name === "Adobe Illustrator" && <IconAI />} */}
-                          {icon}
+                        <Feature key={i} className="feature" bgColor={bgColor}>
+                          {/* {icon} */}
                           <span>{name}</span>
                         </Feature>
                       );
@@ -434,11 +498,11 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </div>
-      <ProjectWraper
+      {/* <ProjectWraper
         initial={"hidden"}
         animate={controls}
         transition={{ staggerChildren: 0.8 }}
@@ -489,7 +553,7 @@ const Projects = () => {
             </ProjectsContainer>
           );
         })}
-      </ProjectWraper>
+      </ProjectWraper> */}
       <p className="footerTitle">{currentLanguage.lenguage.desc}</p>
     </ProjectsStyled>
   );

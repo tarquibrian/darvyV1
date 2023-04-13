@@ -79,13 +79,13 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head title="Portfolio Brian Tarqui | Darvy">
+        <Head title="Darvy Portfolio">
           <meta
             name="description"
             content="Hi🤘, My name is Brian but they usually call me by my last name (Tarqui), I am a person who is very passionate about the world of technology and I recently obtained my degree in Systems Engineering."
           />
 
-          <meta property="og:url" content="https://www.tarquibrian.com/" />
+          {/* <meta property="og:url" content="https://www.tarquibrian.com/" /> */}
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Portfolio Brian Tarqui | Darvy" />
           <meta
