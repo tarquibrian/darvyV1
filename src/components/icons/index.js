@@ -10,3 +10,4 @@ export { default as IconJavascript } from "./javascript";
 export { default as IconVS } from "./vscode";
 export { default as IconVim } from "./vim";
 export { default as IconAtom } from "./atom";
+export { default as IconNextjs } from "./next";
