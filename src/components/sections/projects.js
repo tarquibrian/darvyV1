@@ -22,6 +22,7 @@ import { animate, motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
 import { projectsData } from "@data";
+import IconPWA from "../icons/pwa";
 
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
@@ -373,6 +374,7 @@ const Projects = () => {
                           {feature.name === "Google Maps Platform" && (
                             <IconMaps />
                           )}
+                          {feature.name === "PWA" && <IconPWA />}
                           <span>{name}</span>
                         </div>
                       );
