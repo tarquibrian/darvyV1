@@ -15,3 +15,4 @@ export { default as IconSC } from "./sc";
 export { default as IconFigmaImg } from "./figmaIcon";
 export { default as IconSass } from "./sass";
 export { default as IconRedux } from "./redux";
+export { default as IconExpress } from "./express";
