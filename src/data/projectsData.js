@@ -22,7 +22,7 @@ import imgProject3 from "../images/project-img3.png";
 import imgProject4 from "../images/project-img4.png";
 import IconPWA from "src/components/icons/pwa";
 
-export const projectsData = {
+const projectsData = {
   es: {
     title: ".Proyectos",
     desc: "+12 Proyectos. Preparando el despliegue y previsualización.",
