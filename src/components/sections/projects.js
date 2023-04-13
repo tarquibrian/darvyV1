@@ -357,6 +357,7 @@ const Projects = () => {
                           {feature.name === "Sublime Text" && <IconVim />}
                           {feature.name === "Atom" && <IconAtom />}
                           {feature.name === "NextJS" && <IconNextjs />}
+                          {feature.name === "NextJS" && <IconNextjs />}
                           <span>{name}</span>
                         </div>
                       );
