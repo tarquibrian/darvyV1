@@ -12,3 +12,4 @@ export { default as IconVim } from "./vim";
 export { default as IconAtom } from "./atom";
 export { default as IconNextjs } from "./next";
 export { default as IconSC } from "./sc";
+export { default as IconFigmaImg } from "./figmaIcon";

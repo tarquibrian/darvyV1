@@ -3,6 +3,7 @@ import {
   IconAtom,
   IconExternal,
   IconFigma,
+  IconFigmaImg,
   IconGitHub,
   IconNextjs,
   IconSC,
@@ -359,6 +360,7 @@ const Projects = () => {
                           {feature.name === "Atom" && <IconAtom />}
                           {feature.name === "NextJS" && <IconNextjs />}
                           {feature.name === "Styled Components" && <IconSC />}
+                          {feature.name === "Figma+" && <IconFigmaImg />}
                           <span>{name}</span>
                         </div>
                       );
