@@ -6,6 +6,7 @@ import {
   IconFigma,
   IconFigmaImg,
   IconGitHub,
+  IconMaps,
   IconMongo,
   IconNextjs,
   IconRedux,
@@ -369,6 +370,9 @@ const Projects = () => {
                           {feature.name === "Redux" && <IconRedux />}
                           {feature.name === "Express" && <IconExpress />}
                           {feature.name === "MongoDB" && <IconMongo />}
+                          {feature.name === "Google Maps Platform" && (
+                            <IconMaps />
+                          )}
                           <span>{name}</span>
                         </div>
                       );
