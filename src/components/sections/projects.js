@@ -470,10 +470,10 @@ const Projects = () => {
                   </div>
                   <div className="main__body-features">
                     {features.map((feature, i) => {
-                      const { name, bgColor } = feature;
+                      const { name, icon, bgColor } = feature;
                       return (
                         <Feature key={i} className="feature" bgColor={bgColor}>
-                          {/* {icon} */}
+                          {icon}
                           <span>{name}</span>
                         </Feature>
                       );
