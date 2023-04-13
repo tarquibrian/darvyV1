@@ -6,6 +6,7 @@ import {
   IconFigma,
   IconFigmaImg,
   IconGitHub,
+  IconMongo,
   IconNextjs,
   IconRedux,
   IconSC,
@@ -367,6 +368,7 @@ const Projects = () => {
                           {feature.name === "Sass" && <IconSass />}
                           {feature.name === "Redux" && <IconRedux />}
                           {feature.name === "Express" && <IconExpress />}
+                          {feature.name === "MongoDB" && <IconMongo />}
                           <span>{name}</span>
                         </div>
                       );
