@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
 
       {/* <SEO title="Brian Tarqui Rojas" /> */}
       <Head>
-        <title>Darvy Portfolio</title>
+        <title>Darvy | Web Developer</title>
       </Head>
 
       <Header />
