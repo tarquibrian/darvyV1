@@ -105,7 +105,6 @@ const SpinerLoader = styled.div`
 `;
 
 const HeaderLoader = styled.div`
-  /* background-color: #f5f5f5; */
   width: 100%;
   height: 100%;
   position: fixed;
@@ -119,7 +118,6 @@ const HeaderLoader = styled.div`
   .ipl-progress-indicator-head {
     background-color: #fff;
     height: 0.4vh;
-    /* height: 4px; */
     overflow: hidden;
     position: relative;
 
