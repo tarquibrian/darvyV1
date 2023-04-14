@@ -260,7 +260,7 @@ const Loader = ({ finishLoading }) => {
             className="first"
             initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.3, ease: "easeOut" }}
+            transition={{ duration: 1.3, delay: 0.3, ease: "easeOut" }}
           >
             <Image
               src={imgDarvy}
@@ -273,7 +273,7 @@ const Loader = ({ finishLoading }) => {
             className="figure"
             initial={{ opacity: 0, x: -240 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.3, ease: "easeOut" }}
+            transition={{ duration: 1.3, delay: 0.3, ease: "easeOut" }}
           >
             |
           </motion.div>
@@ -281,7 +281,7 @@ const Loader = ({ finishLoading }) => {
             className="second"
             initial={{ opacity: 0, x: 200 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.3, ease: "easeOut" }}
+            transition={{ duration: 1.3, delay: 0.3, ease: "easeOut" }}
           >
             Darvy Web Developer
           </motion.div>
