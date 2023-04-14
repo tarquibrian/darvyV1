@@ -790,10 +790,10 @@ const Projects = () => {
     >
       <h1 className="headerTitle">{currentLanguage.lenguage.title}</h1>
       <div className="project">
-        {currentLanguage.lenguage?.items?.map((project) => {
+        {currentLanguage.lenguage.items.map((project) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
-            <div className={`project__container`} key={id + 2}>
+            <div className={`project__container`} key={id}>
               <div className="project__container-picture">
                 <Image src={img} alt="img from portfolio" />
               </div>
