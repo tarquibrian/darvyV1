@@ -15,22 +15,13 @@ const HeroStyled = styled(motion.section)`
     fill: #ff101f;
     width: 1200px;
     height: 600px;
-    /* width: 100%; */
-    /* height: 100%; */
     position: absolute;
     bottom: 0;
-    /* left: 0; */
     right: 0;
-    /* top: 0; */
-    /* margin: 0 auto 0 0; */
     transform: translate(50%, 0%);
   }
 
   .hero__container {
-    /* margin: 0 auto; */
-    /* background: blue; */
-    /* width: 95%; */
-    /* min-height: 100vh; */
     height: 110%;
     display: flex;
     justify-content: center;
@@ -60,7 +51,6 @@ const HeroStyled = styled(motion.section)`
 
     h2 {
       font-family: "Oswald", sans-serif;
-      /* font-size: 5rem; */
       font-size: clamp(30px, 8vw, 80px);
       font-weight: 400;
       color: #eae2b7;
@@ -70,7 +60,6 @@ const HeroStyled = styled(motion.section)`
 
     h3 {
       font-family: "Oswald", sans-serif;
-      /* font-size: 5rem; */
       font-size: clamp(30px, 8vw, 80px);
       font-weight: 200;
       margin-bottom: 20px;

@@ -11,7 +11,6 @@ const ExperienceStyled = styled(motion.section)`
   place-content: center;
   width: 80%;
   margin: auto;
-  /* background-color: red; */
   @media screen and (max-width: 400px) {
     width: 90%;
   }
