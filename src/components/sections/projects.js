@@ -753,7 +753,7 @@ const animateElement = {
   visible: {
     x: 0,
     opacity: 1,
-    transition: { type: "spring", bounce: 0.1, duration: 2 },
+    transition: { type: "spring", bounce: 0.3, duration: 2 },
   },
 };
 
