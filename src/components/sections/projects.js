@@ -24,14 +24,12 @@ import imgProject from "../../images/project-img1.png";
 import imgProject2 from "../../images/project-img2.png";
 import imgProject3 from "../../images/project-img3.png";
 import imgProject4 from "../../images/project-img4.png";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Image from "next/image";
 import { animate, motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
 import IconPWA from "../icons/pwa";
-// import { projectsData } from "@data";
-// import { projectsData } from "../../data/projectsData";
 
 export const projectsData = {
   es: {
