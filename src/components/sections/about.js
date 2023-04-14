@@ -105,7 +105,6 @@ const ImgProfile = styled.div`
   min-height: 200px;
   width: 300px;
   height: 300px;
-  /* background: #eae2b7; */
   position: relative;
   z-index: 9;
   img {
