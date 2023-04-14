@@ -3,7 +3,7 @@ import styled from "styled-components";
 import anime from "animejs";
 import { motion } from "framer-motion";
 
-const LoaderSection = styled.div`
+const LoaderSection = styled(motion.div)`
   position: fixed;
   inset: 0 0 0 0;
   width: 100vw;
@@ -44,6 +44,10 @@ const LogoContainer = styled.div`
   position: relative;
   display: grid;
   place-content: center;
+  header {
+    display: flex;
+    white-space: nowrap;
+  }
   h1 {
     color: #ee2e31;
     font-weight: bolder;
@@ -208,7 +212,11 @@ const Loader = ({ finishLoading }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <LoaderSection>
+    <LoaderSection
+    // initial={{ opacity: 0 }}
+    // animate={{ opacity: 1 }}
+    // transition={{ duration: 1 }}
+    >
       {/* <HeaderLoader>
         <div className="ipl-progress-indicator-head">
           <div className="first-indicator"></div>
@@ -220,7 +228,22 @@ const Loader = ({ finishLoading }) => {
           <h1 className="name">T</h1>
         </div>
         <SpinerLoader /> */}
-        <h1>Brian Tarqui Rojas</h1>
+        <motion.header>
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5 }}
+          >
+            Tarqui Brian{" "}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5 }}
+          >
+            Web Developer
+          </motion.div>
+        </motion.header>
       </LogoContainer>
     </LoaderSection>
   );

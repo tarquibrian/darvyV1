@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     if (router.asPath === "/") {
-      setTimeout(() => setLoading(true), 3000);
+      setTimeout(() => setLoading(true), 300000000);
     } else {
       setLoading(true);
     }
@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }) {
         <motion.div
           key="loading"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1.5, y: 0 }}
           exit={{ y: -1000 }}
         >
           <Loader />
