@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import anime from "animejs";
-import { easeIn, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Chivo_Mono } from "@next/font/google";
 import Image from "next/image";
 import imgDarvy from "../../images/darvy-icon.png";
@@ -48,14 +48,13 @@ const LoaderSection = styled(motion.div)`
 `;
 
 const LogoContainer = styled.div`
-  width: 100px;
-  height: 100px;
-  position: relative;
+  /* width: 100px; */
+  /* height: 100px; */
+  /* position: relative; */
   display: grid;
   place-content: center;
   color: #fa4238;
   font-weight: bolder;
-  /* font-family: "Raleway", sans-serif; */
   white-space: nowrap;
   header {
     display: flex;
@@ -63,6 +62,7 @@ const LogoContainer = styled.div`
     align-items: center;
     white-space: nowrap;
     font-size: 1.5rem;
+    font-size: clamp(12px, 3vw, 1.5rem);
     gap: 1rem;
     img {
       width: 50px;
@@ -77,6 +77,15 @@ const LogoContainer = styled.div`
       position: relative;
       margin-top: -6px;
       font-size: 51px;
+    }
+    @media screen and (max-width: 640px) {
+      img {
+        width: 30px;
+      }
+      .figure {
+        margin-top: -3px;
+        font-size: 31px;
+      }
     }
   }
 

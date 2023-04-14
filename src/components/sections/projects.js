@@ -47,6 +47,11 @@ export const projectsData = {
             name: "Sublime Text",
             icon: <IconST />,
             bgColor: "rgba(255,165,0,.3)",
+            // bgColor: `linear-gradient(
+            //   93.3deg,
+            //   rgba(236, 80, 80, 1) 21.5%,
+            //   rgba(255, 97, 29, 1) 93.9%
+            // )`,
           },
           { name: "Atom", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
         ],
@@ -557,7 +562,7 @@ const ProjectsStyled = styled(motion.section)`
 const Feature = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 4px;
-  background-color: ${({ bgColor }) =>
+  background: ${({ bgColor }) =>
     bgColor ? bgColor : "rgba(255, 255, 255, 0.1)"};
   flex: 1 0 content;
   padding: 0.5rem;

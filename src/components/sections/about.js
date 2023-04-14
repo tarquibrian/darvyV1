@@ -17,6 +17,7 @@ const AboutStyled = styled(motion.section)`
   grid-template-columns: repeat(2, auto);
   gap: 2rem;
   justify-content: center;
+  max-width: 920px;
   @media screen and (max-width: 750px) {
     grid-template-columns: repeat(1, auto);
   }
@@ -30,6 +31,7 @@ const AboutCard = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 700px;
+  /* max-width: 920px; */
   border-radius: 4px;
   font-family: "DM Sans", sans-serif;
   font-weight: normal;

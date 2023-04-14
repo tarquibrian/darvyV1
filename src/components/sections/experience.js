@@ -20,7 +20,7 @@ const ExperienceCard = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 600px;
-  max-width: 950px;
+  max-width: 920px;
   border-radius: 4px;
   font-family: "DM Sans", sans-serif;
   font-weight: normal;
