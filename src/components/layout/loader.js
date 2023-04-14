@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import anime from "animejs";
-import { motion } from "framer-motion";
+import { easeIn, motion } from "framer-motion";
+import { Chivo_Mono } from "@next/font/google";
+import Image from "next/image";
+import imgDarvy from "../../images/darvy-icon.png";
+
+const chivo = Chivo_Mono({
+  subsets: ["latin"],
+});
 
 const LoaderSection = styled(motion.div)`
+  font-family: var(--chivo-mono);
+  font-weight: 900;
   position: fixed;
   inset: 0 0 0 0;
   width: 100vw;
@@ -44,16 +53,33 @@ const LogoContainer = styled.div`
   position: relative;
   display: grid;
   place-content: center;
+  color: #fa4238;
+  font-weight: bolder;
+  /* font-family: "Raleway", sans-serif; */
+  white-space: nowrap;
   header {
     display: flex;
+    justify-content: center;
+    align-items: center;
     white-space: nowrap;
+    font-size: 1.5rem;
+    gap: 1rem;
+    img {
+      width: 50px;
+      height: auto;
+    }
+    .first {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .figure {
+      position: relative;
+      margin-top: -6px;
+      font-size: 51px;
+    }
   }
-  h1 {
-    color: #ee2e31;
-    font-weight: bolder;
-    font-family: "Oswald", sans-serif;
-    white-space: nowrap;
-  }
+
   .title {
     position: absolute;
     top: 0;
@@ -213,9 +239,10 @@ const Loader = ({ finishLoading }) => {
 
   return (
     <LoaderSection
-    // initial={{ opacity: 0 }}
-    // animate={{ opacity: 1 }}
-    // transition={{ duration: 1 }}
+      className={chivo.variable}
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // transition={{ duration: 1 }}
     >
       {/* <HeaderLoader>
         <div className="ipl-progress-indicator-head">
@@ -228,20 +255,35 @@ const Loader = ({ finishLoading }) => {
           <h1 className="name">T</h1>
         </div>
         <SpinerLoader /> */}
-        <motion.header>
+        <motion.header className={chivo.className}>
           <motion.div
-            initial={{ opacity: 0, x: -100 }}
+            className="first"
+            initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1.3, ease: "easeOut" }}
           >
-            Tarqui Brian{" "}
+            <Image
+              src={imgDarvy}
+              width={50}
+              height={50}
+              alt="loader darvy icon"
+            />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 100 }}
+            className="figure"
+            initial={{ opacity: 0, x: -240 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1.3, ease: "easeOut" }}
           >
-            Web Developer
+            |
+          </motion.div>
+          <motion.div
+            className="second"
+            initial={{ opacity: 0, x: 200 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.3, ease: "easeOut" }}
+          >
+            Darvy Web Developer
           </motion.div>
         </motion.header>
       </LogoContainer>
