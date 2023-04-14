@@ -44,15 +44,8 @@ const SEO = ({
 
   return (
     <Head>
-      {/* <title>{title}</title>
-      {metaData.map(({ name, content }, i) => (
-        <meta key={i} name={name} content={content} />
-      ))}
-      <meta property="og:url" content="https://tarquibrian.com/" />
-      <meta property="og:image" content="https://tarquibrian.com/og.png" />
-      <meta name="image" content="https://tarquibrian.com/og.png" /> */}
-
       <title>Brian Tarqui Rojas - Web Developer</title>
+
       <meta name="description" content="Brian Tarqui Rojas | Web Developer" />
 
       <meta property="og:url" content="https://www.tarquibrian.com/" />
