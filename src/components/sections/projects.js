@@ -397,8 +397,6 @@ const ProjectsStyled = styled(motion.section)`
   width: 80%;
   max-width: 1080px;
   margin: auto;
-  /* display: grid; */
-  /* place-content: center; */
   overflow: hidden;
   .headerTitle {
     font-size: clamp(40px, 8vw, 80px);
@@ -424,45 +422,30 @@ const ProjectsStyled = styled(motion.section)`
     font-weight: 400;
     margin-top: 2rem;
     text-align: center;
-    /* margin: 3rem auto 0; */
     font-size: clamp(10px, 2vw, 18px);
   }
 
   .project {
     display: grid;
     grid-template-columns: 1fr;
-    /* grid-template-columns: repeat(2, minmax(200px, auto)); */
-    /* grid-template-rows: masonry; */
     gap: 3rem;
 
     .project__container {
       display: grid;
       grid-template-columns: 4fr 3fr;
-      /* grid-template-rows: repeat(6, 1fr); */
-      /* grid-template-columns: repeat(15, 1fr); */
-      /* grid-template-rows: repeat(6, 1fr); */
-      /* grid-template-rows: repeat(6, 1fr); */
-      /* background-color: red; */
       gap: 1rem;
-      /* border: 1px solid rgba(255, 255, 255, 0.5); */
 
       &-picture {
-        /* grid-column: 1/9; */
-        /* grid-row: 1/-1; */
-        /* display: flex; */
         width: 100%;
         img {
           width: 100%;
           height: auto;
           border-radius: 4px;
-          /* filter: brightness(80%) contrast(80%); */
         }
       }
 
       &-main {
         width: 100%;
-        /* grid-column: 9/-1; */
-        /* grid-row: 1/-1; */
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -544,8 +527,6 @@ const ProjectsStyled = styled(motion.section)`
         &-picture {
           grid-column: 1/-1;
           grid-row: 1/-1;
-          /* height: 100%; */
-          /* width: 100%; */
           z-index: 0;
           img {
             height: 100%;
