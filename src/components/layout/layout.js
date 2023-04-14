@@ -44,9 +44,6 @@ const Layout = ({ children }) => {
       <GlobalStyle />
 
       {/* <SEO title="Brian Tarqui Rojas" /> */}
-      <Head>
-        <title>Darvy | Web Developer</title>
-      </Head>
 
       <Header />
       <>

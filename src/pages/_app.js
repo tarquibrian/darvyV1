@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { AppProvider } from "src/context/app.context";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -18,6 +19,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <AnimatePresence mode="sync">
+      <Head>
+        <title>Darvy | Web Developer</title>
+      </Head>
       {!loading ? (
         <motion.div
           key="loading"
