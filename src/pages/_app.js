@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     if (router.asPath === "/") {
-      setTimeout(() => setLoading(true), 20000000);
+      setTimeout(() => setLoading(true), 2300);
     } else {
       setLoading(true);
     }
