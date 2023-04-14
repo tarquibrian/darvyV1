@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Main__Section } from "@styles";
 import styled from "styled-components";
-import img from "../../images/profile.jpg";
 import img1 from "../../images/darvy-icon.png";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
@@ -19,8 +17,6 @@ const AboutStyled = styled(motion.section)`
   grid-template-columns: repeat(2, auto);
   gap: 2rem;
   justify-content: center;
-  /* align-items: center; */
-  /* background-color: red; */
   @media screen and (max-width: 750px) {
     grid-template-columns: repeat(1, auto);
   }
