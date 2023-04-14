@@ -44,7 +44,12 @@ const LogoContainer = styled.div`
   position: relative;
   display: grid;
   place-content: center;
-
+  h1 {
+    color: #ee2e31;
+    font-weight: bolder;
+    font-family: "Oswald", sans-serif;
+    white-space: nowrap;
+  }
   .title {
     position: absolute;
     top: 0;
@@ -53,12 +58,6 @@ const LogoContainer = styled.div`
     bottom: 0;
     display: grid;
     place-content: center;
-
-    h1 {
-      color: #ee2e31;
-      font-weight: bolder;
-      font-family: "Oswald";
-    }
   }
 `;
 
@@ -217,10 +216,11 @@ const Loader = ({ finishLoading }) => {
         </div>
       </HeaderLoader> */}
       <LogoContainer>
-        <div className="title">
+        {/* <div className="title">
           <h1 className="name">T</h1>
         </div>
-        <SpinerLoader />
+        <SpinerLoader /> */}
+        <h1>Brian Tarqui Rojas</h1>
       </LogoContainer>
     </LoaderSection>
   );
