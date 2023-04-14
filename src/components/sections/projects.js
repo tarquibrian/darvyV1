@@ -562,7 +562,7 @@ const ProjectsStyled = styled(motion.section)`
           overflow: hidden;
           -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-          z-index: 999;
+          z-index: 1;
         }
       }
     }
