@@ -25,7 +25,7 @@ const ExperienceCard = styled.div`
   font-family: "DM Sans", sans-serif;
   font-weight: normal;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  /* background: rgba(255, 255, 255, 0.1); */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: 9;
@@ -79,13 +79,6 @@ const ExperienceCard = styled.div`
   }
 
   &:hover {
-    /* background: rgba(255, 255, 255, 0.05)
-        linear-gradient(
-          to top right,
-          rgba(255, 255, 255, 0),
-          rgba(255, 235, 0, 0.15)
-        ); */
-
     background: rgba(255, 225, 142, 0.1);
   }
   @media screen and (max-width: 768px) {
@@ -303,6 +296,7 @@ const Experience = () => {
     }
     window.addEventListener("mousemove", handleOnMouseMove);
   }, [controls, inView]);
+
   return (
     <ExperienceStyled
       id="experience"
