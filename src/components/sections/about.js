@@ -31,10 +31,7 @@ const AboutCard = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 700px;
-  /* max-width: 920px; */
   border-radius: 4px;
-  font-family: "DM Sans", sans-serif;
-  font-weight: normal;
   padding: 40px;
   background: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(10px);
@@ -63,9 +60,8 @@ const AboutCard = styled.div`
   }
 
   p {
-    font-size: clamp(14px, 2vw, 18px);
-    font-weight: 400;
-    line-height: 1.5;
+    font-family: "Sofia Sans Condensed", sans-serif;
+    font-size: clamp(16px, 2vw, 20px);
   }
 
   &:hover::before {
@@ -91,13 +87,6 @@ const AboutCard = styled.div`
   }
 
   &:hover {
-    /* background: rgba(255, 255, 255, 0.05)
-        linear-gradient(
-          to top right,
-          rgba(255, 255, 255, 0),
-          rgba(255, 235, 0, 0.15)
-        ); */
-
     background: rgba(255, 225, 142, 0.1);
   }
 `;

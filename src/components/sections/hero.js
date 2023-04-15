@@ -35,19 +35,13 @@ const HeroStyled = styled(motion.section)`
     max-width: 920px;
     border-radius: 4px;
     font-family: "Sofia Sans Condensed", sans-serif;
-    /* font-family: "DM Sans"; */
     padding: 40px;
     background: rgba(255, 255, 255, 0.1);
-    /* background: rgba(255, 255, 255, 0.05)
-    linear-gradient(to top right, rgba(255, 235, 0, 0.15)); */
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 
     h1 {
-      /* font-size: 20px; */
-      /* font-size: clamp(var(--fz-md), 2vw, var(--fz-lg)); */
-      /* font-weight: 400; */
-      font-size: clamp(14px, 2vw, 18px);
+      font-size: clamp(16px, 2vw, 20px);
     }
 
     h2 {
@@ -75,13 +69,13 @@ const HeroStyled = styled(motion.section)`
       /* font-weight: normal; */
       line-height: 1.5;
       margin-bottom: 1rem;
-      font-size: clamp(14px, 2vw, 20px);
+      font-size: clamp(16px, 2vw, 20px);
     }
 
     .hero__container-buttons {
       display: flex;
       gap: 1rem;
-      font-size: clamp(14px, 2vw, 20px);
+      font-size: clamp(16px, 2vw, 20px);
 
       .button__resume,
       .button__contact {

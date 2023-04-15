@@ -64,6 +64,7 @@ const LogoContainer = styled.div`
     font-size: 1.5rem;
     font-size: clamp(12px, 3vw, 1.5rem);
     gap: 1rem;
+    /* font-family: "Sofia Sans Condensed"; */
     img {
       width: 50px;
       height: auto;
