@@ -139,15 +139,13 @@ const ImgProfile = styled.div`
 
   .content {
     color: #eae2b7;
-    font-size: clamp(12px, 3vw, 20px);
-    /* font-weight: 400; */
+    font-size: clamp(14px, 3vw, 20px);
     background-color: rgba(255, 255, 255, 0.1);
-    /* font-family: "Sofia Sans Condensed", sans-serif; */
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border-radius: 4px;
   }
   @media screen and (max-width: 750px) {
@@ -209,9 +207,9 @@ const About = () => {
           />
         </div>
         <CardEffect>
-          <span>⏤ Web Developer✧</span>
+          <span>⏤⏤ Web Developer✧</span>
           <span>⏤⏤ UX/UI Designer✦</span>
-          <span>⏤⏤⏤ System Engineer✷</span>
+          <span>⏤⏤ System Engineer✷</span>
         </CardEffect>
       </ImgProfile>
       <AboutCard ref={aboutref} id="about-card">

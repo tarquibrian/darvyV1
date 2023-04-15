@@ -75,7 +75,7 @@ const HeroStyled = styled(motion.section)`
     .hero__container-buttons {
       display: flex;
       gap: 1rem;
-      font-size: clamp(14px, 2vw, 20px);
+      font-size: clamp(16px, 2vw, 20px);
 
       .button__resume,
       .button__contact {
