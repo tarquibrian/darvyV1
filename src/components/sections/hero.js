@@ -75,7 +75,7 @@ const HeroStyled = styled(motion.section)`
     .hero__container-buttons {
       display: flex;
       gap: 1rem;
-      font-size: clamp(16px, 2vw, 20px);
+      font-size: clamp(14px, 2vw, 20px);
 
       .button__resume,
       .button__contact {
@@ -131,19 +131,15 @@ const HeroStyled = styled(motion.section)`
       z-index: -1;
     }
     &:hover {
-      /* background: rgba(255, 255, 255, 0.05)
-        linear-gradient(
-          to top right,
-          rgba(255, 255, 255, 0),
-          rgba(255, 235, 0, 0.15)
-        ); */
-
       background: rgba(255, 225, 142, 0.1);
     }
   }
 
   @media screen and (max-width: 400px) {
     width: 90%;
+    .hero__container-card {
+      /* padding: 30px; */
+    }
   }
 `;
 
