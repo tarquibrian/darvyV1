@@ -209,9 +209,9 @@ const About = () => {
           />
         </div>
         <CardEffect>
-          <span>⏤ Web Developer</span>
-          <span>⏤⏤ UX/UI Designer</span>
-          <span>⏤⏤⏤ System Engineer</span>
+          <span>⏤ Web Developer✧</span>
+          <span>⏤⏤ UX/UI Designer✦</span>
+          <span>⏤⏤⏤ System Engineer✷</span>
         </CardEffect>
       </ImgProfile>
       <AboutCard ref={aboutref} id="about-card">

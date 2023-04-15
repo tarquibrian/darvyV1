@@ -200,10 +200,10 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {currentLanguage.lenguage[5]}
+              {currentLanguage.lenguage[5]} ✹
             </a>
             <a href="mailto:tarquibrian@gmail.com" className="button__contact">
-              {currentLanguage.lenguage[6]}
+              {currentLanguage.lenguage[6]} ✉
             </a>
           </div>
         </div>
