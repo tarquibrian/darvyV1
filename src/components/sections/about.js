@@ -1,11 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import img1 from "../../images/darvy-icon.png";
+import imgWhite from "../../images/pf-white.jpg";
+import imgBlur from "../../images/pf-blur.jpg";
+import imgTransparent from "../../images/pf-transparent.png";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
 import { aboutData } from "@data";
+import { CardEffect } from "../layout";
 
 const AboutStyled = styled(motion.section)`
   width: 80%;
@@ -14,8 +18,8 @@ const AboutStyled = styled(motion.section)`
   padding-bottom: 100px;
   padding-top: 150px;
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 2rem;
+  grid-template-columns: minmax(100px, 300px) auto;
+  gap: 1rem;
   justify-content: center;
   max-width: 920px;
   @media screen and (max-width: 750px) {
@@ -92,39 +96,62 @@ const AboutCard = styled.div`
 `;
 
 const ImgProfile = styled.div`
-  min-width: 200px;
-  min-height: 200px;
-  width: 300px;
-  height: 300px;
+  /* min-width: 200px; */
+  /* min-height: 200px; */
+  /* width: 300px; */
+  /* height: 300px; */
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   z-index: 9;
-  img {
-    display: block;
-    border-radius: 4px;
-    min-width: 200px;
-    width: 300px;
-    height: auto;
-    object-fit: cover;
-    z-index: 99;
-  }
-  &:hover {
+  /* overflow: hidden; */
+  height: 100%;
+
+  .image {
+    /* border-radius: 5px; */
+    /* overflow: hidden; */
+    /* height: 100%; */
     img {
-      opacity: 1;
+      display: block;
+      border-radius: 5px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      /* width: 300px; */
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      /* object-fit: cover; */
+      /* z-index: 999; */
+      background-image: linear-gradient(
+        93.3deg,
+        rgba(236, 80, 80, 1) 21.5%,
+        rgba(255, 97, 29, 1) 93.9%
+      );
     }
-    &::after {
-      background-color: rgba(234, 226, 183, 0.3);
+    &:hover {
+      img {
+        opacity: 1;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
+      }
     }
   }
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    width: 300px;
-    height: 300px;
-    border: 1px solid white;
+
+  .content {
+    color: #eae2b7;
+    font-size: clamp(12px, 3vw, 20px);
+    /* font-weight: 400; */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* font-family: "Sofia Sans Condensed", sans-serif; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
     border-radius: 4px;
-    transform: translate(15px, 15px);
-    z-index: -9;
+  }
+  @media screen and (max-width: 750px) {
+    flex-direction: row;
   }
 `;
 
@@ -172,23 +199,28 @@ const About = () => {
       initial="hidden"
       variants={variants}
     >
-      <AboutCard ref={aboutref} id="about-card">
-        <h1>{currentLanguage.lenguage[1]}</h1>
-
-        {currentLanguage.lenguage[2].map((item, i) => {
-          return <p key={i}>{item}</p>;
-        })}
-      </AboutCard>
       <ImgProfile>
-        <div>
+        <div className="image">
           <Image
-            src={img1}
+            src={imgTransparent}
             alt={`profile picture`}
             width={200}
             height={`auto`}
           />
         </div>
+        <CardEffect>
+          <span>⏤ Web Developer</span>
+          <span>⏤⏤ UX/UI Designer</span>
+          <span>⏤⏤⏤ System Engineer</span>
+        </CardEffect>
       </ImgProfile>
+      <AboutCard ref={aboutref} id="about-card">
+        <h1>{currentLanguage.lenguage[1]}</h1>
+
+        {currentLanguage.lenguage[2].map((item, i) => {
+          return <p key={i}>✦ {item}</p>;
+        })}
+      </AboutCard>
     </AboutStyled>
   );
 };

@@ -23,7 +23,7 @@ const CardEffectContainer = styled.div`
   &::before {
     background: radial-gradient(
       400px circle at var(--mouse-x) var(--mouse-y),
-      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.15),
       transparent 60%
     );
     border-radius: inherit;
@@ -45,7 +45,8 @@ const CardEffectContainer = styled.div`
           rgba(255, 235, 0, 0.15)
         ); */
 
-    background: rgba(0, 0, 0, 0.1);
+    /* background: rgba(0, 0, 0, 0.1); */
+    background-color: rgba(234, 226, 183, 0.15);
     /* z-index: 999; */
   }
 `;
@@ -67,7 +68,11 @@ const CardEffect = ({ children }) => {
     window.addEventListener("mousemove", handleOnMouseMove);
   }, []);
 
-  return <CardEffectContainer ref={cardRef}>{children}</CardEffectContainer>;
+  return (
+    <CardEffectContainer ref={cardRef} className="content">
+      {children}
+    </CardEffectContainer>
+  );
 };
 
 export default CardEffect;

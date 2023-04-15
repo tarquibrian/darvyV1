@@ -55,7 +55,7 @@ const HeroStyled = styled(motion.section)`
 
     h3 {
       font-family: "Oswald", sans-serif;
-      font-size: clamp(30px, 8vw, 80px);
+      font-size: clamp(30px, 8vw, 78px);
       font-weight: 200;
       margin-bottom: 20px;
       /* color: #dfdfdf; */
@@ -191,7 +191,7 @@ const Hero = () => {
         <div className="hero__container-card" id="hero-card" ref={heroref}>
           <h1>{currentLanguage.lenguage[1]}</h1>
           <h2>Brian Tarqui Rojas.</h2>
-          <h3>{currentLanguage.lenguage[3]}</h3>
+          <h3>{currentLanguage.lenguage[3]}✿</h3>
           <p>{currentLanguage.lenguage[4]}</p>
           <div className="hero__container-buttons">
             <a
