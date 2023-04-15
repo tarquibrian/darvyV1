@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import {
+  CardEffect,
   IconAI,
   IconAP,
   IconAtom,
@@ -437,13 +438,18 @@ const ProjectsStyled = styled(motion.section)`
       display: grid;
       grid-template-columns: 4fr 3fr;
       gap: 1rem;
+      font-family: "Sofia Sans Condensed";
+      color: #fff;
 
       &-picture {
         width: 100%;
+        border-radius: 4px;
+        /* overflow: hidden; */
+        /* background-color: red; */
         img {
           width: 100%;
           height: auto;
-          border-radius: 4px;
+          /* z-index: 0; */
         }
       }
 
@@ -473,7 +479,7 @@ const ProjectsStyled = styled(motion.section)`
             background: rgba(255, 255, 255, 0.1);
             border-radius: 4px;
             border: 1px solid rgba(255, 255, 255, 0.5);
-            font-size: clamp(14px, 2vw, 16px);
+            font-size: clamp(14px, 2vw, 18px);
             &:hover {
               background: rgba(200, 200, 200, 0.2);
               border: 1px solid rgba(255, 255, 255, 0.2);
@@ -484,6 +490,7 @@ const ProjectsStyled = styled(motion.section)`
             flex-wrap: wrap;
             white-space: nowrap;
             gap: 1rem;
+            font-size: clamp(14px, 2vw, 18px);
           }
           &-links {
             display: flex;
@@ -517,8 +524,6 @@ const ProjectsStyled = styled(motion.section)`
       }
     }
     @media screen and (max-width: 1280px) {
-    }
-    @media screen and (max-width: 1024px) {
       grid-template-columns: repeat(2, minmax(200px, auto));
       .project__container {
         grid-template-columns: 1fr;
@@ -800,7 +805,9 @@ const Projects = () => {
           return (
             <div className={`project__container`} key={id}>
               <div className="project__container-picture">
-                <Image src={img} alt="img from portfolio" />
+                <CardEffect>
+                  <Image src={img} alt="img from portfolio" />
+                </CardEffect>
               </div>
               <div className="project__container-main">
                 <header>

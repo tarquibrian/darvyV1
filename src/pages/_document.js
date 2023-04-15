@@ -55,6 +55,16 @@ export default class MyDocument extends Document {
             name="twitter:image"
             content="https://tarquibrian.com/og.png"
           ></meta>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
 
         <body>

@@ -12,7 +12,7 @@ const HeroStyled = styled(motion.section)`
   margin: auto;
   svg {
     overflow: hidden;
-    fill: #ff101f;
+    /* fill: #ff101f; */
     width: 1200px;
     height: 600px;
     position: absolute;
@@ -34,8 +34,8 @@ const HeroStyled = styled(motion.section)`
     flex-direction: column;
     max-width: 920px;
     border-radius: 4px;
-    font-family: "DM Sans", sans-serif;
-    font-weight: normal;
+    font-family: "Sofia Sans Condensed", sans-serif;
+    /* font-family: "DM Sans"; */
     padding: 40px;
     background: rgba(255, 255, 255, 0.1);
     /* background: rgba(255, 255, 255, 0.05)
@@ -44,9 +44,10 @@ const HeroStyled = styled(motion.section)`
     backdrop-filter: blur(10px);
 
     h1 {
-      font-size: 20px;
-      font-size: clamp(var(--fz-md), 2vw, var(--fz-lg));
-      font-weight: 400;
+      /* font-size: 20px; */
+      /* font-size: clamp(var(--fz-md), 2vw, var(--fz-lg)); */
+      /* font-weight: 400; */
+      font-size: clamp(14px, 2vw, 18px);
     }
 
     h2 {
@@ -71,19 +72,20 @@ const HeroStyled = styled(motion.section)`
     }
 
     p {
-      font-size: clamp(14px, 2vw, 18px);
-      font-weight: normal;
+      /* font-weight: normal; */
       line-height: 1.5;
       margin-bottom: 1rem;
+      font-size: clamp(14px, 2vw, 20px);
     }
 
     .hero__container-buttons {
       display: flex;
       gap: 1rem;
+      font-size: clamp(14px, 2vw, 20px);
 
       .button__resume,
       .button__contact {
-        padding: 12px 18px;
+        padding: 10px 18px;
         display: grid;
         place-content: center;
         border: 1px solid rgba(255, 255, 255, 0.4);

@@ -33,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
+    /* font-size: 18px; */
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
   }
@@ -70,6 +71,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   h1, h2,h3,h4,h5 {
     color: #fff;
+    font-size: 1rem;
+    /* all: inset; */
   }
   button {
     background-color: transparent;
