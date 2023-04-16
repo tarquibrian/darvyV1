@@ -24,7 +24,7 @@ const ExperienceCard = styled.div`
   border-radius: 4px;
   font-family: "DM Sans", sans-serif;
   font-weight: normal;
-  padding: 40px;
+  /* padding: 40px; */
   /* background: rgba(255, 255, 255, 0.1); */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -56,7 +56,7 @@ const ExperienceCard = styled.div`
     font-weight: 400;
   }
 
-  &:hover::before {
+  /* &:hover::before {
     opacity: 1;
   }
 
@@ -80,7 +80,7 @@ const ExperienceCard = styled.div`
 
   &:hover {
     background: rgba(255, 225, 142, 0.1);
-  }
+  } */
   @media screen and (max-width: 768px) {
     min-width: fit-content;
   }
@@ -88,11 +88,12 @@ const ExperienceCard = styled.div`
 
 const CardContent = styled.div`
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 4rem;
+  grid-template-columns: 250px 1fr;
+  gap: 1rem;
   margin-top: 1rem;
   line-height: 1.5;
   overflow: hidden;
+
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(1, auto);
   }
@@ -101,6 +102,9 @@ const CardContent = styled.div`
 const ContentList = styled.div`
   display: flex;
   flex-direction: column;
+  /* padding: 1rem; */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
   @media screen and (max-width: 768px) {
     overflow-x: scroll;
     flex-direction: row;
@@ -117,7 +121,9 @@ const TabList = styled.div`
   border-radius: 2px;
   position: relative;
   background: ${({ isActive }) =>
-    isActive ? "rgba(234,226,176,.3)" : "transparent"};
+    isActive
+      ? "linear-gradient(93.3deg,rgba(236, 80, 80, 1) 21.5%,rgba(255, 97, 29, 1) 93.9%)"
+      : "linear-gradient(93.3deg,rgba(236, 80, 80, .3) 21.5%,rgba(255, 97, 29, .3) 93.9%)"};
   /* transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) */
   transition: 0.3s ease;
 
@@ -179,6 +185,8 @@ const TabList = styled.div`
 `;
 
 const ContentBody = styled.div`
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
   .contentbody__container {
     display: flex;
     flex-direction: column;
