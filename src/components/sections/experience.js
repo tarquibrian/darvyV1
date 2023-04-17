@@ -80,8 +80,8 @@ const ContentList = styled.div`
   border-radius: 4px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  overflow: hidden;
-  outline: 1px solid rgba(255, 255, 255, 0.1);
+  /* overflow: hidden; */
+  outline: 1px solid rgba(255, 255, 255, 1);
   position: relative;
 
   .dinamic-bg {
@@ -106,6 +106,19 @@ const ContentList = styled.div`
       height: 100%;
       background: rgba(234, 226, 176, 1);
     }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 5px;
+    height: 100%;
+    border-radius: ${({ isActive }) => (isActive ? "0px" : "0px")};
+
+    background-color: ${({ isActive }) =>
+      isActive ? "rgba(234,226,176,1)" : "rgba(255, 255, 255, 0.2)"};
   }
   @media screen and (max-width: 768px) {
     overflow-x: scroll;
