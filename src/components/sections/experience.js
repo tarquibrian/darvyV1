@@ -60,7 +60,7 @@ const ExperienceCard = styled.div`
 
 const CardContent = styled.div`
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 250px auto;
 
   gap: 1rem;
   margin-top: 1rem;
@@ -76,7 +76,38 @@ const ContentList = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
-  gap: 1rem;
+  /* gap: 1rem; */
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  overflow: hidden;
+  outline: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+
+  .dinamic-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(
+      93.3deg,
+      rgba(236, 80, 80, 1) 21.5%,
+      rgba(255, 97, 29, 1) 93.9%
+    );
+    z-index: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0%;
+      width: 5px;
+      height: 100%;
+      /* border-radius: ${({ isActive }) => (isActive ? "0px" : "0px")}; */
+      background: rgba(234, 226, 176, 1);
+    }
+    /* z-index: 999; */
+  }
   @media screen and (max-width: 768px) {
     overflow-x: scroll;
     flex-direction: row;
@@ -85,20 +116,22 @@ const ContentList = styled.div`
 
 const TabList = styled.div`
   min-width: 200px;
-  height: 45px;
+  height: 60px;
   display: grid;
-  grid-template-columns: 50px 150px;
-  align-items: center;
-  gap: 3rem;
-  border-radius: 4px;
+  grid-template-columns: 80px auto;
+  /* align-items: center; */
+  /* gap: 3rem; */
+  padding: 1rem 0;
+  padding-left: 5px;
   position: relative;
-  border: 1px solid
-    ${({ isActive }) => (isActive ? "rgba(234,226,176,.5)" : "transparent")};
-  background: ${({ isActive }) =>
+  /* outline: 1px solid
+    ${({ isActive }) => (isActive ? "rgba(234,226,176,.5)" : "transparent")}; */
+  /* background: ${({ isActive }) =>
     isActive
       ? "linear-gradient(93.3deg,rgba(236, 80, 80, 1) 21.5%,rgba(255, 97, 29, 1) 93.9%)"
-      : "rgba(255,255,255,.1)"};
+      : "rgba(255,255,255,0)"}; */
   transition: 0.3s ease;
+  z-index: 1;
 
   h2,
   h3 {
@@ -106,32 +139,33 @@ const TabList = styled.div`
     color: ${({ isActive }) => (isActive ? "#fff" : "#e5e5e5")};
     text-shadow: ${({ isActive }) =>
       isActive ? "0 0 5px rgba(255 255 255 / 0.5)" : "initial"};
-    font-size: clamp(12px, 2vw, 16px);
+    font-size: clamp(16px, 3vw, 18px);
   }
   h2 {
-    justify-self: end;
+    justify-self: center;
+    /* background-color: red; */
   }
   h3 {
-    justify-self: start;
+    /* justify-self: start; */
   }
 
-  &::after {
+  /* &::after {
     content: "";
     position: absolute;
     top: 0;
-    left: 29%;
+    left: 0%;
     width: 5px;
     height: 100%;
     border-radius: ${({ isActive }) => (isActive ? "0px" : "0px")};
 
     background-color: ${({ isActive }) =>
-      isActive ? "rgba(234,226,176,.5)" : "rgba(255, 255, 255, 0.5)"};
-  }
+    isActive ? "rgba(234,226,176,1)" : "rgba(255, 255, 255, 0.2)"};
+  } */
 
   &:hover {
     cursor: pointer;
     background-color: ${({ isActive }) =>
-      isActive ? "rgba(234,226,176,.3)" : "rgba(234,226,176,.1)"};
+      isActive ? "rgba(234,226,176,0)" : "rgba(234,226,176,.1)"};
   }
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(1, auto);
@@ -304,12 +338,26 @@ const Experience = () => {
     cardref?.current?.style?.setProperty("--mouse1-y", `${y}px`);
   };
 
+  const handleOnMouseEnter = (e) => {
+    console.log(e);
+  };
+
+  const DinamicBG = () => {
+    const bg = document.querySelector(".dinamic-bg");
+    // bg.style.top = activeId * 60 + "px";
+  };
+
   useEffect(() => {
     if (inView) {
       controls.start("visible");
+      // DinamicBG();
     }
+    const bg = document.querySelector(".dinamic-bg");
+    let h = activeId * 60;
+    bg.style.top = h + "px";
     window.addEventListener("mousemove", handleOnMouseMove);
-  }, [controls, inView]);
+    // DinamicBG();
+  }, [controls, inView, activeId]);
 
   return (
     <ExperienceStyled
@@ -337,6 +385,7 @@ const Experience = () => {
                 </TabList>
               );
             })}
+            <span className="dinamic-bg"></span>
           </ContentList>
           <ContentBody>
             {currentLanguage.lenguage.items.map(({ id, body, title }, i) => {
