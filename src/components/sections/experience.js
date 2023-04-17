@@ -80,7 +80,7 @@ const ContentList = styled.div`
   border-radius: 4px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
 
@@ -123,6 +123,10 @@ const ContentList = styled.div`
   @media screen and (max-width: 768px) {
     overflow-x: scroll;
     flex-direction: row;
+    border-radius: 4px;
+    .dinamic-bg {
+      display: none;
+    }
   }
 `;
 
@@ -149,8 +153,8 @@ const TabList = styled.div`
   h3 {
     font-weight: normal;
     color: ${({ isActive }) => (isActive ? "#fff" : "#e5e5e5")};
-    text-shadow: ${({ isActive }) =>
-      isActive ? "0 0 5px rgba(255 255 255 / 0.5)" : "initial"};
+    /* text-shadow: ${({ isActive }) =>
+      isActive ? "0 0 5px rgba(255 255 255 / 0.5)" : "initial"}; */
     font-size: clamp(16px, 3vw, 18px);
   }
   h2 {
@@ -177,11 +181,24 @@ const TabList = styled.div`
   &:hover {
     cursor: pointer;
     background-color: ${({ isActive }) =>
-      isActive ? "transparent" : "rgba(255, 255, 255, 0.2)"};
+      isActive ? "transparent" : "rgba(255, 255, 255, .1)"};
+    h1,
+    h2,
+    h3 {
+      text-shadow: ${({ isActive }) =>
+        isActive
+          ? "0 0 5px rgba(255, 255, 255 , 0.6)"
+          : "0 0 5px rgba(255, 255, 255 , 0.8)"};
+    }
   }
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(1, auto);
     place-content: center;
+    height: 40px;
+    background: ${({ isActive }) =>
+      isActive
+        ? "linear-gradient(93.3deg,rgba(236, 80, 80, 1) 21.5%,rgba(255, 97, 29, 1) 93.9%)"
+        : "rgba(255,255,255,0)"};
     h2 {
       display: none;
     }
