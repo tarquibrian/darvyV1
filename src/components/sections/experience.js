@@ -26,8 +26,8 @@ const ExperienceCard = styled.div`
   font-weight: normal;
   /* padding: 40px; */
   /* background: rgba(255, 255, 255, 0.1); */
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  /* -webkit-backdrop-filter: blur(10px); */
+  /* backdrop-filter: blur(10px); */
   z-index: 9;
 
   .headerTitle {
@@ -118,10 +118,11 @@ const TabList = styled.div`
   display: grid;
   grid-template-columns: 50px 150px;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   border-radius: 4px;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid
+    ${({ isActive }) => (isActive ? "rgba(234,226,176,.5)" : "transparent")};
   background: ${({ isActive }) =>
     isActive
       ? "linear-gradient(93.3deg,rgba(236, 80, 80, 1) 21.5%,rgba(255, 97, 29, 1) 93.9%)"
@@ -144,7 +145,7 @@ const TabList = styled.div`
     justify-self: start;
   }
 
-  &:first-of-type {
+  /* &:first-of-type {
     &::after {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
@@ -155,19 +156,20 @@ const TabList = styled.div`
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
     }
-  }
+  } */
 
-  /* &::after {
+  &::after {
     content: "";
     position: absolute;
     top: 0;
-    left: 33%;
+    left: 29%;
     width: 5px;
     height: 100%;
-    border-radius: ${({ isActive }) => (isActive ? "10px" : "0px")};
+    border-radius: ${({ isActive }) => (isActive ? "0px" : "0px")};
+
     background-color: ${({ isActive }) =>
-    isActive ? "rgba(234,226,176,1)" : "rgba(234,226,176,.3)"};
-  } */
+      isActive ? "rgba(234,226,176,.5)" : "rgba(255, 255, 255, 0.5)"};
+  }
 
   &:hover {
     cursor: pointer;
@@ -187,33 +189,28 @@ const TabList = styled.div`
 `;
 
 const ContentBody = styled.div`
-  /* padding: 2rem; */
-  width: 100%;
-  /* background-color: red; */
   .contentbody__container {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
     background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
+    padding: 1.7rem 2rem;
 
     &-header {
       display: flex;
       /* align-items: center; */
       justify-content: space-between;
-      /* padding: 0 1rem; */
 
-      /* background-color: rgba(255, 97, 29, 1); */
+      /* padding: 1rem 1.5rem; */
       /* border: 1px solid rgba(255, 255, 255, 0.5); */
-      /* height: 60px; */
+      /* background-color: rgba(255, 255, 255, 0.1); */
 
       border-radius: 4px;
       width: 100%;
       font-family: "Oswald", sans-serif;
-      font-size: clamp(16px, 3vw, 20px);
-      /* color: #eae2b7; */
+      font-size: clamp(20px, 3vw, 28px);
+      color: #eae2b7;
       text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
       .link {
         font-size: clamp(12px, 3vw, 16px);
@@ -224,15 +221,20 @@ const ContentBody = styled.div`
       border-radius: 4px;
       width: 100%;
       p {
-        /* padding: 0 1rem; */
         font-size: clamp(16px, 3vw, 20px);
-        /* background-color: red; */
+        /* padding: 1rem 1.5rem; */
+        /* background: rgba(255, 255, 255, 0.1); */
+        /* border: 1px solid rgba(255, 255, 255, 0.5); */
+        border-radius: 4px;
       }
 
       ul {
         font-size: clamp(16px, 3vw, 20px);
         margin-top: 1rem;
-        /* padding: 0 1rem; */
+        /* padding: 1rem 1.5rem; */
+        /* background: rgba(255, 255, 255, 0.1); */
+        /* border: 1px solid rgba(255, 255, 255, 0.5); */
+        border-radius: 4px;
       }
     }
     .type {
