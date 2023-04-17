@@ -194,7 +194,7 @@ const TabList = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(1, auto);
     place-content: center;
-    height: 40px;
+    height: 50px;
     background: ${({ isActive }) =>
       isActive
         ? "linear-gradient(93.3deg,rgba(236, 80, 80, 1) 21.5%,rgba(255, 97, 29, 1) 93.9%)"
@@ -221,6 +221,7 @@ const ContentBody = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
 
       /* padding: 1rem 1.5rem; */
       /* border: 1px solid rgba(255, 255, 255, 0.5); */
