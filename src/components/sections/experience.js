@@ -80,8 +80,8 @@ const ContentList = styled.div`
   border-radius: 4px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  /* overflow: hidden; */
-  outline: 1px solid rgba(255, 255, 255, 1);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
 
   .dinamic-bg {
@@ -177,7 +177,7 @@ const TabList = styled.div`
   &:hover {
     cursor: pointer;
     background-color: ${({ isActive }) =>
-      isActive ? "rgba(234,226,176,0)" : "rgba(234,226,176,.1)"};
+      isActive ? "transparent" : "rgba(255, 255, 255, 0.2)"};
   }
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(1, auto);
