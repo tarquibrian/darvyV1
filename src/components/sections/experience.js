@@ -22,7 +22,7 @@ const ExperienceCard = styled.div`
   min-width: 600px;
   max-width: 920px;
   border-radius: 4px;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Sofia Sans Condensed", sans-serif;
   font-weight: normal;
   /* padding: 40px; */
   /* background: rgba(255, 255, 255, 0.1); */
@@ -89,6 +89,7 @@ const ExperienceCard = styled.div`
 const CardContent = styled.div`
   display: grid;
   grid-template-columns: 250px 1fr;
+
   gap: 1rem;
   margin-top: 1rem;
   line-height: 1.5;
@@ -102,6 +103,7 @@ const CardContent = styled.div`
 const ContentList = styled.div`
   display: flex;
   flex-direction: column;
+  height: fit-content;
   /* padding: 1rem; */
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
@@ -185,11 +187,32 @@ const TabList = styled.div`
 `;
 
 const ContentBody = styled.div`
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
+  /* padding: 2rem; */
+  width: 100%;
+  /* background-color: red; */
   .contentbody__container {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+
+    &-header {
+      font-size: 1.3rem;
+      background: rgba(255, 255, 255, 0.1);
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      border-radius: 4px;
+      width: 100%;
+    }
+    &-main {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 4px;
+      width: 100%;
+    }
     .type {
       color: #cbc0d3;
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -211,6 +234,7 @@ const ContentBody = styled.div`
       }
     }
     .skeleton {
+      width: 100%;
       a {
         color: transparent;
       }
@@ -339,7 +363,26 @@ const Experience = () => {
               if (id === activeId) {
                 return (
                   <div key={id} className="contentbody__container">
-                    <span className={`type ${id !== 0 ? "skeleton" : ""}`}>
+                    <header className="contentbody__container-header">
+                      {header} <span>@{name}</span>
+                    </header>
+                    <div className="contentbody__container-main">
+                      <p className={`${id !== 0 ? "skeleton" : ""}`}>
+                        {description}
+                      </p>
+
+                      <ul>
+                        {features.map((feature, i) => (
+                          <li
+                            key={i}
+                            className={`${id !== 0 ? "skeleton" : ""}`}
+                          >
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    {/* <span className={`type ${id !== 0 ? "skeleton" : ""}`}>
                       <span className="entity">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -379,7 +422,7 @@ const Experience = () => {
                           {feature}
                         </li>
                       ))}
-                    </ul>
+                    </ul> */}
                   </div>
                 );
               }

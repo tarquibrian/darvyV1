@@ -30,7 +30,8 @@ export const experienceData = {
         },
         body: {
           header: "header",
-          description: "description2",
+          description:
+            "Desarrollo de una aplicación web enfocada hacia la gestión del turismo regional, describiendo detalles como:",
           features: [
             "Analisis de la situacion problematica",
             "Desarrollo y despliegue del fron y back",
@@ -47,7 +48,8 @@ export const experienceData = {
         },
         body: {
           header: "header",
-          description: "description3",
+          description:
+            "Desarrollo de una aplicación web enfocada hacia la gestión del turismo regional, describiendo detalles como:",
           features: [
             "Analisis de la situacion problematica",
             "Desarrollo y despliegue del fron y back",
@@ -89,7 +91,8 @@ export const experienceData = {
         },
         body: {
           header: "header",
-          description: "description2",
+          description:
+            "Development of a web application focused on the management of regional tourism, describing details such as:",
           features: [
             "Analisis de la situacion problematica",
             "Desarrollo y despliegue del fron y back",
@@ -106,7 +109,8 @@ export const experienceData = {
         },
         body: {
           header: "header",
-          description: "description3",
+          description:
+            "Development of a web application focused on the management of regional tourism, describing details such as:",
           features: [
             "Analisis de la situacion problematica",
             "Desarrollo y despliegue del fron y back",
