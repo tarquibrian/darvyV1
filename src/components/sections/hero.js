@@ -132,6 +132,7 @@ const HeroStyled = styled(motion.section)`
     }
     &:hover {
       background: rgba(255, 225, 142, 0.1);
+      /* background-color: rgba(0, 0, 0, 0.1); */
     }
   }
 

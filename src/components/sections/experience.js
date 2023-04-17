@@ -104,9 +104,8 @@ const ContentList = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
-  /* padding: 1rem; */
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  gap: 1rem;
+  /* border-radius: 4px; */
   @media screen and (max-width: 768px) {
     overflow-x: scroll;
     flex-direction: row;
@@ -120,12 +119,13 @@ const TabList = styled.div`
   grid-template-columns: 50px 150px;
   align-items: center;
   gap: 2rem;
-  border-radius: 2px;
+  border-radius: 4px;
   position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   background: ${({ isActive }) =>
     isActive
       ? "linear-gradient(93.3deg,rgba(236, 80, 80, 1) 21.5%,rgba(255, 97, 29, 1) 93.9%)"
-      : "linear-gradient(93.3deg,rgba(236, 80, 80, .3) 21.5%,rgba(255, 97, 29, .3) 93.9%)"};
+      : "rgba(255,255,255,.1)"};
   /* transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) */
   transition: 0.3s ease;
 
@@ -157,7 +157,7 @@ const TabList = styled.div`
     }
   }
 
-  &::after {
+  /* &::after {
     content: "";
     position: absolute;
     top: 0;
@@ -166,8 +166,8 @@ const TabList = styled.div`
     height: 100%;
     border-radius: ${({ isActive }) => (isActive ? "10px" : "0px")};
     background-color: ${({ isActive }) =>
-      isActive ? "rgba(234,226,176,1)" : "rgba(234,226,176,.3)"};
-  }
+    isActive ? "rgba(234,226,176,1)" : "rgba(234,226,176,.3)"};
+  } */
 
   &:hover {
     cursor: pointer;
@@ -196,6 +196,7 @@ const ContentBody = styled.div`
     flex-direction: column;
     gap: 1rem;
     background-color: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     padding: 2rem;
 
     &-header {
