@@ -5,6 +5,7 @@ const CardEffectContainer = styled.div`
   width: 100%;
   margin: auto;
   display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   position: relative;

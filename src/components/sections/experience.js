@@ -5,6 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
 import { experienceData } from "@data";
+import { CardEffect } from "../layout";
 
 const ExperienceStyled = styled(motion.section)`
   display: grid;
@@ -24,10 +25,6 @@ const ExperienceCard = styled.div`
   border-radius: 4px;
   font-family: "Sofia Sans Condensed", sans-serif;
   font-weight: normal;
-  /* padding: 40px; */
-  /* background: rgba(255, 255, 255, 0.1); */
-  /* -webkit-backdrop-filter: blur(10px); */
-  /* backdrop-filter: blur(10px); */
   z-index: 9;
 
   .headerTitle {
@@ -56,31 +53,6 @@ const ExperienceCard = styled.div`
     font-weight: 400;
   }
 
-  /* &:hover::before {
-    opacity: 1;
-  }
-
-  &::before {
-    background: radial-gradient(
-      800px circle at var(--mouse1-x) var(--mouse1-y),
-      rgba(255, 255, 255, 0.15),
-      transparent 40%
-    );
-    border-radius: inherit;
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0%;
-    left: 0%;
-    opacity: 0;
-    transition: opacity 500ms;
-    z-index: -1;
-  }
-
-  &:hover {
-    background: rgba(255, 225, 142, 0.1);
-  } */
   @media screen and (max-width: 768px) {
     min-width: fit-content;
   }
@@ -105,7 +77,6 @@ const ContentList = styled.div`
   flex-direction: column;
   height: fit-content;
   gap: 1rem;
-  /* border-radius: 4px; */
   @media screen and (max-width: 768px) {
     overflow-x: scroll;
     flex-direction: row;
@@ -127,7 +98,6 @@ const TabList = styled.div`
     isActive
       ? "linear-gradient(93.3deg,rgba(236, 80, 80, 1) 21.5%,rgba(255, 97, 29, 1) 93.9%)"
       : "rgba(255,255,255,.1)"};
-  /* transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) */
   transition: 0.3s ease;
 
   h2,
@@ -144,19 +114,6 @@ const TabList = styled.div`
   h3 {
     justify-self: start;
   }
-
-  /* &:first-of-type {
-    &::after {
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-  }
-  &:last-of-type {
-    &::after {
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-    }
-  } */
 
   &::after {
     content: "";
@@ -194,12 +151,12 @@ const ContentBody = styled.div`
     flex-direction: column;
     gap: 1rem;
     border-radius: 4px;
-    background: rgba(255, 255, 255, 0.1);
+    /* background: rgba(255, 255, 255, 0.1); */
     padding: 1.7rem 2rem;
 
     &-header {
       display: flex;
-      /* align-items: center; */
+      align-items: center;
       justify-content: space-between;
 
       /* padding: 1rem 1.5rem; */
@@ -387,26 +344,27 @@ const Experience = () => {
               const { name } = title;
               if (id === activeId) {
                 return (
-                  <div key={id} className="contentbody__container">
-                    <header
-                      className={`${
-                        id !== 0 ? "skeleton" : ""
-                      } contentbody__container-header`}
-                    >
-                      {header} <span className="link">@{name}</span>
-                    </header>
-                    <div className="contentbody__container-main">
-                      <p className={`${id !== 0 ? "skeleton" : ""}`}>
-                        {description}
-                      </p>
+                  <CardEffect key={id}>
+                    <div className="contentbody__container">
+                      <header
+                        className={`${
+                          id !== 0 ? "skeleton" : ""
+                        } contentbody__container-header`}
+                      >
+                        {header} <span className="link">@{name}</span>
+                      </header>
+                      <div className="contentbody__container-main">
+                        <p className={`${id !== 0 ? "skeleton" : ""}`}>
+                          {description}
+                        </p>
 
-                      <ul className={`${id !== 0 ? "skeleton" : ""}`}>
-                        {features.map((feature, i) => (
-                          <li key={i}>{feature}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    {/* <span className={`type ${id !== 0 ? "skeleton" : ""}`}>
+                        <ul className={`${id !== 0 ? "skeleton" : ""}`}>
+                          {features.map((feature, i) => (
+                            <li key={i}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      {/* <span className={`type ${id !== 0 ? "skeleton" : ""}`}>
                       <span className="entity">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -447,7 +405,8 @@ const Experience = () => {
                         </li>
                       ))}
                     </ul> */}
-                  </div>
+                    </div>
+                  </CardEffect>
                 );
               }
             })}
