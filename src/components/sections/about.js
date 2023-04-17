@@ -31,7 +31,6 @@ const AboutStyled = styled(motion.section)`
 `;
 
 const AboutCard = styled.div`
-  background: rgba(0 0 0 / 0.2);
   display: flex;
   flex-direction: column;
   max-width: 700px;

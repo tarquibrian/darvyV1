@@ -195,23 +195,44 @@ const ContentBody = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2rem;
 
     &-header {
-      font-size: 1.3rem;
-      background: rgba(255, 255, 255, 0.1);
-      height: 50px;
       display: flex;
-      align-items: center;
+      /* align-items: center; */
       justify-content: space-between;
-      padding: 0 2rem;
+      /* padding: 0 1rem; */
+
+      /* background-color: rgba(255, 97, 29, 1); */
+      /* border: 1px solid rgba(255, 255, 255, 0.5); */
+      /* height: 60px; */
+
       border-radius: 4px;
       width: 100%;
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(16px, 3vw, 20px);
+      /* color: #eae2b7; */
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+      .link {
+        font-size: clamp(12px, 3vw, 16px);
+      }
     }
     &-main {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
+      /* background: rgba(255, 255, 255, 0.1); */
       border-radius: 4px;
       width: 100%;
+      p {
+        /* padding: 0 1rem; */
+        font-size: clamp(16px, 3vw, 20px);
+        /* background-color: red; */
+      }
+
+      ul {
+        font-size: clamp(16px, 3vw, 20px);
+        margin-top: 1rem;
+        /* padding: 0 1rem; */
+      }
     }
     .type {
       color: #cbc0d3;
@@ -235,7 +256,8 @@ const ContentBody = styled.div`
     }
     .skeleton {
       width: 100%;
-      a {
+      a,
+      li {
         color: transparent;
       }
       svg {
@@ -272,13 +294,13 @@ const ContentBody = styled.div`
       }
     }
     p {
-      font-size: clamp(14px, 2vw, 18px);
-      margin-bottom: 1.4rem;
+      /* font-size: clamp(14px, 2vw, 18px); */
+      /* margin-bottom: 1.4rem; */
     }
     ul {
       li {
         position: relative;
-        font-size: clamp(14px, 2vw, 18px);
+        /* font-size: clamp(14px, 2vw, 18px); */
         padding-left: 30px;
         margin-bottom: 10px;
         margin-bottom: 5px;
@@ -363,22 +385,21 @@ const Experience = () => {
               if (id === activeId) {
                 return (
                   <div key={id} className="contentbody__container">
-                    <header className="contentbody__container-header">
-                      {header} <span>@{name}</span>
+                    <header
+                      className={`${
+                        id !== 0 ? "skeleton" : ""
+                      } contentbody__container-header`}
+                    >
+                      {header} <span className="link">@{name}</span>
                     </header>
                     <div className="contentbody__container-main">
                       <p className={`${id !== 0 ? "skeleton" : ""}`}>
                         {description}
                       </p>
 
-                      <ul>
+                      <ul className={`${id !== 0 ? "skeleton" : ""}`}>
                         {features.map((feature, i) => (
-                          <li
-                            key={i}
-                            className={`${id !== 0 ? "skeleton" : ""}`}
-                          >
-                            {feature}
-                          </li>
+                          <li key={i}>{feature}</li>
                         ))}
                       </ul>
                     </div>
