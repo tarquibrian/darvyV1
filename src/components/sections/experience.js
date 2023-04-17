@@ -96,6 +96,7 @@ const ContentList = styled.div`
       rgba(255, 97, 29, 1) 93.9%
     );
     z-index: 0;
+
     &::after {
       content: "";
       position: absolute;
@@ -103,10 +104,8 @@ const ContentList = styled.div`
       left: 0%;
       width: 5px;
       height: 100%;
-      /* border-radius: ${({ isActive }) => (isActive ? "0px" : "0px")}; */
       background: rgba(234, 226, 176, 1);
     }
-    /* z-index: 999; */
   }
   @media screen and (max-width: 768px) {
     overflow-x: scroll;
