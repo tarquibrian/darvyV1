@@ -814,7 +814,7 @@ const Projects = () => {
         {currentLanguage.lenguage.items.map((project) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
-            <CardEffect key={id} bgColor="dark">
+            <CardEffect key={id} bgColor="dark" lightLevel="low">
               <div className={`project__container`}>
                 <div className="project__container-picture">
                   <CardEffect>

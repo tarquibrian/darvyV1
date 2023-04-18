@@ -5,8 +5,8 @@ const CardEffectContainer = styled.div`
   width: 100%;
   margin: auto;
   display: flex;
-  background: ${(props) =>
-    props.bgColor === "dark" ? "rgba(0,0,0,.05)" : "rgba(255,255,255,.1)"};
+  background: ${({ bgColor }) =>
+    bgColor === "dark" ? "rgba(0,0,0,.05)" : "rgba(255,255,255,.1)"};
   /* background-color: rgba(255, 255, 255, 0.1); */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -21,7 +21,8 @@ const CardEffectContainer = styled.div`
     background: radial-gradient(
       400px circle at var(--mouse-x) var(--mouse-y),
       rgba(255, 255, 255, 0.15),
-      transparent 60%
+      ${({ lightLevel }) =>
+        lightLevel === "low" ? "transparent 30%" : "transparent 60%"}
     );
     border-radius: inherit;
     content: "";
@@ -32,7 +33,7 @@ const CardEffectContainer = styled.div`
     left: 0%;
     opacity: 0;
     transition: opacity 500ms;
-    z-index: 100;
+    z-index: 0;
   }
   &:hover {
     background: ${(props) =>
