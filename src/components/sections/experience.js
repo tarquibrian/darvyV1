@@ -82,6 +82,8 @@ const ContentList = styled.div`
   border-bottom-left-radius: 0;
   /* overflow: hidden; */
   border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   position: relative;
 
   .dinamic-bg {

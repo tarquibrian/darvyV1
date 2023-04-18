@@ -12,8 +12,8 @@ import { useRouter } from "next/router";
 const NavbarHeader = styled(motion.header)`
   position: fixed;
   bottom: 5%;
-  left: 10%;
-  right: 10%;
+  left: 0%;
+  right: 0%;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -65,7 +65,8 @@ const NavbarHeader = styled(motion.header)`
 const NavbarContent = styled(motion.div)`
   margin: 0 auto;
   height: 100%;
-  width: 100%;
+  width: 80%;
+  max-width: 1280px;
   padding: 0 4%;
   display: flex;
   justify-content: space-between;
