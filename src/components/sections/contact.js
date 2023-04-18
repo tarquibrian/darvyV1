@@ -149,9 +149,9 @@ const Contact = () => {
       <ContactContainer ref={cardref}>
         <h1>{currentLanguage.lenguage.title}</h1>
         <CardContent>
-          <p>{currentLanguage.lenguage.description}</p>
+          <p>✷ {currentLanguage.lenguage.description}</p>
           <a href="mailto:tarquibrian@gmail.com">
-            {currentLanguage.lenguage.button}
+            {currentLanguage.lenguage.button} →
           </a>
         </CardContent>
       </ContactContainer>

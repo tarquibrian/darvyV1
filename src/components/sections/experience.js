@@ -351,7 +351,7 @@ const Experience = () => {
                         >
                           <span>@{name}</span>
                         </a>
-                        <h2>{header}</h2>
+                        <h2>✦ {header}</h2>
                       </header>
                       <div className="contentbody__container-main">
                         <p className={`${id !== 0 ? "skeleton" : ""}`}>

@@ -673,11 +673,11 @@ const Projects = () => {
                 <div className="project__container-main">
                   <header>
                     <span>{label}</span>
-                    <h2>{title}</h2>
+                    <h2>✦ {title}</h2>
                   </header>
                   <div className="main__body">
                     <div className="main__body-desc">
-                      <p>{desc}</p>
+                      <p>✷ {desc}</p>
                     </div>
                     <div className="main__body-features">
                       {features.map((feature, i) => {

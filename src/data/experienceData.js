@@ -15,10 +15,10 @@ export const experienceData = {
           description:
             "Desarrollo de una aplicación web enfocada hacia la gestión del turismo regional, describiendo detalles como:",
           features: [
-            "Analisis de la situacion problematica",
-            "Desarrollo y despliegue del fron y back",
-            "Uso de geolocalizacion para el posicionamiento, geocodificaion y geoetiquetado",
-            "Integracion de funcionalidades progresivas",
+            "Analisis de la situacion problematica.",
+            "Desarrollo y despliegue del fron y back.",
+            "Uso de geolocalizacion para el posicionamiento, geocodificaion y geoetiquetado.",
+            "Integracion de funcionalidades progresivas.",
           ],
         },
       },
@@ -76,10 +76,10 @@ export const experienceData = {
           description:
             "Development of a web application focused on the management of regional tourism, describing details such as:",
           features: [
-            "Analysis of the problematic situation",
-            "Development and deployment of the fron and back",
-            "Use of geolocation for positioning, geocoding and geotagging",
-            "Integration of progressive functionalities",
+            "Analysis of the problematic situation.",
+            "Development and deployment of the fron and back.",
+            "Use of geolocation for positioning, geocoding and geotagging.",
+            "Integration of progressive functionalities.",
           ],
         },
       },
