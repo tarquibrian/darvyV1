@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Main__Section } from "@styles";
 import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -134,25 +133,23 @@ const TabList = styled.div`
   transition: 0.3s ease;
   z-index: 1;
 
-  h2,
-  h3 {
+  .year-list,
+  .name-list {
     font-weight: normal;
     color: ${({ isActive }) => (isActive ? "#fff" : "#e5e5e5")};
     font-size: clamp(16px, 3vw, 18px);
   }
-  h2 {
+  .year-list {
     justify-self: center;
-  }
-  h3 {
   }
 
   &:hover {
     cursor: pointer;
     background-color: ${({ isActive }) =>
       isActive ? "transparent" : "rgba(255, 255, 255, .1)"};
-    h1,
-    h2,
-    h3 {
+
+    .year-list,
+    .name-list {
       text-shadow: ${({ isActive }) =>
         isActive
           ? "0 0 5px rgba(255, 255, 255 , 0.6)"
@@ -167,7 +164,7 @@ const TabList = styled.div`
       isActive
         ? "linear-gradient(93.3deg,rgba(236, 80, 80, 1) 21.5%,rgba(255, 97, 29, 1) 93.9%)"
         : "rgba(255,255,255,0)"};
-    h2 {
+    .year-list {
       display: none;
     }
     &::after {
@@ -182,76 +179,58 @@ const ContentBody = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     padding: 1.7rem 2rem;
 
     &-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-
-      /* padding: 1rem 1.5rem; */
-      /* border: 1px solid rgba(255, 255, 255, 0.5); */
-      /* background-color: rgba(255, 255, 255, 0.1); */
-
-      border-radius: 4px;
       width: 100%;
-      font-family: "Oswald", sans-serif;
-      font-size: clamp(20px, 3vw, 28px);
-      color: #eae2b7;
-      text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+
+      h3 {
+        margin-top: 5px;
+        font-family: var(--ff-oswald);
+        font-size: var(--fz-lg);
+        color: #eae2b7;
+        text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+      }
       .link {
-        font-size: clamp(12px, 3vw, 16px);
-      }
-    }
-    &-main {
-      /* background: rgba(255, 255, 255, 0.1); */
-      border-radius: 4px;
-      width: 100%;
-      p {
-        font-size: clamp(16px, 3vw, 20px);
-        /* padding: 1rem 1.5rem; */
-        /* background: rgba(255, 255, 255, 0.1); */
-        /* border: 1px solid rgba(255, 255, 255, 0.5); */
-        border-radius: 4px;
-      }
-
-      ul {
-        font-size: clamp(16px, 3vw, 20px);
-        margin-top: 1rem;
-        /* padding: 1rem 1.5rem; */
-        /* background: rgba(255, 255, 255, 0.1); */
-        /* border: 1px solid rgba(255, 255, 255, 0.5); */
-        border-radius: 4px;
-      }
-    }
-    .type {
-      color: #cbc0d3;
-      text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: center;
-      .entity {
-        font-weight: bold;
-        transition: 0.1s ease;
-        display: flex;
-        align-items: center;
-        svg {
-          margin-left: -2px;
-        }
-
+        font-size: var(--fz-sm);
+        color: rgba(203, 192, 211, 1);
         &:hover {
           color: #fff;
           text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
         }
       }
     }
+    &-main {
+      border-radius: var(--border-radius);
+      width: 100%;
+      font-size: var(--fz-md);
+
+      ul {
+        margin-top: 1rem;
+        li {
+          position: relative;
+          padding-left: 30px;
+          margin-bottom: 10px;
+          margin-bottom: 5px;
+          color: #fff;
+          &::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: rgba(234, 226, 176, 1);
+          }
+        }
+      }
+    }
     .skeleton {
       width: 100%;
+      h3,
       a,
       li {
         color: transparent;
+        text-shadow: inherit;
       }
       svg {
         color: rgba(255, 255, 255, 0.1);
@@ -277,35 +256,6 @@ const ContentBody = styled.div`
         }
       }
     }
-
-    h1 {
-      font-size: var(--fz-xxl);
-      font-size: clamp(14px, 3vw, 22px);
-      color: white;
-      &:hover {
-        text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
-      }
-    }
-    p {
-      /* font-size: clamp(14px, 2vw, 18px); */
-      /* margin-bottom: 1.4rem; */
-    }
-    ul {
-      li {
-        position: relative;
-        /* font-size: clamp(14px, 2vw, 18px); */
-        padding-left: 30px;
-        margin-bottom: 10px;
-        margin-bottom: 5px;
-        color: #fff;
-        &::before {
-          content: "▹";
-          position: absolute;
-          left: 0;
-          color: rgba(234, 226, 176, 1);
-        }
-      }
-    }
   }
 `;
 
@@ -326,7 +276,7 @@ const Experience = () => {
   const [activeId, setActiveId] = useState(0);
   const controls = useAnimation();
   const [refView, inView] = useInView();
-  const { state, toggleLanguage } = useAppContext();
+  const { state } = useAppContext();
   const cardref = useRef(null);
 
   const currentLanguage = {
@@ -373,8 +323,8 @@ const Experience = () => {
                   isActive={activeId === i}
                   key={id}
                 >
-                  <h2>{year}</h2>
-                  <h3>✹ {name}</h3>
+                  <span className="year-list">{year}</span>
+                  <span className="name-list">✹ {name}</span>
                 </TabList>
               );
             })}
@@ -382,7 +332,7 @@ const Experience = () => {
           </ContentList>
           <ContentBody>
             {currentLanguage.lenguage.items.map(({ id, body, title }, i) => {
-              const { header, description, features, path, type } = body;
+              const { header, description, features, path } = body;
               const { name } = title;
               if (id === activeId) {
                 return (
@@ -393,7 +343,15 @@ const Experience = () => {
                           id !== 0 ? "skeleton" : ""
                         } contentbody__container-header`}
                       >
-                        {header} <span className="link">@{name}</span>
+                        <a
+                          href={path}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="link"
+                        >
+                          <span>@{name}</span>
+                        </a>
+                        <h3>{header}</h3>
                       </header>
                       <div className="contentbody__container-main">
                         <p className={`${id !== 0 ? "skeleton" : ""}`}>
@@ -406,47 +364,6 @@ const Experience = () => {
                           ))}
                         </ul>
                       </div>
-                      {/* <span className={`type ${id !== 0 ? "skeleton" : ""}`}>
-                      <span className="entity">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          strokeWidth="2"
-                          stroke="currentColor"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path
-                            stroke="none"
-                            d="M0 0h24v24H0z"
-                            fill="none"
-                          ></path>
-                          <circle cx="12" cy="12" r="4"></circle>
-                          <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path>
-                        </svg>
-                        <a href={path} target="_blank" rel="noreferrer">
-                          {name}
-                        </a>
-                      </span>
-                    </span>
-                    <h1 className={`${id !== 0 ? "skeleton" : ""}`}>
-                      {header}
-                    </h1>
-
-                    <p className={`${id !== 0 ? "skeleton" : ""}`}>
-                      {description}
-                    </p>
-
-                    <ul>
-                      {features.map((feature, i) => (
-                        <li key={i} className={`${id !== 0 ? "skeleton" : ""}`}>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul> */}
                     </div>
                   </CardEffect>
                 );

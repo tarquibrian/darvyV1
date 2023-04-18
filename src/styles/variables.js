@@ -19,6 +19,7 @@ const variables = css`
 
     --fz-sm: clamp(12px, 2vw, 16px);
     --fz-md: clamp(16px, 2vw, 20px);
+    --fz-lg: clamp(20px, 3vw, 24px);
     --fz-header: clamp(30px, 8vw, 80px);
 
     /* BORDER */
