@@ -11,22 +11,20 @@ const ContactContainer = styled.div`
   width: 80%;
   max-width: 850px;
   margin: auto;
-  font-family: "DM Sans", sans-serif;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-light);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   z-index: 9;
-  /* margin-bottom: 150px; */
 
   h1 {
-    font-family: "Oswald", sans-serif;
+    font-family: var(--ff-oswald);
     font-size: 5rem;
     font-weight: 400;
     color: #eae2b7;
 
-    font-size: clamp(40px, 8vw, 80px);
+    font-size: var(--fz-header);
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     margin: 0 0 15px -4px;
     display: grid;
@@ -71,8 +69,7 @@ const ContactContainer = styled.div`
           rgba(255, 255, 255, 0),
           rgba(255, 235, 0, 0.15)
         ); */
-
-    background: rgba(255, 225, 142, 0.1);
+    background: var(--bg-light-hover);
   }
   @media screen and (max-width: 400px) {
     width: 90%;
@@ -85,7 +82,8 @@ const CardContent = styled.div`
   gap: 1rem;
 
   p {
-    font-size: clamp(14px, 2vw, 18px);
+    font-family: var(--ff-sofia);
+    font-size: var(--fz-md);
   }
 
   a {
@@ -97,7 +95,7 @@ const CardContent = styled.div`
     margin: auto;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--bg-light);
       cursor: pointer;
       filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
     }
@@ -118,7 +116,7 @@ const Contact = () => {
   const cardref = useRef(null);
   const controls = useAnimation();
   const [refView, inView] = useInView();
-  const { state, toggleLenguage } = useAppContext();
+  const { state } = useAppContext();
 
   const currentLanguage = {
     lenguage: languages[state.currentLanguage],
