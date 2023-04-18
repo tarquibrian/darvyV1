@@ -12,7 +12,6 @@ const HeroStyled = styled(motion.section)`
   margin: auto;
   svg {
     overflow: hidden;
-    /* fill: #ff101f; */
     width: 1200px;
     height: 600px;
     position: absolute;
@@ -34,7 +33,7 @@ const HeroStyled = styled(motion.section)`
     flex-direction: column;
     max-width: 920px;
     border-radius: var(--border-radius);
-    font-family: "Sofia Sans Condensed", sans-serif;
+    font-family: var(--ff-sofia);
     padding: 40px;
     background: var(--bg-light);
     -webkit-backdrop-filter: blur(10px);
@@ -45,7 +44,7 @@ const HeroStyled = styled(motion.section)`
     }
 
     h1 {
-      font-family: "Oswald", sans-serif;
+      font-family: var(--ff-oswald);
       font-size: var(--fz-header);
       font-weight: 400;
       color: #eae2b7;
@@ -54,7 +53,7 @@ const HeroStyled = styled(motion.section)`
     }
 
     h2 {
-      font-family: "Oswald", sans-serif;
+      font-family: var(--ff-oswald);
       font-size: clamp(30px, 8vw, 78px);
       font-weight: 200;
       margin-bottom: 20px;
@@ -66,7 +65,6 @@ const HeroStyled = styled(motion.section)`
     }
 
     p {
-      /* font-weight: normal; */
       line-height: 1.5;
       margin-bottom: 1rem;
       font-size: var(--fz-md);
