@@ -37,7 +37,7 @@ const CardEffectContainer = styled.div`
   &:hover {
     background: ${(props) =>
       props.bgColor === "dark"
-        ? "rgba(255,255,255,.01)"
+        ? "rgba(0,0,0,.01)"
         : "rgba(255, 225, 142, 0.05)"};
   }
 `;
