@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <AnimatePresence mode="sync">
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <Head>
         <title>Darvy | Web Developer</title>
       </Head>

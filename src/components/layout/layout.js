@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
   }, [router, loading]);
   return (
     <>
-      {/* <GlobalStyle /> */}
+      <GlobalStyle />
 
       {/* <SEO title="Brian Tarqui Rojas" /> */}
 

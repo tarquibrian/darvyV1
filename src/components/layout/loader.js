@@ -262,7 +262,7 @@ const Loader = ({ finishLoading }) => {
           <h1 className="name">T</h1>
         </div>
         <SpinerLoader /> */}
-        <motion.header>
+        <motion.header className={chivo.className}>
           <motion.div
             className="first"
             initial={{ opacity: 0, x: -200 }}
