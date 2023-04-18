@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AppProvider } from "src/context/app.context";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { GlobalStyle } from "@styles";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <AnimatePresence mode="sync">
+      <GlobalStyle />
       <Head>
         <title>Darvy | Web Developer</title>
       </Head>
