@@ -368,15 +368,6 @@ const Experience = () => {
     cardref?.current?.style?.setProperty("--mouse1-y", `${y}px`);
   };
 
-  const handleOnMouseEnter = (e) => {
-    console.log(e);
-  };
-
-  const DinamicBG = () => {
-    const bg = document.querySelector(".dinamic-bg");
-    // bg.style.top = activeId * 60 + "px";
-  };
-
   useEffect(() => {
     if (inView) {
       controls.start("visible");
