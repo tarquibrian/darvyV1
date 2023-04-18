@@ -733,58 +733,6 @@ const Projects = () => {
           );
         })}
       </div>
-      {/* <ProjectWraper
-        initial={"hidden"}
-        animate={controls}
-        transition={{ staggerChildren: 0.8 }}
-      >
-        {currentLanguage.lenguage.items.map((project) => {
-          const { id, label, title, desc, features, links, img } = project;
-          return (
-            <ProjectsContainer key={id} variants={animateElement}>
-              <ProjectContent>
-                <div className="label">{label}</div>
-                <h2>{title}</h2>
-                <p ref={ref}>{desc}</p>
-                <ul>
-                  {features.map((feature, i) => {
-                    const { name } = feature;
-                    return (
-                      <li key={i} className="features">
-                        {name}
-                      </li>
-                    );
-                  })}
-                </ul>
-                <ul>
-                  {links.map((linkname, i) => {
-                    return (
-                      <li key={i}>
-                        <a
-                          href={linkname.path}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {linkname.svg === 1 && <IconExternal />}
-                          {linkname.svg === 2 && <IconGitHub />}
-                          {linkname.svg === 3 && <IconFigma />}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </ProjectContent>
-              <ProjectImg>
-                <Image
-                  src={img}
-                  alt="thumbnail of the project"
-                  title="thumbnail of the project"
-                />
-              </ProjectImg>
-            </ProjectsContainer>
-          );
-        })}
-      </ProjectWraper> */}
       <p className="footerTitle">{currentLanguage.lenguage.desc}</p>
     </ProjectsStyled>
   );
