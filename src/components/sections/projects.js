@@ -414,11 +414,11 @@ const ProjectsStyled = styled(motion.section)`
     &::after {
       content: "";
       display: block;
+      background: #eae2b7;
       align-self: end;
       margin-bottom: 12px;
       width: auto;
       height: 3px;
-      background: #eae2b7;
     }
   }
 
@@ -445,14 +445,13 @@ const ProjectWrapper = styled(motion.div)`
   .project__container {
     display: grid;
     grid-template-columns: 10fr 9fr;
-    padding: 2rem 0rem;
-    gap: 1rem;
+    padding: 2rem 2rem;
+    gap: 2rem;
     font-family: var(--ff-sofia);
     color: #fff;
-    border-top: var(--border-size) solid var(--border-light);
-    border-bottom: var(--border-size) solid var(--border-light);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    overflow: hidden;
+    /* border-top: var(--border-size) solid var(--border-light); */
+    /* border-bottom: var(--border-size) solid var(--border-light); */
     z-index: 99;
 
     &-picture {
@@ -491,7 +490,7 @@ const ProjectWrapper = styled(motion.div)`
         gap: 1rem;
         &-desc {
           padding: 1rem;
-          background: var(--bg-light);
+          /* background: var(--bg-light); */
           border-radius: var(--border-radius);
           border: var(--border-size) solid var(--border-light);
           font-size: var(--fz-smm);
@@ -541,8 +540,10 @@ const ProjectWrapper = styled(motion.div)`
   }
   @media screen and (max-width: 1280px) {
     grid-template-columns: repeat(2, minmax(200px, auto));
+    gap: 2rem;
     .project__container {
       grid-template-columns: 1fr;
+      padding: 0;
     }
   }
   @media screen and (max-width: 640px) {
@@ -598,7 +599,7 @@ const Feature = styled.div`
   }
 
   &:hover {
-    background: rgba(200, 200, 200, 0.2);
+    /* background: rgba(200, 200, 200, 0.2); */
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6));
   }
   /* background-color: rgba(38, 70, 83, 0.9); */
@@ -662,12 +663,12 @@ const Projects = () => {
         {currentLanguage.lenguage.items.map((project) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
-            <CardEffect key={id} bgColor="dark" lightLevel="low">
+            <CardEffect key={id} lightLevel="low">
               <div className={`project__container`}>
                 <div className="project__container-picture">
-                  <CardEffect>
-                    <Image src={img} alt="img from portfolio" />
-                  </CardEffect>
+                  {/* <CardEffect> */}
+                  <Image src={img} alt="img from portfolio" />
+                  {/* </CardEffect> */}
                 </div>
                 <div className="project__container-main">
                   <header>

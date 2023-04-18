@@ -6,7 +6,8 @@ const CardEffectContainer = styled.div`
   margin: auto;
   display: flex;
   background: ${({ bgColor }) =>
-    bgColor === "dark" ? "rgba(0,0,0,0)" : "rgba(255,255,255,.1)"};
+    bgColor === "dark" ? "rgba(0,0,0,0.05)" : "rgba(255, 255, 255, 0.1)"};
+
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 4px;

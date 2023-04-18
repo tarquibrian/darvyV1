@@ -123,7 +123,7 @@ const ImgProfile = styled.div`
   .content {
     color: #eae2b7;
     font-size: var(--fz-md);
-    background-color: var(--bg-light);
+    /* background-color: var(--bg-light); */
     height: 100%;
     display: flex;
     flex-direction: column;
