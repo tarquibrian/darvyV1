@@ -214,7 +214,7 @@ const ContentBody = styled.div`
     flex-direction: column;
     gap: 1rem;
     border-radius: 4px;
-    /* background: rgba(255, 255, 255, 0.1); */
+    overflow: hidden;
     padding: 1.7rem 2rem;
 
     &-header {
@@ -371,13 +371,11 @@ const Experience = () => {
   useEffect(() => {
     if (inView) {
       controls.start("visible");
-      // DinamicBG();
     }
     const bg = document.querySelector(".dinamic-bg");
     let h = activeId * 60;
     bg.style.top = h + "px";
     window.addEventListener("mousemove", handleOnMouseMove);
-    // DinamicBG();
   }, [controls, inView, activeId]);
 
   return (

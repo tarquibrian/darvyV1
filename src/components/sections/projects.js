@@ -399,7 +399,7 @@ export const projectsData = {
 
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
-  max-width: 1080px;
+  max-width: 920px;
   margin: auto;
   overflow: hidden;
   .headerTitle {
@@ -436,7 +436,7 @@ const ProjectsStyled = styled(motion.section)`
 
     .project__container {
       display: grid;
-      grid-template-columns: 4fr 3fr;
+      grid-template-columns: 1fr 1fr;
       gap: 1rem;
       font-family: "Sofia Sans Condensed";
       color: #fff;
