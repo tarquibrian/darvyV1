@@ -34,16 +34,16 @@ const AboutCard = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 700px;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   padding: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-light);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: 9;
 
   h1 {
     font-family: "Oswald", sans-serif;
-    font-size: clamp(40px, 8vw, 80px);
+    font-size: var(--fz-header);
     font-weight: 400;
     color: #eae2b7;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
@@ -64,7 +64,7 @@ const AboutCard = styled.div`
 
   p {
     font-family: "Sofia Sans Condensed", sans-serif;
-    font-size: clamp(16px, 2vw, 20px);
+    font-size: var(--fz-md);
   }
 
   &:hover::before {
@@ -90,42 +90,27 @@ const AboutCard = styled.div`
   }
 
   &:hover {
-    background: rgba(255, 225, 142, 0.1);
+    background: var(--bg-light-hover);
   }
 `;
 
 const ImgProfile = styled.div`
-  /* min-width: 200px; */
-  /* min-height: 200px; */
-  /* width: 300px; */
-  /* height: 300px; */
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   z-index: 9;
-  /* overflow: hidden; */
   height: 100%;
 
   .image {
-    /* border-radius: 5px; */
-    /* overflow: hidden; */
-    /* height: 100%; */
     img {
       display: block;
       border-radius: 5px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      /* width: 300px; */
+      border: calc(1px + var(--border-size)) solid var(--border-light);
       width: 100%;
       max-width: 400px;
       height: auto;
-      /* object-fit: cover; */
-      /* z-index: 999; */
-      background-image: linear-gradient(
-        93.3deg,
-        rgba(236, 80, 80, 1) 21.5%,
-        rgba(255, 97, 29, 1) 93.9%
-      );
+      background: var(--bg-orange);
     }
     &:hover {
       img {

@@ -69,7 +69,7 @@ const HeroStyled = styled(motion.section)`
       /* font-weight: normal; */
       line-height: 1.5;
       margin-bottom: 1rem;
-      font-size: var(--fz-sm);
+      font-size: var(--fz-md);
     }
 
     .hero__container-buttons {
@@ -94,11 +94,7 @@ const HeroStyled = styled(motion.section)`
 
       .button__resume {
         border: var(--border-size) solid transparent;
-        background-image: linear-gradient(
-          93.3deg,
-          rgba(236, 80, 80, 1) 21.5%,
-          rgba(255, 97, 29, 1) 93.9%
-        );
+        background: var(--bg-orange);
         &:hover {
           text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
         }
