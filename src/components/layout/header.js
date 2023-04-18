@@ -66,7 +66,7 @@ const NavbarContent = styled(motion.div)`
   margin: 0 auto;
   height: 100%;
   width: 80%;
-  max-width: 1280px;
+  max-width: 1340px;
   padding: 0 4%;
   display: flex;
   justify-content: space-between;
