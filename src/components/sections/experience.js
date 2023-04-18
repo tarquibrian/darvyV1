@@ -37,6 +37,7 @@ const ExperienceCard = styled.div`
     display: grid;
     grid-template-columns: max-content auto;
     gap: 0.2rem;
+    margin-bottom: 3rem;
     &::after {
       content: "";
       display: block;
@@ -63,7 +64,6 @@ const CardContent = styled.div`
   grid-template-columns: 250px auto;
 
   gap: 1rem;
-  margin-top: 1rem;
   line-height: 1.5;
   overflow: hidden;
 

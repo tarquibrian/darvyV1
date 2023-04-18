@@ -432,23 +432,32 @@ const ProjectsStyled = styled(motion.section)`
   .project {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 5rem;
 
     .project__container {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      padding: 2rem 0rem;
       gap: 1rem;
       font-family: "Sofia Sans Condensed";
       color: #fff;
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      /* background-color: rgba(0, 0, 0, 0.05); */
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      z-index: 999;
 
       &-picture {
         width: 100%;
-        border-radius: 4px;
         /* overflow: hidden; */
-        /* background-color: red; */
+
+        display: flex;
         img {
           width: 100%;
           height: auto;
+          border-radius: 4px;
+          align-self: center;
           /* z-index: 0; */
         }
       }
@@ -457,6 +466,8 @@ const ProjectsStyled = styled(motion.section)`
         width: 100%;
         display: flex;
         flex-direction: column;
+        align-self: center;
+        /* border: 1px solid rgba(255, 255, 255, 0.5); */
         gap: 1rem;
 
         header {
@@ -803,69 +814,75 @@ const Projects = () => {
         {currentLanguage.lenguage.items.map((project) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
-            <div className={`project__container`} key={id}>
-              <div className="project__container-picture">
-                <CardEffect>
-                  <Image src={img} alt="img from portfolio" />
-                </CardEffect>
-              </div>
-              <div className="project__container-main">
-                <header>
-                  <span>{label}</span>
-                  <h1>{title}</h1>
-                </header>
-                <div className="main__body">
-                  <div className="main__body-desc">
-                    <p>{desc}</p>
-                  </div>
-                  <div className="main__body-features">
-                    {features.map((feature, i) => {
-                      const { name, bgColor } = feature;
-                      return (
-                        <Feature key={i} className="feature" bgColor={bgColor}>
-                          {name === "VS Code" && <IconVS />}
-                          {name === "Sublime Text" && <IconST />}
-                          {name === "Atom" && <IconAtom />}
-                          {name === "NextJS" && <IconNextjs />}
-                          {name === "React" && <ReactIcon />}
-                          {name === "Styled Components" && <IconSC />}
-                          {name === "Adobe Illustrator" && <IconAI />}
-                          {name === "Figma+" && <IconFigmaImg />}
-                          {name === "Sass" && <IconSass />}
-                          {name === "Adobe Photoshop" && <IconAP />}
-                          {name === "Redux" && <IconRedux />}
-                          {name === "Express" && <IconExpress />}
-                          {name === "MongoDB" && <IconMongo />}
-                          {name === "Google Maps Platform" && <IconMaps />}
-                          {name === "Push Notifications" && (
-                            <IconPushNotification />
-                          )}
-                          {name === "PWA" && <IconPWA />}
-                          <span>{name}</span>
-                        </Feature>
-                      );
-                    })}
-                  </div>
-                  <div className="main__body-links">
-                    {links.map((linkname, i) => {
-                      return (
-                        <span key={i}>
-                          <a
-                            href={linkname.path}
-                            target="_blank"
-                            rel="noreferrer"
+            <CardEffect key={id} bgColor="dark">
+              <div className={`project__container`}>
+                <div className="project__container-picture">
+                  <CardEffect>
+                    <Image src={img} alt="img from portfolio" />
+                  </CardEffect>
+                </div>
+                <div className="project__container-main">
+                  <header>
+                    <span>{label}</span>
+                    <h1>{title}</h1>
+                  </header>
+                  <div className="main__body">
+                    <div className="main__body-desc">
+                      <p>{desc}</p>
+                    </div>
+                    <div className="main__body-features">
+                      {features.map((feature, i) => {
+                        const { name, bgColor } = feature;
+                        return (
+                          <Feature
+                            key={i}
+                            className="feature"
+                            bgColor={bgColor}
                           >
-                            {linkname.svg === 1 && <IconExternal />}
-                            {linkname.svg === 2 && <IconGitHub />}
-                            {linkname.svg === 3 && <IconFigma />}
-                          </a>
-                        </span>
-                      );
-                    })}
+                            {name === "VS Code" && <IconVS />}
+                            {name === "Sublime Text" && <IconST />}
+                            {name === "Atom" && <IconAtom />}
+                            {name === "NextJS" && <IconNextjs />}
+                            {name === "React" && <ReactIcon />}
+                            {name === "Styled Components" && <IconSC />}
+                            {name === "Adobe Illustrator" && <IconAI />}
+                            {name === "Figma+" && <IconFigmaImg />}
+                            {name === "Sass" && <IconSass />}
+                            {name === "Adobe Photoshop" && <IconAP />}
+                            {name === "Redux" && <IconRedux />}
+                            {name === "Express" && <IconExpress />}
+                            {name === "MongoDB" && <IconMongo />}
+                            {name === "Google Maps Platform" && <IconMaps />}
+                            {name === "Push Notifications" && (
+                              <IconPushNotification />
+                            )}
+                            {name === "PWA" && <IconPWA />}
+                            <span>{name}</span>
+                          </Feature>
+                        );
+                      })}
+                    </div>
+                    <div className="main__body-links">
+                      {links.map((linkname, i) => {
+                        return (
+                          <span key={i}>
+                            <a
+                              href={linkname.path}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              {linkname.svg === 1 && <IconExternal />}
+                              {linkname.svg === 2 && <IconGitHub />}
+                              {linkname.svg === 3 && <IconFigma />}
+                            </a>
+                          </span>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </CardEffect>
           );
         })}
       </div>
