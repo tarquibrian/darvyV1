@@ -36,7 +36,7 @@ const CardEffectContainer = styled.div`
     left: 0%;
     opacity: 0;
     transition: opacity 500ms;
-    z-index: -1;
+    z-index: 10;
   }
   &:hover {
     background: ${(props) =>

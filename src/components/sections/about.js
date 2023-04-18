@@ -146,6 +146,9 @@ const ImgProfile = styled.div`
     justify-content: space-around;
     padding: 1rem 2rem;
     border-radius: 4px;
+    span {
+      z-index: 999;
+    }
   }
   @media screen and (max-width: 750px) {
     flex-direction: row;

@@ -399,7 +399,7 @@ export const projectsData = {
 
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
-  max-width: 920px;
+  max-width: 1080px;
   margin: auto;
   overflow: hidden;
   .headerTitle {
@@ -436,7 +436,7 @@ const ProjectsStyled = styled(motion.section)`
 
     .project__container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 10fr 9fr;
       padding: 2rem 0rem;
       gap: 1rem;
       font-family: "Sofia Sans Condensed";
@@ -446,7 +446,7 @@ const ProjectsStyled = styled(motion.section)`
       /* background-color: rgba(0, 0, 0, 0.05); */
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
-      z-index: 999;
+      z-index: 99;
 
       &-picture {
         width: 100%;
@@ -458,7 +458,6 @@ const ProjectsStyled = styled(motion.section)`
           height: auto;
           border-radius: 4px;
           align-self: center;
-          /* z-index: 0; */
         }
       }
 
@@ -491,6 +490,7 @@ const ProjectsStyled = styled(motion.section)`
             border-radius: 4px;
             border: 1px solid rgba(255, 255, 255, 0.5);
             font-size: clamp(14px, 2vw, 18px);
+
             &:hover {
               background: rgba(200, 200, 200, 0.2);
               border: 1px solid rgba(255, 255, 255, 0.2);
@@ -665,7 +665,6 @@ const ProjectContent = styled.div`
     -webkit-backdrop-filter: blur(100px);
     border-radius: 4px;
     margin-bottom: 1rem;
-    z-index: 999;
 
     &:hover {
       background-color: rgba(141, 153, 174, 0.6);

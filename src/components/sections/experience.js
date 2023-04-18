@@ -212,6 +212,7 @@ const TabList = styled.div`
 
 const ContentBody = styled.div`
   .contentbody__container {
+    z-index: 999;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -407,7 +408,7 @@ const Experience = () => {
                   key={id}
                 >
                   <h2>{year}</h2>
-                  <h3>{name}</h3>
+                  <h3>✹ {name}</h3>
                 </TabList>
               );
             })}
