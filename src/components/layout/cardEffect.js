@@ -19,10 +19,14 @@ const CardEffectContainer = styled.div`
 
   &::before {
     background: radial-gradient(
-      400px circle at var(--mouse-x) var(--mouse-y),
-      rgba(255, 255, 255, 0.15),
+      ${({ lightLevel }) => (lightLevel === "low" ? "400px" : "600px")} circle
+        at var(--mouse-x) var(--mouse-y),
       ${({ lightLevel }) =>
-        lightLevel === "low" ? "transparent 30%" : "transparent 60%"}
+        lightLevel === "low"
+          ? "rgba(255, 255, 255, 0.10)"
+          : "rgba(255, 255, 255, 0.15)"},
+      ${({ lightLevel }) =>
+        lightLevel === "low" ? "transparent 50%" : "transparent 60%"}
     );
     border-radius: inherit;
     content: "";
@@ -38,8 +42,8 @@ const CardEffectContainer = styled.div`
   &:hover {
     background: ${(props) =>
       props.bgColor === "dark"
-        ? "rgba(0,0,0,.01)"
-        : "rgba(255, 225, 142, 0.05)"};
+        ? "rgba(0,0,0,.03)"
+        : "rgba(255, 225, 142, 0.1)"};
   }
 `;
 
