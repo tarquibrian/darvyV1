@@ -92,13 +92,12 @@ const CardContent = styled.div`
     padding: 16px 28px;
     display: grid;
     place-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: var(--border-size) solid var(--border-light);
     border-radius: var(--border-radius);
     margin: auto;
-    border-radius: 4px;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
       cursor: pointer;
       filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
     }

@@ -33,27 +33,27 @@ const HeroStyled = styled(motion.section)`
     display: flex;
     flex-direction: column;
     max-width: 920px;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     font-family: "Sofia Sans Condensed", sans-serif;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-light);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 
-    h1 {
-      font-size: clamp(16px, 2vw, 20px);
+    span {
+      font-size: var(--fz-md);
     }
 
-    h2 {
+    h1 {
       font-family: "Oswald", sans-serif;
-      font-size: clamp(30px, 8vw, 80px);
+      font-size: var(--fz-header);
       font-weight: 400;
       color: #eae2b7;
       text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
       margin-left: -4px;
     }
 
-    h3 {
+    h2 {
       font-family: "Oswald", sans-serif;
       font-size: clamp(30px, 8vw, 78px);
       font-weight: 200;
@@ -69,31 +69,31 @@ const HeroStyled = styled(motion.section)`
       /* font-weight: normal; */
       line-height: 1.5;
       margin-bottom: 1rem;
-      font-size: clamp(16px, 2vw, 20px);
+      font-size: var(--fz-sm);
     }
 
     .hero__container-buttons {
       display: flex;
       gap: 1rem;
-      font-size: clamp(16px, 2vw, 20px);
+      font-size: var(--fz-md);
 
       .button__resume,
       .button__contact {
         padding: 10px 18px;
         display: grid;
         place-content: center;
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        border-radius: 4px;
+        border: var(--border-size) solid var(--border-light);
+        border-radius: var(--border-radius);
 
         &:hover {
-          border: 1px solid rgba(255, 255, 255, 0.4);
+          border: var(--border-size) solid var(--border-light);
           cursor: pointer;
           filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
         }
       }
 
       .button__resume {
-        border: 1px solid transparent;
+        border: var(--border-size) solid transparent;
         background-image: linear-gradient(
           93.3deg,
           rgba(236, 80, 80, 1) 21.5%,
@@ -104,7 +104,7 @@ const HeroStyled = styled(motion.section)`
         }
       }
       .button__contact {
-        border: 1px solid transparent;
+        border: var(--border-size) solid transparent;
         background-color: rgba(255, 255, 255, 0.2);
       }
     }
@@ -131,16 +131,12 @@ const HeroStyled = styled(motion.section)`
       z-index: -1;
     }
     &:hover {
-      background: rgba(255, 225, 142, 0.1);
-      /* background-color: rgba(0, 0, 0, 0.1); */
+      background: var(--bg-light-hover);
     }
   }
 
   @media screen and (max-width: 400px) {
     width: 90%;
-    .hero__container-card {
-      /* padding: 30px; */
-    }
   }
 `;
 
@@ -190,9 +186,9 @@ const Hero = () => {
     >
       <div className="hero__container">
         <div className="hero__container-card" id="hero-card" ref={heroref}>
-          <h1>{currentLanguage.lenguage[1]}</h1>
-          <h2>Brian Tarqui Rojas.</h2>
-          <h3>{currentLanguage.lenguage[3]}✿</h3>
+          <span>{currentLanguage.lenguage[1]}</span>
+          <h1>Brian Tarqui Rojas.</h1>
+          <h2>{currentLanguage.lenguage[3]}✿</h2>
           <p>{currentLanguage.lenguage[4]}</p>
           <div className="hero__container-buttons">
             <a
