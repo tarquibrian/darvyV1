@@ -133,7 +133,7 @@ const LeftSide = () => {
     <SideStyle
       initial={{ x: -100 }}
       animate={{ x: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
     >
       {social}
     </SideStyle>

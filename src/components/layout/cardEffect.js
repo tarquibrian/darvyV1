@@ -7,7 +7,6 @@ const CardEffectContainer = styled.div`
   display: flex;
   background: ${({ bgColor }) =>
     bgColor === "dark" ? "rgba(0,0,0,.05)" : "rgba(255,255,255,.1)"};
-  /* background-color: rgba(255, 255, 255, 0.1); */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 4px;
@@ -37,7 +36,7 @@ const CardEffectContainer = styled.div`
     left: 0%;
     opacity: 0;
     transition: opacity 500ms;
-    z-index: 0;
+    z-index: -1;
   }
   &:hover {
     background: ${(props) =>
@@ -49,7 +48,6 @@ const CardEffectContainer = styled.div`
 
 const CardEffect = (props) => {
   const cardRef = useRef(null);
-  // console.log(props.bgColor);
 
   const handleOnMouseMove = (e) => {
     let rect = cardRef?.current?.getBoundingClientRect(),

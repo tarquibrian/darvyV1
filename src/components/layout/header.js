@@ -209,9 +209,9 @@ const Header = () => {
       isOpen={isOpen}
     >
       <NavbarContent
-        initial={{ y: 100 }}
+        initial={{ y: 200 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
       >
         <LogoContainer>
           <a onClick={scrollTop} href={`#`}>

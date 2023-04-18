@@ -153,8 +153,13 @@ const ImgProfile = styled.div`
 `;
 
 const variants = {
-  visible: { y: 0, opacity: 1, scale: 1, transition: { duration: 0.6 } },
-  hidden: { y: 200, opacity: 0, scale: 1 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.6 },
+  },
+  hidden: { y: 500, opacity: 0, scale: 1 },
 };
 
 const languages = {
@@ -194,7 +199,15 @@ const About = () => {
       ref={refView}
       animate={controls}
       initial="hidden"
-      variants={variants}
+      variants={{
+        visible: {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          transition: { duration: 0.6, delay: 0.3 },
+        },
+        hidden: { y: 200, opacity: 0, scale: 1 },
+      }}
     >
       <ImgProfile>
         <div className="image">
