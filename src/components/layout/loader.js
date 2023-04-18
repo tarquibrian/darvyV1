@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import anime from "animejs";
 import { motion } from "framer-motion";
 import { Chivo_Mono } from "@next/font/google";
 import Image from "next/image";
@@ -11,7 +10,6 @@ const chivo = Chivo_Mono({
 });
 
 const LoaderSection = styled(motion.div)`
-  font-family: var(--chivo-mono);
   font-weight: 900;
   position: fixed;
   inset: 0 0 0 0;
@@ -249,10 +247,9 @@ const Loader = ({ finishLoading }) => {
 
   return (
     <LoaderSection
-      className={chivo.variable}
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // transition={{ duration: 1 }}
+    // initial={{ opacity: 0 }}
+    // animate={{ opacity: 1 }}
+    // transition={{ duration: 1 }}
     >
       {/* <HeaderLoader>
         <div className="ipl-progress-indicator-head">
@@ -265,7 +262,7 @@ const Loader = ({ finishLoading }) => {
           <h1 className="name">T</h1>
         </div>
         <SpinerLoader /> */}
-        <motion.header className={chivo.className}>
+        <motion.header>
           <motion.div
             className="first"
             initial={{ opacity: 0, x: -200 }}
