@@ -5,8 +5,8 @@ const CardEffectContainer = styled.div`
   width: 100%;
   margin: auto;
   display: flex;
-  /* background: ${(props) =>
-    props.bgColor === "dark" ? "rgba(0,0,0,.05)" : "rgba(255,255,255,.1)"}; */
+  background: ${(props) =>
+    props.bgColor === "dark" ? "rgba(0,0,0,.05)" : "rgba(255,255,255,.1)"};
   /* background-color: rgba(255, 255, 255, 0.1); */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -35,7 +35,10 @@ const CardEffectContainer = styled.div`
     z-index: 100;
   }
   &:hover {
-    background-color: rgba(255, 225, 142, 0.05);
+    background: ${(props) =>
+      props.bgColor === "dark"
+        ? "rgba(255,255,255,.01)"
+        : "rgba(255, 225, 142, 0.05)"};
   }
 `;
 
