@@ -186,7 +186,7 @@ const ContentBody = styled.div`
     &-header {
       width: 100%;
 
-      h3 {
+      h2 {
         margin-top: 5px;
         font-family: var(--ff-oswald);
         font-size: var(--fz-lg);
@@ -226,7 +226,7 @@ const ContentBody = styled.div`
     }
     .skeleton {
       width: 100%;
-      h3,
+      h2,
       a,
       li {
         color: transparent;
@@ -351,7 +351,7 @@ const Experience = () => {
                         >
                           <span>@{name}</span>
                         </a>
-                        <h3>{header}</h3>
+                        <h2>{header}</h2>
                       </header>
                       <div className="contentbody__container-main">
                         <p className={`${id !== 0 ? "skeleton" : ""}`}>
