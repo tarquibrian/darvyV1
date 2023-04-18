@@ -22,14 +22,14 @@ const ExperienceCard = styled.div`
   flex-direction: column;
   min-width: 600px;
   max-width: 920px;
-  border-radius: 4px;
-  font-family: "Sofia Sans Condensed", sans-serif;
+  border-radius: var(--border-radius);
+  font-family: var(--ff-sofia);
   font-weight: normal;
   z-index: 9;
 
   .headerTitle {
-    font-family: "Oswald", sans-serif;
-    font-size: clamp(40px, 8vw, 80px);
+    font-family: var(--ff-oswald);
+    font-size: var(--fz-header);
     font-weight: 400;
     color: #eae2b7;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
@@ -50,8 +50,7 @@ const ExperienceCard = styled.div`
   }
 
   p {
-    font-size: clamp(14px, 2vw, 18px);
-    font-weight: 400;
+    font-size: var(--fz-md);
   }
 
   @media screen and (max-width: 768px) {
@@ -76,12 +75,10 @@ const ContentList = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
-  /* gap: 1rem; */
   border-radius: 4px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  /* overflow: hidden; */
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: var(--border-size) solid rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   position: relative;
@@ -92,11 +89,7 @@ const ContentList = styled.div`
     left: 0;
     width: 100%;
     height: 60px;
-    background: linear-gradient(
-      93.3deg,
-      rgba(236, 80, 80, 1) 21.5%,
-      rgba(255, 97, 29, 1) 93.9%
-    );
+    background: var(--bg-orange);
     z-index: 0;
 
     &::after {
@@ -117,15 +110,13 @@ const ContentList = styled.div`
     left: 0%;
     width: 5px;
     height: 100%;
-    border-radius: ${({ isActive }) => (isActive ? "0px" : "0px")};
-
     background-color: ${({ isActive }) =>
       isActive ? "rgba(234,226,176,1)" : "rgba(255, 255, 255, 0.2)"};
   }
   @media screen and (max-width: 768px) {
     overflow-x: scroll;
     flex-direction: row;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     .dinamic-bg {
       display: none;
     }
@@ -137,17 +128,9 @@ const TabList = styled.div`
   height: 60px;
   display: grid;
   grid-template-columns: 80px auto;
-  /* align-items: center; */
-  /* gap: 3rem; */
   padding: 1rem 0;
   padding-left: 5px;
   position: relative;
-  /* outline: 1px solid
-    ${({ isActive }) => (isActive ? "rgba(234,226,176,.5)" : "transparent")}; */
-  /* background: ${({ isActive }) =>
-    isActive
-      ? "linear-gradient(93.3deg,rgba(236, 80, 80, 1) 21.5%,rgba(255, 97, 29, 1) 93.9%)"
-      : "rgba(255,255,255,0)"}; */
   transition: 0.3s ease;
   z-index: 1;
 
@@ -155,30 +138,13 @@ const TabList = styled.div`
   h3 {
     font-weight: normal;
     color: ${({ isActive }) => (isActive ? "#fff" : "#e5e5e5")};
-    /* text-shadow: ${({ isActive }) =>
-      isActive ? "0 0 5px rgba(255 255 255 / 0.5)" : "initial"}; */
     font-size: clamp(16px, 3vw, 18px);
   }
   h2 {
     justify-self: center;
-    /* background-color: red; */
   }
   h3 {
-    /* justify-self: start; */
   }
-
-  /* &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0%;
-    width: 5px;
-    height: 100%;
-    border-radius: ${({ isActive }) => (isActive ? "0px" : "0px")};
-
-    background-color: ${({ isActive }) =>
-    isActive ? "rgba(234,226,176,1)" : "rgba(255, 255, 255, 0.2)"};
-  } */
 
   &:hover {
     cursor: pointer;

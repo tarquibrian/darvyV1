@@ -39,9 +39,10 @@ const AboutCard = styled.div`
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: 9;
+  font-family: var(--ff-sofia);
 
   h1 {
-    font-family: "Oswald", sans-serif;
+    font-family: var(--ff-oswald);
     font-size: var(--fz-header);
     font-weight: 400;
     color: #eae2b7;
@@ -62,7 +63,6 @@ const AboutCard = styled.div`
   }
 
   p {
-    font-family: "Sofia Sans Condensed", sans-serif;
     font-size: var(--fz-md);
   }
 
