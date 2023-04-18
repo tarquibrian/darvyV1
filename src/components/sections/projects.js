@@ -403,7 +403,7 @@ const ProjectsStyled = styled(motion.section)`
   margin: auto;
   overflow: hidden;
   .headerTitle {
-    font-size: clamp(40px, 8vw, 80px);
+    font-size: var(--fz-header);
     font-weight: 400;
     color: #eae2b7;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
@@ -421,12 +421,12 @@ const ProjectsStyled = styled(motion.section)`
       background: #eae2b7;
     }
   }
+
   .footerTitle {
-    font-family: "DM Sans";
-    font-weight: 400;
+    font-family: var(--ff-sofia);
     margin-top: 2rem;
     text-align: center;
-    font-size: clamp(10px, 2vw, 18px);
+    font-size: var(--fz-sm);
   }
 
   .project {
@@ -439,24 +439,22 @@ const ProjectsStyled = styled(motion.section)`
       grid-template-columns: 10fr 9fr;
       padding: 2rem 0rem;
       gap: 1rem;
-      font-family: "Sofia Sans Condensed";
+      font-family: var(--ff-sofia);
       color: #fff;
-      border-top: 1px solid rgba(255, 255, 255, 0.5);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      /* background-color: rgba(0, 0, 0, 0.05); */
+      border-top: var(--border-size) solid var(--border-light);
+      border-bottom: var(--border-size) solid var(--border-light);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       z-index: 99;
 
       &-picture {
         width: 100%;
-        /* overflow: hidden; */
-
         display: flex;
+
         img {
           width: 100%;
           height: auto;
-          border-radius: 4px;
+          border-radius: var(--border-radius);
           align-self: center;
         }
       }
@@ -466,17 +464,16 @@ const ProjectsStyled = styled(motion.section)`
         display: flex;
         flex-direction: column;
         align-self: center;
-        /* border: 1px solid rgba(255, 255, 255, 0.5); */
         gap: 1rem;
 
         header {
           span {
             color: #eae2b7;
-            font-size: clamp(14px, 2vw, 16px);
+            font-size: var(--fz-sm);
           }
-          h1 {
+          h2 {
             margin-top: 0.4rem;
-            font-size: clamp(20px, 3vw, 24px);
+            font-size: var(--fz-lg);
           }
         }
 
@@ -486,14 +483,14 @@ const ProjectsStyled = styled(motion.section)`
           gap: 1rem;
           &-desc {
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            font-size: clamp(14px, 2vw, 18px);
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            border: var(--border-size) solid var(--border-light);
+            font-size: var(--fz-smm);
 
             &:hover {
-              background: rgba(200, 200, 200, 0.2);
-              border: 1px solid rgba(255, 255, 255, 0.2);
+              /* background: rgba(200, 200, 200, 0.2); */
+              border: var(--border-size) solid rgba(255, 255, 255, 0.4);
             }
           }
           &-features {
@@ -501,7 +498,7 @@ const ProjectsStyled = styled(motion.section)`
             flex-wrap: wrap;
             white-space: nowrap;
             gap: 1rem;
-            font-size: clamp(14px, 2vw, 18px);
+            font-size: var(--fz-smm);
           }
           &-links {
             display: flex;
@@ -509,7 +506,7 @@ const ProjectsStyled = styled(motion.section)`
             gap: 1rem;
 
             a {
-              background: rgba(255, 255, 255, 0);
+              /* background: rgba(255, 255, 255, 0); */
               padding: 0.3rem 0;
               svg {
                 width: 24px;
@@ -603,6 +600,10 @@ const Feature = styled.div`
     background: rgba(200, 200, 200, 0.2);
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6));
   }
+  /* background-color: rgba(38, 70, 83, 0.9); */
+  /* background-color: rgba(255, 48, 79, 0.9); */
+  /* background-color: rgba(226, 67, 75, 0.9); */
+  /* background-color: rgba(8, 40, 53, 0.8); */
 `;
 
 const ProjectsContainer = styled(motion.div)`
@@ -708,10 +709,6 @@ const ProjectContent = styled.div`
     padding: 2rem;
     display: grid;
     place-content: center;
-    /* background-color: rgba(38, 70, 83, 0.9); */
-    /* background-color: rgba(255, 48, 79, 0.9); */
-    /* background-color: rgba(226, 67, 75, 0.9); */
-    background-color: rgba(8, 40, 53, 0.8);
 
     backdrop-filter: blur(2px);
     height: 100%;
@@ -823,7 +820,7 @@ const Projects = () => {
                 <div className="project__container-main">
                   <header>
                     <span>{label}</span>
-                    <h1>{title}</h1>
+                    <h2>{title}</h2>
                   </header>
                   <div className="main__body">
                     <div className="main__body-desc">

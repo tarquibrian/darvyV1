@@ -18,6 +18,7 @@ const variables = css`
     --ff-dmsans: "DM Sans", "Sofia Sans Condensed", sans-serif;
 
     --fz-sm: clamp(12px, 2vw, 16px);
+    --fz-smm: clamp(14px, 2vw, 18px);
     --fz-md: clamp(16px, 2vw, 20px);
     --fz-lg: clamp(20px, 3vw, 24px);
     --fz-header: clamp(30px, 8vw, 80px);
