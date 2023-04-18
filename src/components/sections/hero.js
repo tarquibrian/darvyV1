@@ -40,6 +40,7 @@ const HeroStyled = styled(motion.section)`
     backdrop-filter: blur(10px);
 
     span {
+      color: #fff;
       font-size: var(--fz-md);
     }
 
