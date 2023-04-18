@@ -115,7 +115,7 @@ const ImgProfile = styled.div`
     &:hover {
       img {
         opacity: 1;
-        border: 2px solid rgba(255, 255, 255, 0.4);
+        border: calc(1px + var(--border-size)) solid var(--border-light);
         filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
       }
     }
@@ -123,14 +123,14 @@ const ImgProfile = styled.div`
 
   .content {
     color: #eae2b7;
-    font-size: clamp(14px, 3vw, 20px);
-    background-color: rgba(255, 255, 255, 0.1);
+    font-size: var(--fz-md);
+    background-color: var(--bg-light);
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 1rem 2rem;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     span {
       z-index: 999;
     }
