@@ -15,7 +15,7 @@ const AboutStyled = styled(motion.section)`
   width: 80%;
   margin: auto;
   padding: initial;
-  padding-bottom: 100px;
+  /* padding-bottom: 100px; */
   padding-top: 150px;
   display: grid;
   grid-template-columns: minmax(100px, 300px) auto;

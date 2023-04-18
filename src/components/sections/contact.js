@@ -18,7 +18,7 @@ const ContactContainer = styled.div`
   backdrop-filter: blur(10px);
   border-radius: 4px;
   z-index: 9;
-  margin-bottom: 150px;
+  /* margin-bottom: 150px; */
 
   h1 {
     font-family: "Oswald", sans-serif;

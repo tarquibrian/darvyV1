@@ -50,8 +50,13 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     width: 100%;
     height: 100%;
-
-    padding: 100px 0;
+    padding: 5rem 0px;
+    &:nth-child(2) {
+      padding-bottom: 5rem;
+    }
+    &:last-of-type {
+      padding-bottom: 16rem;
+    }
   }
 
   a {
