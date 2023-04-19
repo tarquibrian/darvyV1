@@ -127,6 +127,7 @@ const HeroStyled = styled(motion.section)`
     }
     &:hover {
       background: var(--bg-light-hover);
+      /* background: rgba(0, 0, 0, 0.1); */
     }
   }
 

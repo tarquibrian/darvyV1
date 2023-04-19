@@ -399,7 +399,7 @@ export const projectsData = {
 
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
-  max-width: 1080px;
+  max-width: 984px;
   margin: auto;
   overflow: hidden;
   .headerTitle {
@@ -457,6 +457,7 @@ const ProjectWrapper = styled(motion.div)`
     &-picture {
       width: 100%;
       display: flex;
+      /* order: 2; */
 
       img {
         width: 100%;
@@ -496,7 +497,7 @@ const ProjectWrapper = styled(motion.div)`
           font-size: var(--fz-smm);
 
           &:hover {
-            /* background: rgba(200, 200, 200, 0.2); */
+            background: rgba(255, 255, 255, 0.08);
             border: var(--border-size) solid rgba(255, 255, 255, 0.4);
           }
         }
@@ -600,7 +601,8 @@ const Feature = styled.div`
 
   &:hover {
     /* background: rgba(200, 200, 200, 0.2); */
-    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.6));
+    /* background-color: rgba(255, 48, 79, 0.9); */
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
   }
   /* background-color: rgba(38, 70, 83, 0.9); */
   /* background-color: rgba(255, 48, 79, 0.9); */

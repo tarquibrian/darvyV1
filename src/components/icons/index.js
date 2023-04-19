@@ -22,3 +22,4 @@ export { default as IconPushNotification } from "./push";
 export { default as IconAP } from "./ap";
 export { default as IconAI } from "./ai";
 export { default as IconST } from "./st";
+export { default as IconArrow } from "./arrow";
