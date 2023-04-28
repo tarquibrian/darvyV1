@@ -12,7 +12,7 @@ const ContactContainer = styled.div`
   max-width: 850px;
   margin: auto;
   padding: 40px;
-  background: var(--bg-light);
+  background: var(--bg-color);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: var(--border-radius);
@@ -63,13 +63,7 @@ const ContactContainer = styled.div`
   }
 
   &:hover {
-    /* background: rgba(255, 255, 255, 0.05)
-        linear-gradient(
-          to top right,
-          rgba(255, 255, 255, 0),
-          rgba(255, 235, 0, 0.15)
-        ); */
-    background: var(--bg-light-hover);
+    background: var(--bg-color-hover);
   }
   @media screen and (max-width: 400px) {
     width: 90%;
