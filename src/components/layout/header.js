@@ -73,6 +73,7 @@ const NavbarContent = styled(motion.div)`
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 4px;
+  /* background-color: var(--bg-color); */
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   z-index: 999;
