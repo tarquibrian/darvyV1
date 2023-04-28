@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
-import fragment from "./shader/fragment.glsl";
-import vertex from "./shader/vertex.glsl";
+import fragment from "./shaders/fragment.glsl";
+import vertex from "./shaders/vertex.glsl";
 
 import { DotScreenShader } from "./customShader";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";

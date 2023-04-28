@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Sketch from "src/threejs/main";
 
 const BGImage = styled.div`
   position: fixed;
@@ -31,6 +32,10 @@ const Layout = ({ children }) => {
   const { state, loadingComplete } = useAppContext();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+
+  new Sketch({
+    dom: document.getElementById("container"),
+  });
 
   useEffect(() => {
     // if (router.asPath === "/") {
@@ -59,8 +64,8 @@ const Layout = ({ children }) => {
       <RightSide />
       <LeftSide />
 
-      <BGImage>
-        <Image
+      <BGImage id="container">
+        {/* <Image
           priority
           src={noiseIMG}
           alt="background image"
@@ -68,7 +73,7 @@ const Layout = ({ children }) => {
           onLoadingComplete={() => {
             setLoading(true);
           }}
-        />
+        /> */}
       </BGImage>
     </>
   );
