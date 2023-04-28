@@ -35,7 +35,7 @@ const HeroStyled = styled(motion.section)`
     border-radius: var(--border-radius);
     font-family: var(--ff-sofia);
     padding: 40px;
-    background: var(--bg-light);
+    background: var(--bg-dark);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 
@@ -126,7 +126,7 @@ const HeroStyled = styled(motion.section)`
       z-index: -1;
     }
     &:hover {
-      background: var(--bg-light-hover);
+      background: var(--bg-dark-hover);
       /* background: rgba(0, 0, 0, 0.1); */
     }
   }
@@ -173,15 +173,16 @@ const Hero = () => {
   }, [controls, inView]);
 
   return (
-    <HeroStyled
-      id="hero"
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      variants={variants}
-    >
+    <HeroStyled id="hero" ref={ref}>
       <div className="hero__container">
-        <div className="hero__container-card" id="hero-card" ref={heroref}>
+        <motion.div
+          className="hero__container-card"
+          id="hero-card"
+          ref={heroref}
+          animate={controls}
+          initial="hidden"
+          variants={variants}
+        >
           <span>{currentLanguage.lenguage[1]}</span>
           <h1>Brian Tarqui Rojas.</h1>
           <h2>{currentLanguage.lenguage[3]}✿</h2>
@@ -199,7 +200,7 @@ const Hero = () => {
               {currentLanguage.lenguage[6]} ✉
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </HeroStyled>
   );
