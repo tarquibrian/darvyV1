@@ -35,9 +35,9 @@ const Layout = ({ children }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
-  new Sketch({
-    dom: document.getElementById("container"),
-  });
+  // new Sketch({
+  //   dom: document.getElementById("container"),
+  // });
 
   useEffect(() => {
     // if (router.asPath === "/") {
@@ -45,6 +45,10 @@ const Layout = ({ children }) => {
     // } else {
     //   setLoading(true);
     // }
+
+    new Sketch({
+      dom: document.getElementById("container"),
+    });
   }, [router, loading]);
   return (
     <>

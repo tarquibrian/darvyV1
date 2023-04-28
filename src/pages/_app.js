@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>Darvy | Web Developer</title>
       </Head>
-      {!loading ? (
+      {/* {!loading ? (
         <motion.div
           key="loading"
           initial={{ opacity: 0 }}
@@ -37,7 +37,11 @@ export default function App({ Component, pageProps }) {
         <AppProvider>
           <Component {...pageProps} />
         </AppProvider>
-      )}
+      )} */}
+
+      <AppProvider>
+        <Component {...pageProps} />
+      </AppProvider>
     </AnimatePresence>
   );
 }
