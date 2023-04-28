@@ -16,16 +16,18 @@ const BGImage = styled.div`
   inset: 0;
   width: 100vw;
   height: 100vh;
+  /* width: 1000px; */
+  /* height: 700px; */
   z-index: -9;
   overflow: hidden;
   transform-style: preserve-3d;
 
-  img {
+  /* img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+  } */
 `;
 
 const Layout = ({ children }) => {

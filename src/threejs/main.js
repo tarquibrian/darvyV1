@@ -13,8 +13,8 @@ export default class Sketch {
     this.scene = new THREE.Scene();
 
     this.container = options.dom;
-    this.width = this.container.offsetWidth;
-    this.height = this.container.offsetHeight;
+    this.width = this.container?.offsetWidth;
+    this.height = this.container?.offsetHeight;
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setSize(this.width, this.height);
@@ -22,7 +22,7 @@ export default class Sketch {
     this.renderer.physicallyCorrectLights = true;
     this.renderer.outputEncoding = THREE.sRGBEncoding;
 
-    this.container.appendChild(this.renderer.domElement);
+    this.container?.appendChild(this.renderer.domElement);
 
     this.camera = new THREE.PerspectiveCamera(
       70,
@@ -57,8 +57,8 @@ export default class Sketch {
   }
 
   resize() {
-    this.width = this.container.offsetWidth;
-    this.height = this.container.offsetHeight;
+    this.width = this.container?.offsetWidth;
+    this.height = this.container?.offsetHeight;
     this.renderer.setSize(this.width, this.height);
     this.composer.setSize(this.width, this.height);
     this.camera.aspect = this.width / this.height;
