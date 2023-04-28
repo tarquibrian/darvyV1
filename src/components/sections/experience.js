@@ -80,6 +80,7 @@ const ContentList = styled.div`
   border: var(--border-size) solid rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  background-color: var(--bg-color);
   position: relative;
 
   .dinamic-bg {
