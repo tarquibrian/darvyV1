@@ -14,8 +14,8 @@ import Sketch from "src/threejs/main";
 const BGImage = styled(motion.div)`
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw; */
+  /* height: 100vh; */
   /* width: 1000px; */
   /* height: 700px; */
   z-index: -9;
@@ -35,17 +35,7 @@ const Layout = ({ children }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
-  // new Sketch({
-  //   dom: document.getElementById("container"),
-  // });
-
   useEffect(() => {
-    // if (router.asPath === "/") {
-    //   setTimeout(() => setLoading(true), 3000);
-    // } else {
-    //   setLoading(true);
-    // }
-
     new Sketch({
       dom: document.getElementById("container"),
     });
