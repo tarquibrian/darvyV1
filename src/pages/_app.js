@@ -10,13 +10,13 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (router.asPath === "/") {
-      setTimeout(() => setLoading(true), 2300);
-    } else {
-      setLoading(true);
-    }
-  }, [router]);
+  // useEffect(() => {
+  //   if (router.asPath === "/") {
+  //     setTimeout(() => setLoading(true), 2300);
+  //   } else {
+  //     setLoading(true);
+  //   }
+  // }, [router]);
 
   return (
     <AnimatePresence mode="sync">
