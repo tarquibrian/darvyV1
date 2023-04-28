@@ -35,7 +35,7 @@ const AboutCard = styled.div`
   max-width: 700px;
   border-radius: var(--border-radius);
   padding: 40px;
-  background: var(--bg-light);
+  background: var(--bg-color);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: 9;
@@ -89,7 +89,7 @@ const AboutCard = styled.div`
   }
 
   &:hover {
-    background: var(--bg-light-hover);
+    background: var(--bg-color-hover);
   }
 `;
 

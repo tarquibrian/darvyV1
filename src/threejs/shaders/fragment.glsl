@@ -57,7 +57,8 @@ void main() {
 	// vec3 accent = vec3(0.88, 0.81, 0.45);
 	// vec3 accent = vec3(1.00, 0.91, 0.42);
 	// vec3 accent = vec3(1.00, 0.95, 0.67);
-	vec3 accent = vec3(0.96, 0.92, 0.69);
+	// vec3 accent = vec3(0.96, 0.92, 0.69);
+	vec3 accent = vec3(0.80, 0.95, 0.94);
 
 	// vec3 baseSecond = vec3(224. / 255., 148. / 255., 66. / 255.);
 	// vec3 baseSecond = vec3(1.00, 0.00, 0.00);
