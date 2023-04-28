@@ -3,7 +3,7 @@ import * as THREE from "three";
 import fragment from "./shader/fragment.glsl";
 import vertex from "./shader/vertex.glsl";
 
-import { DotScreenShader } from "./CustomShader";
+import { DotScreenShader } from "./customShader";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
@@ -131,7 +131,3 @@ export default class Sketch {
     this.composer.render(this.scene, this.camera);
   }
 }
-
-new Sketch({
-  dom: document.getElementById("container"),
-});
