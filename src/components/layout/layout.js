@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import Sketch from "src/threejs/main";
 
-const BGImage = styled.div`
+const BGImage = styled(motion.div)`
   position: fixed;
   inset: 0;
   width: 100vw;
@@ -70,7 +70,12 @@ const Layout = ({ children }) => {
       <RightSide />
       <LeftSide />
 
-      <BGImage id="container">
+      <BGImage
+        id="container"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3, ease: "easeIn" }}
+      >
         {/* <Image
           priority
           src={noiseIMG}
