@@ -14,10 +14,6 @@ import Sketch from "src/threejs/main";
 const BGImage = styled(motion.div)`
   position: fixed;
   inset: 0;
-  /* width: 100vw; */
-  /* height: 100vh; */
-  /* width: 1000px; */
-  /* height: 700px; */
   z-index: -9;
   overflow: hidden;
   transform-style: preserve-3d;
