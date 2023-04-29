@@ -1,14 +1,10 @@
 import { GlobalStyle } from "@styles";
 import React, { useEffect, useState } from "react";
-import SEO from "./seo";
-import { Footer, Header, LeftSide, Loader, RightSide } from "@components";
+import { Header, LeftSide, Loader, RightSide } from "@components";
 import styled from "styled-components";
-import Image from "next/image";
-import noiseIMG from "../../images/layer-min.png";
 import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 import { useRouter } from "next/router";
-import Head from "next/head";
 import Sketch from "src/threejs/main";
 
 const BGImage = styled(motion.div)`
