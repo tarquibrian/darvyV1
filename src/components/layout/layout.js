@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 import { useRouter } from "next/router";
 import Sketch from "src/threejs/main";
+import Image from "next/image";
+import noiseIMG from "../../images/layer-min.png";
 
 const BGImage = styled(motion.div)`
   position: fixed;
@@ -18,6 +20,8 @@ const BGImage = styled(motion.div)`
     display: block;
     width: 100%;
     height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
   } */
 `;

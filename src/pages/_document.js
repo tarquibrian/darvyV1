@@ -31,6 +31,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head title="Darvy | Web Developer">
+          <meta name="robots" content="all" />
           <meta name="title" content="Darvy | Web Developer"></meta>
           <meta
             name="description"

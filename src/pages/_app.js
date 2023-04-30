@@ -23,6 +23,7 @@ export default function App({ Component, pageProps }) {
       {/* <GlobalStyle /> */}
       <Head>
         <title>Darvy | Web Developer</title>
+        <meta name="robots" content="all" />
       </Head>
       {/* {!loading ? (
         <motion.div

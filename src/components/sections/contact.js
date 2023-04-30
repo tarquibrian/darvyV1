@@ -4,8 +4,48 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
 import { contactData } from "@data";
+import TestIcon from "../icons/test";
 
-const ContactStyled = styled(motion.section)``;
+const ContactStyled = styled(motion.section)`
+  .svgTest {
+    /* background-color: red; */
+    display: grid;
+    place-content: center;
+    svg {
+      fill: var(--bg-color);
+
+      &:hover {
+      }
+    }
+  }
+
+  .customContainer {
+    /* background-color: lightblue; */
+    display: grid;
+    margin: auto;
+    max-width: 980px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 500px;
+
+    .content-head {
+      background-color: var(--bg-color);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+    }
+
+    .content-body {
+      /* border: 1px solid rgba(255, 255, 255, 0.4); */
+      background-color: var(--bg-color);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      grid-column: 3 / 4;
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+    }
+  }
+`;
 
 const ContactContainer = styled.div`
   width: 80%;
