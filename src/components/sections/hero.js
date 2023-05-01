@@ -8,9 +8,9 @@ import { useAppContext } from "src/context/app.context";
 
 const HeroStyled = styled(motion.section)`
   height: calc(100vh - 150px);
-  width: 80%;
+  /* width: 80%; */
   margin: auto;
-  svg {
+  /* svg {
     overflow: hidden;
     width: 1200px;
     height: 600px;
@@ -18,22 +18,27 @@ const HeroStyled = styled(motion.section)`
     bottom: 0;
     right: 0;
     transform: translate(50%, 0%);
-  }
+  } */
 
   .hero__container {
     height: 110%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    /* justify-content: space-between; */
+    align-items: center;
+    max-width: 1200px;
+    gap: 2rem;
+    margin: auto;
   }
 
   .hero__container-card {
     display: flex;
     flex-direction: column;
-    max-width: 920px;
     border-radius: var(--border-radius);
     font-family: var(--ff-sofia);
+    max-width: 920px;
+    /* width: fit-content; */
     padding: 40px;
     background: var(--bg-dark);
     -webkit-backdrop-filter: blur(10px);
@@ -46,7 +51,7 @@ const HeroStyled = styled(motion.section)`
 
     h1 {
       font-family: var(--ff-oswald);
-      font-size: var(--fz-header);
+      font-size: var(--fz-title);
       font-weight: 400;
       color: #eae2b7;
       text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
@@ -55,7 +60,9 @@ const HeroStyled = styled(motion.section)`
 
     h2 {
       font-family: var(--ff-oswald);
+      white-space: nowrap;
       font-size: clamp(30px, 8vw, 78px);
+      font-size: var(--fz-title);
       font-weight: 200;
       margin-bottom: 20px;
       /* color: #dfdfdf; */
@@ -69,6 +76,7 @@ const HeroStyled = styled(motion.section)`
       line-height: 1.5;
       margin-bottom: 1rem;
       font-size: var(--fz-md);
+      max-width: 720px;
     }
 
     .hero__container-buttons {
@@ -129,6 +137,15 @@ const HeroStyled = styled(motion.section)`
       background: var(--bg-color-hover);
       /* background: rgba(0, 0, 0, 0.1); */
     }
+  }
+
+  .hero__container-carousel {
+    min-width: 300px;
+    /* width: 100%; */
+    background-color: var(--bg-color);
+    height: 100%;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 
   @media screen and (max-width: 400px) {
@@ -206,6 +223,7 @@ const Hero = () => {
             </a>
           </div>
         </motion.div>
+        <div className="hero__container-carousel">hola</div>
       </div>
     </HeroStyled>
   );

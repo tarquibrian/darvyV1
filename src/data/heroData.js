@@ -8,7 +8,7 @@ export const heroData = {
     6: "Contacto",
   },
   en: {
-    1: "Hi, mi name is",
+    1: "Hi there!, mi name is",
     2: "Brian Tarqui Rojas",
     3: "I build experiences for the web",
     4: "Systems Engineer focused on FullStack web development, specialized in designing and building modern web applications, always prioritizing delivering exceptional digital experiences.",
