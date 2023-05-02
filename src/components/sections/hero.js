@@ -47,6 +47,7 @@ const HeroStyled = styled(motion.section)`
     background: var(--bg-color);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    position: relative;
 
     .type {
       /* font-family: "Sofia Sans Condensed"; */
@@ -104,7 +105,7 @@ const HeroStyled = styled(motion.section)`
         padding: 10px 18px;
         display: grid;
         place-content: center;
-        border: 2px solid var(--border-light);
+        /* border: 2px solid var(--border-light); */
         border-radius: var(--br-buttns);
 
         &:hover {
@@ -125,6 +126,7 @@ const HeroStyled = styled(motion.section)`
         );
 
         color: black;
+        /* color: #f77f00; */
         &:hover {
           text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
           background-image: radial-gradient(
@@ -273,7 +275,7 @@ const Hero = () => {
         initial="hidden"
         variants={variants}
       >
-        <motion.div className="hero__container-card" id="hero-card">
+        <div className="hero__container-card" id="hero-card">
           <span className="type" translate="no">
             {currentLanguage.lenguage[1]}
           </span>
@@ -295,7 +297,7 @@ const Hero = () => {
               {currentLanguage.lenguage[6]} ✉
             </a>
           </div>
-        </motion.div>
+        </div>
         <div className="hero__container-carousel">
           <div className="wrapper-carousel">
             <ColumnCarousel
