@@ -23,13 +23,13 @@ const HeroStyled = styled(motion.section)`
   } */
 
   .hero__container {
-    height: 110%;
+    height: 100%;
     position: relative;
     display: grid;
     grid-template-columns: max-content 1fr;
     /* justify-content: space-between; */
     align-items: center;
-    max-width: 1200px;
+    max-width: 1300px;
     gap: 2rem;
     margin: auto;
   }
@@ -151,7 +151,6 @@ const HeroStyled = styled(motion.section)`
 
   .hero__container-carousel {
     min-width: 300px;
-    /* width: 100%; */
     background: var(--bg-color);
     height: 100%;
     -webkit-backdrop-filter: blur(10px);
@@ -167,7 +166,7 @@ const HeroStyled = styled(motion.section)`
     .wrapper-carousel {
       display: flex;
       gap: 0.5rem;
-      transform: rotate(20deg) translateX(-91%);
+      transform: rotate(20deg) translateX(-65%);
     }
   }
 
@@ -248,7 +247,7 @@ const Hero = () => {
 
   return (
     <HeroStyled id="hero" ref={ref}>
-      <div className="hero__container">
+      <motion.div className="hero__container">
         <motion.div
           className="hero__container-card"
           id="hero-card"
@@ -322,7 +321,7 @@ const Hero = () => {
             </ColumnCarousel>
           </div>
         </div>
-      </div>
+      </motion.div>
     </HeroStyled>
   );
 };

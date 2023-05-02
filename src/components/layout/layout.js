@@ -16,14 +16,14 @@ const BGImage = styled(motion.div)`
   overflow: hidden;
   transform-style: preserve-3d;
 
-  img {
+  /* img {
     display: block;
     width: 100%;
     height: 100%;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-  }
+  } */
 `;
 
 const Layout = ({ children }) => {
@@ -32,9 +32,9 @@ const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // new Sketch({
-    //   dom: document.getElementById("container"),
-    // });
+    new Sketch({
+      dom: document.getElementById("container"),
+    });
   }, [router, loading]);
   return (
     <>
@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3, ease: "easeIn" }}
       >
-        <Image
+        {/* <Image
           priority
           src={noiseIMG}
           alt="background image"
@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
           onLoadingComplete={() => {
             setLoading(true);
           }}
-        />
+        /> */}
       </BGImage>
     </>
   );

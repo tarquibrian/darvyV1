@@ -32,7 +32,7 @@ const variables = css`
     --bg-light-hover: rgba(255, 225, 142, 0.1);
     --bg-dark-hover: rgba(0, 0, 0, 0.15);
     --bg-color: rgba(255, 255, 255, 0.1);
-    --bg-color-hover: rgba(0, 0, 0, 0.2);
+    --bg-color-hover: rgba(255, 255, 255, 0.05);
   }
 `;
 
