@@ -5,6 +5,8 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { heroData } from "@data";
 import { useAppContext } from "src/context/app.context";
+import imghero from "../../images/hero1.jpg";
+import Image from "next/image";
 
 const HeroStyled = styled(motion.section)`
   height: calc(100vh - 150px);
@@ -153,10 +155,72 @@ const HeroStyled = styled(motion.section)`
     height: 100%;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    border-radius: 4px;
+    overflow: hidden;
+    img {
+      width: 250px;
+      height: auto;
+      margin-bottom: 0.5rem;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    .wrapper-carousel {
+      display: flex;
+      gap: 0.5rem;
+      transform: rotate(20deg) translateX(-91%);
+    }
+
+    /* .column {
+      display: flex;
+      flex-direction: column;
+      animation: carouselAnimation 10s linear infinite;
+    }
+
+    @keyframes carouselAnimation {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-50%);
+      }
+    } */
   }
 
   @media screen and (max-width: 400px) {
     width: 90%;
+  }
+`;
+
+const ColumnCarousel = styled.div`
+  display: flex;
+  flex-direction: column;
+  animation: ${({ animationDirection }) =>
+      animationDirection === "up" ? "upAnimation" : "downAnimation"}
+    ${({ animationTime }) => (animationTime ? animationTime : "5s")} linear
+    infinite;
+
+  @keyframes upAnimation {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes downAnimation {
+    0% {
+      transform: translateY(-50%);
+    }
+
+    100% {
+      transform: translateY(-0%);
+    }
   }
 `;
 
@@ -234,7 +298,49 @@ const Hero = () => {
             </a>
           </div>
         </motion.div>
-        <div className="hero__container-carousel">hola</div>
+        <div className="hero__container-carousel">
+          <div className="wrapper-carousel">
+            <ColumnCarousel
+              className="column"
+              animationTime={"15s"}
+              animationDirection={"up"}
+            >
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+            </ColumnCarousel>
+            <ColumnCarousel
+              className="column"
+              animationTime={"18s"}
+              animationDirection={"down"}
+            >
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+            </ColumnCarousel>
+            <ColumnCarousel
+              className="column"
+              animationTime={"18s"}
+              animationDirection={"up"}
+            >
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+              <Image src={imghero} alt="img from hero" />
+            </ColumnCarousel>
+          </div>
+        </div>
       </div>
     </HeroStyled>
   );
