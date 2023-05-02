@@ -19,6 +19,7 @@ const variables = css`
     /* BORDER */
     --border-size: 1px;
     --border-radius: 16px;
+    --br-buttns: 8px;
     --border-light: rgba(255, 255, 255, 0.4);
 
     /* BACKGROUND COLOR */

@@ -57,6 +57,11 @@ const HeroStyled = styled(motion.section)`
       padding: 0.3rem 1rem;
       border-radius: 5rem;
       background-color: #ffe2c4;
+      background-image: radial-gradient(
+        circle farthest-corner at 10% 20%,
+        rgba(255, 229, 168, 1) 0%,
+        rgba(251, 174, 222, 1) 100.7%
+      );
       letter-spacing: 3px;
       color: #f77f00;
     }
@@ -99,25 +104,38 @@ const HeroStyled = styled(motion.section)`
         padding: 10px 18px;
         display: grid;
         place-content: center;
-        border: var(--border-size) solid var(--border-light);
-        border-radius: var(--border-radius);
+        border: 2px solid var(--border-light);
+        border-radius: var(--br-buttns);
 
         &:hover {
-          border: var(--border-size) solid var(--border-light);
+          border: 2px solid var(--border-light);
           cursor: pointer;
           filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
         }
       }
 
       .button__resume {
-        border: var(--border-size) solid transparent;
-        background: var(--bg-orange);
+        /* border: 2px solid transparent; */
+        /* background: var(--bg-orange); */
+
+        background-image: radial-gradient(
+          circle farthest-corner at 10% 20%,
+          rgba(255, 229, 168, 1) 0%,
+          rgba(251, 174, 222, 1) 100.7%
+        );
+
+        color: black;
         &:hover {
           text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
+          background-image: radial-gradient(
+            circle farthest-corner at 10% 20%,
+            rgba(255, 229, 168, 1) 0%,
+            rgba(251, 174, 222, 1) 100.7%
+          );
         }
       }
       .button__contact {
-        border: var(--border-size) solid transparent;
+        border: 2px solid transparent;
         background-color: rgba(255, 255, 255, 0.2);
       }
     }
@@ -150,11 +168,12 @@ const HeroStyled = styled(motion.section)`
   }
 
   .hero__container-carousel {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     min-width: 300px;
     background: var(--bg-color);
     height: 100%;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+
     border-radius: var(--border-radius);
     overflow: hidden;
     img {
@@ -206,12 +225,11 @@ const ColumnCarousel = styled.div`
 
 const variants = {
   visible: {
-    y: 0,
     opacity: 1,
     scale: 1,
     transition: { duration: 0.6, delay: 0.3 },
   },
-  hidden: { y: 200, opacity: 0, scale: 1 },
+  hidden: { opacity: 0, scale: 1 },
 };
 
 const languages = {
