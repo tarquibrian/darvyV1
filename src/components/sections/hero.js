@@ -27,7 +27,6 @@ const HeroStyled = styled(motion.section)`
     position: relative;
     display: grid;
     grid-template-columns: max-content 1fr;
-    /* justify-content: space-between; */
     align-items: center;
     max-width: 1300px;
     gap: 2rem;
@@ -35,25 +34,22 @@ const HeroStyled = styled(motion.section)`
   }
 
   .hero__container-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
     border-radius: var(--border-radius);
-    /* border-radius: 8px; */
     font-family: var(--ff-sofia);
     max-width: 920px;
-    /* width: fit-content; */
     padding: 40px;
     background: var(--bg-color);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    position: relative;
+    height: fit-content;
 
     .type {
-      /* font-family: "Sofia Sans Condensed"; */
       color: #fff;
       font-size: var(--fz-smm);
-      /* border: 1px solid white; */
       width: fit-content;
       padding: 0.3rem 1rem;
       border-radius: 5rem;
@@ -100,45 +96,39 @@ const HeroStyled = styled(motion.section)`
       gap: 1rem;
       font-size: var(--fz-md);
 
-      .button__resume,
       .button__contact {
         padding: 10px 18px;
         display: grid;
         place-content: center;
-        /* border: 2px solid var(--border-light); */
         border-radius: var(--br-buttns);
+        border: 2px solid var(--border-light);
 
         &:hover {
           border: 2px solid var(--border-light);
           cursor: pointer;
           filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
+          background-color: rgba(255, 255, 255, 0.2);
         }
       }
 
       .button__resume {
-        /* border: 2px solid transparent; */
-        /* background: var(--bg-orange); */
-
-        background-image: radial-gradient(
+        padding: 10px 18px;
+        display: grid;
+        place-content: center;
+        border-radius: var(--br-buttns);
+        border: 2px solid var(--border-light);
+        background: radial-gradient(
           circle farthest-corner at 10% 20%,
           rgba(255, 229, 168, 1) 0%,
           rgba(251, 174, 222, 1) 100.7%
         );
-
         color: black;
-        /* color: #f77f00; */
+        transition: 0.3s ease;
         &:hover {
+          filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
+          border: 2px solid rgba(255, 255, 255, 0.7);
           text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
-          background-image: radial-gradient(
-            circle farthest-corner at 10% 20%,
-            rgba(255, 229, 168, 1) 0%,
-            rgba(251, 174, 222, 1) 100.7%
-          );
         }
-      }
-      .button__contact {
-        border: 2px solid transparent;
-        background-color: rgba(255, 255, 255, 0.2);
       }
     }
 
@@ -148,7 +138,7 @@ const HeroStyled = styled(motion.section)`
 
     &::before {
       background: radial-gradient(
-        800px circle at var(--mouse1-x) var(--mouse1-y),
+        1000px circle at var(--mouse1-x) var(--mouse1-y),
         rgba(255, 255, 255, 0.15),
         transparent 40%
       );
@@ -165,7 +155,6 @@ const HeroStyled = styled(motion.section)`
     }
     &:hover {
       background: var(--bg-color-hover);
-      /* background: rgba(0, 0, 0, 0.1); */
     }
   }
 
@@ -240,7 +229,7 @@ const languages = {
 };
 
 const Hero = () => {
-  const { state, toggleLanguage } = useAppContext();
+  const { state } = useAppContext();
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const heroref = useRef(null);
@@ -252,7 +241,7 @@ const Hero = () => {
   const handleOnMouseMove = (e) => {
     let rect = heroref?.current?.getBoundingClientRect(),
       x = e?.clientX - rect?.left,
-      y = e?.clientY - rect?.top;
+      y = e?.clientY - rect?.top - 110;
 
     heroref?.current?.style?.setProperty("--mouse1-x", `${x}px`);
     heroref?.current?.style?.setProperty("--mouse1-y", `${y}px`);
@@ -275,7 +264,7 @@ const Hero = () => {
         initial="hidden"
         variants={variants}
       >
-        <div className="hero__container-card" id="hero-card">
+        <div className="hero__container-card">
           <span className="type" translate="no">
             {currentLanguage.lenguage[1]}
           </span>
@@ -298,6 +287,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
+
         <div className="hero__container-carousel">
           <div className="wrapper-carousel">
             <ColumnCarousel
