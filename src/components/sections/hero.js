@@ -247,15 +247,15 @@ const Hero = () => {
 
   return (
     <HeroStyled id="hero" ref={ref}>
-      <motion.div className="hero__container">
-        <motion.div
-          className="hero__container-card"
-          id="hero-card"
-          ref={heroref}
-          animate={controls}
-          initial="hidden"
-          variants={variants}
-        >
+      <motion.div
+        className="hero__container"
+        id="hero-container"
+        ref={heroref}
+        animate={controls}
+        initial="hidden"
+        variants={variants}
+      >
+        <motion.div className="hero__container-card" id="hero-card">
           <span className="type" translate="no">
             {currentLanguage.lenguage[1]}
           </span>
