@@ -39,11 +39,12 @@ const HeroStyled = styled(motion.section)`
     flex-direction: column;
     gap: 1.3rem;
     border-radius: var(--border-radius);
+    /* border-radius: 8px; */
     font-family: var(--ff-sofia);
     max-width: 920px;
     /* width: fit-content; */
     padding: 40px;
-    background: var(--bg-dark);
+    background: var(--bg-color);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 
@@ -151,20 +152,16 @@ const HeroStyled = styled(motion.section)`
   .hero__container-carousel {
     min-width: 300px;
     /* width: 100%; */
-    background-color: var(--bg-color);
+    background: var(--bg-color);
     height: 100%;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     overflow: hidden;
     img {
       width: 250px;
       height: auto;
       margin-bottom: 0.5rem;
-
-      &:hover {
-        transform: scale(1.02);
-      }
     }
 
     .wrapper-carousel {
@@ -172,22 +169,6 @@ const HeroStyled = styled(motion.section)`
       gap: 0.5rem;
       transform: rotate(20deg) translateX(-91%);
     }
-
-    /* .column {
-      display: flex;
-      flex-direction: column;
-      animation: carouselAnimation 10s linear infinite;
-    }
-
-    @keyframes carouselAnimation {
-      0% {
-        transform: translateY(0);
-      }
-
-      100% {
-        transform: translateY(-50%);
-      }
-    } */
   }
 
   @media screen and (max-width: 400px) {

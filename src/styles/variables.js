@@ -18,7 +18,7 @@ const variables = css`
 
     /* BORDER */
     --border-size: 1px;
-    --border-radius: 4px;
+    --border-radius: 16px;
     --border-light: rgba(255, 255, 255, 0.4);
 
     /* BACKGROUND COLOR */
@@ -31,7 +31,7 @@ const variables = css`
     --bg-dark: rgba(0, 0, 0, 0.1);
     --bg-light-hover: rgba(255, 225, 142, 0.1);
     --bg-dark-hover: rgba(0, 0, 0, 0.15);
-    --bg-color: rgba(0, 0, 0, 0.1);
+    --bg-color: rgba(255, 255, 255, 0.1);
     --bg-color-hover: rgba(0, 0, 0, 0.2);
   }
 `;
