@@ -10,17 +10,7 @@ import Image from "next/image";
 
 const HeroStyled = styled(motion.section)`
   height: calc(100vh - 150px);
-  /* width: 80%; */
   margin: auto;
-  /* svg {
-    overflow: hidden;
-    width: 1200px;
-    height: 600px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    transform: translate(50%, 0%);
-  } */
 
   .hero__container {
     height: 100%;
@@ -69,7 +59,6 @@ const HeroStyled = styled(motion.section)`
       font-weight: 400;
       color: #eae2b7;
       text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-      /* margin-left: -4px; */
     }
 
     h2 {
@@ -78,8 +67,6 @@ const HeroStyled = styled(motion.section)`
       font-size: clamp(30px, 8vw, 78px);
       font-size: var(--fz-title);
       font-weight: 200;
-      /* color: #dfdfdf; */
-      /* margin-left: -4px; */
       color: transparent;
       text-shadow: 0 0 5px rgba(255 255 255 / 1);
       -webkit-text-stroke: 1px white;
