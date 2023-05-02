@@ -35,6 +35,7 @@ const HeroStyled = styled(motion.section)`
   .hero__container-card {
     display: flex;
     flex-direction: column;
+    gap: 1.3rem;
     border-radius: var(--border-radius);
     font-family: var(--ff-sofia);
     max-width: 920px;
@@ -44,9 +45,17 @@ const HeroStyled = styled(motion.section)`
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 
-    span {
+    .type {
+      /* font-family: "Sofia Sans Condensed"; */
       color: #fff;
-      font-size: var(--fz-md);
+      font-size: var(--fz-smm);
+      /* border: 1px solid white; */
+      width: fit-content;
+      padding: 0.3rem 1rem;
+      border-radius: 5rem;
+      background-color: #ffe2c4;
+      letter-spacing: 3px;
+      color: #f77f00;
     }
 
     h1 {
@@ -55,7 +64,7 @@ const HeroStyled = styled(motion.section)`
       font-weight: 400;
       color: #eae2b7;
       text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-      margin-left: -4px;
+      /* margin-left: -4px; */
     }
 
     h2 {
@@ -64,19 +73,17 @@ const HeroStyled = styled(motion.section)`
       font-size: clamp(30px, 8vw, 78px);
       font-size: var(--fz-title);
       font-weight: 200;
-      margin-bottom: 20px;
       /* color: #dfdfdf; */
-      margin-left: -4px;
+      /* margin-left: -4px; */
       color: transparent;
       text-shadow: 0 0 5px rgba(255 255 255 / 1);
       -webkit-text-stroke: 1px white;
     }
 
     p {
-      line-height: 1.5;
       margin-bottom: 1rem;
       font-size: var(--fz-md);
-      max-width: 720px;
+      max-width: 640px;
     }
 
     .hero__container-buttons {
@@ -205,9 +212,13 @@ const Hero = () => {
           initial="hidden"
           variants={variants}
         >
-          <span>{currentLanguage.lenguage[1]}</span>
-          <h1>Brian Tarqui Rojas.</h1>
-          <h2>{currentLanguage.lenguage[3]}✿</h2>
+          <span className="type" translate="no">
+            {currentLanguage.lenguage[1]}
+          </span>
+          <div className="main-title">
+            <h1>Brian Tarqui Rojas.</h1>
+            <h2>{currentLanguage.lenguage[3]}✿</h2>
+          </div>
           <p>{currentLanguage.lenguage[4]}</p>
           <div className="hero__container-buttons">
             <a
