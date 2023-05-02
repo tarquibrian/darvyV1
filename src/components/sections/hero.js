@@ -109,7 +109,13 @@ const HeroStyled = styled(motion.section)`
           rgba(255, 229, 168, 1) 0%,
           rgba(251, 174, 222, 1) 100.7%
         );
-        color: black;
+        /* background-image: radial-gradient(
+          circle farthest-corner at 83.7% 4.3%,
+          rgba(173, 0, 171, 1) 0%,
+          rgba(15, 51, 92, 1) 90%
+        ); */
+
+        color: var(--c-dark);
         transition: 0.3s ease;
         &:hover {
           filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
@@ -117,6 +123,21 @@ const HeroStyled = styled(motion.section)`
           text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
         }
       }
+
+      .button__contact,
+      .button__resume {
+        display: flex;
+        gap: 5px;
+        &:hover {
+          .symbol {
+            transform: scale(1.3);
+          }
+        }
+      }
+    }
+
+    .symbolF {
+      display: inline-block;
     }
 
     &:hover::before {
@@ -142,6 +163,9 @@ const HeroStyled = styled(motion.section)`
     }
     &:hover {
       background: var(--bg-color-hover);
+      .symbolF {
+        transform: scale(1.3);
+      }
     }
   }
 
@@ -257,7 +281,10 @@ const Hero = () => {
           </span>
           <div className="main-title">
             <h1>Brian Tarqui Rojas.</h1>
-            <h2>{currentLanguage.lenguage[3]}✿</h2>
+            <h2>
+              {currentLanguage.lenguage[3]}{" "}
+              {/* <span className="symbolF">⁕◎◌º✿</span> */}
+            </h2>
           </div>
           <p>{currentLanguage.lenguage[4]}</p>
           <div className="hero__container-buttons">
@@ -267,10 +294,10 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {currentLanguage.lenguage[5]} ✹
+              {currentLanguage.lenguage[5]} <span className="symbol">✹</span>
             </a>
             <a href="mailto:tarquibrian@gmail.com" className="button__contact">
-              {currentLanguage.lenguage[6]} ✉
+              {currentLanguage.lenguage[6]} <span className="symbol">✉</span>
             </a>
           </div>
         </div>

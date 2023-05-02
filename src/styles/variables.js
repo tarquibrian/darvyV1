@@ -34,6 +34,9 @@ const variables = css`
     --bg-dark-hover: rgba(0, 0, 0, 0.15);
     --bg-color: rgba(255, 255, 255, 0.1);
     --bg-color-hover: rgba(255, 255, 255, 0.05);
+
+    --c-dark: #000;
+    --c-light: #fff;
   }
 `;
 

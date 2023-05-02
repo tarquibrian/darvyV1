@@ -16,7 +16,7 @@ const BGImage = styled(motion.div)`
   overflow: hidden;
   transform-style: preserve-3d;
 
-  img {
+  .bg {
     display: block;
     width: 100%;
     height: 100%;
@@ -31,11 +31,19 @@ const Layout = ({ children }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
+  const renderBG = () => {
+    const Element = document.getElementById("container");
+    new Sketch({
+      dom: Element,
+    });
+  };
+
   useEffect(() => {
     // new Sketch({
     //   dom: document.getElementById("container"),
     // });
-  }, [router, loading]);
+    // renderBG();
+  }, []);
   return (
     <>
       <GlobalStyle />
@@ -67,6 +75,7 @@ const Layout = ({ children }) => {
           src={noiseIMG}
           alt="background image"
           placeholder="blur"
+          className="bg"
           onLoadingComplete={() => {
             setLoading(true);
           }}
