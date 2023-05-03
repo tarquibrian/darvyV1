@@ -11,16 +11,18 @@ import Image from "next/image";
 const HeroStyled = styled(motion.section)`
   height: calc(100vh - 150px);
   margin: auto;
+  width: 80%;
 
   .hero__container {
     height: 100%;
     position: relative;
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: minmax(350px, 1fr) minmax(400px, 530px);
     align-items: center;
     max-width: 1300px;
     gap: 2rem;
     margin: auto;
+    /* overflow: hidden; */
   }
 
   .hero__container-card {
@@ -35,7 +37,8 @@ const HeroStyled = styled(motion.section)`
     background: var(--bg-color);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    height: fit-content;
+    /* height: fit-content; */
+    /* border: 2px solid rgba(255, 255, 255, 0.5); */
 
     .type {
       color: #fff;
@@ -50,7 +53,7 @@ const HeroStyled = styled(motion.section)`
         rgba(251, 174, 222, 1) 100.7%
       );
       letter-spacing: 3px;
-      color: #f77f00;
+      color: var(--c-dark);
     }
 
     h1 {
@@ -63,7 +66,6 @@ const HeroStyled = styled(motion.section)`
 
     h2 {
       font-family: var(--ff-oswald);
-      white-space: nowrap;
       font-size: clamp(30px, 8vw, 78px);
       font-size: var(--fz-title);
       font-weight: 200;
@@ -172,8 +174,14 @@ const HeroStyled = styled(motion.section)`
   .hero__container-carousel {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    min-width: 300px;
+    min-width: 200px;
     background: var(--bg-color);
+    background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(255, 229, 168, 1) 0%,
+      rgba(251, 174, 222, 1) 100.7%
+    );
+    /* padding: 1rem; */
     height: 100%;
 
     border-radius: var(--border-radius);
@@ -182,17 +190,46 @@ const HeroStyled = styled(motion.section)`
       width: 250px;
       height: auto;
       margin-bottom: 0.5rem;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     }
 
     .wrapper-carousel {
       display: flex;
       gap: 0.5rem;
-      transform: rotate(20deg) translateX(-65%);
+      transform: rotate(20deg) translate(-68%, 0%);
     }
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 1024px) {
+    padding: 2rem 0;
+    .hero__container {
+      grid-template-columns: 1fr;
+
+      .hero__container-carousel {
+        .wrapper-carousel {
+          transform: rotate(20deg) translate(-45vw, 0%);
+
+          img {
+            width: 300px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 640px) {
     width: 90%;
+    .hero__container {
+      .hero__container-carousel {
+        .wrapper-carousel {
+          transform: rotate(20deg) translate(-60vw, 0%);
+          img {
+            width: 200px;
+          }
+        }
+      }
+    }
   }
 `;
 

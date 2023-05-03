@@ -50,7 +50,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    padding: 5rem 0px;
+    padding: 5rem 0;
     &:nth-child(2) {
       padding-bottom: 5rem;
     }

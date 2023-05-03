@@ -63,7 +63,7 @@ const NavbarHeader = styled(motion.header)`
   }
 `;
 const NavbarContent = styled(motion.div)`
-  margin: 0 auto;
+  margin: auto;
   height: 100%;
   width: 80%;
   max-width: 1300px;
@@ -73,7 +73,6 @@ const NavbarContent = styled(motion.div)`
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 4px;
-  /* background-color: var(--bg-color); */
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   z-index: 999;
@@ -133,7 +132,7 @@ const LinksContainer = styled.div`
       }
     }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 550px) {
     display: none;
   }
 `;
@@ -157,6 +156,7 @@ export const ResumeLink = styled.div`
 const NavbarContentResponsive = styled.div`
   margin: 0 auto;
   height: 100%;
+  width: 80%;
   padding: 0 4%;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 4px;
@@ -169,6 +169,12 @@ const NavbarContentResponsive = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 90%;
+    width: fit-content;
+    justify-content: center;
   }
 `;
 

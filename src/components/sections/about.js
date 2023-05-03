@@ -13,7 +13,7 @@ import { CardEffect } from "../layout";
 
 const AboutStyled = styled(motion.section)`
   width: 80%;
-  margin: auto;
+  /* margin: auto; */
   padding: initial;
   padding-top: 150px;
   display: grid;
