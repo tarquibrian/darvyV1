@@ -177,11 +177,13 @@ const HeroStyled = styled(motion.section)`
     backdrop-filter: blur(10px);
     min-width: 200px;
     background: var(--bg-color);
-    background-image: radial-gradient(
+    border: 2px solid var(--border-light);
+    background-color: rgba(255, 255, 255, 0.4);
+    /* background-image: radial-gradient(
       circle farthest-corner at 10% 20%,
       rgba(255, 229, 168, 1) 0%,
       rgba(251, 174, 222, 1) 100.7%
-    );
+    ); */
     height: 100%;
 
     border-radius: var(--border-radius);
