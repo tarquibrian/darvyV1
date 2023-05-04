@@ -128,7 +128,6 @@ const ImgProfile = styled.div`
   .content {
     color: #eae2b7;
     font-size: var(--fz-md);
-    /* background-color: var(--bg-light); */
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -144,16 +143,6 @@ const ImgProfile = styled.div`
   }
 `;
 
-const variants = {
-  visible: {
-    y: 0,
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.6 },
-  },
-  hidden: { y: 500, opacity: 0, scale: 1 },
-};
-
 const languages = {
   es: aboutData.es,
   en: aboutData.en,
@@ -163,7 +152,7 @@ const About = () => {
   const controls = useAnimation();
   const [refView, inView] = useInView();
   const aboutref = useRef(null);
-  const { state, toggleLanguage } = useAppContext();
+  const { state } = useAppContext();
 
   const currentLanguage = {
     lenguage: languages[state.currentLanguage],
