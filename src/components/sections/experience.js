@@ -72,10 +72,6 @@ const ContentList = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
-  border-radius: 8px;
-  overflow: hidden;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
   border: var(--border-size) solid rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
