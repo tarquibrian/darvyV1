@@ -13,7 +13,6 @@ import { CardEffect } from "../layout";
 
 const AboutStyled = styled(motion.section)`
   width: 80%;
-  /* margin: auto; */
   padding: initial;
   padding-top: 150px;
   display: grid;
@@ -34,6 +33,7 @@ const AboutCard = styled.div`
   flex-direction: column;
   max-width: 700px;
   border-radius: var(--border-radius);
+  /* border: 2px solid var(--border-light); */
   padding: 40px;
   background: var(--bg-color);
   -webkit-backdrop-filter: blur(10px);
@@ -126,16 +126,43 @@ const ImgProfile = styled.div`
   }
 
   .content {
-    color: #eae2b7;
     font-size: var(--fz-md);
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 1rem 2rem;
     border-radius: var(--border-radius);
-    span {
+    border-radius: 8px;
+    background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(255, 229, 168, 1) 0%,
+      rgba(251, 174, 222, 1) 100.7%
+    );
+    border: 2px solid var(--border-light);
+    color: var(--c-dark);
+    .element {
+      width: 100%;
+      display: grid;
+      gap: 0.5rem;
       z-index: 999;
+
+      .wrapper-element {
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+      }
+    }
+
+    &:hover {
+      filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
+      .element {
+        .symbol {
+          transform: scale(1.4);
+        }
+      }
     }
   }
   @media screen and (max-width: 750px) {
@@ -200,9 +227,21 @@ const About = () => {
           />
         </div>
         <CardEffect>
-          <span>⏤⏤ Web Developer✧</span>
-          <span>⏤⏤ UX/UI Designer✦</span>
-          <span>⏤⏤ System Engineer✷</span>
+          <div className="element">
+            <span className="wrapper-element">
+              ⏤⏤ Web Developer <span className="symbol">✧</span>
+            </span>
+          </div>
+          <div className="element">
+            <span className="wrapper-element">
+              ⏤⏤ UX/UI Designer <span className="symbol">✦</span>
+            </span>
+          </div>
+          <div className="element">
+            <span className="wrapper-element">
+              ⏤⏤ System Engineer <span className="symbol">✷</span>
+            </span>
+          </div>
         </CardEffect>
       </ImgProfile>
       <AboutCard ref={aboutref} id="about-card">
