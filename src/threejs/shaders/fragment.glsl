@@ -47,6 +47,27 @@ mat2 rotate2D(float angle) {
 	return mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
 }
 
+// void main() {
+
+// 	vec3 baseFirst = vec3(0.38, 0.09, 0.57);
+// 	vec3 accent = vec3(0.80, 0.95, 0.94);
+// 	// vec3 accent = vec3(1.00, 0.78, 0.87);
+// 	// vec3 accent = vec3(1.00, 0.69, 0.80);
+
+// 	vec3 baseSecond = vec3(1.00, 0.1, 0.00);
+// 	vec3 baseThird = vec3(232. / 255., 201. / 255., 73. / 255.);
+// 	float n = noise(vPosition + time);
+
+// 	vec2 baseUV = rotate2D(n) * vPosition.xy * .01;
+// 	float basePattern = lines(baseUV, 0.5);
+// 	float secondPattern = lines(baseUV, 0.1);
+
+// 	vec3 baseColor = mix(baseSecond, baseFirst, basePattern);
+// 	vec3 secondBaseColor = mix(baseColor, accent, secondPattern);
+
+// 	gl_FragColor = vec4(vec3(secondBaseColor), 3.);
+// }
+
 void main() {
 
 	vec3 baseFirst = vec3(0.38, 0.09, 0.57);
@@ -54,12 +75,17 @@ void main() {
 	// vec3 accent = vec3(1.00, 0.78, 0.87);
 	// vec3 accent = vec3(1.00, 0.69, 0.80);
 
-	vec3 baseSecond = vec3(1.00, 0.1, 0.00);
-	vec3 baseThird = vec3(232. / 255., 201. / 255., 73. / 255.);
+	//black
+	// vec3 baseSecond = vec3(1.00, 0.1, 0.00);
+	vec3 baseSecond = vec3(0.00, 0.00, 0.00);
+
+	// vec3 baseThird = vec3(232. / 255., 201. / 255., 73. / 255.);
+
 	float n = noise(vPosition + time);
 
-	vec2 baseUV = rotate2D(n) * vPosition.xy * .01;
-	float basePattern = lines(baseUV, 0.5);
+	//0.01
+	vec2 baseUV = rotate2D(n) * vPosition.xy * .005;
+	float basePattern = lines(baseUV, 0.1);
 	float secondPattern = lines(baseUV, 0.1);
 
 	vec3 baseColor = mix(baseSecond, baseFirst, basePattern);

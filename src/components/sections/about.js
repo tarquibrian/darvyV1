@@ -110,7 +110,7 @@ const ImgProfile = styled.div`
       width: 100%;
       max-width: 400px;
       height: auto;
-      background: var(--bg-orange);
+      /* background: var(--bg-orange); */
       background-image: radial-gradient(
         circle farthest-corner at 10% 20%,
         rgba(255, 229, 168, 1) 0%,
@@ -140,6 +140,7 @@ const ImgProfile = styled.div`
       rgba(255, 229, 168, 1) 0%,
       rgba(251, 174, 222, 1) 100.7%
     );
+
     border: 2px solid var(--border-light);
     color: var(--c-dark);
     .element {
