@@ -71,8 +71,8 @@ const NavbarContent = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   z-index: 999;

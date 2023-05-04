@@ -33,7 +33,7 @@ const AboutCard = styled.div`
   flex-direction: column;
   max-width: 700px;
   border-radius: var(--border-radius);
-  /* border: 2px solid var(--border-light); */
+  border: 2px solid var(--border-light);
   padding: 40px;
   background: var(--bg-color);
   -webkit-backdrop-filter: blur(10px);
@@ -89,6 +89,7 @@ const AboutCard = styled.div`
   }
 
   &:hover {
+    border-color: rgba(255, 255, 255, 0.2);
     background: var(--bg-color-hover);
   }
 `;

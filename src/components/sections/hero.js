@@ -38,7 +38,7 @@ const HeroStyled = styled(motion.section)`
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     /* height: fit-content; */
-    /* border: 2px solid rgba(255, 255, 255, 0.5); */
+    border: 2px solid rgba(255, 255, 255, 0.4);
 
     .type {
       color: #fff;
@@ -165,6 +165,7 @@ const HeroStyled = styled(motion.section)`
     }
     &:hover {
       background: var(--bg-color-hover);
+      border-color: rgba(255, 255, 255, 0.2);
       .symbolF {
         transform: scale(1.3);
       }

@@ -183,6 +183,7 @@ const TabList = styled.div`
 
 const ContentBody = styled.div`
   border-radius: var(--border-radius);
+  border: 2px solid var(--border-light);
   overflow: hidden;
   .contentbody__container {
     z-index: 999;
@@ -264,6 +265,10 @@ const ContentBody = styled.div`
         }
       }
     }
+  }
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.2);
   }
 `;
 
