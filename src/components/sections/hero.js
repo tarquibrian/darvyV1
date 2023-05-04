@@ -181,7 +181,6 @@ const HeroStyled = styled(motion.section)`
       rgba(255, 229, 168, 1) 0%,
       rgba(251, 174, 222, 1) 100.7%
     );
-    /* padding: 1rem; */
     height: 100%;
 
     border-radius: var(--border-radius);

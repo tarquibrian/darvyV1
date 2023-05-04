@@ -173,7 +173,7 @@ const NavbarContentResponsive = styled.div`
 
   @media screen and (max-width: 640px) {
     width: 90%;
-    width: fit-content;
+    /* width: fit-content; */
     justify-content: center;
   }
 `;
