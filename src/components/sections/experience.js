@@ -21,9 +21,7 @@ const ExperienceCard = styled.div`
   flex-direction: column;
   min-width: 600px;
   max-width: 920px;
-  border-radius: var(--border-radius);
   font-family: var(--ff-sofia);
-  font-weight: normal;
   z-index: 9;
 
   .headerTitle {
@@ -74,7 +72,8 @@ const ContentList = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
-  border-radius: 4px;
+  border-radius: 8px;
+  overflow: hidden;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border: var(--border-size) solid rgba(255, 255, 255, 0.2);
@@ -104,7 +103,7 @@ const ContentList = styled.div`
       left: 0%;
       width: 5px;
       height: 100%;
-      background: rgba(234, 226, 176, 1);
+      background: #000;
     }
   }
 
@@ -115,8 +114,7 @@ const ContentList = styled.div`
     left: 0%;
     width: 5px;
     height: 100%;
-    background-color: ${({ isActive }) =>
-      isActive ? "rgba(234,226,176,1)" : "rgba(255, 255, 255, 0.2)"};
+    background-color: rgba(255, 255, 255, 0.2);
   }
   @media screen and (max-width: 768px) {
     overflow-x: scroll;
@@ -141,7 +139,7 @@ const TabList = styled.div`
 
   .year-list,
   .name-list {
-    color: ${({ isActive }) => (isActive ? "var(--c-dark)" : "#e5e5e5")};
+    color: ${({ isActive }) => (isActive ? "var(--c-dark)" : "#fff")};
     font-size: clamp(16px, 3vw, 18px);
   }
   .year-list {
@@ -188,13 +186,13 @@ const TabList = styled.div`
 `;
 
 const ContentBody = styled.div`
+  border-radius: var(--border-radius);
+  overflow: hidden;
   .contentbody__container {
     z-index: 999;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border-radius: var(--border-radius);
-    overflow: hidden;
     padding: 1.7rem 2rem;
 
     &-header {
