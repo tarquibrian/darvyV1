@@ -90,6 +90,11 @@ const ContentList = styled.div`
     width: 100%;
     height: 60px;
     background: var(--bg-orange);
+    background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(255, 229, 168, 1) 0%,
+      rgba(251, 174, 222, 1) 100.7%
+    );
     z-index: 0;
 
     &::after {
@@ -136,12 +141,17 @@ const TabList = styled.div`
 
   .year-list,
   .name-list {
-    font-weight: normal;
-    color: ${({ isActive }) => (isActive ? "#fff" : "#e5e5e5")};
+    color: ${({ isActive }) => (isActive ? "var(--c-dark)" : "#e5e5e5")};
     font-size: clamp(16px, 3vw, 18px);
   }
   .year-list {
     justify-self: center;
+  }
+
+  .name-list {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
   }
 
   &:hover {
@@ -155,6 +165,9 @@ const TabList = styled.div`
         isActive
           ? "0 0 5px rgba(255, 255, 255 , 0.6)"
           : "0 0 5px rgba(255, 255, 255 , 0.8)"};
+    }
+    .symbol {
+      transform: scale(1.4);
     }
   }
   @media screen and (max-width: 768px) {
@@ -325,7 +338,10 @@ const Experience = () => {
                   key={id}
                 >
                   <span className="year-list">{year}</span>
-                  <span className="name-list">✹ {name}</span>
+                  <div className="name-list">
+                    <span className="symbol">✹</span>
+                    {name}
+                  </div>
                 </TabList>
               );
             })}
