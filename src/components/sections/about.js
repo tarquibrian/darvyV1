@@ -104,12 +104,17 @@ const ImgProfile = styled.div`
   .image {
     img {
       display: block;
-      border-radius: 5px;
+      border-radius: 8px;
       border: calc(1px + var(--border-size)) solid var(--border-light);
       width: 100%;
       max-width: 400px;
       height: auto;
       background: var(--bg-orange);
+      background-image: radial-gradient(
+        circle farthest-corner at 10% 20%,
+        rgba(255, 229, 168, 1) 0%,
+        rgba(251, 174, 222, 1) 100.7%
+      );
     }
     &:hover {
       img {
