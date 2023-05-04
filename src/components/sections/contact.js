@@ -125,7 +125,7 @@ const CardContent = styled.div`
     display: grid;
     place-content: center;
     border: var(--border-size) solid var(--border-light);
-    border-radius: var(--border-radius);
+    border-radius: 8px;
     margin: auto;
 
     &:hover {
