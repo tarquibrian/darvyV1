@@ -7,7 +7,7 @@ const EmailStyle = styled(motion.div)`
   top: 0;
   right: 0;
   width: 100px;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   place-content: center;
   div {
