@@ -16,6 +16,7 @@ const ContactContainer = styled.div`
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: var(--border-radius);
+  border: 2px solid var(--border-light);
   z-index: 9;
 
   h1 {
@@ -63,6 +64,7 @@ const ContactContainer = styled.div`
   }
 
   &:hover {
+    border-color: rgba(255, 255, 255, 0.2);
     background: var(--bg-color-hover);
   }
   @media screen and (max-width: 400px) {
