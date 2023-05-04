@@ -268,9 +268,9 @@ const variants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.6, delay: 0.3 },
+    transition: { duration: 0.6, delay: 0.6 },
   },
-  hidden: { opacity: 0, scale: 1 },
+  hidden: { opacity: 0, scale: 0.95 },
 };
 
 const languages = {
@@ -312,7 +312,14 @@ const Hero = () => {
         ref={heroref}
         animate={controls}
         initial="hidden"
-        variants={variants}
+        variants={{
+          visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.6, delay: 0.6, ease: "easeInOut" },
+          },
+          hidden: { opacity: 0, scale: 0.95 },
+        }}
       >
         <div className="hero__container-card">
           <span className="type" translate="no">

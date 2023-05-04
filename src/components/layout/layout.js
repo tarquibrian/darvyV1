@@ -39,10 +39,7 @@ const Layout = ({ children }) => {
   };
 
   useEffect(() => {
-    // new Sketch({
-    //   dom: document.getElementById("container"),
-    // });
-    renderBG();
+    // renderBG();
   }, []);
   return (
     <>
@@ -70,7 +67,7 @@ const Layout = ({ children }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3, ease: "easeIn" }}
       >
-        {/* <Image
+        <Image
           priority
           src={noiseIMG}
           alt="background image"
@@ -79,7 +76,7 @@ const Layout = ({ children }) => {
           onLoadingComplete={() => {
             setLoading(true);
           }}
-        /> */}
+        />
       </BGImage>
     </>
   );
