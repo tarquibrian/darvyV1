@@ -179,12 +179,8 @@ const HeroStyled = styled(motion.section)`
     background: var(--bg-color);
     border: 2px solid var(--border-light);
     background-color: rgba(255, 255, 255, 0.4);
-    /* background-image: radial-gradient(
-      circle farthest-corner at 10% 20%,
-      rgba(255, 229, 168, 1) 0%,
-      rgba(251, 174, 222, 1) 100.7%
-    ); */
     height: 100%;
+    max-height: 700px;
 
     border-radius: var(--border-radius);
     overflow: hidden;
