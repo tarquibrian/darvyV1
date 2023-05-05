@@ -786,8 +786,7 @@ const animateElement = {
 };
 
 const Projects = () => {
-  const ref = useRef(null);
-  const { state, toggleLanguage } = useAppContext();
+  const { state } = useAppContext();
   const controls = useAnimation();
   const [refView, inView] = useInView();
 
@@ -795,17 +794,10 @@ const Projects = () => {
     lenguage: languages[state.currentLanguage],
   };
 
-  const handleOnMouseMove = (e) => {
-    const rect = ref?.current?.getBoundingClientRect(),
-      x = e?.clientX - rect?.left,
-      y = e?.clientY - rect?.top;
-  };
-
   useEffect(() => {
     if (inView) {
       controls.start("visible");
     }
-    window.addEventListener("mousemove", handleOnMouseMove);
   }, [controls, inView]);
 
   return (
@@ -951,27 +943,23 @@ const WrapperContent = ({
   }, [controls, inView]);
 
   return (
-    <motion.article
-      className={`projects__wrapper`}
-      id={id}
-      ref={refView}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        visible: {
-          x: 0,
-          opacity: 1,
-          scale: 1,
-          transition: { duration: 0.6, delay: 0.3 },
-        },
-        hidden: { x: 200, opacity: 0, scale: 1 },
-      }}
-    >
-      <a
+    <motion.article className={`projects__wrapper`} id={id} ref={refView}>
+      <motion.a
         className="projects__wrapper-picture"
         href={links[0].path}
         target="_blank"
         rel="noopener noreferrer"
+        initial="hidden"
+        animate={controls}
+        variants={{
+          visible: {
+            x: 0,
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.6, ease: "backInOut" },
+          },
+          hidden: { x: -200, opacity: 0, scale: 1 },
+        }}
       >
         <header className="header-content">
           <div className="content-title">
@@ -988,8 +976,21 @@ const WrapperContent = ({
             <Image src={img} alt="img picture" />
           </CardEffect>
         </div>
-      </a>
-      <div className="projects__wrapper-details">
+      </motion.a>
+      <motion.div
+        className="projects__wrapper-details"
+        initial="hidden"
+        animate={controls}
+        variants={{
+          visible: {
+            x: 0,
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 1.3, ease: "backInOut" },
+          },
+          hidden: { x: 200, opacity: 0, scale: 1 },
+        }}
+      >
         <div className="card-details">
           <div className="details-wrapper">
             <div className="title">{typeProject[0]}</div>
@@ -1029,7 +1030,7 @@ const WrapperContent = ({
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.article>
   );
 };
