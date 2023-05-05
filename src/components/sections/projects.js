@@ -426,7 +426,7 @@ const ProjectsStyled = styled(motion.section)`
   width: 80%;
   max-width: 1300px;
   margin: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 
   .headerTitle {
     font-size: var(--fz-header);
@@ -906,77 +906,19 @@ const Projects = () => {
             client,
           } = project;
           return (
-            <article className={`projects__wrapper`} key={id}>
-              <a
-                className="projects__wrapper-picture"
-                href={links[0].path}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <header className="header-content">
-                  <div className="content-title">
-                    <h2>{title}</h2>
-                    <p>{desc}</p>
-                  </div>
-                  <div className="content-link">
-                    <IconArrow />
-                  </div>
-                </header>
-
-                <div className="picture-content">
-                  <CardEffect>
-                    <Image src={img} alt="img picture" />
-                  </CardEffect>
-                </div>
-              </a>
-              <div className="projects__wrapper-details">
-                <div className="card-details">
-                  <div className="details-wrapper">
-                    <div className="title">{typeProject[0]}</div>
-                    <span className="desc">{typeProject[1]}</span>
-                  </div>
-                  <div className="details-wrapper">
-                    <div className="title">{client}</div>
-                    <span className="desc">{label}</span>
-                  </div>
-                  <div className="details-wrapper">
-                    <div className="title">{techStack}</div>
-                    <div className="features">
-                      {features.map((feature, i) => {
-                        const { name, bgColor } = feature;
-                        return (
-                          <div
-                            key={i}
-                            className="feature-item"
-                            bgColor={bgColor}
-                          >
-                            {name === "VS Code" && <IconVS />}
-                            {name === "Sublime Text" && <IconST />}
-                            {name === "Atom" && <IconAtom />}
-                            {name === "NextJS" && <IconNextjs />}
-                            {name === "React" && <ReactIcon />}
-                            {name === "Styled Components" && <IconSC />}
-                            {name === "Adobe Illustrator" && <IconAI />}
-                            {name === "Figma+" && <IconFigmaImg />}
-                            {name === "Sass" && <IconSass />}
-                            {name === "Adobe Photoshop" && <IconAP />}
-                            {name === "Redux" && <IconRedux />}
-                            {name === "Express" && <IconExpress />}
-                            {name === "MongoDB" && <IconMongo />}
-                            {name === "Google Maps Platform" && <IconMaps />}
-                            {name === "Push Notifications" && (
-                              <IconPushNotification />
-                            )}
-                            {name === "PWA" && <IconPWA />}
-                            <span>{name}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <WrapperContent
+              id={id}
+              label={label}
+              desc={desc}
+              features={features}
+              title={title}
+              key={id}
+              links={links}
+              img={img}
+              typeProject={typeProject}
+              techStack={techStack}
+              client={client}
+            />
           );
         })}
       </div>
@@ -986,3 +928,108 @@ const Projects = () => {
 };
 
 export default Projects;
+
+const WrapperContent = ({
+  id,
+  label,
+  title,
+  desc,
+  features,
+  links,
+  img,
+  typeProject,
+  techStack,
+  client,
+}) => {
+  const controls = useAnimation();
+  const [refView, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.article
+      className={`projects__wrapper`}
+      id={id}
+      ref={refView}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        visible: {
+          x: 0,
+          opacity: 1,
+          scale: 1,
+          transition: { duration: 0.6, delay: 0.3 },
+        },
+        hidden: { x: 200, opacity: 0, scale: 1 },
+      }}
+    >
+      <a
+        className="projects__wrapper-picture"
+        href={links[0].path}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <header className="header-content">
+          <div className="content-title">
+            <h2>{title}</h2>
+            <p>{desc}</p>
+          </div>
+          <div className="content-link">
+            <IconArrow />
+          </div>
+        </header>
+
+        <div className="picture-content">
+          <CardEffect>
+            <Image src={img} alt="img picture" />
+          </CardEffect>
+        </div>
+      </a>
+      <div className="projects__wrapper-details">
+        <div className="card-details">
+          <div className="details-wrapper">
+            <div className="title">{typeProject[0]}</div>
+            <span className="desc">{typeProject[1]}</span>
+          </div>
+          <div className="details-wrapper">
+            <div className="title">{client}</div>
+            <span className="desc">{label}</span>
+          </div>
+          <div className="details-wrapper">
+            <div className="title">{techStack}</div>
+            <div className="features">
+              {features.map((feature, i) => {
+                const { name, bgColor } = feature;
+                return (
+                  <div key={i} className="feature-item" bgColor={bgColor}>
+                    {name === "VS Code" && <IconVS />}
+                    {name === "Sublime Text" && <IconST />}
+                    {name === "Atom" && <IconAtom />}
+                    {name === "NextJS" && <IconNextjs />}
+                    {name === "React" && <ReactIcon />}
+                    {name === "Styled Components" && <IconSC />}
+                    {name === "Adobe Illustrator" && <IconAI />}
+                    {name === "Figma+" && <IconFigmaImg />}
+                    {name === "Sass" && <IconSass />}
+                    {name === "Adobe Photoshop" && <IconAP />}
+                    {name === "Redux" && <IconRedux />}
+                    {name === "Express" && <IconExpress />}
+                    {name === "MongoDB" && <IconMongo />}
+                    {name === "Google Maps Platform" && <IconMaps />}
+                    {name === "Push Notifications" && <IconPushNotification />}
+                    {name === "PWA" && <IconPWA />}
+                    <span>{name}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.article>
+  );
+};
