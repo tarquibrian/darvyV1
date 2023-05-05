@@ -450,9 +450,7 @@ const ProjectsStyled = styled(motion.section)`
 
         .content-link {
           svg {
-            fill: red;
-            color: red;
-            background-color: red;
+            fill: var(--c-light);
           }
         }
       }
