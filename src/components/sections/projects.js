@@ -448,9 +448,14 @@ const ProjectsStyled = styled(motion.section)`
     }
   }
 
+  .projects__container {
+    display: grid;
+    gap: 10rem;
+  }
+
   .projects__wrapper {
     font-family: var(--ff-sofia);
-    padding: 4rem 0;
+    /* padding: 4rem 0; */
     display: grid;
     grid-template-columns: 3fr 1.3fr;
     gap: 2rem;
