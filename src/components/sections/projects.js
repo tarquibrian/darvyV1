@@ -458,6 +458,12 @@ const ProjectsStyled = styled(motion.section)`
           rgba(255, 229, 168, 1) 0%,
           rgba(251, 174, 222, 1) 100.7%
         );
+
+        &:hover {
+          filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
+          border: 2px solid rgba(255, 255, 255, 0.7);
+          text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
+        }
       }
     }
   }
