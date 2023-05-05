@@ -399,7 +399,7 @@ export const projectsData = {
 
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
-  max-width: 984px;
+  max-width: 1300px;
   margin: auto;
   overflow: hidden;
   .headerTitle {
@@ -419,6 +419,35 @@ const ProjectsStyled = styled(motion.section)`
       margin-bottom: 12px;
       width: auto;
       height: 3px;
+    }
+  }
+
+  .projects__wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1.2fr;
+    margin-bottom: 4rem;
+    gap: 2rem;
+
+    &-picture {
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-details {
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+
+      .card-details {
+        height: 500px;
+        width: 100%;
+        background-color: lightblue;
+      }
     }
   }
 
@@ -661,7 +690,7 @@ const Projects = () => {
       variants={variants}
     >
       <h1 className="headerTitle">{currentLanguage.lenguage.title}</h1>
-      <ProjectWrapper className="project">
+      {/* <ProjectWrapper className="project">
         {currentLanguage.lenguage.items.map((project) => {
           const { id, label, title, desc, features, links, img } = project;
           return (
@@ -734,7 +763,29 @@ const Projects = () => {
             </CardEffect>
           );
         })}
-      </ProjectWrapper>
+      </ProjectWrapper> */}
+      <div className="projects__container">
+        {currentLanguage.lenguage.items.map((project) => {
+          const { id, label, title, desc, features, links, img } = project;
+          return (
+            <article className={`projects__wrapper`} key={id}>
+              <div className="projects__wrapper-picture">
+                <header className="header-content">
+                  <h2>{title}</h2>
+                  <p>{desc}</p>
+                </header>
+
+                <div className="picture">
+                  <Image src={img} alt="img picture" />
+                </div>
+              </div>
+              <div className="projects__wrapper-details">
+                <div className="card-details">{label}</div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
       <p className="footerTitle">{currentLanguage.lenguage.desc}</p>
     </ProjectsStyled>
   );
