@@ -403,6 +403,7 @@ const ProjectsStyled = styled(motion.section)`
   max-width: 1300px;
   margin: auto;
   overflow: hidden;
+
   .headerTitle {
     font-size: var(--fz-header);
     font-weight: 400;
@@ -424,32 +425,40 @@ const ProjectsStyled = styled(motion.section)`
   }
 
   .projects__wrapper {
+    font-family: var(--ff-sofia);
+    padding: 4rem 0;
     display: grid;
     grid-template-columns: 3fr 1.3fr;
-    margin-bottom: 6rem;
     gap: 2rem;
 
     &-picture {
-      overflow: hidden;
+      /* overflow: hidden; */
       display: flex;
       flex-direction: column;
       gap: 2rem;
+      transition: 1s ease;
 
       .header-content {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
 
         .content-title {
+          max-width: 650px;
           h2 {
             margin-bottom: 1rem;
+            font-size: var(--fz-subtitle);
+            color: #eae2b7;
+            /* color: rgba(255, 229, 168, 1); */
           }
           p {
-            max-width: 600px;
+            font-size: var(--fz-md);
           }
         }
 
         .content-link {
           svg {
+            transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
             fill: var(--c-light);
           }
         }
@@ -465,6 +474,13 @@ const ProjectsStyled = styled(motion.section)`
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+
+      &:hover {
+        transform: translateX(1rem);
+        svg {
+          transform: rotate(45deg);
+        }
       }
     }
 
@@ -814,7 +830,12 @@ const Projects = () => {
           const { id, label, title, desc, features, links, img } = project;
           return (
             <article className={`projects__wrapper`} key={id}>
-              <div className="projects__wrapper-picture">
+              <a
+                className="projects__wrapper-picture"
+                href={links[0].path}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <header className="header-content">
                   <div className="content-title">
                     <h2>{title}</h2>
@@ -828,7 +849,7 @@ const Projects = () => {
                 <div className="picture-content">
                   <Image src={img} alt="img picture" />
                 </div>
-              </div>
+              </a>
               <div className="projects__wrapper-details">
                 <div className="card-details">{label}</div>
               </div>
