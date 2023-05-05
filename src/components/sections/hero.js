@@ -178,7 +178,7 @@ const HeroStyled = styled(motion.section)`
     min-width: 200px;
     background: var(--bg-color);
     border: 2px solid var(--border-light);
-    background-color: rgba(255, 255, 255, 0.4);
+    /* background-color: rgba(255, 255, 255, 0.4); */
     height: 100%;
     max-height: 700px;
 
