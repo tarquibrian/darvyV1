@@ -668,9 +668,7 @@ const Projects = () => {
             <CardEffect key={id} lightLevel="low">
               <div className={`project__container`}>
                 <div className="project__container-picture">
-                  {/* <CardEffect> */}
                   <Image src={img} alt="img from portfolio" />
-                  {/* </CardEffect> */}
                 </div>
                 <div className="project__container-main">
                   <header>
