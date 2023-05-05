@@ -451,133 +451,138 @@ const ProjectsStyled = styled(motion.section)`
   .projects__container {
     display: grid;
     gap: 10rem;
-  }
 
-  .projects__wrapper {
-    font-family: var(--ff-sofia);
-    /* padding: 4rem 0; */
-    display: grid;
-    grid-template-columns: 3fr 1.3fr;
-    gap: 2rem;
-
-    &-picture {
-      /* overflow: hidden; */
-      display: flex;
-      flex-direction: column;
+    .projects__wrapper {
+      font-family: var(--ff-sofia);
+      /* padding: 4rem 0; */
+      display: grid;
+      grid-template-columns: 3fr 1.3fr;
       gap: 2rem;
-      transition: 1s ease;
 
-      .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-
-        .content-title {
-          max-width: 650px;
-          h2 {
-            margin-bottom: 1rem;
-            font-size: var(--fz-subtitle);
-            color: #eae2b7;
-          }
-          p {
-            font-size: var(--fz-smm);
-          }
-        }
-
-        .content-link {
-          svg {
-            transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
-            fill: var(--c-light);
-          }
-        }
-      }
-
-      .picture-content {
-        overflow: hidden;
-        border-radius: var(--border-radius);
-        border: 2px solid rgba(255, 255, 255, 0.4);
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        &:hover {
-          border-color: rgba(255, 255, 255, 0.2);
-          /* filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8)); */
-          /* text-shadow: 0 0 5px rgba(255 255 255 / 0.5); */
-        }
-      }
-
-      &:hover {
-        transform: translateX(1rem);
-        svg {
-          transform: rotate(45deg);
-        }
-      }
-    }
-
-    &-details {
-      overflow: hidden;
-      display: flex;
-      align-items: flex-end;
-
-      .card-details {
-        color: var(--c-dark);
-        width: 100%;
-        padding: 2rem;
-        border-radius: var(--border-radius);
-        border: 2px solid rgba(255, 255, 255, 0.4);
-        background-image: radial-gradient(
-          circle farthest-corner at 10% 20%,
-          rgba(255, 229, 168, 1) 0%,
-          rgba(251, 174, 222, 1) 100.7%
-        );
+      &-picture {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        transition: 1s ease;
 
-        .details-wrapper {
+        .header-content {
           display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          .title {
-            color: var(--c-dark);
-            font-size: var(--fz-md);
-            font-weight: bold;
+          justify-content: space-between;
+          align-items: flex-end;
+
+          .content-title {
+            max-width: 650px;
+            h2 {
+              margin-bottom: 1rem;
+              font-size: var(--fz-subtitle);
+              color: #eae2b7;
+            }
+            p {
+              font-size: var(--fz-smm);
+            }
           }
-          .desc {
-            font-size: var(--fz-smm);
-          }
-          .features {
-            display: flex;
-            flex-wrap: wrap;
-            column-gap: 1.5rem;
-            row-gap: 1rem;
-          }
-          .feature-item {
-            white-space: nowrap;
-            /* padding: 1rem; */
-            /* flex: 1 0 content; */
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: var(--fz-smm);
-            /* background-color: red; */
-            height: 35px;
-            img,
+
+          .content-link {
             svg {
-              width: auto;
-              height: 100%;
-              /* background-color: red; */
+              transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+              fill: var(--c-light);
             }
           }
         }
 
+        .picture-content {
+          overflow: hidden;
+          border-radius: var(--border-radius);
+          border: 2px solid rgba(255, 255, 255, 0.4);
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          &:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            /* filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8)); */
+            /* text-shadow: 0 0 5px rgba(255 255 255 / 0.5); */
+          }
+        }
+
         &:hover {
-          filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
-          text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
-          border: 2px solid rgba(255, 255, 255, 0.7);
+          transform: translate3d(1rem, 1rem, 1rem);
+          svg {
+            transform: rotate(45deg);
+          }
+        }
+      }
+      .wrapper-effect {
+        transition: 1s ease;
+        &:hover {
+          transform: translateX(1rem);
+        }
+      }
+
+      &-details {
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+
+        .card-details {
+          color: var(--c-dark);
+          width: 100%;
+          padding: 2rem;
+          border-radius: var(--border-radius);
+          border: 2px solid rgba(255, 255, 255, 0.4);
+          background-image: radial-gradient(
+            circle farthest-corner at 10% 20%,
+            rgba(255, 229, 168, 1) 0%,
+            rgba(251, 174, 222, 1) 100.7%
+          );
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+
+          .details-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            .title {
+              color: var(--c-dark);
+              font-size: var(--fz-md);
+              font-weight: bold;
+            }
+            .desc {
+              font-size: var(--fz-smm);
+            }
+            .features {
+              display: flex;
+              flex-wrap: wrap;
+              column-gap: 1.5rem;
+              row-gap: 1rem;
+            }
+            .feature-item {
+              white-space: nowrap;
+              /* padding: 1rem; */
+              /* flex: 1 0 content; */
+              display: flex;
+              align-items: center;
+              gap: 0.4rem;
+              font-size: var(--fz-smm);
+              /* background-color: red; */
+              height: 35px;
+              img,
+              svg {
+                width: auto;
+                height: 100%;
+                /* background-color: red; */
+              }
+            }
+          }
+
+          &:hover {
+            filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
+            text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.7);
+          }
         }
       }
     }
@@ -949,39 +954,42 @@ const WrapperContent = ({
 
   return (
     <motion.article className={`projects__wrapper`} id={id} ref={refView}>
-      <motion.a
-        className="projects__wrapper-picture"
-        href={links[0].path}
-        target="_blank"
-        rel="noopener noreferrer"
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: {
-            x: 0,
-            opacity: 1,
-            scale: 1,
-            transition: { duration: 0.6, ease: "backInOut" },
-          },
-          hidden: { x: -200, opacity: 0, scale: 1 },
-        }}
-      >
-        <header className="header-content">
-          <div className="content-title">
-            <h2>{title}</h2>
-            <p>{desc}</p>
-          </div>
-          <div className="content-link">
-            <IconArrow />
-          </div>
-        </header>
+      <div className="wrapper-effect">
+        <motion.a
+          className="projects__wrapper-picture"
+          href={links[0].path}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial="hidden"
+          animate={controls}
+          variants={{
+            visible: {
+              x: 0,
+              opacity: 1,
+              scale: 1,
+              transition: { duration: 0.6, ease: "backInOut" },
+            },
+            hidden: { x: -200, opacity: 0, scale: 1 },
+          }}
+        >
+          <header className="header-content">
+            <div className="content-title">
+              <h2>{title}</h2>
+              <p>{desc}</p>
+            </div>
+            <div className="content-link">
+              <IconArrow />
+            </div>
+          </header>
 
-        <div className="picture-content">
-          <CardEffect>
-            <Image src={img} alt="img picture" />
-          </CardEffect>
-        </div>
-      </motion.a>
+          <div className="picture-content">
+            <CardEffect>
+              <Image src={img} alt="img picture" />
+            </CardEffect>
+          </div>
+        </motion.a>
+      </div>
+
       <motion.div
         className="projects__wrapper-details"
         initial="hidden"
