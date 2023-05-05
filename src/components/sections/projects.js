@@ -68,6 +68,9 @@ export const projectsData = {
           },
         ],
         img: imgProject,
+        typeProject: ["Tipo de Proyecto", "Extensión para Marketplace"],
+        techStack: "Tecnologías",
+        client: "Cliente",
       },
       {
         id: "2",
@@ -116,6 +119,9 @@ export const projectsData = {
           },
         ],
         img: imgProject2,
+        typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
+        techStack: "Tecnologías",
+        client: "Cliente",
       },
       {
         id: "3",
@@ -160,6 +166,9 @@ export const projectsData = {
           },
         ],
         img: imgProject3,
+        typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
+        techStack: "Tecnologías",
+        client: "Cliente",
       },
       {
         id: "4",
@@ -214,6 +223,9 @@ export const projectsData = {
           },
         ],
         img: imgProject4,
+        typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
+        techStack: "Tecnologías",
+        client: "Cliente",
       },
     ],
   },
@@ -246,6 +258,9 @@ export const projectsData = {
           },
         ],
         img: imgProject,
+        typeProject: ["Type Project", "Marketplace Extensions"],
+        techStack: "Tech Stack",
+        client: "Client",
       },
       {
         id: "2",
@@ -294,6 +309,9 @@ export const projectsData = {
           },
         ],
         img: imgProject2,
+        typeProject: ["Type Project", "Web App"],
+        techStack: "Tech Stack",
+        client: "Client",
       },
       {
         id: "3",
@@ -338,6 +356,9 @@ export const projectsData = {
           },
         ],
         img: imgProject3,
+        typeProject: ["Type Project", "Web App"],
+        techStack: "Tech Stack",
+        client: "Client",
       },
       {
         id: "4",
@@ -393,6 +414,9 @@ export const projectsData = {
           },
         ],
         img: imgProject4,
+        typeProject: ["Type Project", "Web App"],
+        techStack: "Tech Stack",
+        client: "Client",
       },
     ],
   },
@@ -449,10 +473,9 @@ const ProjectsStyled = styled(motion.section)`
             margin-bottom: 1rem;
             font-size: var(--fz-subtitle);
             color: #eae2b7;
-            /* color: rgba(255, 229, 168, 1); */
           }
           p {
-            font-size: var(--fz-md);
+            font-size: var(--fz-smm);
           }
         }
 
@@ -468,12 +491,17 @@ const ProjectsStyled = styled(motion.section)`
         overflow: hidden;
         border-radius: var(--border-radius);
         border: 2px solid rgba(255, 255, 255, 0.4);
-      }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        &:hover {
+          border-color: rgba(255, 255, 255, 0.2);
+          /* filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8)); */
+          /* text-shadow: 0 0 5px rgba(255 255 255 / 0.5); */
+        }
       }
 
       &:hover {
@@ -488,25 +516,63 @@ const ProjectsStyled = styled(motion.section)`
       overflow: hidden;
       display: flex;
       align-items: flex-end;
-      color: var(--c-dark);
 
       .card-details {
-        /* height: 500px; */
+        color: var(--c-dark);
         width: 100%;
         padding: 2rem;
         border-radius: var(--border-radius);
         border: 2px solid rgba(255, 255, 255, 0.4);
-        /* background-color: lightblue; */
         background-image: radial-gradient(
           circle farthest-corner at 10% 20%,
           rgba(255, 229, 168, 1) 0%,
           rgba(251, 174, 222, 1) 100.7%
         );
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .details-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          .title {
+            color: var(--c-dark);
+            font-size: var(--fz-md);
+            font-weight: bold;
+          }
+          .desc {
+            font-size: var(--fz-smm);
+          }
+          .features {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 1.5rem;
+            row-gap: 1rem;
+          }
+          .feature-item {
+            white-space: nowrap;
+            /* padding: 1rem; */
+            /* flex: 1 0 content; */
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: var(--fz-smm);
+            /* background-color: red; */
+            height: 35px;
+            img,
+            svg {
+              width: auto;
+              height: 100%;
+              /* background-color: red; */
+            }
+          }
+        }
 
         &:hover {
           filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
-          border: 2px solid rgba(255, 255, 255, 0.7);
           text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
+          border: 2px solid rgba(255, 255, 255, 0.7);
         }
       }
     }
@@ -827,7 +893,18 @@ const Projects = () => {
       </ProjectWrapper> */}
       <div className="projects__container">
         {currentLanguage.lenguage.items.map((project) => {
-          const { id, label, title, desc, features, links, img } = project;
+          const {
+            id,
+            label,
+            title,
+            desc,
+            features,
+            links,
+            img,
+            typeProject,
+            techStack,
+            client,
+          } = project;
           return (
             <article className={`projects__wrapper`} key={id}>
               <a
@@ -847,11 +924,57 @@ const Projects = () => {
                 </header>
 
                 <div className="picture-content">
-                  <Image src={img} alt="img picture" />
+                  <CardEffect>
+                    <Image src={img} alt="img picture" />
+                  </CardEffect>
                 </div>
               </a>
               <div className="projects__wrapper-details">
-                <div className="card-details">{label}</div>
+                <div className="card-details">
+                  <div className="details-wrapper">
+                    <div className="title">{typeProject[0]}</div>
+                    <span className="desc">{typeProject[1]}</span>
+                  </div>
+                  <div className="details-wrapper">
+                    <div className="title">{client}</div>
+                    <span className="desc">{label}</span>
+                  </div>
+                  <div className="details-wrapper">
+                    <div className="title">{techStack}</div>
+                    <div className="features">
+                      {features.map((feature, i) => {
+                        const { name, bgColor } = feature;
+                        return (
+                          <div
+                            key={i}
+                            className="feature-item"
+                            bgColor={bgColor}
+                          >
+                            {name === "VS Code" && <IconVS />}
+                            {name === "Sublime Text" && <IconST />}
+                            {name === "Atom" && <IconAtom />}
+                            {name === "NextJS" && <IconNextjs />}
+                            {name === "React" && <ReactIcon />}
+                            {name === "Styled Components" && <IconSC />}
+                            {name === "Adobe Illustrator" && <IconAI />}
+                            {name === "Figma+" && <IconFigmaImg />}
+                            {name === "Sass" && <IconSass />}
+                            {name === "Adobe Photoshop" && <IconAP />}
+                            {name === "Redux" && <IconRedux />}
+                            {name === "Express" && <IconExpress />}
+                            {name === "MongoDB" && <IconMongo />}
+                            {name === "Google Maps Platform" && <IconMaps />}
+                            {name === "Push Notifications" && (
+                              <IconPushNotification />
+                            )}
+                            {name === "PWA" && <IconPWA />}
+                            <span>{name}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
               </div>
             </article>
           );
