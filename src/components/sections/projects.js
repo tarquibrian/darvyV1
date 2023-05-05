@@ -70,7 +70,7 @@ export const projectsData = {
         img: imgProject,
         typeProject: ["Tipo de Proyecto", "Extensión para Marketplace"],
         techStack: "Tecnologías",
-        client: "Cliente",
+        client: ["Cliente", "Personal"],
       },
       {
         id: "2",
@@ -121,7 +121,7 @@ export const projectsData = {
         img: imgProject2,
         typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
         techStack: "Tecnologías",
-        client: "Cliente",
+        client: ["Cliente", "SonusTech"],
       },
       {
         id: "3",
@@ -168,7 +168,7 @@ export const projectsData = {
         img: imgProject3,
         typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
         techStack: "Tecnologías",
-        client: "Cliente",
+        client: ["Cliente", "ModernFashion"],
       },
       {
         id: "4",
@@ -225,7 +225,7 @@ export const projectsData = {
         img: imgProject4,
         typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
         techStack: "Tecnologías",
-        client: "Cliente",
+        client: ["Cliente", "Villa Rivero"],
       },
     ],
   },
@@ -260,7 +260,7 @@ export const projectsData = {
         img: imgProject,
         typeProject: ["Type Project", "Marketplace Extensions"],
         techStack: "Tech Stack",
-        client: "Client",
+        client: ["Client", "Personal"],
       },
       {
         id: "2",
@@ -311,7 +311,7 @@ export const projectsData = {
         img: imgProject2,
         typeProject: ["Type Project", "Web App"],
         techStack: "Tech Stack",
-        client: "Client",
+        client: ["Client", "SonusTech"],
       },
       {
         id: "3",
@@ -358,7 +358,7 @@ export const projectsData = {
         img: imgProject3,
         typeProject: ["Type Project", "Web App"],
         techStack: "Tech Stack",
-        client: "Client",
+        client: ["Client", "ModernFashion"],
       },
       {
         id: "4",
@@ -416,7 +416,7 @@ export const projectsData = {
         img: imgProject4,
         typeProject: ["Type Project", "Web App"],
         techStack: "Tech Stack",
-        client: "Client",
+        client: ["Client", "Villa Rivero"],
       },
     ],
   },
@@ -522,7 +522,7 @@ const ProjectsStyled = styled(motion.section)`
       }
 
       &-details {
-        overflow: hidden;
+        /* overflow: hidden; */
         display: flex;
         align-items: flex-end;
 
@@ -1010,8 +1010,8 @@ const WrapperContent = ({
             <span className="desc">{typeProject[1]}</span>
           </div>
           <div className="details-wrapper">
-            <div className="title">{client}</div>
-            <span className="desc">{label}</span>
+            <div className="title">{client[0]}</div>
+            <span className="desc">{client[1]}</span>
           </div>
           <div className="details-wrapper">
             <div className="title">{techStack}</div>
