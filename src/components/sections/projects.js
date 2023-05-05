@@ -430,6 +430,8 @@ const ProjectsStyled = styled(motion.section)`
 
     &-picture {
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
 
       img {
         width: 100%;
@@ -442,11 +444,20 @@ const ProjectsStyled = styled(motion.section)`
       overflow: hidden;
       display: flex;
       align-items: flex-end;
+      color: var(--c-dark);
 
       .card-details {
-        height: 500px;
+        /* height: 500px; */
         width: 100%;
-        background-color: lightblue;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        /* background-color: lightblue; */
+        background-image: radial-gradient(
+          circle farthest-corner at 10% 20%,
+          rgba(255, 229, 168, 1) 0%,
+          rgba(251, 174, 222, 1) 100.7%
+        );
       }
     }
   }
