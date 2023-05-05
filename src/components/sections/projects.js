@@ -3,6 +3,7 @@ import {
   CardEffect,
   IconAI,
   IconAP,
+  IconArrow,
   IconAtom,
   IconExpress,
   IconExternal,
@@ -424,14 +425,43 @@ const ProjectsStyled = styled(motion.section)`
 
   .projects__wrapper {
     display: grid;
-    grid-template-columns: 3fr 1.2fr;
-    margin-bottom: 4rem;
+    grid-template-columns: 3fr 1.3fr;
+    margin-bottom: 6rem;
     gap: 2rem;
 
     &-picture {
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      gap: 2rem;
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+
+        .content-title {
+          h2 {
+            margin-bottom: 1rem;
+          }
+          p {
+            max-width: 600px;
+          }
+        }
+
+        .content-link {
+          svg {
+            fill: red;
+            color: red;
+            background-color: red;
+          }
+        }
+      }
+
+      .picture-content {
+        overflow: hidden;
+        border-radius: var(--border-radius);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+      }
 
       img {
         width: 100%;
@@ -788,11 +818,16 @@ const Projects = () => {
             <article className={`projects__wrapper`} key={id}>
               <div className="projects__wrapper-picture">
                 <header className="header-content">
-                  <h2>{title}</h2>
-                  <p>{desc}</p>
+                  <div className="content-title">
+                    <h2>{title}</h2>
+                    <p>{desc}</p>
+                  </div>
+                  <div className="content-link">
+                    <IconArrow />
+                  </div>
                 </header>
 
-                <div className="picture">
+                <div className="picture-content">
                   <Image src={img} alt="img picture" />
                 </div>
               </div>
