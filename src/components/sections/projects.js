@@ -874,15 +874,6 @@ const languages = {
   en: projectsData.en,
 };
 
-const animateElement = {
-  hidden: { x: 1000, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: { type: "spring", bounce: 0.3, duration: 2 },
-  },
-};
-
 const Projects = () => {
   const { state } = useAppContext();
   const controls = useAnimation();
@@ -907,80 +898,6 @@ const Projects = () => {
       variants={variants}
     >
       <h1 className="headerTitle">{currentLanguage.lenguage.title}</h1>
-      {/* <ProjectWrapper className="project">
-        {currentLanguage.lenguage.items.map((project) => {
-          const { id, label, title, desc, features, links, img } = project;
-          return (
-            <CardEffect key={id} lightLevel="low">
-              <div className={`project__container`}>
-                <div className="project__container-picture">
-                  <Image src={img} alt="img from portfolio" />
-                </div>
-                <div className="project__container-main">
-                  <header>
-                    <span>{label}</span>
-                    <h2>✦ {title}</h2>
-                  </header>
-                  <div className="main__body">
-                    <div className="main__body-desc">
-                      <p>✷ {desc}</p>
-                    </div>
-                    <div className="main__body-features">
-                      {features.map((feature, i) => {
-                        const { name, bgColor } = feature;
-                        return (
-                          <Feature
-                            key={i}
-                            className="feature"
-                            bgColor={bgColor}
-                          >
-                            {name === "VS Code" && <IconVS />}
-                            {name === "Sublime Text" && <IconST />}
-                            {name === "Atom" && <IconAtom />}
-                            {name === "NextJS" && <IconNextjs />}
-                            {name === "React" && <ReactIcon />}
-                            {name === "Styled Components" && <IconSC />}
-                            {name === "Adobe Illustrator" && <IconAI />}
-                            {name === "Figma+" && <IconFigmaImg />}
-                            {name === "Sass" && <IconSass />}
-                            {name === "Adobe Photoshop" && <IconAP />}
-                            {name === "Redux" && <IconRedux />}
-                            {name === "Express" && <IconExpress />}
-                            {name === "MongoDB" && <IconMongo />}
-                            {name === "Google Maps Platform" && <IconMaps />}
-                            {name === "Push Notifications" && (
-                              <IconPushNotification />
-                            )}
-                            {name === "PWA" && <IconPWA />}
-                            <span>{name}</span>
-                          </Feature>
-                        );
-                      })}
-                    </div>
-                    <div className="main__body-links">
-                      {links.map((linkname, i) => {
-                        return (
-                          <span key={i}>
-                            <a
-                              href={linkname.path}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              {linkname.svg === 1 && <IconExternal />}
-                              {linkname.svg === 2 && <IconGitHub />}
-                              {linkname.svg === 3 && <IconFigma />}
-                            </a>
-                          </span>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardEffect>
-          );
-        })}
-      </ProjectWrapper> */}
       <div className="projects__container">
         {currentLanguage.lenguage.items.map((project) => {
           const {
