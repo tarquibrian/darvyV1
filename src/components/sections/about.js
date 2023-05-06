@@ -22,10 +22,11 @@ const AboutStyled = styled(motion.section)`
   max-width: 920px;
   @media screen and (max-width: 750px) {
     grid-template-columns: repeat(1, auto);
-  }
-  @media screen and (max-width: 400px) {
     width: 90%;
   }
+  /* @media screen and (max-width: 400px) {
+    width: 90%;
+  } */
 `;
 
 const AboutCard = styled.div`
