@@ -26,6 +26,7 @@ import imgProject from "../../images/project-img1.png";
 import imgProject2 from "../../images/project-img2.png";
 import imgProject3 from "../../images/project-img3.png";
 import imgProject4 from "../../images/project-img4.png";
+import imgProject5 from "../../images/project-img5.png";
 import styled from "styled-components";
 import Image from "next/image";
 import { animate, motion, useAnimation, Variants } from "framer-motion";
@@ -227,6 +228,41 @@ export const projectsData = {
         techStack: "Tecnologías",
         client: ["Cliente", "Villa Rivero"],
       },
+      {
+        id: "5",
+        label: "Web Project",
+        title: "Carls Burger Restaurant",
+        desc: "Aplicación web sobre un restaurante de hamburguesas que proporciona una experiencia de usuario satisfactoria, fácil y atractiva, y es una excelente herramienta de marketing para atraer nuevos clientes y mantener a los ya existentes.",
+
+        features: [
+          {
+            name: "NextJS",
+            icon: <IconNextjs />,
+            bgColor: "rgba(25,25,25,.3)",
+          },
+          {
+            name: "React",
+            icon: <ReactIcon />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
+          { name: "Sass", icon: <IconSass />, bgColor: "rgba(231,62,250,.4)" },
+          {
+            name: "Figma+",
+            icon: <IconFigmaImg />,
+            bgColor: "rgba(255,0,0,.2)",
+          },
+        ],
+        links: [
+          {
+            path: "https://carls-burger.vercel.app/",
+            svg: 1,
+          },
+        ],
+        img: imgProject5,
+        typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
+        techStack: "Tecnologías",
+        client: ["Cliente", "Villa Rivero"],
+      },
     ],
   },
   en: {
@@ -418,6 +454,41 @@ export const projectsData = {
         techStack: "Tech Stack",
         client: ["Client", "Villa Rivero"],
       },
+      {
+        id: "5",
+        label: "Web Project",
+        title: "Carls Burger Restaurant",
+        desc: "Web application about a hamburger restaurant that provides a satisfying, easy and attractive user experience, and is an excellent marketing tool to attract new customers and keep existing ones.",
+
+        features: [
+          {
+            name: "NextJS",
+            icon: <IconNextjs />,
+            bgColor: "rgba(25,25,25,.3)",
+          },
+          {
+            name: "React",
+            icon: <ReactIcon />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
+          { name: "Sass", icon: <IconSass />, bgColor: "rgba(231,62,250,.4)" },
+          {
+            name: "Figma+",
+            icon: <IconFigmaImg />,
+            bgColor: "rgba(255,0,0,.2)",
+          },
+        ],
+        links: [
+          {
+            path: "https://carls-burger.vercel.app/",
+            svg: 1,
+          },
+        ],
+        img: imgProject5,
+        typeProject: ["Type Project", "Web App"],
+        techStack: "Tech Stack",
+        client: ["Client", "Cars Burger"],
+      },
     ],
   },
 };
@@ -473,6 +544,8 @@ const ProjectsStyled = styled(motion.section)`
           .content-title {
             max-width: 650px;
             h2 {
+              display: flex;
+              gap: 0.5rem;
               margin-bottom: 1rem;
               font-size: var(--fz-subtitle);
               color: #eae2b7;
@@ -512,6 +585,14 @@ const ProjectsStyled = styled(motion.section)`
           svg {
             transform: rotate(45deg);
           }
+
+          .header-content {
+            .content-title {
+              .symbol {
+                transform: scale(1.3);
+              }
+            }
+          }
         }
       }
       .wrapper-effect {
@@ -546,6 +627,9 @@ const ProjectsStyled = styled(motion.section)`
             flex-direction: column;
             gap: 0.5rem;
             .title {
+              display: flex;
+              align-items: center;
+              gap: 0.4rem;
               color: var(--c-dark);
               font-size: var(--fz-md);
               font-weight: bold;
@@ -582,6 +666,10 @@ const ProjectsStyled = styled(motion.section)`
             filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
             text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
             border: 2px solid rgba(255, 255, 255, 0.7);
+
+            .symbol {
+              transform: scale(1.3);
+            }
           }
         }
       }
@@ -974,7 +1062,9 @@ const WrapperContent = ({
         >
           <header className="header-content">
             <div className="content-title">
-              <h2>{title}</h2>
+              <h2>
+                <span className="symbol">✦</span> {title}
+              </h2>
               <p>{desc}</p>
             </div>
             <div className="content-link">
@@ -1006,15 +1096,21 @@ const WrapperContent = ({
       >
         <div className="card-details">
           <div className="details-wrapper">
-            <div className="title">{typeProject[0]}</div>
+            <div className="title">
+              <span className="symbol">✷</span> {typeProject[0]}
+            </div>
             <span className="desc">{typeProject[1]}</span>
           </div>
           <div className="details-wrapper">
-            <div className="title">{client[0]}</div>
+            <div className="title">
+              <span className="symbol">✷</span> {client[0]}
+            </div>
             <span className="desc">{client[1]}</span>
           </div>
           <div className="details-wrapper">
-            <div className="title">{techStack}</div>
+            <div className="title">
+              <span className="symbol">✷</span> {techStack}
+            </div>
             <div className="features">
               {features.map((feature, i) => {
                 const { name, bgColor } = feature;
