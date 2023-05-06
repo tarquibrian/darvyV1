@@ -497,7 +497,6 @@ const ProjectsStyled = styled(motion.section)`
   width: 80%;
   max-width: 1300px;
   margin: auto;
-  /* overflow: hidden; */
 
   .headerTitle {
     font-size: var(--fz-header);
@@ -527,7 +526,7 @@ const ProjectsStyled = styled(motion.section)`
       font-family: var(--ff-sofia);
       /* padding: 4rem 0; */
       display: grid;
-      grid-template-columns: 3fr 1.3fr;
+      grid-template-columns: 3fr minmax(280px, 1.3fr);
       gap: 2rem;
 
       &-picture {
@@ -672,6 +671,10 @@ const ProjectsStyled = styled(motion.section)`
             }
           }
         }
+      }
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
       }
     }
   }
