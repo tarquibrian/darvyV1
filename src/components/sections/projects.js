@@ -497,6 +497,7 @@ const ProjectsStyled = styled(motion.section)`
   width: 80%;
   max-width: 1300px;
   margin: auto;
+  /* overflow: hidden; */
 
   .headerTitle {
     font-size: var(--fz-header);
@@ -804,7 +805,7 @@ const WrapperContent = ({
               scale: 1,
               transition: { duration: 0.6, ease: "backInOut" },
             },
-            hidden: { x: -200, opacity: 0, scale: 1 },
+            hidden: { x: -100, opacity: 0, scale: 1 },
           }}
         >
           <header className="header-content">
@@ -838,7 +839,7 @@ const WrapperContent = ({
             scale: 1,
             transition: { duration: 1.3, ease: "backInOut" },
           },
-          hidden: { x: 200, opacity: 0, scale: 1 },
+          hidden: { x: 100, opacity: 0, scale: 1 },
         }}
       >
         <div className="card-details">

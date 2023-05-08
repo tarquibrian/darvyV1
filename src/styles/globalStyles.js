@@ -34,7 +34,6 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
-    /* font-size: 18px; */
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
   }
@@ -44,6 +43,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 1600px;
     min-height: 100vh;
+    overflow: hidden;
   }
 
   section {
