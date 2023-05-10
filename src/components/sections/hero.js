@@ -12,6 +12,11 @@ import imgHero21 from '../../images/hero21.png'
 import imgHero22 from '../../images/hero22.png'
 import imgHero23 from '../../images/hero23.png'
 
+import imgHero31 from '../../images/hero31.png'
+import imgHero32 from '../../images/hero32.png'
+import imgHero33 from '../../images/hero33.png'
+import imgHero34 from '../../images/hero34.png'
+
 const HeroStyled = styled(motion.section)`
   height: calc(100vh - 150px);
   margin: auto;
