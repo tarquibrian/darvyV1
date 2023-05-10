@@ -227,6 +227,7 @@ const About = () => {
             alt={`profile picture`}
             width={200}
             height={`auto`}
+            placeholder="blur"
           />
         </div>
         <CardEffect>

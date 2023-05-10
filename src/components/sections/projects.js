@@ -822,7 +822,7 @@ const WrapperContent = ({
 
           <div className="picture-content">
             <CardEffect>
-              <Image src={img} alt="img picture" />
+              <Image src={img} alt="img picture" placeholder="blur" />
             </CardEffect>
           </div>
         </motion.a>
