@@ -372,47 +372,47 @@ const Hero = () => {
                 animationTime={"15s"}
                 animationDirection={"up"}
               >
-                <Image src={imgHero12} alt="img from hero" />
-                <Image src={imgHero22} alt="img from hero" />
-                <Image src={imgHero32} alt="img from hero" />
-                <Image src={imgHero42} alt="img from hero" />
+                <Image src={imgHero12} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero22} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero32} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero42} alt="img from hero" placeholder="blur"/>
 
-                <Image src={imgHero12} alt="img from hero" />
-                <Image src={imgHero22} alt="img from hero" />
-                <Image src={imgHero32} alt="img from hero" />
-                <Image src={imgHero42} alt="img from hero" />
+                <Image src={imgHero12} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero22} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero32} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero42} alt="img from hero" placeholder="blur"/>
               </ColumnCarousel>
               <ColumnCarousel
                 className="column"
                 animationTime={"18s"}
                 animationDirection={"down"}
               >
-                <Image src={imgHero34} alt="img from hero" />
-                <Image src={imgHero21} alt="img from hero" />
-                <Image src={imgHero41} alt="img from hero" />
-                <Image src={imgHero31} alt="img from hero" />
+                <Image src={imgHero34} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero21} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero41} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero31} alt="img from hero" placeholder="blur"/>
 
-                <Image src={imgHero34} alt="img from hero" />
-                <Image src={imgHero21} alt="img from hero" />
-                <Image src={imgHero41} alt="img from hero" />
-                <Image src={imgHero31} alt="img from hero" />
+                <Image src={imgHero34} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero21} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero41} alt="img from hero" placeholder="blur"/>
+                <Image src={imgHero31} alt="img from hero" placeholder="blur"/>
               </ColumnCarousel>
               <ColumnCarousel
                 className="column"
                 animationTime={"18s"}
                 animationDirection={"up"}
               >
-                <Image src={imgHero23} alt="img from hero" />
-                <Image src={imgHero14} alt="img from hero" />
-                <Image src={imgHero33} alt="img from hero" />
-                <Image src={imgHero11} alt="img from hero" />
-                <Image src={imgHero13} alt="img from hero" />
+                <Image src={imgHero23} alt="img from hero" placeholder="blur" />
+                <Image src={imgHero14} alt="img from hero" placeholder="blur" />
+                <Image src={imgHero33} alt="img from hero" placeholder="blur" />
+                <Image src={imgHero11} alt="img from hero" placeholder="blur" />
+                <Image src={imgHero13} alt="img from hero" placeholder="blur" />
 
-                <Image src={imgHero23} alt="img from hero" />
-                <Image src={imgHero14} alt="img from hero" />
-                <Image src={imgHero33} alt="img from hero" />
-                <Image src={imgHero11} alt="img from hero" />
-                <Image src={imgHero13} alt="img from hero" />
+                <Image src={imgHero23} alt="img from hero" placeholder="blur" />
+                <Image src={imgHero14} alt="img from hero" placeholder="blur" />
+                <Image src={imgHero33} alt="img from hero" placeholder="blur" />
+                <Image src={imgHero11} alt="img from hero" placeholder="blur" />
+                <Image src={imgHero13} alt="img from hero" placeholder="blur"/>
               </ColumnCarousel>
             </div>
           </div>
