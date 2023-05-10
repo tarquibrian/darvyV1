@@ -8,6 +8,10 @@ import { useAppContext } from "src/context/app.context";
 import imghero from "../../images/hero1.jpg";
 import Image from "next/image";
 
+import imgHero21 from '../../images/hero21.png'
+import imgHero22 from '../../images/hero22.png'
+import imgHero23 from '../../images/hero23.png'
+
 const HeroStyled = styled(motion.section)`
   height: calc(100vh - 150px);
   margin: auto;

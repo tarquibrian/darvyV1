@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }) {
     <AnimatePresence mode="sync">
       {/* <GlobalStyle /> */}
       <Head>
-        <title>Darvy | Web Developer</title>
+        <title>Darvy Portfolio</title>
         <meta name="robots" content="all" />
       </Head>
       {/* {!loading ? (
