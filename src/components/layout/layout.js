@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   const renderBG = () => {
-    const Element = document.getElementById("container");
+    const Element = document.getElementById("threejsBG");
     new Sketch({
       dom: Element,
     });
@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
       <LeftSide />
 
       <BGImage
-        id="container"
+        id="threejsBG"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3, ease: "easeIn" }}
