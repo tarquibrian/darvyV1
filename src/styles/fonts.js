@@ -92,7 +92,10 @@ const OswaldNormal = CreateFontFaces(Oswald);
 // const RalewayNormalItalic = CreateFontFaces(Raleway);
 
 const Fonts = css`
-  ${OswaldNormal }
+  ${OswaldNormal
+  //  + DMSansNormalItalic 
+  //  + RalewayNormalItalic
+  }
 `;
 
 export default Fonts;
