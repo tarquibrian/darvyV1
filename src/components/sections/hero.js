@@ -31,7 +31,6 @@ const HeroStyled = styled(motion.section)`
     max-width: 1300px;
     gap: 2rem;
     margin: auto;
-    /* overflow: hidden; */
   }
 
   .hero__container-card {
@@ -46,7 +45,6 @@ const HeroStyled = styled(motion.section)`
     background: var(--bg-color);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    /* height: fit-content; */
     border: 2px solid rgba(255, 255, 255, 0.4);
 
     .type {
@@ -187,7 +185,6 @@ const HeroStyled = styled(motion.section)`
     min-width: 200px;
     background: var(--bg-color);
     border: 2px solid var(--border-light);
-    /* background-color: rgba(255, 255, 255, 0.4); */
     height: 100%;
     max-height: 700px;
 
