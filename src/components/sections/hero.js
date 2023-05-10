@@ -225,8 +225,6 @@ const HeroStyled = styled(motion.section)`
 
       .hero__container-carousel {
         .wrapper-carousel {
-          transform: rotate(20deg) translate(-45vw, 0%);
-
           img {
             width: 300px;
             vertical-align: middle;
@@ -241,7 +239,6 @@ const HeroStyled = styled(motion.section)`
     .hero__container {
       .hero__container-carousel {
         .wrapper-carousel {
-          transform: rotate(20deg) translate(-60vw, 0%);
           img {
             width: 200px;
           }
@@ -256,7 +253,7 @@ const ColumnCarousel = styled.div`
   flex-direction: column;
   height: fit-content;
   animation: ${({ animationDirection }) =>
-    animationDirection === "up" ? "upAnimation" : "downAnimation"}
+      animationDirection === "up" ? "upAnimation" : "downAnimation"}
     ${({ animationTime }) => (animationTime ? animationTime : "5s")} linear
     infinite;
 
@@ -401,15 +398,15 @@ const Hero = () => {
                 animationTime={"18s"}
                 animationDirection={"up"}
               >
-                <Image src={imgHero31} alt="img from hero" />
-                <Image src={imgHero32} alt="img from hero" />
                 <Image src={imgHero34} alt="img from hero" />
+                <Image src={imgHero31} alt="img from hero" />
                 <Image src={imgHero33} alt="img from hero" />
+                <Image src={imgHero32} alt="img from hero" />
 
-                <Image src={imgHero31} alt="img from hero" />
-                <Image src={imgHero32} alt="img from hero" />
                 <Image src={imgHero34} alt="img from hero" />
+                <Image src={imgHero31} alt="img from hero" />
                 <Image src={imgHero33} alt="img from hero" />
+                <Image src={imgHero32} alt="img from hero" />
               </ColumnCarousel>
             </div>
           </div>
