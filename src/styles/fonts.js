@@ -88,8 +88,8 @@ const CreateFontFaces = (family) => {
 };
 
 const OswaldNormal = CreateFontFaces(Oswald);
-const DMSansNormalItalic = CreateFontFaces(DMSans);
-const RalewayNormalItalic = CreateFontFaces(Raleway);
+// const DMSansNormalItalic = CreateFontFaces(DMSans);
+// const RalewayNormalItalic = CreateFontFaces(Raleway);
 
 const Fonts = css`
   ${OswaldNormal + DMSansNormalItalic + RalewayNormalItalic}
