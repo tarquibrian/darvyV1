@@ -8,6 +8,11 @@ import { useAppContext } from "src/context/app.context";
 import imghero from "../../images/hero1.jpg";
 import Image from "next/image";
 
+import imgHero11 from "../../images/hero11.png";
+import imgHero12 from "../../images/hero12.png";
+import imgHero13 from "../../images/hero13.png";
+import imgHero14 from "../../images/hero14.png";
+
 import imgHero21 from "../../images/hero21.png";
 import imgHero22 from "../../images/hero22.png";
 import imgHero23 from "../../images/hero23.png";
@@ -201,7 +206,7 @@ const HeroStyled = styled(motion.section)`
     .carousel-card {
       height: 100%;
       width: 100%;
-      transform: rotate(20deg) translate(-23%, -12%);
+      /* transform: rotate(20deg) translate(-23%, -12%); */
       /* overflow:hidden; */
       /* background-color: rgba(0,0,0,.3) */
     }
@@ -252,10 +257,10 @@ const ColumnCarousel = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
-  animation: ${({ animationDirection }) =>
-      animationDirection === "up" ? "upAnimation" : "downAnimation"}
+  /* animation: ${({ animationDirection }) =>
+    animationDirection === "up" ? "upAnimation" : "downAnimation"}
     ${({ animationTime }) => (animationTime ? animationTime : "5s")} linear
-    infinite;
+    infinite; */
 
   @keyframes upAnimation {
     0% {
@@ -370,43 +375,29 @@ const Hero = () => {
                 animationTime={"15s"}
                 animationDirection={"up"}
               >
-                <Image src={imgHero21} alt="img from hero" />
+                <Image src={imgHero12} alt="img from hero" />
                 <Image src={imgHero22} alt="img from hero" />
-                <Image src={imgHero23} alt="img from hero" />
-
-                <Image src={imgHero21} alt="img from hero" />
-                <Image src={imgHero22} alt="img from hero" />
-                <Image src={imgHero23} alt="img from hero" />
+                <Image src={imgHero32} alt="img from hero" />
               </ColumnCarousel>
               <ColumnCarousel
                 className="column"
                 animationTime={"18s"}
                 animationDirection={"down"}
               >
-                <Image src={imghero} alt="img from hero" />
-                <Image src={imghero} alt="img from hero" />
-                <Image src={imghero} alt="img from hero" />
-                <Image src={imghero} alt="img from hero" />
-
-                <Image src={imghero} alt="img from hero" />
-                <Image src={imghero} alt="img from hero" />
-                <Image src={imghero} alt="img from hero" />
-                <Image src={imghero} alt="img from hero" />
+                <Image src={imgHero34} alt="img from hero" />
+                <Image src={imgHero21} alt="img from hero" />
+                <Image src={imgHero13} alt="img from hero" />
+                <Image src={imgHero31} alt="img from hero" />
               </ColumnCarousel>
               <ColumnCarousel
                 className="column"
                 animationTime={"18s"}
                 animationDirection={"up"}
               >
-                <Image src={imgHero34} alt="img from hero" />
-                <Image src={imgHero31} alt="img from hero" />
+                <Image src={imgHero23} alt="img from hero" />
+                <Image src={imgHero14} alt="img from hero" />
                 <Image src={imgHero33} alt="img from hero" />
-                <Image src={imgHero32} alt="img from hero" />
-
-                <Image src={imgHero34} alt="img from hero" />
-                <Image src={imgHero31} alt="img from hero" />
-                <Image src={imgHero33} alt="img from hero" />
-                <Image src={imgHero32} alt="img from hero" />
+                <Image src={imgHero11} alt="img from hero" />
               </ColumnCarousel>
             </div>
           </div>
