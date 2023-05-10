@@ -252,10 +252,10 @@ const ColumnCarousel = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
-  /* animation: ${({ animationDirection }) =>
+  animation: ${({ animationDirection }) =>
     animationDirection === "up" ? "upAnimation" : "downAnimation"}
     ${({ animationTime }) => (animationTime ? animationTime : "5s")} linear
-    infinite; */
+    infinite;
 
   @keyframes upAnimation {
     0% {
@@ -373,6 +373,10 @@ const Hero = () => {
                 <Image src={imgHero12} alt="img from hero" />
                 <Image src={imgHero22} alt="img from hero" />
                 <Image src={imgHero32} alt="img from hero" />
+
+                <Image src={imgHero12} alt="img from hero" />
+                <Image src={imgHero22} alt="img from hero" />
+                <Image src={imgHero32} alt="img from hero" />
               </ColumnCarousel>
               <ColumnCarousel
                 className="column"
@@ -383,12 +387,22 @@ const Hero = () => {
                 <Image src={imgHero21} alt="img from hero" />
                 <Image src={imgHero13} alt="img from hero" />
                 <Image src={imgHero31} alt="img from hero" />
+
+                <Image src={imgHero34} alt="img from hero" />
+                <Image src={imgHero21} alt="img from hero" />
+                <Image src={imgHero13} alt="img from hero" />
+                <Image src={imgHero31} alt="img from hero" />
               </ColumnCarousel>
               <ColumnCarousel
                 className="column"
                 animationTime={"18s"}
                 animationDirection={"up"}
               >
+                <Image src={imgHero23} alt="img from hero" />
+                <Image src={imgHero14} alt="img from hero" />
+                <Image src={imgHero33} alt="img from hero" />
+                <Image src={imgHero11} alt="img from hero" />
+
                 <Image src={imgHero23} alt="img from hero" />
                 <Image src={imgHero14} alt="img from hero" />
                 <Image src={imgHero33} alt="img from hero" />
