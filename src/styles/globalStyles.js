@@ -84,6 +84,22 @@ export const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     border-style: none;
   }
+
+  img[alt=""],
+  img:not([alt]) {
+    filter: blur(5px);
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    vertical-align: middle;
+
+    &.feather {
+      fill: none;
+    }
+  }
 `;
 
 export const Main__Section = styled.section``;
