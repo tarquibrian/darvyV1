@@ -197,7 +197,7 @@ const HeroStyled = styled(motion.section)`
     max-height: 700px;
 
     border-radius: var(--border-radius);
-    /* overflow: hidden; */
+    overflow: hidden;
     img {
       width: 250px;
       height: auto;
@@ -254,10 +254,10 @@ const ColumnCarousel = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
-  /* animation: ${({ animationDirection }) =>
-    animationDirection === "up" ? "upAnimation" : "downAnimation"}
+  animation: ${({ animationDirection }) =>
+      animationDirection === "up" ? "upAnimation" : "downAnimation"}
     ${({ animationTime }) => (animationTime ? animationTime : "5s")} linear
-    infinite; */
+    infinite;
 
   @keyframes upAnimation {
     0% {
@@ -375,12 +375,12 @@ const Hero = () => {
                 <Image src={imgHero12} alt="img from hero" />
                 <Image src={imgHero22} alt="img from hero" />
                 <Image src={imgHero32} alt="img from hero" />
-                <Image src={imgHero41} alt="img from hero" />
+                <Image src={imgHero42} alt="img from hero" />
 
-                {/* <Image src={imgHero12} alt="img from hero" />
+                <Image src={imgHero12} alt="img from hero" />
                 <Image src={imgHero22} alt="img from hero" />
                 <Image src={imgHero32} alt="img from hero" />
-                <Image src={imgHero41} alt="img from hero" /> */}
+                <Image src={imgHero42} alt="img from hero" />
               </ColumnCarousel>
               <ColumnCarousel
                 className="column"
@@ -392,10 +392,10 @@ const Hero = () => {
                 <Image src={imgHero41} alt="img from hero" />
                 <Image src={imgHero31} alt="img from hero" />
 
-                {/* <Image src={imgHero34} alt="img from hero" />
+                <Image src={imgHero34} alt="img from hero" />
                 <Image src={imgHero21} alt="img from hero" />
                 <Image src={imgHero41} alt="img from hero" />
-                <Image src={imgHero31} alt="img from hero" /> */}
+                <Image src={imgHero31} alt="img from hero" />
               </ColumnCarousel>
               <ColumnCarousel
                 className="column"
@@ -408,11 +408,11 @@ const Hero = () => {
                 <Image src={imgHero11} alt="img from hero" />
                 <Image src={imgHero13} alt="img from hero" />
 
-                {/* <Image src={imgHero23} alt="img from hero" />
+                <Image src={imgHero23} alt="img from hero" />
                 <Image src={imgHero14} alt="img from hero" />
                 <Image src={imgHero33} alt="img from hero" />
                 <Image src={imgHero11} alt="img from hero" />
-                <Image src={imgHero13} alt="img from hero" /> */}
+                <Image src={imgHero13} alt="img from hero" />
               </ColumnCarousel>
             </div>
           </div>
