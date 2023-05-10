@@ -207,19 +207,14 @@ const HeroStyled = styled(motion.section)`
       height: 100%;
       width: 100%;
       /* transform: rotate(20deg) translate(-23%, -12%); */
-      /* overflow:hidden; */
-      /* background-color: rgba(0,0,0,.3) */
+      transform: rotate(20deg) translateY(-12%);
     }
 
     .wrapper-carousel {
       display: flex;
+      justify-content: center;
       gap: 0.5rem;
-      /* transform: rotate(0deg) translate(00%, 0%); */
-      /* rotate: x -40deg; */
-      /* rotate: x 10deg y 20deg */
-      /* rotate: z 4deg */
-      /* transform: rotate3d(10deg, 10deg, 10deg) */
-      /* rotate: 1 -0.5 1 5deg; */
+     
     }
   }
 
