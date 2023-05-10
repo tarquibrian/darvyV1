@@ -355,13 +355,13 @@ const Hero = () => {
               animationTime={"15s"}
               animationDirection={"up"}
             >
-              <Image src={imghero} alt="img from hero" />
-              <Image src={imghero} alt="img from hero" />
-              <Image src={imghero} alt="img from hero" />
+              <Image src={imgHero21} alt="img from hero" />
+              <Image src={imgHero22} alt="img from hero" />
+              <Image src={imgHero23} alt="img from hero" />
 
-              <Image src={imghero} alt="img from hero" />
-              <Image src={imghero} alt="img from hero" />
-              <Image src={imghero} alt="img from hero" />
+              <Image src={imgHero21} alt="img from hero" />
+              <Image src={imgHero22} alt="img from hero" />
+              <Image src={imgHero23} alt="img from hero" />
             </ColumnCarousel>
             <ColumnCarousel
               className="column"
