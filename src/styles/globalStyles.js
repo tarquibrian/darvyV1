@@ -93,13 +93,20 @@ export const GlobalStyle = createGlobalStyle`
   svg {
     width: 100%;
     height: 100%;
-    fill: currentColor;
+    /* fill: currentColor; */
     vertical-align: middle;
 
-    &.feather {
+    /* &.feather {
       fill: none;
-    }
+    } */
   }
+
+  /* img,
+  svg {
+    width: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+  } */
 `;
 
 export const Main__Section = styled.section``;
