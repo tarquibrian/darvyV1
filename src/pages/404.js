@@ -15,8 +15,6 @@ const FourOhFourStyled = styled.section`
     font-weight: normal;
     padding: 40px;
     background: rgba(255, 255, 255, 0.1);
-    /* background: rgba(255, 255, 255, 0.05)
-    linear-gradient(to top right, rgba(255, 235, 0, 0.15)); */
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     z-index: 9;
