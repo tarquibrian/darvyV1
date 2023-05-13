@@ -24,9 +24,7 @@ const AboutStyled = styled(motion.section)`
     grid-template-columns: repeat(1, auto);
     width: 90%;
   }
-  /* @media screen and (max-width: 400px) {
-    width: 90%;
-  } */
+  
 `;
 
 const AboutCard = styled.div`

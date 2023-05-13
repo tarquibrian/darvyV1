@@ -845,19 +845,19 @@ const WrapperContent = ({
         <div className="card-details">
           <div className="details-wrapper">
             <div className="title">
-              <span className="symbol">✷</span> {typeProject[0]}
+              <span className="symbol">✧</span> {typeProject[0]}
             </div>
             <span className="desc">{typeProject[1]}</span>
           </div>
           <div className="details-wrapper">
             <div className="title">
-              <span className="symbol">✷</span> {client[0]}
+              <span className="symbol">✦</span> {client[0]}
             </div>
             <span className="desc">{client[1]}</span>
           </div>
           <div className="details-wrapper">
             <div className="title">
-              <span className="symbol">✷</span> {techStack}
+              <span className="symbol">✴︎</span> {techStack}
             </div>
             <div className="features">
               {features.map((feature, i) => {
