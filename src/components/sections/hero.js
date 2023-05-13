@@ -280,14 +280,6 @@ const ColumnCarousel = styled.div`
   }
 `;
 
-const variants = {
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.6, delay: 0.6 },
-  },
-  hidden: { opacity: 0, scale: 0.95 },
-};
 
 const languages = {
   es: heroData.es,
