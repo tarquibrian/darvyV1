@@ -5,7 +5,6 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { heroData } from "@data";
 import { useAppContext } from "src/context/app.context";
-import imghero from "../../images/hero1.jpg";
 import Image from "next/image";
 
 import imgHero11 from "../../images/hero11.png";
