@@ -25,8 +25,10 @@ import imgHero42 from "../../images/hero42.png";
 
 const HeroStyled = styled(motion.section)`
   height: calc(100vh - 150px);
+  /* height: 100%; */
   margin: auto;
   width: 80%;
+  /* background-color: lightsalmon; */
 
   .hero__container {
     height: 100%;
@@ -37,6 +39,7 @@ const HeroStyled = styled(motion.section)`
     max-width: 1300px;
     gap: 2rem;
     margin: auto;
+    overflow: hidden;
   }
 
   .hero__container-card {
@@ -193,6 +196,7 @@ const HeroStyled = styled(motion.section)`
     border: 2px solid var(--border-light);
     height: 100%;
     max-height: 700px;
+    /* min-height: 200px; */
 
     border-radius: var(--border-radius);
     overflow: hidden;
