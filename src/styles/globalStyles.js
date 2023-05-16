@@ -94,12 +94,6 @@ export const GlobalStyle = createGlobalStyle`
     vertical-align: middle;
   }
 
-  /* img,
-  svg {
-    width: 100%;
-    max-width: 100%;
-    vertical-align: middle;
-  } */
 `;
 
 export const Main__Section = styled.section``;
