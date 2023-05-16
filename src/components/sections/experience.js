@@ -84,7 +84,7 @@ const ContentList = styled.div`
     left: 0;
     width: 100%;
     height: 60px;
-    background: var(--bg-orange);
+    /* background: var(--bg-orange); */
     background-image: radial-gradient(
       circle farthest-corner at 10% 20%,
       rgba(255, 229, 168, 1) 0%,
@@ -170,7 +170,7 @@ const TabList = styled.div`
     height: 50px;
     background: ${({ isActive }) =>
       isActive
-        ? "linear-gradient(93.3deg,rgba(236, 80, 80, 1) 21.5%,rgba(255, 97, 29, 1) 93.9%)"
+        ? `radial-gradient(circle farthest-corner at 10% 20%,rgba(255, 229, 168, 1) 0%,rgba(251, 174, 222, 1) 100.7%)`
         : "rgba(255,255,255,0)"};
     .year-list {
       display: none;
