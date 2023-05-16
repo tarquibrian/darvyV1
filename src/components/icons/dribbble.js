@@ -4,9 +4,9 @@ const IconDribbble = () => (
     width="32"
     height="32"
     viewBox="0 0 32 32"
-    fill="none"
     role="img"
     class="icon fill-current"
+    fill="white"
   >
     <title>Dribbble</title>
     <rect width="32" height="32" fill="black" fill-opacity="0"></rect>
@@ -18,4 +18,4 @@ const IconDribbble = () => (
   </svg>
 );
 
-export default IconDribbble
+export default IconDribbble;

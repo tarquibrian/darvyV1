@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {
   IconCodepen,
+  IconDribbble,
   IconGitHub,
   IconInstagram,
   IconLinkedIn,
@@ -132,11 +133,11 @@ const LeftSide = () => {
         </li>
         <li>
           <a
-            href="https://codepen.io/tarquibrian"
+            href="https://dribbble.com/tarquibrian"
             target="_blank"
             rel="noreferrer"
           >
-            <IconCodepen />
+            <IconDribbble />
           </a>
         </li>
       </ul>
