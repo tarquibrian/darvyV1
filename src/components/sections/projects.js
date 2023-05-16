@@ -885,6 +885,25 @@ const WrapperContent = ({
                 );
               })}
             </div>
+            <div className="links">
+              <ul>
+                {links.map((item, i) => {
+                  return (
+                    <li key={i}>
+                      <a
+                        href={item.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {item.svg === 1 && <IconExternal />}
+                        {item.svg === 2 && <IconGitHub />}
+                        {item.svg === 3 && <IconFigma />}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </motion.div>
