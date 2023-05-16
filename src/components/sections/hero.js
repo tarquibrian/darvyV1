@@ -28,7 +28,6 @@ const HeroStyled = styled(motion.section)`
   /* height: 100%; */
   margin: auto;
   width: 80%;
-  /* background-color: lightsalmon; */
 
   .hero__container {
     height: 100%;
