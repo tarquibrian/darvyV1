@@ -122,10 +122,22 @@ const ImgProfile = styled.div`
       position: absolute;
       bottom: 5%;
       left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
 
-      opacity: 0;
-
-      transform: translateX(50%);
+      span {
+        padding: 0.4rem 1rem;
+        color: var(--c-dark);
+        border-radius: 5rem;
+        background-image: radial-gradient(
+          circle farthest-corner at 10% 20%,
+          rgba(255, 229, 168, 1) 0%,
+          rgba(251, 174, 222, 1) 100.7%
+        );
+      }
     }
 
     &:hover {
@@ -243,7 +255,9 @@ const About = () => {
             height={`auto`}
             placeholder="blur"
           />
-          <span className="name">Darvy is my stage name.</span>
+          <div className="name">
+            <span className="">Darvy is my stage name</span>
+          </div>
         </div>
         <CardEffect>
           <div className="element">
