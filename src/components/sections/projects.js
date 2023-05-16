@@ -883,6 +883,7 @@ const WrapperContent = ({
                 return (
                   <div key={i} className="feature-item" bgColor={bgColor}>
                     {name === "VS Code" && <IconVS />}
+                    {name === "Vim" && <IconVim />}
                     {name === "Sublime Text" && <IconST />}
                     {name === "Atom" && <IconAtom />}
                     {name === "NextJS" && <IconNextjs />}
