@@ -18,6 +18,12 @@ const EmailStyle = styled(motion.div)`
 
     span {
       display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
     }
 
     a {
@@ -26,13 +32,8 @@ const EmailStyle = styled(motion.div)`
       writing-mode: vertical-lr;
       color: white;
       transition: 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      /* width: 100%; */
       &:hover {
         text-shadow: 0 0 3px rgba(255 255 255 / 0.8);
-        transform: scale(1.05);
       }
     }
 
