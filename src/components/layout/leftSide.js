@@ -50,11 +50,13 @@ const SideStyle = styled(motion.div)`
     }
   }
 
-  ol {
+  ul {
     z-index: 999;
     /* width: 100%; */
     list-style: none;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     gap: 10px;
@@ -67,12 +69,15 @@ const SideStyle = styled(motion.div)`
         color: rgba(255, 255, 255, 1);
         padding: 6px 0;
         transition: 0.2s ease;
-        &:hover {
-          text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
-        }
+        vertical-align: middle;
         svg {
           height: 24px;
           width: 24px;
+          vertical-align: middle;
+        }
+        &:hover {
+          text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
+          transform: scale(1.4);
         }
       }
     }
@@ -89,7 +94,7 @@ const SideStyle = styled(motion.div)`
 const LeftSide = () => {
   const social = (
     <div>
-      <ol>
+      <ul>
         <li>
           <a
             href="https://github.com/tarquibrian"
@@ -126,7 +131,7 @@ const LeftSide = () => {
             <IconCodepen />
           </a>
         </li>
-      </ol>
+      </ul>
     </div>
   );
   return (
