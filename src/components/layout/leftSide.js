@@ -5,6 +5,7 @@ import {
   IconGitHub,
   IconInstagram,
   IconLinkedIn,
+  IconMedium,
 } from "@components";
 import { motion } from "framer-motion";
 
@@ -118,6 +119,15 @@ const LeftSide = () => {
             rel="noreferrer"
           >
             <IconInstagram />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://medium.com/@tarquibrian"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconMedium/>
           </a>
         </li>
         <li>
