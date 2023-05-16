@@ -62,18 +62,16 @@ const SideStyle = styled(motion.div)`
     gap: 10px;
 
     li {
-      width: 100%;
       a {
         text-align: center;
         width: 100%;
         color: rgba(255, 255, 255, 1);
         padding: 6px 0;
         transition: 0.2s ease;
-        vertical-align: middle;
+        display: flex;
         svg {
           height: 24px;
           width: 24px;
-          vertical-align: middle;
         }
         &:hover {
           text-shadow: 0 0 5px rgba(255 255 255 / 0.5);
