@@ -660,6 +660,24 @@ const ProjectsStyled = styled(motion.section)`
                 /* background-color: red; */
               }
             }
+            .links {
+              margin-top: 1rem;
+              ul {
+                display: flex;
+                gap: 0.8rem;
+                svg {
+                  width: 24px;
+                  height: 24px;
+                  color: var(--c-dark);
+                  vertical-align: middle;
+
+                  &:hover {
+                    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+                    transform: scale(1.1);
+                  }
+                }
+              }
+            }
           }
 
           &:hover {
