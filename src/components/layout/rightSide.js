@@ -16,14 +16,23 @@ const EmailStyle = styled(motion.div)`
     gap: 1rem;
     height: 100vh;
 
+    span {
+      display: flex;
+    }
+
     a {
       font-family: "DMSans", sans-serif;
       font-size: 1.2rem;
       writing-mode: vertical-lr;
       color: white;
       transition: 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* width: 100%; */
       &:hover {
         text-shadow: 0 0 3px rgba(255 255 255 / 0.8);
+        transform: scale(1.05);
       }
     }
 
@@ -56,7 +65,9 @@ const EmailStyle = styled(motion.div)`
 const RightSide = () => {
   const emailName = (
     <div>
-      <a href="mailto:tarquibrian@gmail.com">tarquibrian@gmail.com</a>
+      <span>
+        <a href="mailto:tarquibrian@gmail.com">tarquibrian@gmail.com</a>
+      </span>
     </div>
   );
   return (
