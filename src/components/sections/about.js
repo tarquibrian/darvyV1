@@ -101,8 +101,9 @@ const ImgProfile = styled.div`
   height: 100%;
 
   .image {
-    /* overflow: hidden */
+    /* overflow: hidden; */
     position: relative;
+
     img {
       display: block;
       border-radius: 8px;
@@ -110,7 +111,6 @@ const ImgProfile = styled.div`
       width: 100%;
       max-width: 400px;
       height: auto;
-      /* background: var(--bg-orange); */
       background-image: radial-gradient(
         circle farthest-corner at 10% 20%,
         rgba(255, 229, 168, 1) 0%,
@@ -120,15 +120,19 @@ const ImgProfile = styled.div`
 
     .name {
       position: absolute;
-      bottom: 5%;
+      bottom: 0;
       left: 0;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      height: 4rem;
 
       span {
+        display: block;
+        position: relative;
+        top: 4rem;
         padding: 0.4rem 1rem;
         color: var(--c-dark);
         border-radius: 5rem;
@@ -148,7 +152,9 @@ const ImgProfile = styled.div`
       }
 
       .name {
-        opacity: 1;
+        span {
+          top: 0rem;
+        }
       }
     }
   }
