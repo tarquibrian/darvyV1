@@ -714,8 +714,8 @@ const ProjectsStyled = styled(motion.section)`
 `;
 
 const variants = {
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
-  hidden: { opacity: 0, scale: 1 },
+  visible: { y: 0, opacity: 1, transition: { duration: 1, delay: 0.3 } },
+  hidden: { y: 200, opacity: 0 },
 };
 
 const languages = {
