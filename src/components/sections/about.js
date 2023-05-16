@@ -101,7 +101,6 @@ const ImgProfile = styled.div`
   height: 100%;
 
   .image {
-    /* overflow: hidden; */
     position: relative;
 
     img {
@@ -127,10 +126,12 @@ const ImgProfile = styled.div`
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      height: 4rem;
+      height: 5rem;
 
       span {
-        display: block;
+        font-family: var(--ff-sofia);
+        font-size: var(--fz-smm);
+        font-weight: bold;
         position: relative;
         top: 4rem;
         padding: 0.4rem 1rem;
