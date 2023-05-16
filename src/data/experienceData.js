@@ -25,7 +25,7 @@ export const experienceData = {
       {
         id: 1,
         title: {
-          name: "Pronto...",
+          name: "Freelancer",
           year: "2023",
         },
         body: {
@@ -86,7 +86,7 @@ export const experienceData = {
       {
         id: 1,
         title: {
-          name: "Coming soon..",
+          name: "Freelancer",
           year: "2023",
         },
         body: {
