@@ -165,7 +165,7 @@ const ImgProfile = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 1rem 2rem;
     border-radius: var(--border-radius);
     border-radius: 8px;
@@ -187,6 +187,7 @@ const ImgProfile = styled.div`
         display: flex;
         gap: 0.4rem;
         align-items: center;
+        white-space: nowrap;
       }
     }
 
