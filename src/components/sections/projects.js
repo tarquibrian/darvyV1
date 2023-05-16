@@ -56,7 +56,7 @@ export const projectsData = {
             //   rgba(255, 97, 29, 1) 93.9%
             // )`,
           },
-          { name: "Atom", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
+          { name: "Vim", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
         ],
         links: [
           {
@@ -281,7 +281,7 @@ export const projectsData = {
             icon: <IconST />,
             bgColor: "rgba(255,165,0,.3)",
           },
-          { name: "Atom", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
+          { name: "Vim", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
         ],
         links: [
           {
@@ -652,7 +652,7 @@ const ProjectsStyled = styled(motion.section)`
               gap: 0.4rem;
               font-size: var(--fz-smm);
               /* background-color: red; */
-              height: 35px;
+              height: 30px;
               img,
               svg {
                 width: auto;
