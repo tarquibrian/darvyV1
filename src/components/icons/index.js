@@ -23,4 +23,5 @@ export { default as IconAP } from "./ap";
 export { default as IconAI } from "./ai";
 export { default as IconST } from "./st";
 export { default as IconArrow } from "./arrow";
-export { default as IconMedium} from "./medium";
+export { default as IconMedium } from "./medium";
+export { default as IconDribbble } from "./dribbble";
