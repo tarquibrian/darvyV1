@@ -24,7 +24,6 @@ const AboutStyled = styled(motion.section)`
     grid-template-columns: repeat(1, auto);
     width: 90%;
   }
-  
 `;
 
 const AboutCard = styled.div`
@@ -102,6 +101,8 @@ const ImgProfile = styled.div`
   height: 100%;
 
   .image {
+    /* overflow: hidden */
+    position: relative;
     img {
       display: block;
       border-radius: 8px;
@@ -116,11 +117,26 @@ const ImgProfile = styled.div`
         rgba(251, 174, 222, 1) 100.7%
       );
     }
+
+    .name {
+      position: absolute;
+      bottom: 5%;
+      left: 0;
+
+      opacity: 0;
+
+      transform: translateX(50%);
+    }
+
     &:hover {
       img {
         opacity: 1;
         border: calc(1px + var(--border-size)) solid var(--border-light);
         filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
+      }
+
+      .name {
+        opacity: 1;
       }
     }
   }
@@ -227,6 +243,7 @@ const About = () => {
             height={`auto`}
             placeholder="blur"
           />
+          <span className="name">Darvy is my stage name.</span>
         </div>
         <CardEffect>
           <div className="element">
