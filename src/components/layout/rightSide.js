@@ -76,7 +76,6 @@ const RightSide = () => {
       initial={{ x: 100 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.6, delay: 0.7 }}
-      exit
     >
       {emailName}
     </EmailStyle>
