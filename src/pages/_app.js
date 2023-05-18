@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence mode="sync">
         {/* <GlobalStyle /> */}
         <Head>
           <title>Darvy Portfolio</title>

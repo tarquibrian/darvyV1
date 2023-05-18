@@ -41,6 +41,7 @@ const Layout = ({ children }) => {
   };
   const updateBG = () => {
     setColor(0.8);
+    console.log(color);
   };
 
   useEffect(() => {
