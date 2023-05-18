@@ -72,7 +72,7 @@ mat2 rotate2D(float angle) {
 void main() {
 
 	vec3 baseFirst = vec3(0.38, 0.09, 0.57);
-	vec3 accent = vec3(0.80, 0.95, 0.94);
+	vec3 accent = vec3(nColor, 0.95, 0.94);
 	// vec3 accent = vec3(1.00, 0.78, 0.87);
 	// vec3 accent = vec3(1.00, 0.69, 0.80);
 

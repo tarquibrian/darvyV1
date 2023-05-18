@@ -9,7 +9,7 @@ import Sketch from "src/threejs/main";
 import Image from "next/image";
 import noiseIMG from "../../images/layer-min.png";
 
-const BGImage = styled.div`
+const BGImage = styled(motion.div)`
   position: fixed;
   inset: 0;
   z-index: -9;
@@ -32,21 +32,21 @@ const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState(0.8);
 
-  const renderBG = () => {
-    const Element = document.getElementById("threejsBG");
-    new Sketch({
-      dom: Element,
-      // color: color,
-    });
-  };
   const updateBG = () => {
-    setColor(0.8);
+    setColor(0);
     console.log(color);
   };
 
   useEffect(() => {
+    const renderBG = () => {
+      const Element = document.getElementById("threejsBG");
+      new Sketch({
+        dom: Element,
+        color: color,
+      });
+    };
     renderBG();
-  }, []);
+  }, [setColor, color]);
   // console.log(color);
 
   return (
@@ -58,17 +58,17 @@ const Layout = ({ children }) => {
       <Header />
 
       <motion.main
-        initial={{ x: 300, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        exit={{ x: 300, opacity: 0 }}
-        transition={{
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
-        }}
+      // initial={{ x: 300, opacity: 0 }}
+      // animate={{ x: 0, opacity: 1 }}
+      // exit={{ x: 300, opacity: 0 }}
+      // transition={{
+      //   type: "spring",
+      //   stiffness: 260,
+      //   damping: 20,
+      // }}
       >
         <button className="button" onClick={() => updateBG()}>
-          ccolorr
+          CHANGE COLOR
         </button>
         {children}
       </motion.main>

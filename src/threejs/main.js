@@ -108,6 +108,7 @@ export default class Sketch {
     });
 
     this.geometry = new THREE.SphereBufferGeometry(1.5, 32, 32);
+    this.material.needsUpdate = true;
 
     this.plane = new THREE.Mesh(this.geometry, this.material);
     this.scene.add(this.plane);
