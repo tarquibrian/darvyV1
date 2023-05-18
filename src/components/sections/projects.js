@@ -33,6 +33,7 @@ import { animate, motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
 import IconPWA from "../icons/pwa";
+import Link from "next/link";
 
 export const projectsData = {
   es: {
@@ -713,6 +714,8 @@ const ProjectsStyled = styled(motion.section)`
   }
 `;
 
+const WrapperLeft = styled(Link)``;
+
 const variants = {
   visible: { y: 0, opacity: 1, transition: { duration: 1, delay: 0.3 } },
   hidden: { y: 200, opacity: 0 },
@@ -809,41 +812,44 @@ const WrapperContent = ({
   return (
     <motion.article className={`projects__wrapper`} id={id} ref={refView}>
       <div className="wrapper-effect">
-        <motion.a
-          className="projects__wrapper-picture"
-          href={links[0].path}
-          target="_blank"
-          rel="noopener noreferrer"
-          initial="hidden"
-          animate={controls}
-          variants={{
-            visible: {
-              x: 0,
-              opacity: 1,
-              scale: 1,
-              transition: { duration: 0.6, ease: "backInOut" },
-            },
-            hidden: { x: -100, opacity: 0, scale: 1 },
-          }}
-        >
-          <header className="header-content">
-            <div className="content-title">
-              <h2>
-                <span className="symbol">✦</span> {title}
-              </h2>
-              <p>{desc}</p>
-            </div>
-            <div className="content-link">
-              <IconArrow />
-            </div>
-          </header>
+        <Link href={`/project/${id}`}>
+          <motion.div
+            className="projects__wrapper-picture"
+            // href={links[0].path}
+            // href={"/project"}
+            // target="_blank"
+            // rel="noopener noreferrer"
+            initial="hidden"
+            animate={controls}
+            variants={{
+              visible: {
+                x: 0,
+                opacity: 1,
+                scale: 1,
+                transition: { duration: 0.6, ease: "backInOut" },
+              },
+              hidden: { x: -100, opacity: 0, scale: 1 },
+            }}
+          >
+            <header className="header-content">
+              <div className="content-title">
+                <h2>
+                  <span className="symbol">✦</span> {title}
+                </h2>
+                <p>{desc}</p>
+              </div>
+              <div className="content-link">
+                <IconArrow />
+              </div>
+            </header>
 
-          <div className="picture-content">
-            <CardEffect>
-              <Image src={img} alt="img picture" placeholder="blur" />
-            </CardEffect>
-          </div>
-        </motion.a>
+            <div className="picture-content">
+              <CardEffect>
+                <Image src={img} alt="img picture" placeholder="blur" />
+              </CardEffect>
+            </div>
+          </motion.div>
+        </Link>
       </div>
 
       <motion.div
