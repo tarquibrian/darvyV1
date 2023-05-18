@@ -9,7 +9,7 @@ import { useAppContext } from "src/context/app.context";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-const NavbarHeader = styled(motion.header)`
+const NavbarHeader = styled.header`
   position: fixed;
   bottom: 5%;
   left: 0%;
@@ -62,7 +62,7 @@ const NavbarHeader = styled(motion.header)`
       `};
   }
 `;
-const NavbarContent = styled(motion.div)`
+const NavbarContent = styled.div`
   margin: auto;
   height: 100%;
   width: 80%;

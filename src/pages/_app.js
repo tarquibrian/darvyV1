@@ -19,13 +19,14 @@ export default function App({ Component, pageProps }) {
   // }, [router]);
 
   return (
-    <AnimatePresence mode="sync">
-      {/* <GlobalStyle /> */}
-      <Head>
-        <title>Darvy Portfolio</title>
-        <meta name="robots" content="all" />
-      </Head>
-      {/* {!loading ? (
+    <>
+      {/* <AnimatePresence mode="wait"> */}
+        {/* <GlobalStyle /> */}
+        <Head>
+          <title>Darvy Portfolio</title>
+          <meta name="robots" content="all" />
+        </Head>
+        {/* {!loading ? (
         <motion.div
           key="loading"
           initial={{ opacity: 0 }}
@@ -40,9 +41,10 @@ export default function App({ Component, pageProps }) {
         </AppProvider>
       )} */}
 
-      <AppProvider>
-        <Component {...pageProps} />
-      </AppProvider>
-    </AnimatePresence>
+        <AppProvider>
+          <Component {...pageProps} />
+        </AppProvider>
+      {/* </AnimatePresence> */}
+    </>
   );
 }
