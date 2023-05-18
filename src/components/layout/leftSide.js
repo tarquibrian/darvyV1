@@ -10,7 +10,7 @@ import {
 } from "@components";
 import { motion } from "framer-motion";
 
-const SideStyle = styled.div`
+const SideStyle = styled(motion.div)`
   min-width: 100px;
   position: fixed;
   bottom: 0;
