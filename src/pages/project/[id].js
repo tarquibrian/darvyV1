@@ -6,9 +6,7 @@ import { projectsData } from "src/data/projectsData";
 import styled from "styled-components";
 
 const ProjectStyled = styled.section`
-  /* width: calc(100% - 200px); */
   width: 80%;
-  background-color: lightblue;
 `;
 
 const languages = {
