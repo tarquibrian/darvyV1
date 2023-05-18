@@ -25,7 +25,6 @@ const Project = () => {
           .filter((item) => item.id === id)
           .map((project, i) => (
             <div key={i}>
-              title
               <h1>{project.title}</h1>
               <p>{project.desc}</p>
             </div>
