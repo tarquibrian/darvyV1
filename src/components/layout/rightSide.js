@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const EmailStyle = styled(motion.div)`
+const EmailStyle = styled.div`
   position: fixed;
   top: 0;
   right: 0;
@@ -20,7 +20,7 @@ const EmailStyle = styled(motion.div)`
       display: flex;
       justify-content: center;
       align-items: center;
-      
+
       &:hover {
         transform: scale(1.05);
       }

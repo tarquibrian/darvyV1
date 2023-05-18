@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      {/* <AnimatePresence mode="popLayout"> */}
+      <AnimatePresence mode="wait">
         {/* <GlobalStyle /> */}
         <Head>
           <title>Darvy Portfolio</title>
@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }) {
         <AppProvider>
           <Component {...pageProps} />
         </AppProvider>
-      {/* </AnimatePresence> */}
+      </AnimatePresence>
     </>
   );
 }

@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
       {/* <SEO title="Brian Tarqui Rojas" /> */}
 
       <Header />
-      <AnimatePresence mode="wait">
+      {/* <AnimatePresence mode="wait"> */}
         <main
         // exit={{ opacity: 0 }}
         // initial={{ opacity: 0 }}
@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
         >
           {children}
         </main>
-      </AnimatePresence>
+      {/* </AnimatePresence> */}
 
       <RightSide />
       <LeftSide />
@@ -66,8 +66,8 @@ const Layout = ({ children }) => {
         // initial={{ opacity: 0 }}
         // animate={{ opacity: 1 }}
         // transition={{ duration: 0.3, ease: "easeIn" }}
-      >
-        {/* <Image
+      />
+      {/* <Image
           priority
           src={noiseIMG}
           alt="background image"
@@ -77,7 +77,6 @@ const Layout = ({ children }) => {
             setLoading(true);
           }}
         /> */}
-      </BGImage>
     </>
   );
 };
