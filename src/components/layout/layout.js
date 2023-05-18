@@ -1,5 +1,5 @@
 import { GlobalStyle } from "@styles";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Header, LeftSide, Loader, RightSide } from "@components";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
@@ -31,22 +31,30 @@ const Layout = ({ children }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState(0.8);
-
-  const updateBG = () => {
-    setColor(0);
-    console.log(color);
-  };
+  const ref = useRef();
+  // const BG = ;
 
   useEffect(() => {
-    const renderBG = () => {
-      const Element = document.getElementById("threejsBG");
-      new Sketch({
-        dom: Element,
-        color: color,
-      });
-    };
-    renderBG();
-  }, [setColor, color]);
+    const Element = document.getElementById("threejsBG");
+    new Sketch({
+      dom: Element,
+      color: color,
+    });
+
+    // const updateBG = () => {
+    // setColor(0);
+    // BG.changeColor(color);
+    // };
+
+    // const renderBG = () => {
+    //   const Element = document.getElementById("threejsBG");
+    //   const BG = new Sketch({
+    //     dom: Element,
+    //     color: color,
+    //   });
+    // };
+    // renderBG();
+  }, [color]);
   // console.log(color);
 
   return (
@@ -67,7 +75,13 @@ const Layout = ({ children }) => {
       //   damping: 20,
       // }}
       >
-        <button className="button" onClick={() => updateBG()}>
+        {/* <input
+          type="text"
+          name="color"
+          value={color}
+          onChange={(e) => setColor(e.target.value)}
+        /> */}
+        <button className="button" onClick={() => setColor(0.0)}>
           CHANGE COLOR
         </button>
         {children}
@@ -78,9 +92,10 @@ const Layout = ({ children }) => {
 
       <BGImage
         id="threejsBG"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3, ease: "easeIn" }}
+        ref={ref}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ duration: 0.3, ease: "easeIn" }}
       />
       {/* <Image
           priority

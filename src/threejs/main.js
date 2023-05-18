@@ -108,10 +108,15 @@ export default class Sketch {
     });
 
     this.geometry = new THREE.SphereBufferGeometry(1.5, 32, 32);
-    this.material.needsUpdate = true;
+    // this.material.needsUpdate = true;
+    // this.material.uniforms.nColor.value = this.currentColor;
 
     this.plane = new THREE.Mesh(this.geometry, this.material);
     this.scene.add(this.plane);
+  }
+
+  changeColor(valor) {
+    this.material.uniforms.nColor.value = valor;
   }
 
   stop() {
@@ -131,6 +136,7 @@ export default class Sketch {
     this.time += 0.007;
     this.cubeCamera.update(this.renderer, this.scene);
     this.material.uniforms.time.value = this.time;
+    this.material.uniforms.nColor.value = this.currentColor;
     requestAnimationFrame(this.render.bind(this));
     this.composer.render(this.scene, this.camera);
   }
