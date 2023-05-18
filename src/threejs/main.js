@@ -143,6 +143,7 @@ export default class Sketch {
 
     // this.material.uniforms.nColor.value += 0.001;
     // this.uniforms.nColor = this.currentColor;
+    // this.material.uniforms.nColor.value += 0.1;
     requestAnimationFrame(this.render.bind(this));
     this.composer.render(this.scene, this.camera);
   }
