@@ -12,6 +12,7 @@ const languages = {
 const Project = () => {
   const { state } = useAppContext();
   const router = useRouter();
+  const id = router.query.id;
 
   const currentLanguage = {
     lenguage: languages[state.currentLanguage],
@@ -21,11 +22,12 @@ const Project = () => {
     <Layout>
       <section>
         {currentLanguage.lenguage.items
-          .filter((item) => item.id === router.query.id)
-          .map((item2, i) => (
+          .filter((item) => item.id === id)
+          .map((project, i) => (
             <div key={i}>
               title
-              <h1>{item2.title}</h1>
+              <h1>{project.title}</h1>
+              <p>{project.desc}</p>
             </div>
           ))}
       </section>
