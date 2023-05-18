@@ -49,13 +49,13 @@ const Layout = ({ children }) => {
 
       <Header />
       {/* <AnimatePresence mode="wait"> */}
-        <main
-        // exit={{ opacity: 0 }}
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
-        >
-          {children}
-        </main>
+      <main
+      // exit={{ opacity: 0 }}
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      >
+        {children}
+      </main>
       {/* </AnimatePresence> */}
 
       <RightSide />
@@ -63,9 +63,9 @@ const Layout = ({ children }) => {
 
       <BGImage
         id="threejsBG"
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
-        // transition={{ duration: 0.3, ease: "easeIn" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3, ease: "easeIn" }}
       />
       {/* <Image
           priority
