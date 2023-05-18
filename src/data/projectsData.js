@@ -26,6 +26,7 @@ import imgProject from "../images/project-img1.png";
 import imgProject2 from "../images/project-img2.png";
 import imgProject3 from "../images/project-img3.png";
 import imgProject4 from "../images/project-img4.png";
+import imgProject5 from "../images/project-img5.png";
 import IconPWA from "src/components/icons/pwa";
 
 export const projectsData = {
