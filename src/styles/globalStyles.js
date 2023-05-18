@@ -27,18 +27,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 16px;
+    width: 10px;
   }
         
   ::-webkit-scrollbar-track {
     border-radius: 8px;
-    background-color: rgba(231,231,231,.1);
-    border: 1px solid #cacaca;
+    background-color: rgba(255,255,255,1);
   }
         
   ::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
     background-clip: content-box;
     background-color: #d55959;
   }
