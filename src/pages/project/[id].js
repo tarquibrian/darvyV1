@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 const ProjectStyled = styled.section`
   width: 80%;
+  /* overflow-y: scroll; */
 `;
 
 const languages = {

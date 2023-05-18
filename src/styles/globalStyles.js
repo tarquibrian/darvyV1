@@ -26,32 +26,22 @@ export const GlobalStyle = createGlobalStyle`
     background: rgba(234,226,183,.5);
   }
 
-  width
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.section::-webkit-scrollbar-thumb {
-  border: 5px solid transparent;
-  border-radius: 100px;
-  background-color: #8070d4;
-  background-clip: content-box;
-}
+  ::-webkit-scrollbar {
+    width: 16px;
+  }
+        
+  ::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: rgba(231,231,231,.1);
+    border: 1px solid #cacaca;
+  }
+        
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+    background-color: #d55959;
+  }
 
   body {
     font-family: 'Oswald', sans-serif;
@@ -60,6 +50,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
+    overflow-y: scroll;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
   }
