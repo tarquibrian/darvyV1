@@ -2,7 +2,7 @@ import { GlobalStyle } from "@styles";
 import React, { useEffect, useState } from "react";
 import { Header, LeftSide, Loader, RightSide } from "@components";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 import { useRouter } from "next/router";
 import Sketch from "src/threejs/main";
@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
       {/* <SEO title="Brian Tarqui Rojas" /> */}
 
       <Header />
-      <>
+      <AnimatePresence mode="wait">
         <main
         // exit={{ opacity: 0 }}
         // initial={{ opacity: 0 }}
@@ -56,7 +56,7 @@ const Layout = ({ children }) => {
         >
           {children}
         </main>
-      </>
+      </AnimatePresence>
 
       <RightSide />
       <LeftSide />

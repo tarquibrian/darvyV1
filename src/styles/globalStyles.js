@@ -39,7 +39,7 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 8px;
     border: 2px solid transparent;
     background-clip: content-box;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.7);
   }
 
   body {
