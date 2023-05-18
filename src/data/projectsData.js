@@ -1,33 +1,32 @@
-"use client";
-import {
-  CardEffect,
-  IconAI,
-  IconAP,
-  IconArrow,
-  IconAtom,
-  IconExpress,
-  IconExternal,
-  IconFigma,
-  IconFigmaImg,
-  IconGitHub,
-  IconMaps,
-  IconMongo,
-  IconNextjs,
-  IconPushNotification,
-  IconRedux,
-  IconSC,
-  IconST,
-  IconSass,
-  IconVS,
-  IconVim,
-  ReactIcon,
-} from "@components";
-import imgProject from "../images/project-img1.png";
-import imgProject2 from "../images/project-img2.png";
-import imgProject3 from "../images/project-img3.png";
-import imgProject4 from "../images/project-img4.png";
-import imgProject5 from "../images/project-img5.png";
-import IconPWA from "src/components/icons/pwa";
+// import {
+//   CardEffect,
+//   IconAI,
+//   IconAP,
+//   IconArrow,
+//   IconAtom,
+//   IconExpress,
+//   IconExternal,
+//   IconFigma,
+//   IconFigmaImg,
+//   IconGitHub,
+//   IconMaps,
+//   IconMongo,
+//   IconNextjs,
+//   IconPushNotification,
+//   IconRedux,
+//   IconSC,
+//   IconST,
+//   IconSass,
+//   IconVS,
+//   IconVim,
+//   ReactIcon,
+// } from "@components";
+// import imgProject from "../images/project-img1.png";
+// import imgProject2 from "../images/project-img2.png";
+// import imgProject3 from "../images/project-img3.png";
+// import imgProject4 from "../images/project-img4.png";
+// import imgProject5 from "../images/project-img5.png";
+// import IconPWA from "src/components/icons/pwa";
 
 export const projectsData = {
   es: {
@@ -40,10 +39,9 @@ export const projectsData = {
         title: "Darvy Theme",
         desc: "Darvy Theme es un tema de color para Visual Estudio Code y muy pronto para otros editores como Atom o Sublime Text. La paleta de colores esta inspirado en temas populares como One Dark Pro y Tokyo Night, por lo que puede que éste tema vaya a encantarte.",
         features: [
-          { name: "VS Code", icon: <IconVS />, bgColor: "rgba(31,192,241,.5)" },
+          { name: "VS Code", bgColor: "rgba(31,192,241,.5)" },
           {
             name: "Sublime Text",
-            icon: <IconST />,
             bgColor: "rgba(255,165,0,.3)",
             // bgColor: `linear-gradient(
             //   93.3deg,
@@ -51,7 +49,7 @@ export const projectsData = {
             //   rgba(255, 97, 29, 1) 93.9%
             // )`,
           },
-          { name: "Vim", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
+          { name: "Vim", bgColor: "rgba(76,244,252,.4)" },
         ],
         links: [
           {
@@ -76,27 +74,22 @@ export const projectsData = {
         features: [
           {
             name: "NextJS",
-            icon: <IconNextjs />,
             bgColor: "rgba(25,25,25,.3)",
           },
           {
             name: "React",
-            icon: <ReactIcon />,
             bgColor: "rgba(31,192,241,.5)",
           },
           {
             name: "Styled Components",
-            icon: <IconSC />,
             bgColor: "rgba(231,62,250,.4)",
           },
           {
             name: "Adobe Illustrator",
-            icon: <IconAI />,
             bgColor: "rgba(234,226,183,.6)",
           },
           {
             name: "Figma+",
-            icon: <IconFigmaImg />,
             bgColor: "rgba(255,0,0,.2)",
           },
         ],
@@ -127,23 +120,19 @@ export const projectsData = {
         features: [
           {
             name: "NextJS",
-            icon: <IconNextjs />,
             bgColor: "rgba(25,25,25,.3)",
           },
           {
             name: "React",
-            icon: <ReactIcon />,
             bgColor: "rgba(31,192,241,.5)",
           },
-          { name: "Sass", icon: <IconSass />, bgColor: "rgba(231,62,250,.4)" },
+          { name: "Sass", bgColor: "rgba(231,62,250,.4)" },
           {
             name: "Adobe Photoshop",
-            icon: <IconAP />,
             bgColor: "rgba(21,71,100,.6)",
           },
           {
             name: "Figma+",
-            icon: <IconFigmaImg />,
             bgColor: "rgba(255,0,0,.2)",
           },
         ],
@@ -174,33 +163,27 @@ export const projectsData = {
         features: [
           {
             name: "React",
-            icon: <ReactIcon />,
             bgColor: "rgba(31,192,241,.5)",
           },
           {
             name: "Redux",
-            icon: <IconRedux />,
             bgColor: "rgba(231,62,250,.3)",
           },
           {
             name: "Express",
-            icon: <IconExpress />,
             bgColor: "rgba(222,222,222,.5)",
           },
           {
             name: "MongoDB",
-            icon: <IconMongo />,
             bgColor: "rgba(56,176,68,.5)",
           },
           {
             name: "Google Maps Platform",
-            icon: <IconMaps />,
             bgColor: "rgba(56,176,68,.5)",
           },
-          { name: "PWA", icon: <IconPWA />, bgColor: "rgba(231,62,250,.3)" },
+          { name: "PWA", bgColor: "rgba(231,62,250,.3)" },
           {
             name: "Push Notifications",
-            icon: <IconPushNotification />,
             bgColor: "rgba(31,192,241,.5)",
           },
         ],
@@ -232,18 +215,15 @@ export const projectsData = {
         features: [
           {
             name: "NextJS",
-            icon: <IconNextjs />,
             bgColor: "rgba(25,25,25,.3)",
           },
           {
             name: "React",
-            icon: <ReactIcon />,
             bgColor: "rgba(31,192,241,.5)",
           },
-          { name: "Sass", icon: <IconSass />, bgColor: "rgba(231,62,250,.4)" },
+          { name: "Sass", bgColor: "rgba(231,62,250,.4)" },
           {
             name: "Figma+",
-            icon: <IconFigmaImg />,
             bgColor: "rgba(255,0,0,.2)",
           },
         ],
@@ -270,13 +250,12 @@ export const projectsData = {
         title: "Darvy Theme",
         desc: "Darvy Theme is a color theme for Visual Studio Code and very soon for other editors like Atom or Sublime Text. The color palette is inspired by popular themes like One Dark Pro and Tokyo Night, so you might love this theme.",
         features: [
-          { name: "VS Code", icon: <IconVS />, bgColor: "rgba(31,192,241,.5)" },
+          { name: "VS Code", bgColor: "rgba(31,192,241,.5)" },
           {
             name: "Sublime Text",
-            icon: <IconST />,
             bgColor: "rgba(255,165,0,.3)",
           },
-          { name: "Vim", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
+          { name: "Vim", bgColor: "rgba(76,244,252,.4)" },
         ],
         links: [
           {
@@ -301,27 +280,22 @@ export const projectsData = {
         features: [
           {
             name: "NextJS",
-            icon: <IconNextjs />,
             bgColor: "rgba(25,25,25,.3)",
           },
           {
             name: "React",
-            icon: <ReactIcon />,
             bgColor: "rgba(31,192,241,.5)",
           },
           {
             name: "Styled Components",
-            icon: <IconSC />,
             bgColor: "rgba(231,62,250,.4)",
           },
           {
             name: "Adobe Illustrator",
-            icon: <IconAI />,
             bgColor: "rgba(234,226,183,.6)",
           },
           {
             name: "Figma+",
-            icon: <IconFigmaImg />,
             bgColor: "rgba(255,0,0,.2)",
           },
         ],
@@ -352,23 +326,19 @@ export const projectsData = {
         features: [
           {
             name: "NextJS",
-            icon: <IconNextjs />,
             bgColor: "rgba(25,25,25,.3)",
           },
           {
             name: "React",
-            icon: <ReactIcon />,
             bgColor: "rgba(31,192,241,.5)",
           },
-          { name: "Sass", icon: <IconSass />, bgColor: "rgba(231,62,250,.4)" },
+          { name: "Sass", bgColor: "rgba(231,62,250,.4)" },
           {
             name: "Adobe Photoshop",
-            icon: <IconAP />,
             bgColor: "rgba(21,71,100,.6)",
           },
           {
             name: "Figma+",
-            icon: <IconFigmaImg />,
             bgColor: "rgba(255,0,0,.2)",
           },
         ],
@@ -400,33 +370,27 @@ export const projectsData = {
         features: [
           {
             name: "React",
-            icon: <ReactIcon />,
             bgColor: "rgba(31,192,241,.5)",
           },
           {
             name: "Redux",
-            icon: <IconRedux />,
             bgColor: "rgba(231,62,250,.3)",
           },
           {
             name: "Express",
-            icon: <IconExpress />,
             bgColor: "rgba(222,222,222,.5)",
           },
           {
             name: "MongoDB",
-            icon: <IconMongo />,
             bgColor: "rgba(56,176,68,.5)",
           },
           {
             name: "Google Maps Platform",
-            icon: <IconMaps />,
             bgColor: "rgba(56,176,68,.5)",
           },
-          { name: "PWA", icon: <IconPWA />, bgColor: "rgba(231,62,250,.3)" },
+          { name: "PWA", bgColor: "rgba(231,62,250,.3)" },
           {
             name: "Push Notifications",
-            icon: <IconPushNotification />,
             bgColor: "rgba(31,192,241,.5)",
           },
         ],
@@ -458,18 +422,15 @@ export const projectsData = {
         features: [
           {
             name: "NextJS",
-            icon: <IconNextjs />,
             bgColor: "rgba(25,25,25,.3)",
           },
           {
             name: "React",
-            icon: <ReactIcon />,
             bgColor: "rgba(31,192,241,.5)",
           },
-          { name: "Sass", icon: <IconSass />, bgColor: "rgba(231,62,250,.4)" },
+          { name: "Sass", bgColor: "rgba(231,62,250,.4)" },
           {
             name: "Figma+",
-            icon: <IconFigmaImg />,
             bgColor: "rgba(255,0,0,.2)",
           },
         ],

@@ -2,6 +2,7 @@ uniform float time;
 uniform float progress;
 uniform sampler2D texture1;
 uniform vec4 resolution;
+uniform float nColor;
 varying vec2 vUv;
 varying vec3 vPosition;
 float PI = 3.141592653589793238;

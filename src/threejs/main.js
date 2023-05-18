@@ -13,6 +13,7 @@ export default class Sketch {
     this.scene = new THREE.Scene();
 
     this.container = options.dom;
+    this.currentColor = options.color;
     this.width = this.container?.offsetWidth;
     this.height = this.container?.offsetHeight;
     this.renderer = new THREE.WebGLRenderer();
@@ -97,9 +98,11 @@ export default class Sketch {
       uniforms: {
         time: { value: 0 },
         resolution: { value: new THREE.Vector4() },
+        nColor: { value: this.currentColor },
       },
       // wireframe: true,
       // transparent: true,
+      // vertexColors: ,
       vertexShader: vertex,
       fragmentShader: fragment,
     });

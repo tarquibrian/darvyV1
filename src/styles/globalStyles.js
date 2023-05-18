@@ -111,6 +111,14 @@ export const GlobalStyle = createGlobalStyle`
     vertical-align: middle;
   }
 
+  .button {
+    position: relative;
+    background-color: red;
+
+    left: 10rem;
+    cursor: pointer;
+  }
+
 `;
 
 export const Main__Section = styled.section``;

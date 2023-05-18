@@ -30,17 +30,24 @@ const Layout = ({ children }) => {
   const { state, loadingComplete } = useAppContext();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [color, setColor] = useState(0.8);
 
   const renderBG = () => {
     const Element = document.getElementById("threejsBG");
     new Sketch({
       dom: Element,
+      // color: color,
     });
+  };
+  const updateBG = () => {
+    setColor(0.8);
   };
 
   useEffect(() => {
     renderBG();
   }, []);
+  // console.log(color);
+
   return (
     <>
       <GlobalStyle />
@@ -48,6 +55,7 @@ const Layout = ({ children }) => {
       {/* <SEO title="Brian Tarqui Rojas" /> */}
 
       <Header />
+
       <motion.main
         initial={{ x: 300, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -58,6 +66,9 @@ const Layout = ({ children }) => {
           damping: 20,
         }}
       >
+        <button className="button" onClick={() => updateBG()}>
+          ccolorr
+        </button>
         {children}
       </motion.main>
 
@@ -66,9 +77,9 @@ const Layout = ({ children }) => {
 
       <BGImage
         id="threejsBG"
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
-        // transition={{ duration: 0.3, ease: "easeIn" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3, ease: "easeIn" }}
       />
       {/* <Image
           priority
