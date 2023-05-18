@@ -9,7 +9,7 @@ import Sketch from "src/threejs/main";
 import Image from "next/image";
 import noiseIMG from "../../images/layer-min.png";
 
-const BGImage = styled(motion.div)`
+const BGImage = styled.div`
   position: fixed;
   inset: 0;
   z-index: -9;
@@ -48,24 +48,27 @@ const Layout = ({ children }) => {
       {/* <SEO title="Brian Tarqui Rojas" /> */}
 
       <Header />
-      {/* <AnimatePresence mode="wait"> */}
-      <main
-        // exit={{ opacity: 0, y: 200 }}
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
+      <motion.main
+        initial={{ x: 300, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: 300, opacity: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+        }}
       >
         {children}
-      </main>
-      {/* </AnimatePresence> */}
+      </motion.main>
 
       <RightSide />
       <LeftSide />
 
       <BGImage
         id="threejsBG"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3, ease: "easeIn" }}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ duration: 0.3, ease: "easeIn" }}
       />
       {/* <Image
           priority

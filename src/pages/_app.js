@@ -8,6 +8,7 @@ import { GlobalStyle } from "@styles";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  const pageKey = router.asPath;
   const [loading, setLoading] = useState(false);
 
   // useEffect(() => {
@@ -20,7 +21,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <AnimatePresence mode="sync">
+      <AnimatePresence mode="wait" initial='false'>
         {/* <GlobalStyle /> */}
         <Head>
           <title>Darvy Portfolio</title>
@@ -42,7 +43,7 @@ export default function App({ Component, pageProps }) {
       )} */}
 
         <AppProvider>
-          <Component {...pageProps} />
+          <Component key={pageKey} {...pageProps} />
         </AppProvider>
       </AnimatePresence>
     </>
