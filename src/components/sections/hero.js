@@ -281,7 +281,6 @@ const ColumnCarousel = styled.div`
   }
 `;
 
-
 const languages = {
   es: heroData.es,
   en: heroData.en,

@@ -50,9 +50,9 @@ const Layout = ({ children }) => {
       <Header />
       {/* <AnimatePresence mode="wait"> */}
       <main
-      // exit={{ opacity: 0 }}
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
+        // exit={{ opacity: 0, y: 200 }}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
       >
         {children}
       </main>
