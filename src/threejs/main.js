@@ -13,7 +13,14 @@ export default class Sketch {
     this.scene = new THREE.Scene();
 
     this.container = options.dom;
+
     this.currentColor = options.color;
+    this.uniforms = {
+      time: { value: 0 },
+      resolution: { value: new THREE.Vector4() },
+      nColor: { value: this.currentColor },
+    };
+
     this.width = this.container?.offsetWidth;
     this.height = this.container?.offsetHeight;
     this.renderer = new THREE.WebGLRenderer();
@@ -95,11 +102,7 @@ export default class Sketch {
         derivatives: "#extension GL_OES_standard_derivatives : enable",
       },
       side: THREE.DoubleSide,
-      uniforms: {
-        time: { value: 0 },
-        resolution: { value: new THREE.Vector4() },
-        nColor: { value: this.currentColor },
-      },
+      uniforms: this.uniforms,
       // wireframe: true,
       // transparent: true,
       // vertexColors: ,
@@ -108,7 +111,7 @@ export default class Sketch {
     });
 
     this.geometry = new THREE.SphereBufferGeometry(1.5, 32, 32);
-    // this.material.needsUpdate = true;
+    this.material.needsUpdate = true;
     // this.material.uniforms.nColor.value = this.currentColor;
 
     this.plane = new THREE.Mesh(this.geometry, this.material);
@@ -135,8 +138,11 @@ export default class Sketch {
     if (!this.isPlaying) return;
     this.time += 0.007;
     this.cubeCamera.update(this.renderer, this.scene);
+    this.material.needsUpdate = true;
     this.material.uniforms.time.value = this.time;
-    this.material.uniforms.nColor.value = this.currentColor;
+
+    // this.material.uniforms.nColor.value += 0.001;
+    // this.uniforms.nColor = this.currentColor;
     requestAnimationFrame(this.render.bind(this));
     this.composer.render(this.scene, this.camera);
   }
