@@ -1,10 +1,15 @@
 "use client";
 import {
+  CardEffect,
   IconAI,
   IconAP,
+  IconArrow,
   IconAtom,
   IconExpress,
+  IconExternal,
+  IconFigma,
   IconFigmaImg,
+  IconGitHub,
   IconMaps,
   IconMongo,
   IconNextjs,
@@ -14,6 +19,7 @@ import {
   IconST,
   IconSass,
   IconVS,
+  IconVim,
   ReactIcon,
 } from "@components";
 import imgProject from "../images/project-img1.png";
@@ -22,7 +28,7 @@ import imgProject3 from "../images/project-img3.png";
 import imgProject4 from "../images/project-img4.png";
 import IconPWA from "src/components/icons/pwa";
 
-const projectsData = {
+export const projectsData = {
   es: {
     title: ".Proyectos",
     desc: "+12 Proyectos. Preparando el despliegue y previsualización.",
@@ -38,8 +44,13 @@ const projectsData = {
             name: "Sublime Text",
             icon: <IconST />,
             bgColor: "rgba(255,165,0,.3)",
+            // bgColor: `linear-gradient(
+            //   93.3deg,
+            //   rgba(236, 80, 80, 1) 21.5%,
+            //   rgba(255, 97, 29, 1) 93.9%
+            // )`,
           },
-          { name: "Atom", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
+          { name: "Vim", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
         ],
         links: [
           {
@@ -52,6 +63,9 @@ const projectsData = {
           },
         ],
         img: imgProject,
+        typeProject: ["Tipo de Proyecto", "Extensión para Marketplace"],
+        techStack: "Tecnologías",
+        client: ["Cliente", "Personal"],
       },
       {
         id: "2",
@@ -100,6 +114,9 @@ const projectsData = {
           },
         ],
         img: imgProject2,
+        typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
+        techStack: "Tecnologías",
+        client: ["Cliente", "SonusTech"],
       },
       {
         id: "3",
@@ -144,6 +161,9 @@ const projectsData = {
           },
         ],
         img: imgProject3,
+        typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
+        techStack: "Tecnologías",
+        client: ["Cliente", "ModernFashion"],
       },
       {
         id: "4",
@@ -198,6 +218,44 @@ const projectsData = {
           },
         ],
         img: imgProject4,
+        typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
+        techStack: "Tecnologías",
+        client: ["Cliente", "Villa Rivero"],
+      },
+      {
+        id: "5",
+        label: "Web Project",
+        title: "Carls Burger Restaurant",
+        desc: "Aplicación web sobre un restaurante de hamburguesas que proporciona una experiencia de usuario satisfactoria, fácil y atractiva, y es una excelente herramienta de marketing para atraer nuevos clientes y mantener a los ya existentes.",
+
+        features: [
+          {
+            name: "NextJS",
+            icon: <IconNextjs />,
+            bgColor: "rgba(25,25,25,.3)",
+          },
+          {
+            name: "React",
+            icon: <ReactIcon />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
+          { name: "Sass", icon: <IconSass />, bgColor: "rgba(231,62,250,.4)" },
+          {
+            name: "Figma+",
+            icon: <IconFigmaImg />,
+            bgColor: "rgba(255,0,0,.2)",
+          },
+        ],
+        links: [
+          {
+            path: "https://carls-burger.vercel.app/",
+            svg: 1,
+          },
+        ],
+        img: imgProject5,
+        typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
+        techStack: "Tecnologías",
+        client: ["Cliente", "Villa Rivero"],
       },
     ],
   },
@@ -217,7 +275,7 @@ const projectsData = {
             icon: <IconST />,
             bgColor: "rgba(255,165,0,.3)",
           },
-          { name: "Atom", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
+          { name: "Vim", icon: <IconAtom />, bgColor: "rgba(76,244,252,.4)" },
         ],
         links: [
           {
@@ -230,6 +288,9 @@ const projectsData = {
           },
         ],
         img: imgProject,
+        typeProject: ["Type Project", "Marketplace Extensions"],
+        techStack: "Tech Stack",
+        client: ["Client", "Personal"],
       },
       {
         id: "2",
@@ -278,6 +339,9 @@ const projectsData = {
           },
         ],
         img: imgProject2,
+        typeProject: ["Type Project", "Web App"],
+        techStack: "Tech Stack",
+        client: ["Client", "SonusTech"],
       },
       {
         id: "3",
@@ -322,6 +386,9 @@ const projectsData = {
           },
         ],
         img: imgProject3,
+        typeProject: ["Type Project", "Web App"],
+        techStack: "Tech Stack",
+        client: ["Client", "ModernFashion"],
       },
       {
         id: "4",
@@ -377,6 +444,44 @@ const projectsData = {
           },
         ],
         img: imgProject4,
+        typeProject: ["Type Project", "Web App"],
+        techStack: "Tech Stack",
+        client: ["Client", "Villa Rivero"],
+      },
+      {
+        id: "5",
+        label: "Web Project",
+        title: "Carls Burger Restaurant",
+        desc: "Web application about a hamburger restaurant that provides a satisfying, easy and attractive user experience, and is an excellent marketing tool to attract new customers and keep existing ones.",
+
+        features: [
+          {
+            name: "NextJS",
+            icon: <IconNextjs />,
+            bgColor: "rgba(25,25,25,.3)",
+          },
+          {
+            name: "React",
+            icon: <ReactIcon />,
+            bgColor: "rgba(31,192,241,.5)",
+          },
+          { name: "Sass", icon: <IconSass />, bgColor: "rgba(231,62,250,.4)" },
+          {
+            name: "Figma+",
+            icon: <IconFigmaImg />,
+            bgColor: "rgba(255,0,0,.2)",
+          },
+        ],
+        links: [
+          {
+            path: "https://carls-burger.vercel.app/",
+            svg: 1,
+          },
+        ],
+        img: imgProject5,
+        typeProject: ["Type Project", "Web App"],
+        techStack: "Tech Stack",
+        client: ["Client", "Cars Burger"],
       },
     ],
   },
