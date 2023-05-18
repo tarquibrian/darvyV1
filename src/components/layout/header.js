@@ -222,9 +222,9 @@ const Header = () => {
         transition={{ duration: 0.6, delay: 0.7 }}
       >
         <LogoContainer>
-          <a onClick={scrollTop} href={`#`}>
+          <Link onClick={scrollTop} href={`/`}>
             <Image src={darvyImg} alt="portfolio icon" />
-          </a>
+          </Link>
           <button onClick={() => toggleLanguage()}>
             {state.currentLanguage}
           </button>
