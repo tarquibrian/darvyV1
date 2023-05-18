@@ -382,7 +382,19 @@ const WrapperContent = ({
 
             <div className="picture-content">
               <CardEffect>
-                <Image src={img} alt="img picture" placeholder="blur" />
+                {/* <Image
+                  src={`images/${img}.png`}
+                  width={1000}
+                  height={600}
+                  alt="img picture"
+                  // placeholder="blur"
+                /> */}
+                <Image
+                  src={`/images/${img}.png`}
+                  width={900}
+                  height={700}
+                  alt="me"
+                />
               </CardEffect>
             </div>
           </motion.div>
