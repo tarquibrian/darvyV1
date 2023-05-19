@@ -7,6 +7,7 @@ import { DotScreenShader } from "./customShader";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
+// import {}
 
 export default class Sketch {
   constructor(options) {
@@ -26,9 +27,9 @@ export default class Sketch {
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setSize(this.width, this.height);
-    this.renderer.setClearColor(0xeeeeee, 1);
-    this.renderer.physicallyCorrectLights = true;
-    this.renderer.outputEncoding = THREE.sRGBEncoding;
+    // this.renderer.setClearColor(0xeeeeee, 1);
+    // this.renderer.physicallyCorrectLights = true;
+    // this.renderer.outputEncoding = THREE.sRGBEncoding;
 
     this.container?.appendChild(this.renderer.domElement);
 

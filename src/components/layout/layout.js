@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Sketch from "src/threejs/main";
 import Image from "next/image";
 import noiseIMG from "../../images/layer-min.png";
+import { Canvas } from "@react-three/fiber";
 
 const BGImage = styled(motion.div)`
   position: fixed;
@@ -81,14 +82,14 @@ const Layout = ({ children }) => {
           value={color}
           onChange={(e) => setColor(e.target.value)}
         /> */}
-        <button className="button" onClick={() => setColor(0.0)}>
+        {/* <button className="button" onClick={() => setColor(0.0)}>
           CHANGE COLOR
-        </button>
-        {children}
+        </button> */}
+        {/* {children} */}
       </motion.main>
 
-      <RightSide />
-      <LeftSide />
+      {/* <RightSide /> */}
+      {/* <LeftSide /> */}
 
       <BGImage
         id="threejsBG"
@@ -96,7 +97,7 @@ const Layout = ({ children }) => {
         // initial={{ opacity: 0 }}
         // animate={{ opacity: 1 }}
         // transition={{ duration: 0.3, ease: "easeIn" }}
-      />
+      ></BGImage>
       {/* <Image
           priority
           src={noiseIMG}
