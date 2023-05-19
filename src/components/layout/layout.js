@@ -9,6 +9,7 @@ import Sketch from "src/threejs/main";
 import Image from "next/image";
 import noiseIMG from "../../images/layer-min.png";
 import { Canvas } from "@react-three/fiber";
+import ThreeCanvas from "../canvas";
 
 const BGImage = styled(motion.div)`
   position: fixed;
@@ -92,12 +93,14 @@ const Layout = ({ children }) => {
       {/* <LeftSide /> */}
 
       <BGImage
-        id="threejsBG"
-        ref={ref}
+        // id="threejsBG"
+        // ref={ref}
         // initial={{ opacity: 0 }}
         // animate={{ opacity: 1 }}
         // transition={{ duration: 0.3, ease: "easeIn" }}
-      ></BGImage>
+      >
+        <ThreeCanvas />
+      </BGImage>
       {/* <Image
           priority
           src={noiseIMG}
