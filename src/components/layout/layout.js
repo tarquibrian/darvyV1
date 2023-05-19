@@ -2,13 +2,12 @@ import { GlobalStyle } from "@styles";
 import React, { useEffect, useRef, useState } from "react";
 import { Header, LeftSide, Loader, RightSide } from "@components";
 import styled from "styled-components";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 import { useRouter } from "next/router";
-import Sketch from "src/threejs/main";
+// import Sketch from "src/threejs/main";
 import Image from "next/image";
 import noiseIMG from "../../images/layer-min.png";
-import { Canvas } from "@react-three/fiber";
 import ThreeCanvas from "../canvas";
 
 const BGImage = styled(motion.div)`
@@ -37,11 +36,11 @@ const Layout = ({ children }) => {
   // const BG = ;
 
   useEffect(() => {
-    const Element = document.getElementById("threejsBG");
-    new Sketch({
-      dom: Element,
-      color: color,
-    });
+    // const Element = document.getElementById("threejsBG");
+    // new Sketch({
+    //   dom: Element,
+    //   color: color,
+    // });
 
     // const updateBG = () => {
     // setColor(0);

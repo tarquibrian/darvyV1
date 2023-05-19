@@ -6,7 +6,7 @@ import { vertex } from "./shaders/vertex";
 import { fragment } from "./shaders/fragment";
 
 const Sphere = () => {
-  const [color, setColor] = useState(0.0);
+  const [color, setColor] = useState(0.8);
   const mesh = useRef();
   const uniforms = useMemo(
     () => ({
