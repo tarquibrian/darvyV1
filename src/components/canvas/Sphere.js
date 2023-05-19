@@ -1,6 +1,9 @@
 import { useFrame } from "@react-three/fiber";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
+import { vertex } from "./shaders/vertex";
+import { fragment } from "./shaders/fragment";
+
 const Sphere = () => {
   const [color, setColor] = useState(0.0);
   const mesh = useRef();
