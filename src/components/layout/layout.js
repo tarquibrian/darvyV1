@@ -86,18 +86,18 @@ const Layout = ({ children }) => {
         {/* <button className="button" onClick={() => setColor(0.0)}>
           CHANGE COLOR
         </button> */}
-        {/* {children} */}
+        {children}
       </motion.main>
 
-      {/* <RightSide /> */}
-      {/* <LeftSide /> */}
+      <RightSide />
+      <LeftSide />
 
       <BGImage
-        // id="threejsBG"
-        // ref={ref}
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
-        // transition={{ duration: 0.3, ease: "easeIn" }}
+      // id="threejsBG"
+      // ref={ref}
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // transition={{ duration: 0.3, ease: "easeIn" }}
       >
         <ThreeCanvas />
       </BGImage>
