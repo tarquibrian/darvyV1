@@ -11,7 +11,9 @@ import noiseIMG from "../../images/layer-min.png";
 import dynamic from "next/dynamic";
 // import ThreeCanvas from "../canvas";
 
-const ThreeCanvas = dynamic(() => import('../canvas')) 
+const ThreeCanvas = dynamic(() => import("../canvas"), {
+  loading: () => <p>loading..</p>,
+});
 
 const BGImage = styled(motion.div)`
   position: fixed;
@@ -44,12 +46,10 @@ const Layout = ({ children }) => {
     //   dom: Element,
     //   color: color,
     // });
-
     // const updateBG = () => {
     // setColor(0);
     // BG.changeColor(color);
     // };
-
     // const renderBG = () => {
     //   const Element = document.getElementById("threejsBG");
     //   const BG = new Sketch({
