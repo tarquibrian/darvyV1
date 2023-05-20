@@ -8,7 +8,10 @@ import { useRouter } from "next/router";
 // import Sketch from "src/threejs/main";
 import Image from "next/image";
 import noiseIMG from "../../images/layer-min.png";
-import ThreeCanvas from "../canvas";
+import dynamic from "next/dynamic";
+// import ThreeCanvas from "../canvas";
+
+const ThreeCanvas = dynamic(() => import('../canvas')) 
 
 const BGImage = styled(motion.div)`
   position: fixed;
