@@ -5,8 +5,8 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { vertex } from "./shaders/vertex";
 import { fragment } from "./shaders/fragment";
 
-const Sphere = () => {
-  const [color, setColor] = useState(0.8);
+const Sphere = ({ color }) => {
+  console.log(color / 100);
   const mesh = useRef();
   const uniforms = useMemo(
     () => ({
@@ -43,10 +43,8 @@ const Sphere = () => {
     // gl === WebGLRenderer
     // gl.info.calls
     // console.log(gl.info);
-    // setTimeout(() => {
-    //   updateColor(100);
-    // }, 2000);
-  });
+    
+  }, [color]);
 
   useFrame(() => {
     // const { clock } = state;
@@ -54,11 +52,20 @@ const Sphere = () => {
     mesh.current.material.uniforms.time.value += 0.007;
     // mesh.current.rotateZ(0.004);
     mesh.current.rotation.z += 0.004;
-    // updateColor(valor)
-    // setTimeout(() => {
-    //   updateColor(100);
-    // }, 2000);
+    
   });
+
+  const update = (valor) => {
+    mesh.current.material.uniforms.color.value = valor;
+  }
+
+  setTimeout(() => {
+    update(0.0)
+  }, 2000);
+
+  setTimeout(() => {
+    update(0.4)
+  }, 4000);
 
   return (
     <mesh ref={mesh}>

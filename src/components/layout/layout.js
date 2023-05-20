@@ -85,9 +85,9 @@ const Layout = ({ children }) => {
           value={color}
           onChange={(e) => setColor(e.target.value)}
         /> */}
-        {/* <button className="button" onClick={() => setColor(0.0)}>
+        <button className="button" onClick={() => setColor(0.0)}>
           CHANGE COLOR
-        </button> */}
+        </button>
         {children}
       </motion.main>
 
@@ -95,13 +95,13 @@ const Layout = ({ children }) => {
       <LeftSide />
 
       <BGImage
-      id="threejsBG"
-      ref={ref}
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // transition={{ duration: 0.3, ease: "easeIn" }}
+        id="threejsBG"
+        ref={ref}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ duration: 0.3, ease: "easeIn" }}
       >
-        <ThreeCanvas />
+        <ThreeCanvas color={color} />
       </BGImage>
       {/* <Image
           priority
