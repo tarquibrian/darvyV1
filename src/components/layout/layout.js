@@ -13,9 +13,10 @@ import dynamic from "next/dynamic";
 
 const ThreeCanvas = dynamic(() => import("../canvas"), {
   loading: () => <p>loading..</p>,
+  ssr: false
 });
 
-const BGImage = styled(motion.div)`
+const BGImage = styled.div`
   position: fixed;
   inset: 0;
   z-index: -9;
@@ -69,7 +70,7 @@ const Layout = ({ children }) => {
 
       <Header />
 
-      <motion.main
+      <main
       // initial={{ x: 300, opacity: 0 }}
       // animate={{ x: 0, opacity: 1 }}
       // exit={{ x: 300, opacity: 0 }}
@@ -88,11 +89,11 @@ const Layout = ({ children }) => {
         <button className="button" onClick={() => updateColor(0.1)}>
           CHANGE COLOR
         </button>
-        {/* {children} */}
-      </motion.main>
+        {children}
+      </main>
 
-      {/* <RightSide />
-      <LeftSide /> */}
+      <RightSide />
+      <LeftSide />
 
       <BGImage
         id="threejsBG"

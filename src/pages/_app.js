@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <AnimatePresence mode="sync">
+      {/* <AnimatePresence mode="sync"> */}
         {/* <GlobalStyle /> */}
         <Head>
           <title>Darvy Portfolio</title>
@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }) {
         <AppProvider>
           <Component key={pageKey} {...pageProps} />
         </AppProvider>
-      </AnimatePresence>
+      {/* </AnimatePresence> */}
     </>
   );
 }
