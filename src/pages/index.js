@@ -6,6 +6,7 @@ import {
   Projects,
   Contact,
 } from "@components";
+import ThreeCanvas from "src/components/canvas";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Experience />
       <Projects />
       <Contact />
+      {/* <ThreeCanvas /> */}
     </Layout>
   );
 }

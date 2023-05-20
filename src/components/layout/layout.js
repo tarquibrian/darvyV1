@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 import { useRouter } from "next/router";
-// import Sketch from "src/threejs/main";
+import Sketch from "src/threejs/main";
 import Image from "next/image";
 import noiseIMG from "../../images/layer-min.png";
 import dynamic from "next/dynamic";
@@ -33,11 +33,17 @@ const BGImage = styled.div`
   }
 `;
 
+const WrapperMain = styled.main`
+  /* display: none; */
+  opacity: ${({ opacity }) => opacity};
+`;
+
 const Layout = ({ children }) => {
   const { state, loadingComplete, updateColor } = useAppContext();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState(0.8);
+  const [opacity, setOpacity] = useState(1);
   const ref = useRef();
   // const BG = ;
 
@@ -65,21 +71,25 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-
       {/* <SEO title="Brian Tarqui Rojas" /> */}
-
       <Header />
-      <ThreeCanvas  />
-
-      <main
-      // initial={{ x: 300, opacity: 0 }}
-      // animate={{ x: 0, opacity: 1 }}
-      // exit={{ x: 300, opacity: 0 }}
-      // transition={{
-      //   type: "spring",
-      //   stiffness: 260,
-      //   damping: 20,
-      // }}
+      <ThreeCanvas />
+      <button
+        className="button"
+        onClick={() => setOpacity(opacity === 1 ? 0 : 1)}
+      >
+        CHANGE COLOR
+      </button>
+      <WrapperMain
+        opacity={opacity}
+        // initial={{ x: 300, opacity: 0 }}
+        // animate={{ x: 0, opacity: 1 }}
+        // exit={{ x: 300, opacity: 0 }}
+        // transition={{
+        //   type: "spring",
+        //   stiffness: 260,
+        //   damping: 20,
+        // }}
       >
         {/* <input
           type="text"
@@ -87,13 +97,9 @@ const Layout = ({ children }) => {
           value={color}
           onChange={(e) => setColor(e.target.value)}
         /> */}
-        <button className="button" onClick={() => updateColor(0.1)}>
-          CHANGE COLOR
-        </button>
         {children}
         {/* <ThreeCanvas color={color} setColor={setColor} /> */}
-      </main>
-
+      </WrapperMain>
       <RightSide />
       <LeftSide />
       {/* <BGImage
@@ -102,10 +108,8 @@ const Layout = ({ children }) => {
         // initial={{ opacity: 0 }}
         // animate={{ opacity: 1 }}
         // transition={{ duration: 0.3, ease: "easeIn" }}
-      > */}
-        {/* <ThreeCanvas color={color} setColor={setColor} /> */}
-      {/* </BGImage> */}
-
+      >
+      </BGImage> */}
       {/* <Image
           priority
           src={noiseIMG}
