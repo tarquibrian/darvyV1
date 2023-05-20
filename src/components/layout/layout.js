@@ -103,7 +103,7 @@ const Layout = ({ children }) => {
         // animate={{ opacity: 1 }}
         // transition={{ duration: 0.3, ease: "easeIn" }}
       > */}
-        <ThreeCanvas color={color} setColor={setColor} />
+        {/* <ThreeCanvas color={color} setColor={setColor} /> */}
       {/* </BGImage> */}
 
       {/* <Image
