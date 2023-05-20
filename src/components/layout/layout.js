@@ -13,7 +13,7 @@ import dynamic from "next/dynamic";
 
 const ThreeCanvas = dynamic(() => import("../canvas"), {
   loading: () => <p>loading..</p>,
-  ssr: false
+  ssr: false,
 });
 
 const BGImage = styled.div`
@@ -90,20 +90,21 @@ const Layout = ({ children }) => {
           CHANGE COLOR
         </button>
         {children}
+        {/* <ThreeCanvas color={color} setColor={setColor} /> */}
+        <BGImage
+          id="threejsBG"
+          ref={ref}
+          // initial={{ opacity: 0 }}
+          // animate={{ opacity: 1 }}
+          // transition={{ duration: 0.3, ease: "easeIn" }}
+        >
+          <ThreeCanvas color={color} setColor={setColor} />
+        </BGImage>
       </main>
 
       <RightSide />
       <LeftSide />
 
-      <BGImage
-        id="threejsBG"
-        ref={ref}
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
-        // transition={{ duration: 0.3, ease: "easeIn" }}
-      >
-        <ThreeCanvas color={color} setColor={setColor} />
-      </BGImage>
       {/* <Image
           priority
           src={noiseIMG}

@@ -12,9 +12,9 @@ const ThreeCanvas = ({ color, setColor }) => {
     colorB: { value: "#fff" },
   });
   return (
-    <Canvas camera={{ position: [0, 0, 1.5] }}>
+    <Canvas camera={{ position: [0, 0, 1.5] }} style={{}}>
       <Sphere color={color} setColor={setColor} {...props} />
-      <OrbitControls />
+      {/* <OrbitControls /> */}
       <Effect />
     </Canvas>
   );

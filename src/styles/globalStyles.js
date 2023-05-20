@@ -54,7 +54,19 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  canvas {
+    position: fixed;
+  inset: 0;
+  /* z-index: -9; */
+  transform-style: preserve-3d;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
   main {
+    position: relative;
     margin: 0 auto;
     width: 100%;
     max-width: 1600px;
