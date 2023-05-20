@@ -23,7 +23,7 @@
     "framer-motion": "^9.0.7",
     "glslify-loader": "^2.0.0",
     "gsap": "^3.11.5",
-    "lamina": "^1.1.23",
+    "lamina": "1.0.1",
     "leva": "0.9.31",
     "lil-gui": "^0.18.1",
     "next": "13.1.6",

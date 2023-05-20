@@ -6,13 +6,13 @@ import { vertex } from "./shaders/vertex";
 import { fragment } from "./shaders/fragment";
 import { useAppContext } from "src/context/app.context";
 import { useControls } from "leva";
-import { LayerMaterial, Base, Depth, Fresnel } from "lamina";
+import { LayerMaterial, Depth, Fresnel } from "lamina";
 
-const Sphere = ({ color, setColor }) => {
+const Sphere = ({ color, setColor, base, colorA, colorB }) => {
   const { state } = useAppContext();
   const newColor = state.color;
   const mesh = useRef();
-  const materialRef = useRef();
+  const depth = useRef();
   const uniforms = useMemo(
     () => ({
       // u_time: {
@@ -32,16 +32,24 @@ const Sphere = ({ color, setColor }) => {
     // mesh.current.rotation.z += 0.004;
   });
   useEffect(() => {}, []);
-  
 
   return (
     <mesh ref={mesh}>
       <sphereBufferGeometry args={[1.5, 32, 32]} attach="geometry" />
-      <LayerMaterial>
-        <Base color={base} alpha={1} mode="normal" />
-        <Depth colorA={colorB} colorB={colorA} alpha={0.5} mode="normal" near={0} far={3} origin={[1, 1, 1]} />
-        <Depth ref={depth} colorA={colorB} colorB="black" alpha={1} mode="lighten" near={0.25} far={2} origin={[1, 0, 0]} />
-        <Fresnel mode="softlight" color="white" intensity={0.3} power={2} bias={0} />
+      <LayerMaterial
+        color="#000" //
+        lighting="physical"
+        transmission={1}
+      >
+        <Depth
+          colorA="#810000" //
+          colorB="#ffd0d0"
+          alpha={0.5}
+          mode="multiply"
+          near={0}
+          far={2}
+          origin={[1, 1, 1]}
+        />
       </LayerMaterial>
       {/* <shaderMaterial
         ref={materialRef}
