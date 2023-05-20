@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 import { useRouter } from "next/router";
-import Sketch from "src/threejs/main";
+// import Sketch from "src/threejs/main";
 import Image from "next/image";
 import noiseIMG from "../../images/layer-min.png";
 import dynamic from "next/dynamic";
@@ -41,11 +41,11 @@ const Layout = ({ children }) => {
   // const BG = ;
 
   useEffect(() => {
-    const Element = document.getElementById("threejsBG");
-    new Sketch({
-      dom: Element,
-      color: color,
-    });
+    // const Element = document.getElementById("threejsBG");
+    // new Sketch({
+    //   dom: Element,
+    //   color: color,
+    // });
     // const updateBG = () => {
     // setColor(0);
     // BG.changeColor(color);
@@ -101,7 +101,7 @@ const Layout = ({ children }) => {
       // animate={{ opacity: 1 }}
       // transition={{ duration: 0.3, ease: "easeIn" }}
       >
-        {/* <ThreeCanvas /> */}
+        <ThreeCanvas />
       </BGImage>
       {/* <Image
           priority
