@@ -232,8 +232,8 @@ const Header = () => {
 
         <span>
           <LinksContainer>
-            <Link href={"/"}>page1</Link>
-            <Link href={"/page2"}>page2</Link>
+            {/* <Link href={"/"}>page1</Link> */}
+            {/* <Link href={"/page2"}>page2</Link> */}
             <ol>
               <li>
                 <a href="#about" onClick={() => toggle()}>
