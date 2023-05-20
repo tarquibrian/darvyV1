@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
           value={color}
           onChange={(e) => setColor(e.target.value)}
         /> */}
-        <button className="button" onClick={() => updateColor(0.0)}>
+        <button className="button" onClick={() => updateColor(0.1)}>
           CHANGE COLOR
         </button>
         {children}

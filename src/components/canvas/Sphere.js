@@ -7,7 +7,8 @@ import { fragment } from "./shaders/fragment";
 import { useAppContext } from "src/context/app.context";
 
 const Sphere = ({ color, setColor }) => {
-  const { state, updateColor } = useAppContext();
+  const { state } = useAppContext();
+  const newColor = state.color
   const mesh = useRef();
   const uniforms = useMemo(
     () => ({
@@ -41,10 +42,9 @@ const Sphere = ({ color, setColor }) => {
   // };
 
   useEffect(() => {
-    // gl === WebGLRenderer
-    // gl.info.calls
-    // console.log(gl.info);
-  }, [color]);
+    mesh.current.material.uniforms.color.value = newColor;
+  }, [newColor]);
+  console.log('new', newColor);
 
   useFrame(() => {
     // const { clock } = state;
@@ -52,9 +52,10 @@ const Sphere = ({ color, setColor }) => {
     mesh.current.material.uniforms.time.value += 0.007;
     // mesh.current.rotateZ(0.004);
     mesh.current.rotation.z += 0.004;
+    mesh.current.material.uniforms.color.value = newColor;
   });
 
-    // mesh.current.material.uniforms.color.value = valor;
+  // mesh.current.material.uniforms.color.value = valor;
 
   // console.log(mesh.current.material.uniforms.color)
 
