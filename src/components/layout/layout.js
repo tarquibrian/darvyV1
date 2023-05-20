@@ -88,11 +88,11 @@ const Layout = ({ children }) => {
         <button className="button" onClick={() => updateColor(0.1)}>
           CHANGE COLOR
         </button>
-        {children}
+        {/* {children} */}
       </motion.main>
 
-      <RightSide />
-      <LeftSide />
+      {/* <RightSide />
+      <LeftSide /> */}
 
       <BGImage
         id="threejsBG"
