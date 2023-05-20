@@ -4,9 +4,10 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import { vertex } from "./shaders/vertex";
 import { fragment } from "./shaders/fragment";
+import { useAppContext } from "src/context/app.context";
 
-const Sphere = ({ color }) => {
-  console.log(color / 100);
+const Sphere = ({ color, setColor }) => {
+  const { state, updateColor } = useAppContext();
   const mesh = useRef();
   const uniforms = useMemo(
     () => ({
@@ -14,36 +15,35 @@ const Sphere = ({ color }) => {
       //   value: 0.0,
       // },
       time: { value: 0 },
-      color: { value: color },
+      color: { value: state.color },
       resolution: { value: new THREE.Vector4() },
     }),
-    [color]
+    [state.color]
   );
 
-  const updateColor = (valor) => {
-    let meshcolor = mesh.current.material.uniforms.color.value * 100;
+  // const updateColor = (valor) => {
+  //   let meshcolor = mesh.current.material.uniforms.color.value * 100;
 
-    if (meshcolor < valor) {
-      while (meshcolor < valor) {
-        meshcolor++;
-        mesh.current.material.uniforms.color.value = meshcolor / 100;
-      }
-    }
-    if (meshcolor > valor) {
-      while (meshcolor > valor) {
-        meshcolor--;
-        mesh.current.material.uniforms.color.value = meshcolor / 100;
-      }
-    }
+  //   if (meshcolor < valor) {
+  //     while (meshcolor < valor) {
+  //       meshcolor++;
+  //       mesh.current.material.uniforms.color.value = meshcolor / 100;
+  //     }
+  //   }
+  //   if (meshcolor > valor) {
+  //     while (meshcolor > valor) {
+  //       meshcolor--;
+  //       mesh.current.material.uniforms.color.value = meshcolor / 100;
+  //     }
+  //   }
 
-    console.log(meshcolor / 100);
-  };
+  //   console.log(meshcolor / 100);
+  // };
 
   useEffect(() => {
     // gl === WebGLRenderer
     // gl.info.calls
     // console.log(gl.info);
-    
   }, [color]);
 
   useFrame(() => {
@@ -52,20 +52,19 @@ const Sphere = ({ color }) => {
     mesh.current.material.uniforms.time.value += 0.007;
     // mesh.current.rotateZ(0.004);
     mesh.current.rotation.z += 0.004;
-    
   });
 
-  const update = (valor) => {
-    mesh.current.material.uniforms.color.value = valor;
-  }
+    // mesh.current.material.uniforms.color.value = valor;
 
-  setTimeout(() => {
-    update(0.0)
-  }, 2000);
+  // console.log(mesh.current.material.uniforms.color)
 
-  setTimeout(() => {
-    update(0.4)
-  }, 4000);
+  // setTimeout(() => {
+  //   update(0.0)
+  // }, 2000);
+
+  // setTimeout(() => {
+  //   update(0.4)
+  // }, 4000);
 
   return (
     <mesh ref={mesh}>

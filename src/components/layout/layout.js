@@ -33,7 +33,7 @@ const BGImage = styled(motion.div)`
 `;
 
 const Layout = ({ children }) => {
-  const { state, loadingComplete } = useAppContext();
+  const { state, loadingComplete, updateColor } = useAppContext();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState(0.8);
@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
           value={color}
           onChange={(e) => setColor(e.target.value)}
         /> */}
-        <button className="button" onClick={() => setColor(0.0)}>
+        <button className="button" onClick={() => updateColor(0.0)}>
           CHANGE COLOR
         </button>
         {children}
@@ -101,7 +101,7 @@ const Layout = ({ children }) => {
         // animate={{ opacity: 1 }}
         // transition={{ duration: 0.3, ease: "easeIn" }}
       >
-        <ThreeCanvas color={color} />
+        <ThreeCanvas color={color} setColor={setColor} />
       </BGImage>
       {/* <Image
           priority

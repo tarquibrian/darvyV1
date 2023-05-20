@@ -24,8 +24,19 @@ export const AppProvider = ({ children }) => {
     });
   };
 
+  const updateColor = (color) => {
+    dispatch({
+      type: "UPDATE COLOR",
+      payload: {
+        color,
+      },
+    });
+  };
+
   return (
-    <AppContext.Provider value={{ state, toggleLanguage, loadingComplete }}>
+    <AppContext.Provider
+      value={{ state, toggleLanguage, loadingComplete, updateColor }}
+    >
       {children}
     </AppContext.Provider>
   );

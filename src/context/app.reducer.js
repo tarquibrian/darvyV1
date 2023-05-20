@@ -1,6 +1,7 @@
 export const initialState = {
   currentLanguage: "en",
   loadingComplete: false,
+  color: 0.8,
 };
 
 const AppReducer = (state, action) => {
@@ -18,6 +19,11 @@ const AppReducer = (state, action) => {
       return {
         ...state,
         loadingComplete: loading,
+      };
+    case "UPDATE COLOR":
+      return {
+        ...state,
+        color: payload.color,
       };
     default: {
       throw new Error(`Unsupported action type: ${type}`);
