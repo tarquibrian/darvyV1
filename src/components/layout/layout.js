@@ -9,12 +9,12 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import noiseIMG from "../../images/layer-min.png";
 import dynamic from "next/dynamic";
-// import ThreeCanvas from "../canvas";
+import ThreeCanvas from "../canvas";
 
-const ThreeCanvas = dynamic(() => import("../canvas"), {
-  loading: () => <p>loading..</p>,
-  ssr: false,
-});
+// const ThreeCanvas = dynamic(() => import("../canvas"), {
+//   loading: () => <p>loading..</p>,
+//   ssr: true,
+// });
 
 const BGImage = styled.div`
   position: fixed;
@@ -69,6 +69,7 @@ const Layout = ({ children }) => {
       {/* <SEO title="Brian Tarqui Rojas" /> */}
 
       <Header />
+      <ThreeCanvas  />
 
       <main
       // initial={{ x: 300, opacity: 0 }}
@@ -91,19 +92,19 @@ const Layout = ({ children }) => {
         </button>
         {children}
         {/* <ThreeCanvas color={color} setColor={setColor} /> */}
-        <BGImage
-          id="threejsBG"
-          ref={ref}
-          // initial={{ opacity: 0 }}
-          // animate={{ opacity: 1 }}
-          // transition={{ duration: 0.3, ease: "easeIn" }}
-        >
-          <ThreeCanvas color={color} setColor={setColor} />
-        </BGImage>
       </main>
 
       <RightSide />
       <LeftSide />
+      {/* <BGImage
+        id="threejsBG"
+        ref={ref}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ duration: 0.3, ease: "easeIn" }}
+      > */}
+        <ThreeCanvas color={color} setColor={setColor} />
+      {/* </BGImage> */}
 
       {/* <Image
           priority

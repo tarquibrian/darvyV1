@@ -8,7 +8,7 @@ import { useAppContext } from "src/context/app.context";
 import { useControls } from "leva";
 import { LayerMaterial, Depth, Fresnel, Base, Noise } from "lamina";
 
-const Sphere = ({ color, setColor, base, colorA, colorB }) => {
+const Sphere = () => {
   const { state } = useAppContext();
   const mesh = useRef();
   const uniforms = useMemo(

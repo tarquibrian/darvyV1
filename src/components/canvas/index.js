@@ -6,14 +6,9 @@ import { OrbitControls } from "@react-three/drei";
 import Effect from "./effect";
 
 const ThreeCanvas = ({ color, setColor }) => {
-  const props = useControls({
-    base: { value: "#000" },
-    colorA: { value: "#000" },
-    colorB: { value: "#fff" },
-  });
   return (
     <Canvas camera={{ position: [0, 0, 1.5] }} style={{}}>
-      <Sphere color={color} setColor={setColor} {...props} />
+      <Sphere />
       {/* <OrbitControls /> */}
       <Effect />
     </Canvas>
