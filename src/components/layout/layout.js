@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       {/* <SEO title="Brian Tarqui Rojas" /> */}
       <Header />
       {/* <ThreeCanvas /> */}

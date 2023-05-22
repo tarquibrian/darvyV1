@@ -44,6 +44,7 @@ export default function App({ Component, pageProps }) {
       )} */}
 
       <AppProvider>
+        <GlobalStyle/>
         <Component key={pageKey} {...pageProps} />
         <ThreeCanvas />
       </AppProvider>
