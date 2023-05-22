@@ -73,7 +73,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       {/* <SEO title="Brian Tarqui Rojas" /> */}
       <Header />
-      <ThreeCanvas />
+      {/* <ThreeCanvas /> */}
       <button
         className="button"
         onClick={() => setOpacity(opacity === 1 ? 0 : 1)}

@@ -5,6 +5,7 @@ import { AppProvider } from "src/context/app.context";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { GlobalStyle } from "@styles";
+import ThreeCanvas from "src/components/canvas";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -22,12 +23,12 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       {/* <AnimatePresence mode="sync"> */}
-        {/* <GlobalStyle /> */}
-        <Head>
-          <title>Darvy Portfolio</title>
-          <meta name="robots" content="all" />
-        </Head>
-        {/* {!loading ? (
+      {/* <GlobalStyle /> */}
+      <Head>
+        <title>Darvy Portfolio</title>
+        <meta name="robots" content="all" />
+      </Head>
+      {/* {!loading ? (
         <motion.div
           key="loading"
           initial={{ opacity: 0 }}
@@ -42,9 +43,10 @@ export default function App({ Component, pageProps }) {
         </AppProvider>
       )} */}
 
-        <AppProvider>
-          <Component key={pageKey} {...pageProps} />
-        </AppProvider>
+      <AppProvider>
+        <Component key={pageKey} {...pageProps} />
+        <ThreeCanvas />
+      </AppProvider>
       {/* </AnimatePresence> */}
     </>
   );
