@@ -27,19 +27,25 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 16px;
+    background: transparent;
   }
         
   ::-webkit-scrollbar-track {
     border-radius: 8px;
-    background-color: rgba(255,255,255,1);
+    /* background-color: rgba(255,255,255,1); */
   }
         
   ::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    border: 2px solid transparent;
+    border: 4px solid transparent;
     background-clip: content-box;
-    background-color: rgba(0,0,0,.7);
+    background-color: white;
+    background-image: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(255, 229, 168, 1) 0%,
+      rgba(251, 174, 222, 1) 100.7%
+    );
   }
 
   body {
@@ -50,6 +56,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
+    overflow: overlay;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
   }
