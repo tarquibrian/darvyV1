@@ -11,6 +11,7 @@ import { LayerMaterial, Depth, Fresnel, Base, Noise } from "lamina";
 const Sphere = () => {
   const { state, loadingComplete } = useAppContext();
   const mesh = useRef();
+  
   const uniforms = useMemo(
     () => ({
       time: { value: 0 },
@@ -29,7 +30,7 @@ const Sphere = () => {
       derivatives: "#extension GL_OES_standard_derivatives : enable",
     },
   });
-  
+
   useFrame(() => {
     mesh.current.material.uniforms.time.value += 0.007;
     mesh.current.rotation.z += 0.009;
