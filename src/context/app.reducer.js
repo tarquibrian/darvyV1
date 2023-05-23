@@ -15,7 +15,7 @@ const AppReducer = (state, action) => {
         currentLanguage: toggleLanguage,
       };
     case "LOADING":
-      const loading = state.loadingComplete === false ? true : false;
+      const loading = state.loadingComplete === false ? true : true;
       return {
         ...state,
         loadingComplete: loading,

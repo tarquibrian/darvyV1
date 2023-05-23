@@ -9,7 +9,7 @@ import { useControls } from "leva";
 import { LayerMaterial, Depth, Fresnel, Base, Noise } from "lamina";
 
 const Sphere = () => {
-  const { state } = useAppContext();
+  const { state, loadingComplete } = useAppContext();
   const mesh = useRef();
   const uniforms = useMemo(
     () => ({
@@ -40,7 +40,9 @@ const Sphere = () => {
     mesh.current.material.uniforms.time.value += 0.007;
     mesh.current.rotation.z += 0.009;
   });
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
+  
+  loadingComplete(true)
 
   return (
     <mesh ref={mesh}>

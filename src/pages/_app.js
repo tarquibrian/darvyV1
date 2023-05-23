@@ -10,7 +10,7 @@ import ThreeCanvas from "src/components/canvas";
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const pageKey = router.asPath;
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   // useEffect(() => {
   //   if (router.asPath === "/") {
@@ -24,40 +24,45 @@ export default function App({ Component, pageProps }) {
     <>
       {/* <AnimatePresence mode="sync"> */}
       {/* <GlobalStyle /> */}
-      <Head>
-        <title>Darvy Portfolio</title>
-        <meta name="robots" content="all" />
-      </Head>
-      {/* {!loading ? (
-        <motion.div
-          key="loading"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1.5, y: 0 }}
-          exit={{ y: -1000 }}
-        >
-          <Loader />
-        </motion.div>
-      ) : (
-        <AppProvider>
-          <Component {...pageProps} />
-        </AppProvider>
-      )} */}
 
       <AppProvider>
-        <GlobalStyle />
-        <Header />
-        <AnimatePresence
-          mode="wati"
-          // initial={false}
-          onExitComplete={() => window.scrollTo(0, 0)}
-        >
-          <Component key={pageKey} {...pageProps} />
+        <Head>
+          <title>Darvy Portfolio</title>
+          <meta name="robots" content="all" />
+        </Head>
+
+        <AnimatePresence mode="sync">
+          <GlobalStyle />
+          {/* <AppProvider>
+          {!loading ? (
+            <>
+              <motion.div
+                key="loading"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1.5 }}
+                exit={{ opacity: 0,  }}
+                // transition={{ duration: 2 }}
+              >
+                <Loader />
+              </motion.div>
+            </>
+          ) : (
+            <>
+              <Header />
+              <Component key={pageKey} {...pageProps} />
+              <LeftSide />
+              <RightSide />
+            </>
+          )}
           <ThreeCanvas />
+        </AppProvider> */}
+          <ThreeCanvas />
+          <Header />
+          <LeftSide />
+          <RightSide />
+          <Component key={pageKey} {...pageProps} />
         </AnimatePresence>
-        <LeftSide />
-        <RightSide />
       </AppProvider>
-      {/* </AnimatePresence> */}
     </>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   IconCodepen,
@@ -8,7 +8,7 @@ import {
   IconLinkedIn,
   IconMedium,
 } from "@components";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const SideStyle = styled(motion.div)`
   min-width: 100px;
@@ -92,6 +92,18 @@ const SideStyle = styled(motion.div)`
 `;
 
 const LeftSide = () => {
+  const [loading, setLoading] = useState(false);
+  const controls = useAnimation();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(true);
+    }, 4000);
+    if (loading) {
+      controls.start("visible");
+    }
+  }, [controls, loading]);
+
   const social = (
     <div>
       <ul>
@@ -128,7 +140,7 @@ const LeftSide = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <IconMedium/>
+            <IconMedium />
           </a>
         </li>
         <li>
@@ -145,9 +157,23 @@ const LeftSide = () => {
   );
   return (
     <SideStyle
-      initial={{ x: -100 }}
-      animate={{ x: 0 }}
-      transition={{ duration: 0.6, delay: 0.7 }}
+      // initial={{ x: -100 }}
+      // animate={{ x: 0 }}
+      // transition={{ duration: 0.6, delay: 0.7 }}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        visible: {
+          x: 0,
+          transition: {
+            duration: 0.6,
+            // delay: 0.7,
+          },
+        },
+        hidden: {
+          x: -100,
+        },
+      }}
     >
       {social}
     </SideStyle>

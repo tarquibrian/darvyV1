@@ -1,9 +1,10 @@
 import { Canvas } from "@react-three/fiber";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Sphere from "./Sphere";
 import Effect from "./effect";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useAppContext } from "src/context/app.context";
 
 const BGImage = styled(motion.div)`
   position: fixed;
@@ -17,15 +18,20 @@ const BGImage = styled(motion.div)`
 
 const ThreeCanvas = () => {
   const ref = useRef();
+
   return (
     <BGImage
       id="threejsBG"
       ref={ref}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // transition={{ duration: 0.3 }}
     >
-      <Canvas camera={{ position: [0, 0, 1.5] }} style={{}}>
+      <Canvas
+        camera={{ position: [0, 0, 1.5] }}
+        style={{}}
+        // onLoad={() => console.log('loaded')}
+      >
         <Sphere />
         <Effect />
       </Canvas>

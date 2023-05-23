@@ -41,13 +41,19 @@ const WrapperMain = styled(motion.main)`
 const Layout = ({ children }) => {
   const { state, loadingComplete, updateColor } = useAppContext();
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const [color, setColor] = useState(0.8);
-  const [opacity, setOpacity] = useState(1);
   const ref = useRef();
   // const BG = ;
 
   useEffect(() => {
+    // console.log(state.loadingComplete);
+    // if (state.loadingComplete === false) {
+    //   setTimeout(() => {
+    //     // setLoading(true);
+    //     loadingComplete(true);
+    //   }, 4000);
+    // } else {
+    //   return;
+    // }
     // const Element = document.getElementById("threejsBG");
     // new Sketch({
     //   dom: Element,
@@ -65,14 +71,12 @@ const Layout = ({ children }) => {
     //   });
     // };
     // renderBG();
-  }, [color]);
-  // console.log(color);
+  }, [state.loadingComplete, loadingComplete]);
+  // console.log(state.loadingComplete);
 
   return (
     <>
-      {/* <GlobalStyle /> */}
-      {/* <SEO title="Brian Tarqui Rojas" /> */}
-
+      {!state.loadingComplete && <Loader />}
       <WrapperMain
         initial={{ x: 300, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -83,7 +87,6 @@ const Layout = ({ children }) => {
           damping: 20,
         }}
       >
-        {/* <Header /> */}
         {children}
       </WrapperMain>
       {/* <BGImage
