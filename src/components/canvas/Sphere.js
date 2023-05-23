@@ -29,20 +29,16 @@ const Sphere = () => {
       derivatives: "#extension GL_OES_standard_derivatives : enable",
     },
   });
-  // useFrame(() => {
-  //   // const { clock } = state;
-  //   // console.log(clock);
-  //   // mesh.current.material.uniforms.time.value += 0.007;
-  //   // mesh.current.rotation.z += 0.004;
-
-  // });
+  
   useFrame(() => {
     mesh.current.material.uniforms.time.value += 0.007;
     mesh.current.rotation.z += 0.009;
   });
-  // useEffect(() => {}, []);
-  
-  loadingComplete(true)
+  useEffect(() => {
+    setTimeout(() => {
+      loadingComplete(true);
+    }, 3000);
+  }, [state.loadingComplete, loadingComplete]);
 
   return (
     <mesh ref={mesh}>
