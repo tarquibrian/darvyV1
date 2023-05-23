@@ -5,13 +5,11 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { vertex } from "./shaders/vertex";
 import { fragment } from "./shaders/fragment";
 import { useAppContext } from "src/context/app.context";
-import { useControls } from "leva";
-import { LayerMaterial, Depth, Fresnel, Base, Noise } from "lamina";
 
 const Sphere = () => {
   const { state, loadingComplete } = useAppContext();
   const mesh = useRef();
-  
+
   const uniforms = useMemo(
     () => ({
       time: { value: 0 },
