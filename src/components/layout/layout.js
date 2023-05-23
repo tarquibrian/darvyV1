@@ -86,8 +86,6 @@ const Layout = ({ children }) => {
         {/* <Header /> */}
         {children}
       </WrapperMain>
-      <RightSide />
-      <LeftSide />
       {/* <BGImage
         id="threejsBG"
         ref={ref}

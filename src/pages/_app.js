@@ -1,4 +1,4 @@
-import { Header, Loader } from "@components";
+import { Header, LeftSide, Loader, RightSide } from "@components";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { AppProvider } from "src/context/app.context";
@@ -52,6 +52,8 @@ export default function App({ Component, pageProps }) {
         >
           <Header />
           <Component key={pageKey} {...pageProps} />
+          <LeftSide />
+          <RightSide />
         </AnimatePresence>
         <ThreeCanvas />
       </AppProvider>
