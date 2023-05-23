@@ -45,17 +45,17 @@ export default function App({ Component, pageProps }) {
 
       <AppProvider>
         <GlobalStyle />
+        <Header />
         <AnimatePresence
           mode="wati"
           // initial={false}
           onExitComplete={() => window.scrollTo(0, 0)}
         >
-          <Header />
           <Component key={pageKey} {...pageProps} />
-          <LeftSide />
-          <RightSide />
+          <ThreeCanvas />
         </AnimatePresence>
-        <ThreeCanvas />
+        <LeftSide />
+        <RightSide />
       </AppProvider>
       {/* </AnimatePresence> */}
     </>

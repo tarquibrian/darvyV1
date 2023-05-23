@@ -10,7 +10,7 @@ import {
 } from "@components";
 import { motion } from "framer-motion";
 
-const SideStyle = styled.div`
+const SideStyle = styled(motion.div)`
   min-width: 100px;
   position: fixed;
   bottom: 0;
@@ -145,9 +145,9 @@ const LeftSide = () => {
   );
   return (
     <SideStyle
-      // initial={{ x: -100 }}
-      // animate={{ x: 0 }}
-      // transition={{ duration: 0.6, delay: 0.7 }}
+      initial={{ x: -100 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.6, delay: 0.7 }}
     >
       {social}
     </SideStyle>

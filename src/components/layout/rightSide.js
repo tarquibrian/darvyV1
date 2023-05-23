@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const EmailStyle = styled.div`
+const EmailStyle = styled(motion.div)`
   position: fixed;
   top: 0;
   right: 0;
@@ -73,9 +73,9 @@ const RightSide = () => {
   );
   return (
     <EmailStyle
-      // initial={{ x: 100 }}
-      // animate={{ x: 0 }}
-      // transition={{ duration: 0.6, delay: 0.7 }}
+      initial={{ x: 100 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.6, delay: 0.7 }}
     >
       {emailName}
     </EmailStyle>
