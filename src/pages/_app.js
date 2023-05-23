@@ -1,4 +1,4 @@
-import { Loader } from "@components";
+import { Header, Loader } from "@components";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { AppProvider } from "src/context/app.context";
@@ -44,8 +44,15 @@ export default function App({ Component, pageProps }) {
       )} */}
 
       <AppProvider>
-        <GlobalStyle/>
-        <Component key={pageKey} {...pageProps} />
+        <GlobalStyle />
+        <AnimatePresence
+          mode="wati"
+          // initial={false}
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Header />
+          <Component key={pageKey} {...pageProps} />
+        </AnimatePresence>
         <ThreeCanvas />
       </AppProvider>
       {/* </AnimatePresence> */}

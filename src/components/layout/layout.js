@@ -33,9 +33,9 @@ const BGImage = styled.div`
   }
 `;
 
-const WrapperMain = styled.main`
+const WrapperMain = styled(motion.main)`
   /* display: none; */
-  opacity: ${({ opacity }) => opacity};
+  /* opacity: ${({ opacity }) => opacity}; */
 `;
 
 const Layout = ({ children }) => {
@@ -72,33 +72,19 @@ const Layout = ({ children }) => {
     <>
       {/* <GlobalStyle /> */}
       {/* <SEO title="Brian Tarqui Rojas" /> */}
-      <Header />
-      {/* <ThreeCanvas /> */}
-      <button
-        className="button"
-        onClick={() => setOpacity(opacity === 1 ? 0 : 1)}
-      >
-        CHANGE COLOR
-      </button>
+
       <WrapperMain
-        opacity={opacity}
-        // initial={{ x: 300, opacity: 0 }}
-        // animate={{ x: 0, opacity: 1 }}
-        // exit={{ x: 300, opacity: 0 }}
-        // transition={{
-        //   type: "spring",
-        //   stiffness: 260,
-        //   damping: 20,
-        // }}
+        initial={{ x: 300, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: 300, opacity: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+        }}
       >
-        {/* <input
-          type="text"
-          name="color"
-          value={color}
-          onChange={(e) => setColor(e.target.value)}
-        /> */}
+        {/* <Header /> */}
         {children}
-        {/* <ThreeCanvas color={color} setColor={setColor} /> */}
       </WrapperMain>
       <RightSide />
       <LeftSide />
