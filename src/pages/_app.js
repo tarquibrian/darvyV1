@@ -10,57 +10,47 @@ import ThreeCanvas from "src/components/canvas";
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const pageKey = router.asPath;
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   if (router.asPath === "/") {
-  //     setTimeout(() => setLoading(true), 2300);
-  //   } else {
-  //     setLoading(true);
-  //   }
-  // }, [router]);
+  useEffect(() => {
+    if (router.asPath === "/") {
+      setTimeout(() => setLoading(true), 2300);
+    } else {
+      setLoading(true);
+    }
+  }, [router]);
 
   return (
     <>
-      {/* <AnimatePresence mode="sync"> */}
-      {/* <GlobalStyle /> */}
-
+      <Head>
+        <title>Darvy Portfolio</title>
+        <meta name="robots" content="all" />
+      </Head>
+      <GlobalStyle />
       <AppProvider>
-        <Head>
-          <title>Darvy Portfolio</title>
-          <meta name="robots" content="all" />
-        </Head>
-
-        <AnimatePresence mode="sync">
-          <GlobalStyle />
-          {/* <AppProvider>
+        <ThreeCanvas />
+        <Header />
+        <LeftSide />
+        <RightSide />
+        <AnimatePresence mode="wait">
           {!loading ? (
-            <>
-              <motion.div
-                key="loading"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1.5 }}
-                exit={{ opacity: 0,  }}
-                // transition={{ duration: 2 }}
-              >
-                <Loader />
-              </motion.div>
-            </>
+            <motion.div
+              // key="loading"
+              // initial={{ opacity: 0 }}
+              // animate={{ opacity: 1 }}
+              // exit={{ y: -1000 }}
+              // exit={{ y: -1000, transition: { delay: 1 } }}
+            >
+              <Loader />
+            </motion.div>
           ) : (
             <>
-              <Header />
+              {/* <Header /> */}
               <Component key={pageKey} {...pageProps} />
-              <LeftSide />
-              <RightSide />
+              {/* <LeftSide /> */}
+              {/* <RightSide /> */}
             </>
           )}
-          <ThreeCanvas />
-        </AppProvider> */}
-          <ThreeCanvas />
-          <Header />
-          <LeftSide />
-          <RightSide />
-          <Component key={pageKey} {...pageProps} />
         </AnimatePresence>
       </AppProvider>
     </>

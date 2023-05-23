@@ -44,48 +44,54 @@ const Layout = ({ children }) => {
   const ref = useRef();
   // const BG = ;
 
-  useEffect(() => {
-    // console.log(state.loadingComplete);
-    // if (state.loadingComplete === false) {
-    //   setTimeout(() => {
-    //     // setLoading(true);
-    //     loadingComplete(true);
-    //   }, 4000);
-    // } else {
-    //   return;
-    // }
-    // const Element = document.getElementById("threejsBG");
-    // new Sketch({
-    //   dom: Element,
-    //   color: color,
-    // });
-    // const updateBG = () => {
-    // setColor(0);
-    // BG.changeColor(color);
-    // };
-    // const renderBG = () => {
-    //   const Element = document.getElementById("threejsBG");
-    //   const BG = new Sketch({
-    //     dom: Element,
-    //     color: color,
-    //   });
-    // };
-    // renderBG();
-  }, [state.loadingComplete, loadingComplete]);
+  // useEffect(() => {
+  //   // console.log(state.loadingComplete);
+  //   // if (state.loadingComplete === false) {
+  //   //   setTimeout(() => {
+  //   //     // setLoading(true);
+  //   //     loadingComplete(true);
+  //   //   }, 4000);
+  //   // } else {
+  //   //   return;
+  //   // }
+  //   // const Element = document.getElementById("threejsBG");
+  //   // new Sketch({
+  //   //   dom: Element,
+  //   //   color: color,
+  //   // });
+  //   // const updateBG = () => {
+  //   // setColor(0);
+  //   // BG.changeColor(color);
+  //   // };
+  //   // const renderBG = () => {
+  //   //   const Element = document.getElementById("threejsBG");
+  //   //   const BG = new Sketch({
+  //   //     dom: Element,
+  //   //     color: color,
+  //   //   });
+  //   // };
+  //   // renderBG();
+  // }, [state.loadingComplete, loadingComplete]);
   // console.log(state.loadingComplete);
 
   return (
     <>
-      {!state.loadingComplete && <Loader />}
+      {/* {!state.loadingComplete && <Loader />} */}
       <WrapperMain
         initial={{ x: 300, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        exit={{ x: 300, opacity: 0 }}
-        transition={{
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
+        exit={{
+          x: 300,
+          opacity: 0,
+          transition: {
+            duration: 1,
+          },
         }}
+        // transition={{
+        //   type: "spring",
+        //   stiffness: 260,
+        //   damping: 20,
+        // }}
       >
         {children}
       </WrapperMain>
