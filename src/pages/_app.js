@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
         <LeftSide />
         <RightSide />
         <AnimatePresence mode="wait">
-          {!loading ? (
+          {/* {!loading ? (
             <motion.div
               // key="loading"
               // initial={{ opacity: 0 }}
@@ -43,14 +43,14 @@ export default function App({ Component, pageProps }) {
             >
               <Loader />
             </motion.div>
-          ) : (
-            <>
-              {/* <Header /> */}
-              <Component key={pageKey} {...pageProps} />
-              {/* <LeftSide /> */}
-              {/* <RightSide /> */}
-            </>
-          )}
+          ) : ( */}
+          <>
+            {/* <Header /> */}
+            <Component key={pageKey} {...pageProps} />
+            {/* <LeftSide /> */}
+            {/* <RightSide /> */}
+          </>
+          {/* )} */}
         </AnimatePresence>
       </AppProvider>
     </>

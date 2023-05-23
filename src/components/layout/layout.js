@@ -87,11 +87,11 @@ const Layout = ({ children }) => {
             duration: 1,
           },
         }}
-        // transition={{
-        //   type: "spring",
-        //   stiffness: 260,
-        //   damping: 20,
-        // }}
+        transition={{
+          type: "spring",
+          stiffness: 260,
+          damping: 20,
+        }}
       >
         {children}
       </WrapperMain>
