@@ -240,6 +240,7 @@ const About = () => {
 
   return (
     <AboutStyled
+      key={"about-section"}
       id="about"
       ref={refView}
       animate={controls}

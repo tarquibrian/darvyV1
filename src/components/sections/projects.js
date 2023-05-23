@@ -280,6 +280,7 @@ const Projects = () => {
 
   return (
     <ProjectsStyled
+      key={"projects-section"}
       id="projects"
       ref={refView}
       animate={controls}
@@ -308,7 +309,7 @@ const Projects = () => {
               desc={desc}
               features={features}
               title={title}
-              key={id}
+              key={title}
               links={links}
               img={img}
               typeProject={typeProject}

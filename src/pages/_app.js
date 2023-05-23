@@ -22,17 +22,13 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Head>
-        <title>Darvy Portfolio</title>
-        <meta name="robots" content="all" />
-      </Head>
-      <GlobalStyle />
       <AppProvider>
-        <ThreeCanvas />
-        <Header />
-        <LeftSide />
-        <RightSide />
-        <AnimatePresence mode="wait">
+        <Head>
+          <title>Darvy Portfolio</title>
+          <meta name="robots" content="all" />
+        </Head>
+        <GlobalStyle />
+        <AnimatePresence mode="sync">
           {/* {!loading ? (
             <motion.div
               // key="loading"
@@ -46,9 +42,11 @@ export default function App({ Component, pageProps }) {
           ) : ( */}
           <>
             {/* <Header /> */}
+            <ThreeCanvas />
+            <Header />
             <Component key={pageKey} {...pageProps} />
-            {/* <LeftSide /> */}
-            {/* <RightSide /> */}
+            <LeftSide />
+            <RightSide />
           </>
           {/* )} */}
         </AnimatePresence>

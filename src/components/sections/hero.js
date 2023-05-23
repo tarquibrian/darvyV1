@@ -315,6 +315,7 @@ const Hero = () => {
   return (
     <HeroStyled id="hero" ref={ref}>
       <motion.div
+        key={"hero-section"}
         className="hero__container"
         id="hero-container"
         ref={heroref}

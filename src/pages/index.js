@@ -10,7 +10,7 @@ import ThreeCanvas from "src/components/canvas";
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout key={"home-page"}>
       <Hero />
       <About />
       <Experience />

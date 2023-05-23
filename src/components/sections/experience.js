@@ -317,6 +317,7 @@ const Experience = () => {
 
   return (
     <ExperienceStyled
+      key={"experience-section"}
       id="experience"
       ref={refView}
       animate={controls}

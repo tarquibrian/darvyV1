@@ -136,6 +136,7 @@ const Contact = () => {
 
   return (
     <ContactStyled
+      key={"contact-section"}
       id="contact"
       ref={refView}
       animate={controls}

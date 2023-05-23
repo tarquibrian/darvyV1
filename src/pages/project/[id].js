@@ -25,8 +25,8 @@ const Project = () => {
   };
 
   return (
-    <Layout>
-      <ProjectStyled>
+    <Layout key={"projects-single-page"}>
+      <ProjectStyled key={"projects-single"}>
         {currentLanguage.lenguage.items
           .filter((item) => item.id === id)
           .map((project, i) => (
