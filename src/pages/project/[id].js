@@ -33,7 +33,7 @@ const Project = () => {
 
   useEffect(() => {
     id && updated();
-    console.log(project);
+    console.log({ project });
   }, [project]);
 
   return (
