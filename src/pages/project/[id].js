@@ -26,9 +26,13 @@ const Project = () => {
     lenguage: languages[state.currentLanguage],
   };
 
+  const updated = () => {
+    setProject(currentLanguage.lenguage.items[id - 1]);
+    updateColor(currentLanguage.lenguage.items[id - 1].bgColor);
+  };
+
   useEffect(() => {
-    id && setProject(currentLanguage.lenguage.items[id - 1]);
-    // update();
+    id && updated();
     console.log(project);
   }, [project]);
 

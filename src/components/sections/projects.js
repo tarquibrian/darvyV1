@@ -264,7 +264,7 @@ const languages = {
 };
 
 const Projects = () => {
-  const { state } = useAppContext();
+  const { state, updateColor } = useAppContext();
   const controls = useAnimation();
   const [refView, inView] = useInView();
 
@@ -301,6 +301,7 @@ const Projects = () => {
             typeProject,
             techStack,
             client,
+            bgColor,
           } = project;
           return (
             <WrapperContent
@@ -315,6 +316,7 @@ const Projects = () => {
               typeProject={typeProject}
               techStack={techStack}
               client={client}
+              bgColor={bgColor}
             />
           );
         })}
@@ -337,6 +339,7 @@ const WrapperContent = ({
   typeProject,
   techStack,
   client,
+  bgColor,
 }) => {
   const controls = useAnimation();
   const [refView, inView] = useInView();
