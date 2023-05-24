@@ -1,7 +1,7 @@
 export const initialState = {
   currentLanguage: "en",
   loadingComplete: false,
-  color: 0.8,
+  color: [0.8, 0.95, 0.94],
 };
 
 const AppReducer = (state, action) => {

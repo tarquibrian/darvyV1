@@ -10,13 +10,15 @@ const Sphere = () => {
   const { state, loadingComplete } = useAppContext();
   const mesh = useRef();
 
+  const [c1, c2, c3] = state.color;
+
   const uniforms = useMemo(
     () => ({
       time: { value: 0 },
-      color: { value: state.color },
+      color: { value: new THREE.Color(c1, c2, c3) },
       resolution: { value: new THREE.Vector4() },
     }),
-    [state.color]
+    [c1, c2, c3]
   );
 
   const myShader = new THREE.ShaderMaterial({
