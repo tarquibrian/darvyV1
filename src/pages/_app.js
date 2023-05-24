@@ -28,27 +28,12 @@ export default function App({ Component, pageProps }) {
           <meta name="robots" content="all" />
         </Head>
         <GlobalStyle />
+        <ThreeCanvas />
+        <Header />
+        <LeftSide />
+        <RightSide />
         <AnimatePresence mode="sync">
-          {/* {!loading ? (
-            <motion.div
-              // key="loading"
-              // initial={{ opacity: 0 }}
-              // animate={{ opacity: 1 }}
-              // exit={{ y: -1000 }}
-              // exit={{ y: -1000, transition: { delay: 1 } }}
-            >
-              <Loader />
-            </motion.div>
-          ) : ( */}
-          <>
-            {/* <Header /> */}
-            <ThreeCanvas />
-            <Header />
-            <Component key={pageKey} {...pageProps} />
-            <LeftSide />
-            <RightSide />
-          </>
-          {/* )} */}
+          <Component key={pageKey} {...pageProps} />
         </AnimatePresence>
       </AppProvider>
     </>
