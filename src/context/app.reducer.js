@@ -21,9 +21,10 @@ const AppReducer = (state, action) => {
         loadingComplete: loading,
       };
     case "UPDATE COLOR":
+      const nColor = payload.color ? payload.color : [0.8, 0.95, 0.94];
       return {
         ...state,
-        color: payload.color,
+        color: nColor,
       };
     default: {
       throw new Error(`Unsupported action type: ${type}`);

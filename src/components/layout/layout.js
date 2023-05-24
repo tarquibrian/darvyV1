@@ -43,6 +43,13 @@ const Layout = ({ children }) => {
   const router = useRouter();
   const ref = useRef();
 
+  useEffect(() => {
+    if (router.asPath === "/") {
+      updateColor([0.8, 0.95, 0.94]);
+    }
+    console.log(router);
+  }, []);
+
   // useEffect(() => {
   //   // console.log(state.loadingComplete);
   //   // if (state.loadingComplete === false) {

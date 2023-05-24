@@ -1,6 +1,6 @@
 import { Layout } from "@components";
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppContext } from "src/context/app.context";
 import { projectsData } from "src/data/projectsData";
 import styled from "styled-components";
@@ -16,6 +16,8 @@ const languages = {
 };
 
 const Project = () => {
+  const [bgColorc, setBgColorc] = useState();
+  const [project, setProject] = useState();
   const { state, updateColor } = useAppContext();
   const router = useRouter();
   const id = router.query.id;
@@ -24,13 +26,11 @@ const Project = () => {
     lenguage: languages[state.currentLanguage],
   };
 
-  let [currentProject] = currentLanguage.lenguage.items.filter(
-    (item) => item.id === id
-  );
-
   useEffect(() => {
-    // updateColor(currentProject.bgColor);
-  }, [currentProject, updateColor]);
+    id && setProject(currentLanguage.lenguage.items[id - 1]);
+    // update();
+    console.log(project);
+  }, [project]);
 
   return (
     <Layout key={"projects-single-page"}>
