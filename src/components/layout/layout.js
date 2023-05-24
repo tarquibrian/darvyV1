@@ -42,7 +42,6 @@ const Layout = ({ children }) => {
   const { state, loadingComplete, updateColor } = useAppContext();
   const router = useRouter();
   const ref = useRef();
-  // const BG = ;
 
   // useEffect(() => {
   //   // console.log(state.loadingComplete);
