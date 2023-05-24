@@ -20,22 +20,27 @@ const ThreeCanvas = () => {
   const ref = useRef();
 
   return (
-    <BGImage
-      id="threejsBG"
-      ref={ref}
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // transition={{ duration: 0.3 }}
+    // <BGImage
+    //   id="threejsBG"
+    //   ref={ref}
+    //   // initial={{ opacity: 0 }}
+    //   // animate={{ opacity: 1 }}
+    //   // transition={{ duration: 0.3 }}
+    // >
+    <Canvas
+      camera={{ position: [0, 0, 1.5] }}
+      style={{
+        position: "fixed",
+        inset: "0",
+        width: "100vw",
+        height: "100vh",
+        zIndex: "-9",
+      }}
+      // onLoad={() => console.log('loaded')}
     >
-      <Canvas
-        camera={{ position: [0, 0, 1.5] }}
-        style={{}}
-        // onLoad={() => console.log('loaded')}
-      >
-        <Sphere />
-        <Effect />
-      </Canvas>
-    </BGImage>
+      <Sphere />
+      <Effect />
+    </Canvas>
   );
 };
 

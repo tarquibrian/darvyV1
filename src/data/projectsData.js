@@ -65,6 +65,7 @@ export const projectsData = {
         typeProject: ["Tipo de Proyecto", "Extensión para Marketplace"],
         techStack: "Tecnologías",
         client: ["Cliente", "Personal"],
+        bgColor: [0.1, 0.95, 0.94],
       },
       {
         id: "2",
@@ -111,6 +112,7 @@ export const projectsData = {
         typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
         techStack: "Tecnologías",
         client: ["Cliente", "SonusTech"],
+        bgColor: [0.1, 0.95, 0.94],
       },
       {
         id: "3",
@@ -154,6 +156,7 @@ export const projectsData = {
         typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
         techStack: "Tecnologías",
         client: ["Cliente", "ModernFashion"],
+        bgColor: [0.1, 0.95, 0.94],
       },
       {
         id: "4",
@@ -205,6 +208,7 @@ export const projectsData = {
         typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
         techStack: "Tecnologías",
         client: ["Cliente", "Villa Rivero"],
+        bgColor: [0.1, 0.95, 0.94],
       },
       {
         id: "5",
@@ -237,6 +241,7 @@ export const projectsData = {
         typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
         techStack: "Tecnologías",
         client: ["Cliente", "Villa Rivero"],
+        bgColor: [0.1, 0.95, 0.94],
       },
     ],
   },
@@ -271,6 +276,7 @@ export const projectsData = {
         typeProject: ["Type Project", "Marketplace Extensions"],
         techStack: "Tech Stack",
         client: ["Client", "Personal"],
+        bgColor: [0.1, 0.95, 0.94],
       },
       {
         id: "2",
@@ -317,6 +323,7 @@ export const projectsData = {
         typeProject: ["Type Project", "Web App"],
         techStack: "Tech Stack",
         client: ["Client", "SonusTech"],
+        bgColor: [0.1, 0.95, 0.94],
       },
       {
         id: "3",
@@ -360,6 +367,7 @@ export const projectsData = {
         typeProject: ["Type Project", "Web App"],
         techStack: "Tech Stack",
         client: ["Client", "ModernFashion"],
+        bgColor: [0.1, 0.95, 0.94],
       },
       {
         id: "4",
@@ -412,6 +420,7 @@ export const projectsData = {
         typeProject: ["Type Project", "Web App"],
         techStack: "Tech Stack",
         client: ["Client", "Villa Rivero"],
+        bgColor: [0.1, 0.95, 0.94],
       },
       {
         id: "5",
@@ -444,6 +453,7 @@ export const projectsData = {
         typeProject: ["Type Project", "Web App"],
         techStack: "Tech Stack",
         client: ["Client", "Cars Burger"],
+        bgColor: [0.1, 0.95, 0.94],
       },
     ],
   },
