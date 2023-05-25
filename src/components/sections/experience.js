@@ -19,6 +19,7 @@ const ExperienceStyled = styled(motion.section)`
 const ExperienceCard = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   min-width: 600px;
   max-width: 920px;
   font-family: var(--ff-sofia);
@@ -325,7 +326,7 @@ const Experience = () => {
       variants={variants}
     >
       <ExperienceCard ref={cardref} id="card">
-        <h1 className="headerTitle">{currentLanguage.lenguage.title}</h1>
+        <h1 className="title-content">{currentLanguage.lenguage.title}</h1>
         <CardContent>
           <ContentList>
             {currentLanguage.lenguage.items.map((item, i) => {
