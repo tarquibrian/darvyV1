@@ -36,8 +36,8 @@ const Project = () => {
     };
     const filterProject = currentLanguage.lenguage.items[id - 1];
     setProject(filterProject);
-    project && updateColor(currentLanguage.lenguage.items[id - 1].threeColors);
-    project && changeTheme(project.themeMode);
+    // project && updateColor(currentLanguage.lenguage.items[id - 1].threeColors);
+    // project && changeTheme(project.themeMode);
     // window.scroll(0, 0);
   }, [state.currentLanguage, project]);
 

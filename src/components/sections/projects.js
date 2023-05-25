@@ -301,7 +301,7 @@ const Projects = () => {
             typeProject,
             techStack,
             client,
-            bgColor,
+            threeColors,
           } = project;
           return (
             <WrapperContent
@@ -316,7 +316,7 @@ const Projects = () => {
               typeProject={typeProject}
               techStack={techStack}
               client={client}
-              bgColor={bgColor}
+              threeColors={threeColors}
             />
           );
         })}
@@ -339,21 +339,31 @@ const WrapperContent = ({
   typeProject,
   techStack,
   client,
-  bgColor,
+  threeColors,
 }) => {
   const controls = useAnimation();
   const [refView, inView] = useInView();
+  const { updateColor } = useAppContext();
+
+  const update = (nColors) => {
+    updateColor(nColors);
+  };
 
   useEffect(() => {
     if (inView) {
       controls.start("visible");
     }
+    console.log(threeColors);
   }, [controls, inView]);
 
   return (
     <motion.article className={`projects__wrapper`} id={id} ref={refView}>
       <div className="wrapper-effect">
-        <Link href={`/project/${id}`} scroll={false}>
+        <Link
+          href={`/project/${id}`}
+          scroll={false}
+          onClick={() => update(threeColors)}
+        >
           <motion.div
             className="projects__wrapper-picture"
             initial="hidden"
