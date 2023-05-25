@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 
 const EmailStyle = styled(motion.div)`
+  min-width: 100px;
   position: fixed;
-  top: 0;
+  bottom: 0;
   right: 0;
-  width: 100px;
   min-height: 100vh;
   display: grid;
   place-content: center;
