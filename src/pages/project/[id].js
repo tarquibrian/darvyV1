@@ -22,7 +22,7 @@ const languages = {
 
 const Project = () => {
   const [project, setProject] = useState();
-  const { state, updateColor } = useAppContext();
+  const { state, updateColor, changeTheme } = useAppContext();
   const router = useRouter();
   const { id } = router.query;
 
@@ -41,6 +41,7 @@ const Project = () => {
     const filterProject = currentLanguage.lenguage.items[id - 1];
     setProject(filterProject);
     project && updateColor(currentLanguage.lenguage.items[id - 1].threeColors);
+    project && changeTheme(project.themeMode);
   }, [state.currentLanguage, project]);
 
   return (

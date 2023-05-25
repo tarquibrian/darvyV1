@@ -23,7 +23,7 @@ const WrapperMain = styled(motion.main)`
 `;
 
 const Layout = ({ children }) => {
-  const { state, updateColor } = useAppContext();
+  const { state, updateColor, changeTheme } = useAppContext();
   const router = useRouter();
 
   const theme = { colors: themesMap[state.currentTheme] };
@@ -35,8 +35,8 @@ const Layout = ({ children }) => {
         colorBase: [0.38, 0.09, 0.57],
         colorDeep: [0, 0, 0],
       });
+      changeTheme('dark')
     }
-    console.log(theme);
   }, [router.asPath]);
 
   //   // const Element = document.getElementById("threejsBG");
