@@ -26,13 +26,14 @@ const ProjectWrapperStyled = styled.section`
   .text {
     display: flex;
     color: rgba(60, 60, 60, 1);
-    font-family: var(--ff-sofia);
+    font-family: var(--ff-rubik);
     font-weight: 900;
-    font-size: 12rem;
+    font-size: 10rem;
     writing-mode: vertical-rl;
     text-transform: uppercase;
     white-space: nowrap;
     line-height: 1;
+    margin-bottom: 2rem;
   }
 
   @keyframes textCarousel {
@@ -40,7 +41,7 @@ const ProjectWrapperStyled = styled.section`
       transform: rotate(180deg) translateY(115%);
     }
     100% {
-      transform: rotate(180deg) translateY(-10%);
+      transform: rotate(180deg) translateY(-20%);
     }
   }
 `;
@@ -52,15 +53,13 @@ const ProjectWrapper = (props) => {
       <div className="projectWrapper">
         <div className="carouselTitle">
           <div className="carouselColumn">
-            <span className="text">
-              {props.title} - {props.label}
-            </span>
-            <span className="text">
-              {props.title} - {props.label}
-            </span>
-            <span className="text">
-              {props.title} - {props.label}
-            </span>
+            <span className="text">{props.title}</span>
+            <span className="text">-</span>
+            <span className="text">{props.label}</span>
+            <span className="text">-</span>
+            <span className="text">{props.title}</span>
+            <span className="text">-</span>
+            <span className="text">{props.label}</span>
           </div>
         </div>
         <div className="container">hola</div>
