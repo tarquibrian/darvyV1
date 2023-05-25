@@ -35,7 +35,11 @@ const Layout = ({ children }) => {
         colorBase: [0.38, 0.09, 0.57],
         colorDeep: [0, 0, 0],
       });
-      changeTheme('dark')
+      changeTheme("dark");
+    }
+    if ("scrollRestoration" in history) {
+      // Back off, browser, I got this...
+      history.scrollRestoration = "manual";
     }
   }, [router.asPath]);
 
@@ -53,7 +57,6 @@ const Layout = ({ children }) => {
         animate={{ opacity: 1 }}
         exit={{ x: 100, opacity: 0 }}
         transition={{
-          // duration: 1,
           type: "spring",
           stiffness: 260,
           damping: 20,

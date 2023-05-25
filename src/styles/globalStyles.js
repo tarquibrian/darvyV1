@@ -9,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     box-sizing: border-box;
-    scroll-behavior: smooth;
   }
   *, *::after, *::before {
     margin: 0;
@@ -33,7 +32,6 @@ export const GlobalStyle = createGlobalStyle`
         
   ::-webkit-scrollbar-track {
     border-radius: 8px;
-    /* background-color: rgba(255,255,255,1); */
   }
         
   ::-webkit-scrollbar-thumb {
@@ -53,12 +51,14 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.3;
     /* color: #fff; */
     width: 100%;
-    min-height: 100%;
+    height: 100%;
+    /* overflow: hidden; */
     overflow-x: hidden;
     overflow-y: overlay;
+    scroll-behavior: smooth;
     /* overflow: overlay; */
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+    /* -moz-osx-font-smoothing: grayscale; */
+    /* -webkit-font-smoothing: antialiased; */
   }
 
   /* canvas {
@@ -77,6 +77,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 1600px;
     min-height: 100vh;
+    
     /* overflow: hidden; */
   }
 
@@ -147,7 +148,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .border {
-    border: 2px solid ${({theme})=> theme.colors.border};
+    border: 2px solid ${({ theme }) => theme.colors.border};
   }
 
 `;
