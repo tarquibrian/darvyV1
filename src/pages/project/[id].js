@@ -1,4 +1,5 @@
 import { Layout } from "@components";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -50,6 +51,14 @@ const Project = () => {
           <h1>{project && project.title}</h1>
           {/* <h1>k</h1> */}
           {/* <p>{project?.desc}</p> */}
+          {project && (
+            <Image
+              src={`/images/${project.img}.png`}
+              width={800}
+              height={500}
+              alt={project.title}
+            />
+          )}
         </div>
       </ProjectStyled>
     </Layout>

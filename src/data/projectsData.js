@@ -66,8 +66,8 @@ export const projectsData = {
         techStack: "Tecnologías",
         client: ["Cliente", "Personal"],
         threeColors: {
-          color: [0.8, 0.95, 0.94],
-          colorBase: [0.38, 0.09, 0.57],
+          color: [0.48, 0.53, 1],
+          colorBase: [1, 1, 1],
           colorDeep: [0, 0, 0],
         },
       },
@@ -165,7 +165,7 @@ export const projectsData = {
         techStack: "Tecnologías",
         client: ["Cliente", "ModernFashion"],
         threeColors: {
-          color: [0.8, 0.95, 0.94],
+          color: [0.93, 0.25, 0.25],
           colorBase: [0.38, 0.09, 0.57],
           colorDeep: [0, 0, 0],
         },
@@ -297,8 +297,8 @@ export const projectsData = {
         techStack: "Tech Stack",
         client: ["Client", "Personal"],
         threeColors: {
-          color: [0.8, 0.95, 0.94],
-          colorBase: [0.38, 0.09, 0.57],
+          color: [0.48, 0.53, 1],
+          colorBase: [1, 1, 1],
           colorDeep: [0, 0, 0],
         },
       },
@@ -348,9 +348,9 @@ export const projectsData = {
         techStack: "Tech Stack",
         client: ["Client", "SonusTech"],
         threeColors: {
-          color: [0.0, 0.95, 0.94],
-          colorBase: [0.38, 0.09, 0.57],
-          colorDeep: [0, 0, 0],
+          color: [0, 0, 0],
+          colorBase: [0, 0, 0],
+          colorDeep: [0.07, 0.75, 0.67],
         },
       },
       {
@@ -396,9 +396,9 @@ export const projectsData = {
         techStack: "Tech Stack",
         client: ["Client", "ModernFashion"],
         threeColors: {
-          color: [0.8, 0.95, 0.94],
+          color: [0.94, 0.14, 0.24],
           colorBase: [0.38, 0.09, 0.57],
-          colorDeep: [0, 0, 0],
+          colorDeep: [0.86, 0.93, 0.96],
         },
       },
       {
@@ -490,9 +490,9 @@ export const projectsData = {
         techStack: "Tech Stack",
         client: ["Client", "Cars Burger"],
         threeColors: {
-          color: [0.8, 0.95, 0.94],
-          colorBase: [0.38, 0.09, 0.57],
-          colorDeep: [0, 0, 0],
+          color: [0.4, 0.4, 0.4],
+          colorBase: [0.4, 0.4, 0.4],
+          colorDeep: [0.9, 0.9, 0.9],
         },
       },
     ],
