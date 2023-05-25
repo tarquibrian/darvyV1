@@ -25,40 +25,23 @@ const languages = {
 };
 
 const Project = () => {
-  // const [project, setProject] = useState();
-  // const { state, updateColor, changeTheme } = useAppContext();
-  // const router = useRouter();
-  // const { id } = router.query;
+  const [project, setProject] = useState();
+  const { state, updateColor, changeTheme } = useAppContext();
+  const router = useRouter();
+  const { id } = router.query;
 
-  // // const updated = () => {
-  // //   setProject(currentLanguage.lenguage.items[id - 1]);
-  // //   // updateColor(currentLanguage.lenguage.items[id - 1].bgColor);
-  // // };
-
-  // useEffect(() => {
-  //   const currentLanguage = {
-  //     lenguage: languages[state.currentLanguage],
-  //   };
-  //   // const [currentProject] = currentLanguage.lenguage.items.filter(
-  //   //   (item) => item.id === id
-  //   // );
-  //   const filterProject = currentLanguage.lenguage.items[id - 1];
-  //   setProject(filterProject);
-  //   project && updateColor(currentLanguage.lenguage.items[id - 1].threeColors);
-  //   project && changeTheme(project.themeMode);
-  // }, [state.currentLanguage, project]);
   useEffect(() => {
-    if ("scrollRestoration" in history) {
-      // Back off, browser, I got this...
-      history.scrollRestoration = "manual";
-    }
-    console.log(history)
-  }, []);
+    const currentLanguage = {
+      lenguage: languages[state.currentLanguage],
+    };
+    const filterProject = currentLanguage.lenguage.items[id - 1];
+    setProject(filterProject);
+    project && updateColor(currentLanguage.lenguage.items[id - 1].threeColors);
+    project && changeTheme(project.themeMode);
+  }, [state.currentLanguage, project]);
 
   return (
     <Layout>
-      {/* <Link href="/" scroll={false}>BACK</Link> */}
-      {/* <ProjectStyled key={"projects-single"}></ProjectStyled> */}
       <About />
       <About />
       <About />

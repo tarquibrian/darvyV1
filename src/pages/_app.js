@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }) {
         <LeftSide />
         <RightSide />
         <AnimatePresence
-          mode="wait"
+          mode="sync"
           onExitComplete={() => window.scrollTo(0, 0)}
         >
           <Component {...pageProps} key={router.asPath} />
