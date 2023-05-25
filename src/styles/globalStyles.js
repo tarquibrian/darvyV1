@@ -8,7 +8,8 @@ export const GlobalStyle = createGlobalStyle`
   ${variables}
 
   html {
-    box-sizing: border-box;
+    box-sizing: border-box; 
+    scroll-behavior: smooth;
   }
   *, *::after, *::before {
     margin: 0;
@@ -18,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none; 
     text-decoration: none;
     transition: .3s ease;
+   
   }
 
   *::selection {
@@ -55,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
     /* overflow: hidden; */
     overflow-x: hidden;
     overflow-y: overlay;
-    scroll-behavior: smooth;
+    
     /* overflow: overlay; */
     /* -moz-osx-font-smoothing: grayscale; */
     /* -webkit-font-smoothing: antialiased; */

@@ -37,10 +37,9 @@ const Layout = ({ children }) => {
       });
       changeTheme("dark");
     }
-    if ("scrollRestoration" in history) {
-      // Back off, browser, I got this...
-      history.scrollRestoration = "manual";
-    }
+    setTimeout(() => {
+      window.scroll({ top: 0, left: 0, behavior: "auto" });
+    }, 100);
   }, [router.asPath]);
 
   //   // const Element = document.getElementById("threejsBG");

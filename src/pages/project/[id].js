@@ -52,6 +52,7 @@ const Project = () => {
       // Back off, browser, I got this...
       history.scrollRestoration = "manual";
     }
+    console.log(history)
   }, []);
 
   return (
