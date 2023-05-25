@@ -5,6 +5,7 @@ uniform sampler2D texture1;
 uniform vec4 resolution;
 uniform vec3 color;
 uniform vec3 colorBase;
+uniform vec3 colorDeep;
 varying vec2 vUv;
 varying vec3 vPosition;
 float PI = 3.141592653589793238;
@@ -52,11 +53,11 @@ mat2 rotate2D(float angle) {
 
 void main() {
 
-	vec3 baseFirst = vec3(0.38, 0.09, 0.57);
+	vec3 baseFirst = vec3(colorBase);
 	// vec3 accent = vec3(color, 0.95, 0.94);
 	vec3 accent = vec3(color);
 
-	vec3 baseSecond = vec3(0.00, 0.00, 0.00);
+	vec3 baseSecond = vec3(colorDeep);
 
 
 	float n = noise(vPosition + time);
