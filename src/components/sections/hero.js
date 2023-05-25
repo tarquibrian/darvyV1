@@ -47,7 +47,7 @@ const HeroStyled = styled(motion.section)`
     gap: 1.3rem;
     border: 2px solid var(--border-light);
     border-radius: var(--border-radius);
-    font-family: var(--ff-sofia);
+    /* font-family: var(--ff-sofia); */
     max-width: 920px;
     padding: 40px;
     background: var(--bg-color);
@@ -70,15 +70,16 @@ const HeroStyled = styled(motion.section)`
     }
 
     h1 {
-      font-family: var(--ff-oswald);
+      font-family: var(--ff-rubik);
+      font-weight: 500;
       font-size: var(--fz-title);
-      font-weight: 400;
       color: #eae2b7;
       text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     }
 
     h2 {
       font-family: var(--ff-oswald);
+      /* font-family: var(--ff-rubik); */
       font-size: clamp(30px, 8vw, 78px);
       font-size: var(--fz-title);
       font-weight: 200;

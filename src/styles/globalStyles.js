@@ -106,6 +106,7 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme?.colors.baseColor};
   }
   p {
+    font-family: var(--ff-sofia);
     margin: 0 0 15px 0;
     color: #fff;
 

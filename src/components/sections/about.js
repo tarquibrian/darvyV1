@@ -40,7 +40,7 @@ const AboutCard = styled.div`
   font-family: var(--ff-sofia);
 
   h1 {
-    font-family: var(--ff-oswald);
+    font-family: var(--ff-rubik);
     font-size: var(--fz-header);
     font-weight: 400;
     color: #eae2b7;
