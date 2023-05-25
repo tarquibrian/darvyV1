@@ -7,6 +7,8 @@ const variables = css`
       sans-serif;
     --ff-sofia: "Sofia Sans Condensed", "DM Sans", "Raleway", sans-serif;
     --ff-dmsans: "DM Sans", "Sofia Sans Condensed", sans-serif;
+    --ff-chivo: "Chivo Mono", "Sofia Sans Condensed", sans-serif;
+    --ff-rubik: "Rubik", "Sofia Sans Condensed", sans-serif;
 
     /* SIZES */
     --fz-sm: clamp(12px, 2vw, 16px);
