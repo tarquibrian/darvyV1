@@ -148,6 +148,30 @@ export const GlobalStyle = createGlobalStyle`
     border: 2px solid ${({ theme }) => theme?.colors.border};
   }
 
+  .title-content {
+    font-family: var(--ff-rubik);
+    font-size: var(--fz-header);
+    font-weight: 400;
+    color: #eae2b7;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    margin: 0 0 15px -4px;
+    display: grid;
+    grid-template-columns: max-content auto;
+    gap: 0.2rem;
+    line-height: 1;
+    &::after {
+      content: "";
+      display: block;
+      align-self: end;
+      margin-bottom: 13px;
+      width: auto;
+      height: 8px;
+      border-radius: 2px;
+      background: #eae2b7;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    }
+  }
+
 `;
 
 export const Main__Section = styled.section``;

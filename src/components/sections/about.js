@@ -29,7 +29,7 @@ const AboutStyled = styled(motion.section)`
 const AboutCard = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 700px;
+  max-width: 600px;
   border-radius: var(--border-radius);
   border: 2px solid var(--border-light);
   padding: 40px;
@@ -38,27 +38,6 @@ const AboutCard = styled.div`
   backdrop-filter: blur(10px);
   z-index: 9;
   font-family: var(--ff-sofia);
-
-  h1 {
-    font-family: var(--ff-rubik);
-    font-size: var(--fz-header);
-    font-weight: 400;
-    color: #eae2b7;
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-    margin: 0 0 15px -4px;
-    display: grid;
-    grid-template-columns: max-content auto;
-    gap: 0.2rem;
-    &::after {
-      content: "";
-      display: block;
-      align-self: end;
-      margin-bottom: 12px;
-      width: auto;
-      height: 3px;
-      background: #eae2b7;
-    }
-  }
 
   p {
     font-size: var(--fz-md);
@@ -287,7 +266,7 @@ const About = () => {
         </CardEffect>
       </ImgProfile>
       <AboutCard ref={aboutref} id="about-card">
-        <h1>{currentLanguage.lenguage[1]}</h1>
+        <h1 className="title-content">{currentLanguage.lenguage[1]}</h1>
 
         {currentLanguage.lenguage[2].map((item, i) => {
           return <p key={i}>✦ {item}</p>;
