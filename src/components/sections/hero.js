@@ -52,10 +52,8 @@ const HeroStyled = styled(motion.section)`
     background: var(--bg-color);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.4);
 
     .type {
-      color: #fff;
       font-size: var(--fz-smm);
       width: fit-content;
       padding: 0.3rem 1rem;
@@ -329,7 +327,7 @@ const Hero = () => {
           hidden: { opacity: 0, scale: 0.95 },
         }}
       >
-        <div className="hero__container-card">
+        <div className="hero__container-card border">
           <span className="type" translate="no">
             {currentLanguage.lenguage[1]}
           </span>

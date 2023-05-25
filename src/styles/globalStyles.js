@@ -94,7 +94,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   span {
-    color: ${({ theme }) => theme.colors.baseColor};
+    /* color: ${({ theme }) => theme.colors.baseColor}; */
   }
 
   a {
@@ -144,6 +144,10 @@ export const GlobalStyle = createGlobalStyle`
 
     left: 10rem;
     cursor: pointer;
+  }
+
+  .border {
+    border: 2px solid ${({theme})=> theme.colors.border};
   }
 
 `;
