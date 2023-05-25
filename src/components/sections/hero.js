@@ -25,7 +25,6 @@ import imgHero42 from "../../images/hero42.png";
 
 const HeroStyled = styled(motion.section)`
   height: calc(100vh - 150px);
-  /* height: 100%; */
   margin: auto;
   width: 80%;
 

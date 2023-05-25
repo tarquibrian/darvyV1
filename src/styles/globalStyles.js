@@ -93,6 +93,10 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  span {
+    color: ${({ theme }) => theme.colors.baseColor};
+  }
+
   a {
     display: inline-block;
     text-decoration: none;

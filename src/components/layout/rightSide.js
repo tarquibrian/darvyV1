@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useAppContext } from "src/context/app.context";
 
 const EmailStyle = styled(motion.div)`
   position: fixed;
@@ -31,7 +32,6 @@ const EmailStyle = styled(motion.div)`
       font-family: "DMSans", sans-serif;
       font-size: 1.2rem;
       writing-mode: vertical-lr;
-      color: white;
       transition: 0.2s ease;
       &:hover {
         text-shadow: 0 0 3px rgba(255 255 255 / 0.8);
@@ -44,7 +44,8 @@ const EmailStyle = styled(motion.div)`
       width: 1px;
       height: 100%;
       margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: ${({ theme }) =>
+        theme === "dark" ? "rgba(255, 255, 255, 0.5)" : "rgba(0,0,0, 0.5)"};
     }
     &::after {
       content: "";
@@ -52,7 +53,8 @@ const EmailStyle = styled(motion.div)`
       width: 1px;
       height: 100%;
       margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: ${({ theme }) =>
+        theme === "dark" ? "rgba(255, 255, 255, 0.5)" : "rgba(0,0,0, 0.5)"};
     }
   }
   @media screen and (max-width: 1080px) {
@@ -65,6 +67,7 @@ const EmailStyle = styled(motion.div)`
 `;
 
 const RightSide = () => {
+  const { state } = useAppContext();
   const emailName = (
     <div>
       <span>
@@ -77,6 +80,7 @@ const RightSide = () => {
       initial={{ x: 100 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.6, delay: 0.7 }}
+      theme={state.currentTheme}
     >
       {emailName}
     </EmailStyle>
