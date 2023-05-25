@@ -84,6 +84,17 @@ const NavbarContent = styled(motion.div)`
     align-items: center;
     gap: 40px;
   }
+
+  .dark {
+    a {
+      color: white;
+    }
+  }
+  .light {
+    a {
+      color: black;
+    }
+  }
   @media screen and (max-width: 768px) {
     justify-content: center;
   }
@@ -223,6 +234,7 @@ const Header = () => {
       scrollIsBottom={scrollIsBottom}
       scrollDirection={scrollDirection}
       isOpen={isOpen}
+      // style={{ background: "red" }}
     >
       <NavbarContent
         initial={{ y: 200 }}
@@ -239,7 +251,7 @@ const Header = () => {
           </button>
         </LogoContainer>
 
-        <span>
+        <span className={`${state.currentTheme === "dark" ? "dark" : "light"}`}>
           <button onClick={() => changeTheme("light")}>ligh</button>
           <button onClick={() => changeTheme("dark")}>dark</button>
           <LinksContainer>
@@ -267,7 +279,12 @@ const Header = () => {
             </ol>
           </LinksContainer>
           <ResumeLink>
-            <a href="./resumeV1.pdf" target="_blank" rel="noopener noreferrer">
+            <a
+              href="./resumeV1.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="resume"
+            >
               Resume &gt;
             </a>
           </ResumeLink>
