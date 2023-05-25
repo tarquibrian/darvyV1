@@ -37,9 +37,9 @@ const Layout = ({ children }) => {
       });
       changeTheme("dark");
     }
-    setTimeout(() => {
-      window.scroll({ top: 0, left: 0, behavior: "auto" });
-    }, 100);
+    // setTimeout(() => {
+    //   window.scroll({ top: 0, left: 0});
+    // }, 100);
   }, [router.asPath]);
 
   //   // const Element = document.getElementById("threejsBG");
