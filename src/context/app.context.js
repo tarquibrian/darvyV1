@@ -33,9 +33,18 @@ export const AppProvider = ({ children }) => {
     });
   };
 
+  const changeTheme = (theme) => {
+    dispatch({
+      type: "CHANGE THEME",
+      payload: {
+        theme,
+      },
+    });
+  };
+
   return (
     <AppContext.Provider
-      value={{ state, toggleLanguage, loadingComplete, updateColor }}
+      value={{ state, toggleLanguage, loadingComplete, updateColor, changeTheme }}
     >
       {children}
     </AppContext.Provider>

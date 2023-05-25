@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 import { useRouter } from "next/router";
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
   //   // });
 
   return (
-    <>
+    <ThemeProvider>
       <WrapperMain
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </WrapperMain>
-    </>
+    </ThemeProvider>
   );
 };
 

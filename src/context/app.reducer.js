@@ -1,5 +1,6 @@
 export const initialState = {
   currentLanguage: "en",
+  currentTheme: "dark",
   loadingComplete: false,
   threeColors: {
     color: [0.8, 0.95, 0.94],
@@ -29,6 +30,11 @@ const AppReducer = (state, action) => {
       return {
         ...state,
         threeColors: payload.colors,
+      };
+    case "CHANGE THEME":
+      return {
+        ...state,
+        currentTheme: payload.theme,
       };
     default: {
       throw new Error(`Unsupported action type: ${type}`);
