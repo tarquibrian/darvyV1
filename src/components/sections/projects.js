@@ -359,11 +359,7 @@ const WrapperContent = ({
   return (
     <motion.article className={`projects__wrapper`} id={id} ref={refView}>
       <div className="wrapper-effect">
-        <Link
-          href={`/project/${id}`}
-          scroll={false}
-          onClick={() => update(threeColors)}
-        >
+        <Link href={`/project/${id}`} scroll={false}>
           <motion.div
             className="projects__wrapper-picture"
             initial="hidden"
