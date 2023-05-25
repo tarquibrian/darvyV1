@@ -301,6 +301,7 @@ export const projectsData = {
           colorBase: [1, 1, 1],
           colorDeep: [0, 0, 0],
         },
+        themeMode: 'dark'
       },
       {
         id: "2",
@@ -352,6 +353,7 @@ export const projectsData = {
           colorBase: [0, 0, 0],
           colorDeep: [0.07, 0.75, 0.67],
         },
+        themeMode: 'dark'
       },
       {
         id: "3",
@@ -400,6 +402,7 @@ export const projectsData = {
           colorBase: [0.38, 0.09, 0.57],
           colorDeep: [0.86, 0.93, 0.96],
         },
+        themeMode: 'light'
       },
       {
         id: "4",
@@ -457,6 +460,7 @@ export const projectsData = {
           colorBase: [0.38, 0.09, 0.57],
           colorDeep: [0, 0, 0],
         },
+        themeMode: 'dark'
       },
       {
         id: "5",
@@ -494,6 +498,7 @@ export const projectsData = {
           colorBase: [0.4, 0.4, 0.4],
           colorDeep: [0.9, 0.9, 0.9],
         },
+        themeMode: 'light'
       },
     ],
   },
