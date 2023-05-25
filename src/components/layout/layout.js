@@ -18,7 +18,11 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     if (router.asPath === "/") {
-      updateColor([0.8, 0.95, 0.94]);
+      updateColor({
+        color: [0.8, 0.95, 0.94],
+        colorBase: [0.38, 0.09, 0.57],
+        colorDeep: [0, 0, 0],
+      });
     }
   }, [router.asPath]);
 
@@ -35,6 +39,7 @@ const Layout = ({ children }) => {
         animate={{ opacity: 1 }}
         exit={{ x: 100, opacity: 0 }}
         transition={{
+          // duration: 1,
           type: "spring",
           stiffness: 260,
           damping: 20,

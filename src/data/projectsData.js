@@ -276,7 +276,13 @@ export const projectsData = {
         typeProject: ["Type Project", "Marketplace Extensions"],
         techStack: "Tech Stack",
         client: ["Client", "Personal"],
-        bgColor: [0.1, 0.95, 0.94],
+        // bgColor: [0.37, 0.38, 0.55],
+        // bgColor: [0.48, 0.53, 1],
+        threeColors: {
+          color: [0.8, 0.95, 0.94],
+          colorBase: [0.38, 0.09, 0.57],
+          colorDeep: [0, 0, 0],
+        },
       },
       {
         id: "2",
@@ -324,6 +330,11 @@ export const projectsData = {
         techStack: "Tech Stack",
         client: ["Client", "SonusTech"],
         bgColor: [0.1, 0.95, 0.94],
+        threeColors: {
+          color: [0.0, 0.95, 0.94],
+          colorBase: [0.38, 0.09, 0.57],
+          colorDeep: [0, 0, 0],
+        },
       },
       {
         id: "3",
@@ -368,6 +379,11 @@ export const projectsData = {
         techStack: "Tech Stack",
         client: ["Client", "ModernFashion"],
         bgColor: [0.1, 0.95, 0.94],
+        threeColors: {
+          color: [0.8, 0.95, 0.94],
+          colorBase: [0.38, 0.09, 0.57],
+          colorDeep: [0, 0, 0],
+        },
       },
       {
         id: "4",
@@ -421,6 +437,11 @@ export const projectsData = {
         techStack: "Tech Stack",
         client: ["Client", "Villa Rivero"],
         bgColor: [0.1, 0.95, 0.94],
+        threeColors: {
+          color: [0.8, 0.95, 0.94],
+          colorBase: [0.38, 0.09, 0.57],
+          colorDeep: [0, 0, 0],
+        },
       },
       {
         id: "5",
@@ -454,6 +475,11 @@ export const projectsData = {
         techStack: "Tech Stack",
         client: ["Client", "Cars Burger"],
         bgColor: [0.1, 0.95, 0.94],
+        threeColors: {
+          color: [0.8, 0.95, 0.94],
+          colorBase: [0.38, 0.09, 0.57],
+          colorDeep: [0, 0, 0],
+        },
       },
     ],
   },

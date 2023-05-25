@@ -1,7 +1,11 @@
 export const initialState = {
   currentLanguage: "en",
   loadingComplete: false,
-  color: [0.8, 0.95, 0.94],
+  threeColors: {
+    color: [0.8, 0.95, 0.94],
+    colorBase: [0.38, 0.09, 0.57],
+    colorDeep: [0, 0, 0],
+  },
 };
 
 const AppReducer = (state, action) => {
@@ -21,10 +25,10 @@ const AppReducer = (state, action) => {
         loadingComplete: loading,
       };
     case "UPDATE COLOR":
-      const nColor = payload.color ? payload.color : [0.8, 0.95, 0.94];
+      // const nColor = payload.color ? payload.color : [0.8, 0.95, 0.94];
       return {
         ...state,
-        color: nColor,
+        threeColors: payload.colors,
       };
     default: {
       throw new Error(`Unsupported action type: ${type}`);

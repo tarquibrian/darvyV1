@@ -24,11 +24,11 @@ export const AppProvider = ({ children }) => {
     });
   };
 
-  const updateColor = (color) => {
+  const updateColor = (colors) => {
     dispatch({
       type: "UPDATE COLOR",
       payload: {
-        color,
+        colors,
       },
     });
   };

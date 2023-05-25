@@ -4,6 +4,7 @@ uniform float progress;
 uniform sampler2D texture1;
 uniform vec4 resolution;
 uniform vec3 color;
+uniform vec3 colorBase;
 varying vec2 vUv;
 varying vec3 vPosition;
 float PI = 3.141592653589793238;
@@ -67,6 +68,6 @@ void main() {
 	vec3 baseColor = mix(baseSecond, baseFirst, basePattern);
 	vec3 secondBaseColor = mix(baseColor, accent, secondPattern);
 
-	gl_FragColor = vec4(vec3(secondBaseColor), 3.);
+	gl_FragColor = vec4(vec3(secondBaseColor), 1);
 }
 `;

@@ -9,7 +9,6 @@ import ThreeCanvas from "src/components/canvas";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const pageKey = router.asPath;
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -33,7 +32,7 @@ export default function App({ Component, pageProps }) {
         <LeftSide />
         <RightSide />
         <AnimatePresence mode="sync">
-          <Component key={pageKey} {...pageProps} />
+          <Component {...pageProps} key={router.asPath} />
         </AnimatePresence>
       </AppProvider>
     </>

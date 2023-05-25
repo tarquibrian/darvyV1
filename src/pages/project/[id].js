@@ -1,4 +1,5 @@
 import { Layout } from "@components";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { useAppContext } from "src/context/app.context";
@@ -8,6 +9,9 @@ import styled from "styled-components";
 const ProjectStyled = styled.section`
   width: 80%;
   /* overflow-y: scroll; */
+  h1 {
+    background-color: red;
+  }
 `;
 
 const languages = {
@@ -16,37 +20,37 @@ const languages = {
 };
 
 const Project = () => {
-  const [bgColorc, setBgColorc] = useState();
   const [project, setProject] = useState();
   const { state, updateColor } = useAppContext();
   const router = useRouter();
-  const id = router.query.id;
+  const { id } = router.query;
 
-  const currentLanguage = {
-    lenguage: languages[state.currentLanguage],
-  };
-
-  const updated = () => {
-    setProject(currentLanguage.lenguage.items[id - 1]);
-    updateColor(currentLanguage.lenguage.items[id - 1].bgColor);
-  };
+  // const updated = () => {
+  //   setProject(currentLanguage.lenguage.items[id - 1]);
+  //   // updateColor(currentLanguage.lenguage.items[id - 1].bgColor);
+  // };
 
   useEffect(() => {
-    id && updated();
-    console.log({ project });
-  }, [project]);
+    const currentLanguage = {
+      lenguage: languages[state.currentLanguage],
+    };
+    // const [currentProject] = currentLanguage.lenguage.items.filter(
+    //   (item) => item.id === id
+    // );
+    const filterProject = currentLanguage.lenguage.items[id - 1];
+    setProject(filterProject);
+    project && updateColor(currentLanguage.lenguage.items[id - 1].threeColors);
+  }, [state.currentLanguage, project]);
 
   return (
     <Layout key={"projects-single-page"}>
+      <Link href="/">BACK</Link>
       <ProjectStyled key={"projects-single"}>
-        {currentLanguage.lenguage.items
-          .filter((item) => item.id === id)
-          .map((project, i) => (
-            <div key={i}>
-              <h1>{project.title}</h1>
-              <p>{project.desc}</p>
-            </div>
-          ))}
+        <div>
+          <h1>{project && project.title}</h1>
+          {/* <h1>k</h1> */}
+          {/* <p>{project?.desc}</p> */}
+        </div>
       </ProjectStyled>
     </Layout>
   );
