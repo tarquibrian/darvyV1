@@ -231,7 +231,7 @@ const Header = () => {
         theme={state.currentTheme}
       >
         <LogoContainer>
-          <Link href={`/`}>
+          <Link onClick={scrollTop} href={`/`}>
             <Image src={darvyImg} alt="portfolio icon" />
           </Link>
           <button onClick={() => toggleLanguage()}>

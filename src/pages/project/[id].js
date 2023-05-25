@@ -43,6 +43,7 @@ const Project = () => {
 
   return (
     <Layout>
+      <Link href={"/"}>back</Link>
       <About />
       {/* <About /> */}
       {/* <About /> */}
