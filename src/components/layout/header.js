@@ -21,6 +21,35 @@ const NavbarHeader = styled(motion.header)`
   z-index: 999;
   transition: 0.3s ease-in;
 
+  .dark {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    button {
+      color: white;
+    }
+    .text {
+      a {
+        color: white;
+      }
+    }
+    .resumelink {
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+  .light {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    button {
+      color: black;
+    }
+    .text {
+      a {
+        color: black;
+      }
+    }
+    .resumelink {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     ${({ scrollIsTop, isOpen }) =>
       !scrollIsTop &&
@@ -70,9 +99,7 @@ const NavbarContent = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid
-    ${({ theme }) =>
-      theme === "dark" ? "rgba(255,255,255, 0.5)" : "rgba(0,0,0, 0.5)"};
+
   border-radius: 8px;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
@@ -85,16 +112,6 @@ const NavbarContent = styled(motion.div)`
     gap: 40px;
   }
 
-  .dark {
-    a {
-      color: white;
-    }
-  }
-  .light {
-    a {
-      color: black;
-    }
-  }
   @media screen and (max-width: 768px) {
     justify-content: center;
   }
@@ -151,9 +168,6 @@ export const ResumeLink = styled.div`
   padding: 8px 14px;
   display: grid;
   place-content: center;
-  border: 1px solid
-    ${({ theme }) =>
-      theme === "dark" ? "rgba(255,255,255, 0.5)" : "rgba(0,0,0, 0.5)"};
 
   border-radius: 4px;
 
@@ -173,10 +187,34 @@ const NavbarContentResponsive = styled.div`
   width: 80%;
   padding: 0 4%;
 
-  ${({ theme }) =>
-    theme === "dark"
-      ? "border: 1px solid rgba(0,0,0, 0.5)"
-      : "border: 1px solid rgba(255, 255, 255, 0.5)"};
+  .dark {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    button {
+      color: white;
+    }
+    .text {
+      a {
+        color: white;
+      }
+    }
+    .resumelink {
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+  .light {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    button {
+      color: black;
+    }
+    .text {
+      a {
+        color: black;
+      }
+    }
+    .resumelink {
+      border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+  }
 
   border-radius: 4px;
   -webkit-backdrop-filter: blur(20px);
@@ -202,7 +240,6 @@ const Header = () => {
   const [scrollIsBottom, setIscrollIsBottom] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const scrollDirection = useScrollDirection("up");
-  const theme = state.currentTheme;
 
   const scrollTop = () => {
     window.scrollTo({
@@ -234,13 +271,12 @@ const Header = () => {
       scrollIsBottom={scrollIsBottom}
       scrollDirection={scrollDirection}
       isOpen={isOpen}
-      // style={{ background: "red" }}
     >
       <NavbarContent
         initial={{ y: 200 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, delay: 0.7 }}
-        // theme={state.currentTheme}
+        className={`${state.currentTheme === "dark" ? "dark" : "light"}`}
       >
         <LogoContainer>
           <Link onClick={scrollTop} href={`/`}>
@@ -251,7 +287,7 @@ const Header = () => {
           </button>
         </LogoContainer>
 
-        <span className={`${state.currentTheme === "dark" ? "dark" : "light"}`}>
+        <span className="text">
           <button onClick={() => changeTheme("light")}>ligh</button>
           <button onClick={() => changeTheme("dark")}>dark</button>
           <LinksContainer>
@@ -278,7 +314,7 @@ const Header = () => {
               </li>
             </ol>
           </LinksContainer>
-          <ResumeLink>
+          <ResumeLink className="resumelink">
             <a
               href="./resumeV1.pdf"
               target="_blank"
@@ -290,7 +326,9 @@ const Header = () => {
           </ResumeLink>
         </span>
       </NavbarContent>
-      <NavbarContentResponsive>
+      <NavbarContentResponsive
+        className={`${state.currentTheme === "dark" ? "dark" : "light"}`}
+      >
         <LogoContainer>
           <button onClick={() => setIsOpen(!isOpen)}>
             <Image src={darvyImg} alt="portfolio icon" />
@@ -299,7 +337,7 @@ const Header = () => {
             {state.currentLanguage}
           </button>
         </LogoContainer>
-        <span>
+        <span className="text">
           <LinksContainer>
             <ol>
               <li>
@@ -325,7 +363,7 @@ const Header = () => {
               {/* <Link href={"/"}>Adios</Link> */}
             </ol>
           </LinksContainer>
-          <ResumeLink>
+          <ResumeLink className="resumelink">
             <a href="./resumeV1.pdf" target="_blank" rel="noopener noreferrer">
               Resume &gt;
             </a>

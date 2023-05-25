@@ -45,6 +45,7 @@ const HeroStyled = styled(motion.section)`
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
+    border: 2px solid var(--border-light);
     border-radius: var(--border-radius);
     font-family: var(--ff-sofia);
     max-width: 920px;
@@ -98,6 +99,7 @@ const HeroStyled = styled(motion.section)`
       font-size: var(--fz-md);
 
       .button__contact {
+        color: white;
         padding: 10px 18px;
         display: grid;
         place-content: center;
@@ -313,7 +315,9 @@ const Hero = () => {
     <HeroStyled id="hero" ref={ref}>
       <motion.div
         key={"hero-section"}
-        className="hero__container"
+        className={`hero__container ${
+          state.currentTheme === "dark" ? "dark" : "light"
+        }`}
         id="hero-container"
         ref={heroref}
         animate={controls}

@@ -12,7 +12,7 @@ const EmailStyle = styled(motion.div)`
   display: grid;
   place-content: center;
   z-index: 999;
-  div {
+  .right {
     display: grid;
     grid-template-rows: auto max-content auto;
     gap: 1rem;
@@ -22,19 +22,18 @@ const EmailStyle = styled(motion.div)`
       display: flex;
       justify-content: center;
       align-items: center;
+      a {
+        font-family: "DMSans", sans-serif;
+        font-size: 1.2rem;
+        writing-mode: vertical-lr;
+        transition: 0.2s ease;
+        &:hover {
+          text-shadow: 0 0 3px rgba(255 255 255 / 0.8);
+        }
+      }
 
       &:hover {
         transform: scale(1.05);
-      }
-    }
-
-    a {
-      font-family: "DMSans", sans-serif;
-      font-size: 1.2rem;
-      writing-mode: vertical-lr;
-      transition: 0.2s ease;
-      &:hover {
-        text-shadow: 0 0 3px rgba(255 255 255 / 0.8);
       }
     }
 
@@ -57,6 +56,29 @@ const EmailStyle = styled(motion.div)`
         theme === "dark" ? "rgba(255, 255, 255, 0.5)" : "rgba(0,0,0, 0.5)"};
     }
   }
+
+  .dark {
+    a {
+      color: white;
+    }
+    &::before {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    &::after {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  .light {
+    a {
+      color: black;
+    }
+    &::before {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    &::after {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
   @media screen and (max-width: 1080px) {
     width: 80px;
   }
@@ -69,7 +91,9 @@ const EmailStyle = styled(motion.div)`
 const RightSide = () => {
   const { state } = useAppContext();
   const emailName = (
-    <div>
+    <div
+      className={`right ${state.currentTheme === "dark" ? "dark" : "light"}`}
+    >
       <span>
         <a href="mailto:tarquibrian@gmail.com">tarquibrian@gmail.com</a>
       </span>

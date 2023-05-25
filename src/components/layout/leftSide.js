@@ -20,7 +20,7 @@ const SideStyle = styled(motion.div)`
   display: grid;
   place-content: center;
   z-index: 999;
-  div {
+  .left {
     display: grid;
     grid-template-rows: auto max-content auto;
     gap: 1rem;
@@ -30,7 +30,6 @@ const SideStyle = styled(motion.div)`
       font-size: 1.2rem;
       writing-mode: vertical-lr;
       color: white;
-      transition: 0.2s ease;
       &:hover {
         filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
       }
@@ -42,8 +41,6 @@ const SideStyle = styled(motion.div)`
       width: 1px;
       height: 100%;
       margin: 0 auto;
-      background-color: ${({ theme }) =>
-        theme === "dark" ? "rgba(255, 255, 255, 0.5)" : "rgba(0,0,0, 0.5)"};
     }
     &::after {
       content: "";
@@ -51,8 +48,30 @@ const SideStyle = styled(motion.div)`
       width: 1px;
       height: 100%;
       margin: 0 auto;
-      background-color: ${({ theme }) =>
-        theme === "dark" ? "rgba(255, 255, 255, 0.5)" : "rgba(0,0,0, 0.5)"};
+    }
+  }
+
+  .dark {
+    a,
+    svg {
+      color: white;
+    }
+    &::before {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    &::after {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  .light {
+    a {
+      color: black;
+    }
+    &::before {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    &::after {
+      background-color: rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -97,7 +116,7 @@ const SideStyle = styled(motion.div)`
 const LeftSide = () => {
   const { state } = useAppContext();
   const social = (
-    <div>
+    <div className={`left ${state.currentTheme === "dark" ? "dark" : "light"}`}>
       <ul>
         <li>
           <a
@@ -152,7 +171,6 @@ const LeftSide = () => {
       initial={{ x: -100 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.6, delay: 0.7 }}
-      // theme={state.currentTheme}
     >
       {social}
     </SideStyle>

@@ -18,8 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
     list-style: none; 
     text-decoration: none;
-    transition: .3s ease;
-   
+    transition: .2s ease;
   }
 
   *::selection {
