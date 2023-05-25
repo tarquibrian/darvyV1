@@ -228,7 +228,7 @@ const Header = () => {
         initial={{ y: 200 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, delay: 0.7 }}
-        theme={state.currentTheme}
+        // theme={state.currentTheme}
       >
         <LogoContainer>
           <Link onClick={scrollTop} href={`/`}>
@@ -266,7 +266,7 @@ const Header = () => {
               </li>
             </ol>
           </LinksContainer>
-          <ResumeLink theme={theme}>
+          <ResumeLink>
             <a href="./resumeV1.pdf" target="_blank" rel="noopener noreferrer">
               Resume &gt;
             </a>
