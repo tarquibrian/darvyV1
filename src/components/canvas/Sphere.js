@@ -47,7 +47,7 @@ const Sphere = () => {
 
   return (
     <mesh ref={mesh}>
-      <sphereBufferGeometry args={[1.5, 32, 32]} attach="geometry" />
+      <sphereGeometry args={[1.5, 32, 32]} attach="geometry" />
       {/* <sphereBufferGeometry args={[1, 64, 64]} attach="geometry" /> */}
       <primitive object={myShader} attach="material" />
 
