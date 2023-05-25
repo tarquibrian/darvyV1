@@ -26,7 +26,6 @@ const AppReducer = (state, action) => {
         loadingComplete: loading,
       };
     case "UPDATE COLOR":
-      // const nColor = payload.color ? payload.color : [0.8, 0.95, 0.94];
       return {
         ...state,
         threeColors: payload.colors,
