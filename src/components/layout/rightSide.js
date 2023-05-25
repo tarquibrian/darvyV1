@@ -10,6 +10,7 @@ const EmailStyle = styled(motion.div)`
   min-height: 100vh;
   display: grid;
   place-content: center;
+  z-index: 999;
   div {
     display: grid;
     grid-template-rows: auto max-content auto;
@@ -20,7 +21,7 @@ const EmailStyle = styled(motion.div)`
       display: flex;
       justify-content: center;
       align-items: center;
-      
+
       &:hover {
         transform: scale(1.05);
       }

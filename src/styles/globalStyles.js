@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
     list-style: none; 
     text-decoration: none;
-    transition: .2s ease;
+    transition: .3s ease;
   }
 
   *::selection {
@@ -51,7 +51,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Oswald', sans-serif;
     line-height: 1.3;
-    color: #fff;
+    /* color: #fff; */
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
@@ -97,8 +97,12 @@ export const GlobalStyle = createGlobalStyle`
     display: inline-block;
     text-decoration: none;
     text-decoration-skip-ink: auto;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.baseColor};
     position: relative;
+  }
+  svg {
+    color: ${({ theme }) => theme.colors.baseColor};
+    /* fill: ${({ theme }) => theme.colors.baseColor}; */
   }
   p {
     margin: 0 0 15px 0;
@@ -114,6 +118,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
   button {
+    color: ${({ theme }) => theme.colors.baseColor};
     background-color: transparent;
     border-style: none;
   }

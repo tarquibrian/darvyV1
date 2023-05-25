@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
           <title>Darvy Portfolio</title>
           <meta name="robots" content="all" />
         </Head>
-        <GlobalStyle />
+        {/* <GlobalStyle /> */}
         <ThreeCanvas />
         <Header />
         <LeftSide />

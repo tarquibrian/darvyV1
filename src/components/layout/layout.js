@@ -4,17 +4,29 @@ import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 import { useRouter } from "next/router";
 import Sketch from "src/threejs/main";
+import { darkTheme, lightTheme } from "src/styles/theme";
+import Header from "./header";
+import { GlobalStyle } from "@styles";
 
 // const ThreeCanvas = dynamic(() => import("../canvas"), {
 //   loading: () => <p>loading..</p>,
 //   ssr: true,
 // });
 
-const WrapperMain = styled(motion.main)``;
+const themesMap = {
+  light: lightTheme,
+  dark: darkTheme,
+};
+
+const WrapperMain = styled(motion.main)`
+  /* background-color: ${({ theme }) => theme.colors.border}; */
+`;
 
 const Layout = ({ children }) => {
-  const { updateColor } = useAppContext();
+  const { state, updateColor } = useAppContext();
   const router = useRouter();
+
+  const theme = { colors: themesMap[state.currentTheme] };
 
   useEffect(() => {
     if (router.asPath === "/") {
@@ -24,6 +36,7 @@ const Layout = ({ children }) => {
         colorDeep: [0, 0, 0],
       });
     }
+    console.log(theme);
   }, [router.asPath]);
 
   //   // const Element = document.getElementById("threejsBG");
@@ -33,7 +46,8 @@ const Layout = ({ children }) => {
   //   // });
 
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <WrapperMain
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

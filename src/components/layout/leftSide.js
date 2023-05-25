@@ -9,6 +9,7 @@ import {
   IconMedium,
 } from "@components";
 import { motion, useAnimation } from "framer-motion";
+import { useAppContext } from "src/context/app.context";
 
 const SideStyle = styled(motion.div)`
   min-width: 100px;
@@ -18,6 +19,7 @@ const SideStyle = styled(motion.div)`
   min-height: 100vh;
   display: grid;
   place-content: center;
+  z-index: 999;
   div {
     display: grid;
     grid-template-rows: auto max-content auto;
@@ -40,7 +42,8 @@ const SideStyle = styled(motion.div)`
       width: 1px;
       height: 100%;
       margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: ${({ theme }) =>
+        theme === "dark" ? "rgba(255, 255, 255, 0.5)" : "rgba(0,0,0, 0.5)"};
     }
     &::after {
       content: "";
@@ -48,7 +51,8 @@ const SideStyle = styled(motion.div)`
       width: 1px;
       height: 100%;
       margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: ${({ theme }) =>
+        theme === "dark" ? "rgba(255, 255, 255, 0.5)" : "rgba(0,0,0, 0.5)"};
     }
   }
 
@@ -67,7 +71,6 @@ const SideStyle = styled(motion.div)`
       a {
         text-align: center;
         width: 100%;
-        color: rgba(255, 255, 255, 1);
         padding: 6px 0;
         transition: 0.2s ease;
         display: flex;
@@ -92,6 +95,7 @@ const SideStyle = styled(motion.div)`
 `;
 
 const LeftSide = () => {
+  const { state } = useAppContext();
   const social = (
     <div>
       <ul>
@@ -122,7 +126,7 @@ const LeftSide = () => {
             <IconInstagram />
           </a>
         </li>
-        <li>
+        {/* <li>
           <a
             href="https://medium.com/@tarquibrian"
             target="_blank"
@@ -139,7 +143,7 @@ const LeftSide = () => {
           >
             <IconDribbble />
           </a>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
@@ -148,6 +152,7 @@ const LeftSide = () => {
       initial={{ x: -100 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.6, delay: 0.7 }}
+      theme={state.currentTheme}
     >
       {social}
     </SideStyle>

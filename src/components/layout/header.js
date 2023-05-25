@@ -18,7 +18,6 @@ const NavbarHeader = styled(motion.header)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
   z-index: 999;
   transition: 0.3s ease-in;
 
@@ -71,7 +70,9 @@ const NavbarContent = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid
+    ${({ theme }) =>
+      theme === "dark" ? "rgba(255,255,255, 0.5)" : "rgba(0,0,0, 0.5)"};
   border-radius: 8px;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
@@ -105,7 +106,6 @@ const LogoContainer = styled.div`
     font-size: 1rem;
     font-family: "Raleway", sans-serif;
     font-weight: bold;
-    color: #fff;
     text-transform: uppercase;
     &:hover {
       cursor: pointer;
@@ -140,7 +140,10 @@ export const ResumeLink = styled.div`
   padding: 8px 14px;
   display: grid;
   place-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid
+    ${({ theme }) =>
+      theme === "dark" ? "rgba(255,255,255, 0.5)" : "rgba(0,0,0, 0.5)"};
+
   border-radius: 4px;
 
   &:hover {
@@ -158,7 +161,12 @@ const NavbarContentResponsive = styled.div`
   height: 100%;
   width: 80%;
   padding: 0 4%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  ${({ theme }) =>
+    theme === "dark"
+      ? "border: 1px solid rgba(0,0,0, 0.5)"
+      : "border: 1px solid rgba(255, 255, 255, 0.5)"};
+
   border-radius: 4px;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
@@ -173,17 +181,17 @@ const NavbarContentResponsive = styled.div`
 
   @media screen and (max-width: 640px) {
     width: 90%;
-    /* width: fit-content; */
     justify-content: center;
   }
 `;
 
 const Header = () => {
-  const { state, toggleLanguage } = useAppContext();
+  const { state, toggleLanguage, changeTheme } = useAppContext();
   const [scrollIsTop, setIscrollIsTop] = useState(true);
   const [scrollIsBottom, setIscrollIsBottom] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const scrollDirection = useScrollDirection("up");
+  const theme = state.currentTheme;
 
   const scrollTop = () => {
     window.scrollTo({
@@ -220,6 +228,7 @@ const Header = () => {
         initial={{ y: 200 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, delay: 0.7 }}
+        theme={state.currentTheme}
       >
         <LogoContainer>
           <Link onClick={scrollTop} href={`/`}>
@@ -231,9 +240,9 @@ const Header = () => {
         </LogoContainer>
 
         <span>
+          <button onClick={() => changeTheme("light")}>ligh</button>
+          <button onClick={() => changeTheme("dark")}>dark</button>
           <LinksContainer>
-            {/* <Link href={"/"}>page1</Link> */}
-            {/* <Link href={"/page2"}>page2</Link> */}
             <ol>
               <li>
                 <a href="#about" onClick={() => toggle()}>
@@ -257,7 +266,7 @@ const Header = () => {
               </li>
             </ol>
           </LinksContainer>
-          <ResumeLink>
+          <ResumeLink theme={theme}>
             <a href="./resumeV1.pdf" target="_blank" rel="noopener noreferrer">
               Resume &gt;
             </a>
