@@ -152,7 +152,7 @@ const LeftSide = () => {
       initial={{ x: -100 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.6, delay: 0.7 }}
-      theme={state.currentTheme}
+      // theme={state.currentTheme}
     >
       {social}
     </SideStyle>

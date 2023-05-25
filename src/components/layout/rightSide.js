@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
 
-const EmailStyle = styled.div`
+const EmailStyle = styled(motion.div)`
   min-width: 100px;
   position: fixed;
   bottom: 0;
@@ -77,9 +77,9 @@ const RightSide = () => {
   );
   return (
     <EmailStyle
-      // initial={{ x: 100 }}
-      // animate={{ x: 0 }}
-      // transition={{ duration: 0.6, delay: 0.7 }}
+      initial={{ x: 100 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.6, delay: 0.7 }}
       // theme={state.currentTheme}
     >
       {emailName}
