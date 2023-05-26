@@ -288,8 +288,8 @@ const Header = () => {
         </LogoContainer>
 
         <span className="text">
-          {/* <button onClick={() => changeTheme("light")}>ligh</button> */}
-          {/* <button onClick={() => changeTheme("dark")}>dark</button> */}
+          <button onClick={() => changeTheme("light")}>ligh</button>
+          <button onClick={() => changeTheme("dark")}>dark</button>
           <LinksContainer>
             <ol>
               <li>

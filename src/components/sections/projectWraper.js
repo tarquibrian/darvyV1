@@ -14,7 +14,19 @@ const ProjectWrapperStyled = styled.section`
       color: rgba(230, 230, 230, 1);
     }
     .content {
-      border: 2px solid rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.1);
+      &::before {
+        background: radial-gradient(
+          1000px circle at var(--mouse1-x) var(--mouse1-y),
+          rgba(255, 255, 255, 0.2),
+          transparent 40%
+        );
+      }
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+        background: var(--bg-color-hover);
+      }
     }
   }
 
@@ -24,6 +36,18 @@ const ProjectWrapperStyled = styled.section`
     }
     .content {
       border: 2px solid rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.1);
+      &::before {
+        background: radial-gradient(
+          1400px circle at var(--mouse1-x) var(--mouse1-y),
+          rgba(255, 255, 255, 0.6),
+          transparent 40%
+        );
+      }
+      &:hover {
+        border-color: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.15);
+      }
     }
   }
 
@@ -58,11 +82,11 @@ const ProjectWrapperStyled = styled.section`
 
       .content {
         height: 500px;
-        width: 900px;
+        width: 100%;
         margin-bottom: 1rem;
         border-radius: var(--border-radius);
         padding: 40px;
-        background: rgba(0, 0, 0, 0.1);
+
         position: relative;
 
         &:hover::before {
@@ -70,11 +94,6 @@ const ProjectWrapperStyled = styled.section`
         }
 
         &::before {
-          background: radial-gradient(
-            1000px circle at var(--mouse1-x) var(--mouse1-y),
-            rgba(255, 255, 255, 0.7),
-            transparent 40%
-          );
           border-radius: inherit;
           content: "";
           position: absolute;
@@ -85,11 +104,6 @@ const ProjectWrapperStyled = styled.section`
           opacity: 0;
           transition: opacity 500ms;
           z-index: -1;
-        }
-
-        &:hover {
-          border-color: rgba(0, 0, 0, 0.2);
-          background: rgba(0, 0, 0, 0.1);
         }
       }
 
@@ -148,7 +162,7 @@ const ProjectWrapper = (props) => {
           </div>
         </div>
         <div className="container">
-          <div className="content" ref={ref}>
+          <div className="content text" ref={ref}>
             {props.desc}
           </div>
         </div>
