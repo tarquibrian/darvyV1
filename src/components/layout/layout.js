@@ -18,9 +18,7 @@ const themesMap = {
   dark: darkTheme,
 };
 
-const WrapperMain = styled(motion.main)`
-  /* background-color: ${({ theme }) => theme.colors.border}; */
-`;
+const WrapperMain = styled(motion.main)``;
 
 const Layout = ({ children }) => {
   const { state, updateColor, changeTheme } = useAppContext();

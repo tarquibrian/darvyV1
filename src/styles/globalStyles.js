@@ -48,7 +48,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Sofia Sans Condensed', sans-serif;
     line-height: 1.3;
     /* color: #fff; */
     width: 100%;
@@ -103,7 +103,7 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
   }
   svg {
-    color: ${({ theme }) => theme?.colors.baseColor};
+    /* color: ${({ theme }) => theme?.colors.baseColor}; */
   }
   p {
     font-family: var(--ff-sofia);
@@ -120,7 +120,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
   button {
-    color: ${({ theme }) => theme?.colors?.baseColor};
+    /* color: ${({ theme }) => theme?.colors?.baseColor}; */
     background-color: transparent;
     border-style: none;
   }
@@ -149,7 +149,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .title-content {
-    font-family: var(--ff-rubik);
+    font-family: var(--ff-oswald);
     font-size: var(--fz-header);
     font-weight: 400;
     color: #eae2b7;
@@ -158,15 +158,15 @@ export const GlobalStyle = createGlobalStyle`
     display: grid;
     grid-template-columns: max-content auto;
     gap: 0.2rem;
-    line-height: 1;
+    /* line-height: 1; */
     &::after {
       content: "";
       display: block;
       align-self: end;
-      margin-bottom: 13px;
+      margin-bottom: 12px;
       width: auto;
-      height: 8px;
-      border-radius: 2px;
+      height: 4px;
+      /* border-radius: 2px; */
       background: #eae2b7;
       box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     }

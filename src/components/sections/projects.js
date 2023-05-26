@@ -287,7 +287,7 @@ const Projects = () => {
       initial="hidden"
       variants={variants}
     >
-      <h1 className="headerTitle">{currentLanguage.lenguage.title}</h1>
+      <h1 className="title-content">{currentLanguage.lenguage.title}</h1>
       <div className="projects__container">
         {currentLanguage.lenguage.items.map((project) => {
           const {

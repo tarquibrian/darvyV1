@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAppContext } from "src/context/app.context";
 import styled from "styled-components";
 
@@ -13,11 +13,17 @@ const ProjectWrapperStyled = styled.section`
     .text {
       color: rgba(230, 230, 230, 1);
     }
+    .content {
+      border: 2px solid rgba(0, 0, 0, 0.5);
+    }
   }
 
   .light {
     .text {
       color: rgba(60, 60, 60, 1);
+    }
+    .content {
+      border: 2px solid rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -54,6 +60,9 @@ const ProjectWrapperStyled = styled.section`
         min-height: 500px;
         /* background-color: rgba(1, 1, 1, 0.2); */
         margin-bottom: 1rem;
+        border-radius: var(--border-radius);
+        padding: 40px;
+        background: rgba(0, 0, 0, 0.1);
       }
 
       &::-webkit-scrollbar {
@@ -73,8 +82,12 @@ const ProjectWrapperStyled = styled.section`
 `;
 
 const ProjectWrapper = (props) => {
-  const { state } = useAppContext();
-  console.log(state);
+  const { state, updateColor, changeTheme } = useAppContext();
+  useEffect(() => {
+    updateColor(props.threeColors);
+    changeTheme(props.themeMode);
+  }, []);
+  console.log(props);
   return (
     <ProjectWrapperStyled>
       <div
@@ -94,9 +107,7 @@ const ProjectWrapper = (props) => {
           </div>
         </div>
         <div className="container">
-          <div className="content">HOLA</div>
-          <div className="content">HOLA</div>
-          <div className="content">HOLA</div>
+          <div className="content">{props.desc}</div>
           <div className="content">HOLA</div>
           <div className="content">HOLA</div>
         </div>
