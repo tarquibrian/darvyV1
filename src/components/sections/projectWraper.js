@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useAppContext } from "src/context/app.context";
 import styled from "styled-components";
 
@@ -57,12 +57,40 @@ const ProjectWrapperStyled = styled.section`
       padding: 5rem 0 10rem;
 
       .content {
-        min-height: 500px;
-        /* background-color: rgba(1, 1, 1, 0.2); */
+        height: 500px;
+        width: 900px;
         margin-bottom: 1rem;
         border-radius: var(--border-radius);
         padding: 40px;
         background: rgba(0, 0, 0, 0.1);
+        position: relative;
+
+        &:hover::before {
+          opacity: 1;
+        }
+
+        &::before {
+          background: radial-gradient(
+            1000px circle at var(--mouse1-x) var(--mouse1-y),
+            rgba(255, 255, 255, 0.7),
+            transparent 40%
+          );
+          border-radius: inherit;
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0%;
+          left: 0%;
+          opacity: 0;
+          transition: opacity 500ms;
+          z-index: -1;
+        }
+
+        &:hover {
+          border-color: rgba(0, 0, 0, 0.2);
+          background: rgba(0, 0, 0, 0.1);
+        }
       }
 
       &::-webkit-scrollbar {
@@ -83,10 +111,23 @@ const ProjectWrapperStyled = styled.section`
 
 const ProjectWrapper = (props) => {
   const { state, updateColor, changeTheme } = useAppContext();
+  const ref = useRef(null);
+
+  const handleOnMouseMove = (e) => {
+    const rect = ref?.current?.getBoundingClientRect(),
+      x = e?.clientX - rect?.left,
+      y = e?.clientY - rect?.top;
+
+    ref?.current?.style?.setProperty("--mouse1-x", `${x}px`);
+    ref?.current?.style?.setProperty("--mouse1-y", `${y}px`);
+  };
+
   useEffect(() => {
     updateColor(props.threeColors);
     changeTheme(props.themeMode);
+    window.addEventListener("mousemove", handleOnMouseMove);
   }, []);
+
   console.log(props);
   return (
     <ProjectWrapperStyled>
@@ -107,9 +148,9 @@ const ProjectWrapper = (props) => {
           </div>
         </div>
         <div className="container">
-          <div className="content">{props.desc}</div>
-          <div className="content">HOLA</div>
-          <div className="content">HOLA</div>
+          <div className="content" ref={ref}>
+            {props.desc}
+          </div>
         </div>
       </div>
     </ProjectWrapperStyled>
