@@ -22,10 +22,10 @@ export default function App({ Component, pageProps }) {
           <Component {...pageProps} key={router.asPath} />
         </AnimatePresence>
 
-        <ThreeCanvas />
         <Header />
         <LeftSide />
         <RightSide />
+        <ThreeCanvas />
       </AppProvider>
     </>
   );

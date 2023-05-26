@@ -28,19 +28,19 @@ const Layout = ({ children, updateBG }) => {
 
   useEffect(() => {
     if (updateBG) {
-      if (router.asPath === "/") {
-        updateColor({
-          color: [0.8, 0.95, 0.94],
-          colorBase: [0.38, 0.09, 0.57],
-          colorDeep: [0, 0, 0],
-        });
-        changeTheme("dark");
-      }
+      // if (router.asPath === "/") {
+      updateColor({
+        color: [0.8, 0.95, 0.94],
+        colorBase: [0.38, 0.09, 0.57],
+        colorDeep: [0, 0, 0],
+      });
+      changeTheme("dark");
+      // }
     }
     // setTimeout(() => {
     //   window.scroll({ top: 0, left: 0});
     // }, 100);
-  }, [router.asPath]);
+  }, [router.asPath, updateBG]);
 
   //   // const Element = document.getElementById("threejsBG");
   //   // new Sketch({
