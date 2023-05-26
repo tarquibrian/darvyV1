@@ -161,6 +161,7 @@ export const projectsData = {
           },
         ],
         img: "project-img3",
+        imgs: ["p3-min.png", "p3-1-min.png", "p3-2-min.png", "p3-3-min.png"],
         typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
         techStack: "Tecnologías",
         client: ["Cliente", "ModernFashion"],
@@ -217,6 +218,7 @@ export const projectsData = {
           },
         ],
         img: "project-img4",
+        imgs: ["p3-min.png", "p3-1-min.png", "p3-2-min.png", "p3-3-min.png"],
         typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
         techStack: "Tecnologías",
         client: ["Cliente", "Villa Rivero"],
@@ -254,6 +256,7 @@ export const projectsData = {
           },
         ],
         img: "project-img5",
+        imgs: ["p3-min.png", "p3-1-min.png", "p3-2-min.png", "p3-3-min.png"],
         typeProject: ["Tipo de Proyecto", "Aplicacion Web"],
         techStack: "Tecnologías",
         client: ["Cliente", "Villa Rivero"],
@@ -293,6 +296,7 @@ export const projectsData = {
           },
         ],
         img: "project-img1",
+        imgs: ["p3-min.png", "p3-1-min.png", "p3-2-min.png", "p3-3-min.png"],
         typeProject: ["Type Project", "Marketplace Extensions"],
         techStack: "Tech Stack",
         client: ["Client", "Personal"],
@@ -301,7 +305,7 @@ export const projectsData = {
           colorBase: [1, 1, 1],
           colorDeep: [0, 0, 0],
         },
-        themeMode: 'dark'
+        themeMode: "dark",
       },
       {
         id: "2",
@@ -345,6 +349,7 @@ export const projectsData = {
           },
         ],
         img: "project-img2",
+        imgs: ["p3-min.png", "p3-1-min.png", "p3-2-min.png", "p3-3-min.png"],
         typeProject: ["Type Project", "Web App"],
         techStack: "Tech Stack",
         client: ["Client", "SonusTech"],
@@ -353,13 +358,45 @@ export const projectsData = {
           colorBase: [0, 0, 0],
           colorDeep: [0.07, 0.75, 0.67],
         },
-        themeMode: 'dark'
+        themeMode: "dark",
       },
       {
         id: "3",
         label: "Web Project",
         title: "Ecommerce Website",
-        desc: "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+        desc: `Modern <strong>clothing</strong> ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.`,
+        blog: {
+          title: "Ecommerce Website",
+          wrapper: [
+            [
+              [
+                "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+                "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+                "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+                "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+              ],
+              [
+                "/images/project-img3.png",
+                "Modern clothing ecommerce web application that offers a wide selection",
+              ],
+            ],
+            [
+              [
+                "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+                "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+              ],
+              [
+                "/images/project-img3.png",
+                "Modern clothing ecommerce web application that offers a wide selection",
+              ],
+            ],
+          ],
+
+          conclusion: [
+            "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+            "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+          ],
+        },
         features: [
           {
             name: "NextJS",
@@ -394,6 +431,7 @@ export const projectsData = {
           },
         ],
         img: "project-img3",
+        imgs: ["p3-min.png", "p3-1-min.png", "p3-2-min.png", "p3-3-min.png"],
         typeProject: ["Type Project", "Web App"],
         techStack: "Tech Stack",
         client: ["Client", "ModernFashion"],
@@ -402,7 +440,7 @@ export const projectsData = {
           colorBase: [0.38, 0.09, 0.57],
           colorDeep: [0.86, 0.93, 0.96],
         },
-        themeMode: 'light'
+        themeMode: "light",
       },
       {
         id: "4",
@@ -452,6 +490,7 @@ export const projectsData = {
           },
         ],
         img: "project-img4",
+        imgs: ["p3-min.png", "p3-1-min.png", "p3-2-min.png", "p3-3-min.png"],
         typeProject: ["Type Project", "Web App"],
         techStack: "Tech Stack",
         client: ["Client", "Villa Rivero"],
@@ -460,7 +499,7 @@ export const projectsData = {
           colorBase: [0.38, 0.09, 0.57],
           colorDeep: [0, 0, 0],
         },
-        themeMode: 'dark'
+        themeMode: "dark",
       },
       {
         id: "5",
@@ -490,6 +529,7 @@ export const projectsData = {
           },
         ],
         img: "project-img5",
+        imgs: ["p3-min.png", "p3-1-min.png", "p3-2-min.png", "p3-3-min.png"],
         typeProject: ["Type Project", "Web App"],
         techStack: "Tech Stack",
         client: ["Client", "Cars Burger"],
@@ -498,7 +538,7 @@ export const projectsData = {
           colorBase: [0.4, 0.4, 0.4],
           colorDeep: [0.9, 0.9, 0.9],
         },
-        themeMode: 'light'
+        themeMode: "light",
       },
     ],
   },

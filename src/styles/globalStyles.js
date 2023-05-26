@@ -171,6 +171,12 @@ export const GlobalStyle = createGlobalStyle`
       box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     }
   }
+  .images {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
 
 `;
 
