@@ -12,7 +12,7 @@ const ProjectWrapperStyled = styled.section`
   margin: auto;
   height: 100vh;
   overflow: hidden;
-  background-color: rgba(1, 1, 1, 0.1);
+  /* background-color: rgba(1, 1, 1, 0.1); */
   .dark {
     .text {
       color: rgba(230, 230, 230, 1);
@@ -32,7 +32,11 @@ const ProjectWrapperStyled = styled.section`
         background: var(--bg-color-hover);
       }
     }
-    p {
+    p,
+    h1,
+    h2,
+    h3,
+    header {
       color: white;
     }
   }
@@ -56,7 +60,12 @@ const ProjectWrapperStyled = styled.section`
         background: rgba(0, 0, 0, 0.15);
       }
     }
-    p {
+    p,
+    p,
+    h1,
+    h2,
+    h3,
+    header {
       color: black;
     }
   }
@@ -67,7 +76,7 @@ const ProjectWrapperStyled = styled.section`
     gap: 2rem;
 
     .carouselTitle {
-      background-color: rgba(111, 1, 111, 0.5);
+      /* background-color: rgba(111, 1, 111, 0.5); */
       width: calc(180px - 2rem);
     }
     .carouselColumn {
@@ -88,16 +97,22 @@ const ProjectWrapperStyled = styled.section`
 
     .container {
       /* background-color: rgba(1, 1, 1, 0.2); */
+      position: relative;
       overflow: auto;
       width: 100%;
       height: 100vh;
-      padding: 5rem 0 10rem;
+      /* padding: 5rem 0 10rem; */
+      /* top: 5rem; */
+      padding-top: 5rem;
       display: grid;
-      grid-template-columns: 1fr 250px;
-      gap: 2rem;
-      /* strong {
-        background-color: rgba(1, 1, 1, 0.4);
-      } */
+      grid-template-columns: 3fr 2fr;
+      gap: 4rem;
+      img {
+        display: block;
+        width: 100%;
+        /* max-width: 400px; */
+        transition: 0.3s;
+      }
 
       .content {
         height: 500px;
@@ -107,6 +122,7 @@ const ProjectWrapperStyled = styled.section`
         padding: 40px;
 
         position: relative;
+        /* overflow: hidden; */
 
         &:hover::before {
           opacity: 1;
@@ -124,6 +140,18 @@ const ProjectWrapperStyled = styled.section`
           transition: opacity 500ms;
           z-index: -1;
         }
+      }
+
+      .left {
+        /* overflow-x: hidden; */
+        width: 100%;
+      }
+
+      .right {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+        /* overflow-x: hidden; */
       }
 
       &::-webkit-scrollbar {
@@ -188,15 +216,28 @@ const ProjectWrapper = (props) => {
             <div dangerouslySetInnerHTML={{ __html: props.blog.body }}></div>
           </div>
           <div className="right">
-            <Image
-              src={`/images/${props.imgs[0]}`}
-              alt={props.title}
-              className="images"
-              width={500}
-              height={800}
-              // loading="lazy"
-              // placeholder="blur"
-            />
+            <div className="column">
+              <Image
+                src={`/images/${props.imgs[0]}`}
+                alt={props.title}
+                className="images"
+                width={500}
+                height={800}
+                // loading="lazy"
+                // placeholder="blur"
+              />
+            </div>
+            <div className="column">
+              <Image
+                src={`/images/${props.imgs[0]}`}
+                alt={props.title}
+                className="images"
+                width={500}
+                height={800}
+                // loading="lazy"
+                // placeholder="blur"
+              />
+            </div>
           </div>
         </div>
       </div>
