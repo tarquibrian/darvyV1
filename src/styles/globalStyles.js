@@ -102,6 +102,7 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     text-decoration-skip-ink: auto;
     position: relative;
+    color: #fff;
   }
   svg {
     /* color: ${({ theme }) => theme?.colors.baseColor}; */
@@ -110,7 +111,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: var(--ff-sofia);
     font-size: var(--fz-md);
     margin: 0 0 15px 0;
-    /* color: #fff; */
+    color: #fff;
 
     &:last-child,
     &:last-of-type {
@@ -122,7 +123,7 @@ export const GlobalStyle = createGlobalStyle`
     /* font-size: 1rem; */
   }
   button {
-    /* color: ${({ theme }) => theme?.colors?.baseColor}; */
+    color: #fff;
     background-color: transparent;
     border-style: none;
   }

@@ -2,6 +2,8 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { useAppContext } from "src/context/app.context";
 import styled from "styled-components";
+import { Cloudinary } from "cloudinary-core";
+import { Video, CloudinaryContext } from "cloudinary-react";
 
 const ProjectWrapperStyled = styled.section`
   padding: 0;
@@ -107,6 +109,7 @@ const ProjectWrapperStyled = styled.section`
       display: grid;
       grid-template-columns: 3fr 1fr;
       gap: 2rem;
+
       img {
         display: block;
         width: 100%;
@@ -142,7 +145,7 @@ const ProjectWrapperStyled = styled.section`
       }
 
       .left {
-        padding-top: 8rem;
+        padding-top: 18rem;
         padding-bottom: 12rem;
         overflow-x: hidden;
         width: 100%;
@@ -152,6 +155,13 @@ const ProjectWrapperStyled = styled.section`
         } */
         article {
           max-width: 80%;
+          /* -webkit-backdrop-filter: blur(10px); */
+          /* backdrop-filter: blur(10px); */
+
+          .header__article-title {
+            font-size: var(--fz-subtitle);
+            font-weight: 800;
+          }
         }
         &::-webkit-scrollbar {
           display: none;
@@ -199,6 +209,11 @@ const ProjectWrapperStyled = styled.section`
 const ProjectWrapper = (props) => {
   const { state, updateColor, changeTheme } = useAppContext();
   const ref = useRef(null);
+  const videoRef = useRef();
+  const cloudinaryRef = useRef();
+  const playerRef = useRef();
+  const cld = new Cloudinary({ cloud_name: "dskypy0xt" });
+  console.log(cld);
 
   const handleOnMouseMove = (e) => {
     const rect = ref?.current?.getBoundingClientRect(),
@@ -213,11 +228,28 @@ const ProjectWrapper = (props) => {
     updateColor(props.threeColors);
     changeTheme(props.themeMode);
     window.addEventListener("mousemove", handleOnMouseMove);
+    // const videoPlayer = cld.videoPlayer("video-player", {
+    //   muted: true,
+    //   controls: true,
+    // });
+    // videoPlayer.source("video-blog/cat");
   }, []);
 
   console.log(props);
   return (
     <ProjectWrapperStyled>
+      <CloudinaryContext cloud_name="dskypy0xt">
+        <div>
+          <Video
+            publicId="samples/elephants"
+            width="100%"
+            // controls
+            innerRef={videoRef}
+            autoPlay
+            
+          />
+        </div>
+      </CloudinaryContext>
       <div
         className={`projectWrapper ${
           state.currentTheme === "dark" ? "dark" : "light"
@@ -236,9 +268,9 @@ const ProjectWrapper = (props) => {
         </div>
         <div className="container text">
           <div className="left text">
-            <article>
-              <header>
-                <h1>{props.blog.title}</h1>
+            <article className="">
+              <header className="header__article">
+                <h1 className="header__article-title">{props.blog.title}</h1>
               </header>
               <div dangerouslySetInnerHTML={{ __html: props.blog.body }}></div>
             </article>
