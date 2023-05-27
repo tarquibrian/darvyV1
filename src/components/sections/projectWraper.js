@@ -145,7 +145,7 @@ const ProjectWrapperStyled = styled.section`
       }
 
       .left {
-        padding-top: 18rem;
+        padding-top: 4rem;
         padding-bottom: 12rem;
         overflow-x: hidden;
         width: 100%;
@@ -153,10 +153,15 @@ const ProjectWrapperStyled = styled.section`
         /* &::-webkit-scrollbar {
           display: none;
         } */
+        .video-content {
+          max-width: 80%;
+          
+        }
         article {
           max-width: 80%;
           /* -webkit-backdrop-filter: blur(10px); */
           /* backdrop-filter: blur(10px); */
+          background-color: lightblue;
 
           .header__article-title {
             font-size: var(--fz-subtitle);
@@ -229,18 +234,6 @@ const ProjectWrapper = (props) => {
   console.log(props);
   return (
     <ProjectWrapperStyled>
-      <CloudinaryContext cloud_name="dskypy0xt">
-        <div>
-          <Video
-            publicId="samples/Ecommerce-website_qewqxj"
-            width="100%"
-            // controls
-            innerRef={videoRef}
-            autoPlay
-            loop
-          />
-        </div>
-      </CloudinaryContext>
       <div
         className={`projectWrapper ${
           state.currentTheme === "dark" ? "dark" : "light"
@@ -259,6 +252,18 @@ const ProjectWrapper = (props) => {
         </div>
         <div className="container text">
           <div className="left text">
+            <CloudinaryContext cloud_name="dskypy0xt">
+              <div className="video-content">
+                <Video
+                  publicId="samples/Ecommerce-website_qewqxj"
+                  width="100%"
+                  // controls
+                  innerRef={videoRef}
+                  autoPlay
+                  loop
+                />
+              </div>
+            </CloudinaryContext>
             <article className="">
               <header className="header__article">
                 <h1 className="header__article-title">{props.blog.title}</h1>
