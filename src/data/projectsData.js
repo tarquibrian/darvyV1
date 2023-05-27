@@ -28,6 +28,10 @@
 // import imgProject5 from "../images/project-img5.png";
 // import IconPWA from "src/components/icons/pwa";
 
+const blogContent = `
+
+`;
+
 export const projectsData = {
   es: {
     title: ".Proyectos",
@@ -366,11 +370,35 @@ export const projectsData = {
         title: "Ecommerce Website",
         desc: `Modern <strong>clothing</strong> ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.`,
         blog: {
-          title: "Ecommerce Website",
+          title: "Ecommerce Websitee",
+          body: `
+
+          <p>Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.</p>
+
+          <p>Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.</p>
+          
+          <div className="content-picture">
+          <img src="/images/project-img3.png" alt="ecommerce website" />  
+          <span className="content-picture-desc">Modern clothing ecommerce web application that offers a wide selection of clothing</span>            
+          </div>
+          
+          <p>Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.</p>
+          
+          <p>Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.</p>
+          
+          <div className="content-picture">
+          <img src="/images/project-img3.png" alt="ecommerce website" />  
+          <span className="content-picture-desc">Modern clothing ecommerce web application that offers a wide selection of clothing</span>            
+          </div>
+          
+          <p>Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.</p>
+          
+          <p>Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.</p>
+          `,
           wrapper: [
             [
               [
-                "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+                "Modern <strong>clothing</strong> ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
                 "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
                 "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
                 "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
@@ -393,7 +421,7 @@ export const projectsData = {
           ],
 
           conclusion: [
-            "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
+            ``,
             "Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.",
           ],
         },

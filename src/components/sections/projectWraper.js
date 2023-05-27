@@ -6,10 +6,13 @@ import styled from "styled-components";
 const ProjectWrapperStyled = styled.section`
   padding: 0;
   min-height: 500px;
-  width: 80%;
+  width: 100%;
+  /* max-width: calc(100% - 100px); */
+  max-width: 85%;
   margin: auto;
   height: 100vh;
   overflow: hidden;
+  /* background-color: lightblue; */
   .dark {
     .text {
       color: rgba(230, 230, 230, 1);
@@ -89,9 +92,9 @@ const ProjectWrapperStyled = styled.section`
       display: grid;
       grid-template-columns: 1fr 250px;
       gap: 2rem;
-      strong {
+      /* strong {
         background-color: rgba(1, 1, 1, 0.4);
-      }
+      } */
 
       .content {
         height: 500px;
@@ -176,60 +179,10 @@ const ProjectWrapper = (props) => {
         </div>
         <div className="container text">
           <div className="left text">
-            <header>{props.blog.title}</header>
-
-            {props.blog.wrapper.map((item, i) => {
-              console.log("items" + i, item);
-              return (
-                <div key={i}>
-                  {item[0].map((item2, i) => (
-                    <p key={i} dangerouslySetInnerHTML={{ __html: item2 }} />
-                  ))}
-                  <Image
-                    src={item[1][0]}
-                    alt={item[1][1]}
-                    width={800}
-                    height={700}
-                  />
-                  <span dangerouslySetInnerHTML={{ __html: item[1][1] }}></span>
-                </div>
-              );
-            })}
-
-            {/* {props.blog.descOne.map((item, i) => (
-              <p key={i} dangerouslySetInnerHTML={{ __html: item }} />
-            ))}
-
-            <Image
-              src={props.blog.imgOne[0]}
-              alt={props.blog.imgOne[1]}
-              width={800}
-              height={700}
-            />
-            <span
-              dangerouslySetInnerHTML={{ __html: props.blog.imgOne[1] }}
-            ></span>
-            {props.blog.descTwo.map((item, i) => (
-              <p key={i} dangerouslySetInnerHTML={{ __html: item }} />
-            ))}
-            <Image
-              src={props.blog.imgTwo[0]}
-              alt={props.blog.imgTwo[1]}
-              width={800}
-              height={700}
-            />
-            <span
-              dangerouslySetInnerHTML={{ __html: props.blog.imgOne[1] }}
-            ></span>
-
-            <p dangerouslySetInnerHTML={{ __html: props.blog.conclusion }}></p> */}
-            {/* <div
-              className="text"
-              ref={ref}
-              aria-readonly
-              dangerouslySetInnerHTML={{ __html: props.desc }}
-            /> */}
-            <div />
+            <header>
+              <h1>{props.blog.title}</h1>
+            </header>
+            <div dangerouslySetInnerHTML={{ __html: props.blog.body }}></div>
           </div>
           <div className="right">
             <Image

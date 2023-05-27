@@ -76,7 +76,8 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
     margin: 0 auto;
     width: 100%;
-    max-width: 1600px;
+    /* max-width: calc(100% - 200px); */
+    /* max-width: 1600px; */
     min-height: 100vh;
     
     /* overflow: hidden; */
