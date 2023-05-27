@@ -210,10 +210,6 @@ const ProjectWrapper = (props) => {
   const { state, updateColor, changeTheme } = useAppContext();
   const ref = useRef(null);
   const videoRef = useRef();
-  const cloudinaryRef = useRef();
-  const playerRef = useRef();
-  const cld = new Cloudinary({ cloud_name: "dskypy0xt" });
-  console.log(cld);
 
   const handleOnMouseMove = (e) => {
     const rect = ref?.current?.getBoundingClientRect(),
@@ -228,11 +224,6 @@ const ProjectWrapper = (props) => {
     updateColor(props.threeColors);
     changeTheme(props.themeMode);
     window.addEventListener("mousemove", handleOnMouseMove);
-    // const videoPlayer = cld.videoPlayer("video-player", {
-    //   muted: true,
-    //   controls: true,
-    // });
-    // videoPlayer.source("video-blog/cat");
   }, []);
 
   console.log(props);
@@ -241,12 +232,12 @@ const ProjectWrapper = (props) => {
       <CloudinaryContext cloud_name="dskypy0xt">
         <div>
           <Video
-            publicId="samples/elephants"
+            publicId="samples/Ecommerce-website_qewqxj"
             width="100%"
             // controls
             innerRef={videoRef}
             autoPlay
-            
+            loop
           />
         </div>
       </CloudinaryContext>
