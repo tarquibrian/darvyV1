@@ -6,13 +6,13 @@ import styled from "styled-components";
 const ProjectWrapperStyled = styled.section`
   padding: 0;
   min-height: 500px;
-  width: 100%;
+  width: 86%;
   /* max-width: calc(100% - 100px); */
-  max-width: 85%;
+  max-width: 1640px;
   margin: auto;
   height: 100vh;
   overflow: hidden;
-  /* background-color: lightblue; */
+  background-color: rgba(1, 1, 1, 0.1);
   .dark {
     .text {
       color: rgba(230, 230, 230, 1);
@@ -64,9 +64,12 @@ const ProjectWrapperStyled = styled.section`
   .projectWrapper {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 1rem;
-    /* overflow: auto; */
+    gap: 2rem;
 
+    .carouselTitle {
+      background-color: rgba(111, 1, 111, 0.5);
+      width: calc(180px - 2rem);
+    }
     .carouselColumn {
       transform: rotate(180deg) translateY(115%);
       animation: textCarousel 28s linear infinite;

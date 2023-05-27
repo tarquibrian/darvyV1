@@ -33,7 +33,7 @@ import { projectsData } from "src/data/projectsData";
 
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
-  max-width: 1300px;
+  max-width: 1280px;
   margin: auto;
   /* overflow: hidden; */
 

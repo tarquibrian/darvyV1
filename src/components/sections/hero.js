@@ -34,7 +34,7 @@ const HeroStyled = styled(motion.section)`
     display: grid;
     grid-template-columns: minmax(350px, 1fr) minmax(400px, 530px);
     align-items: center;
-    max-width: 1300px;
+    max-width: 1280px;
     gap: 2rem;
     margin: auto;
     overflow: hidden;
