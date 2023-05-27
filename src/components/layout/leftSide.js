@@ -57,10 +57,10 @@ const SideStyle = styled(motion.div)`
       color: white;
     }
     &::before {
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 255, 255, 0);
     }
     &::after {
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 255, 255, 0);
     }
   }
   .light {
@@ -68,10 +68,10 @@ const SideStyle = styled(motion.div)`
       color: black;
     }
     &::before {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0);
     }
     &::after {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0);
     }
   }
 

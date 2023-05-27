@@ -108,8 +108,9 @@ export const GlobalStyle = createGlobalStyle`
   }
   p {
     font-family: var(--ff-sofia);
+    font-size: var(--fz-md);
     margin: 0 0 15px 0;
-    color: #fff;
+    /* color: #fff; */
 
     &:last-child,
     &:last-of-type {
@@ -117,8 +118,8 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   h1, h2,h3,h4,h5 {
-    color: #fff;
-    font-size: 1rem;
+    /* color: #fff; */
+    /* font-size: 1rem; */
   }
   button {
     /* color: ${({ theme }) => theme?.colors?.baseColor}; */

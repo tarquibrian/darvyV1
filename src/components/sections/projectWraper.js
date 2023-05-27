@@ -98,20 +98,19 @@ const ProjectWrapperStyled = styled.section`
     .container {
       /* background-color: rgba(1, 1, 1, 0.2); */
       position: relative;
-      overflow: auto;
+      overflow: hidden;
       width: 100%;
       height: 100vh;
       /* padding: 5rem 0 10rem; */
       /* top: 5rem; */
-      padding-top: 5rem;
+      /* padding-top: 8rem; */
       display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 4rem;
+      grid-template-columns: 3fr 1fr;
+      gap: 2rem;
       img {
         display: block;
         width: 100%;
         /* max-width: 400px; */
-        transition: 0.3s;
       }
 
       .content {
@@ -143,15 +142,42 @@ const ProjectWrapperStyled = styled.section`
       }
 
       .left {
-        /* overflow-x: hidden; */
+        padding-top: 8rem;
+        padding-bottom: 12rem;
+        overflow-x: hidden;
         width: 100%;
+        /* max-width: 80%; */
+        /* &::-webkit-scrollbar {
+          display: none;
+        } */
+        article {
+          max-width: 80%;
+        }
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
 
       .right {
-        display: flex;
-        gap: 1rem;
-        width: 100%;
-        /* overflow-x: hidden; */
+        position: relative;
+
+        padding-top: 8rem;
+        /* margin-bottom: 10rem; */
+        padding-bottom: 12rem;
+        overflow-x: hidden;
+        .gallery {
+          display: flex;
+          gap: 1rem;
+          width: 100%;
+        }
+        .column {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
 
       &::-webkit-scrollbar {
@@ -210,33 +236,55 @@ const ProjectWrapper = (props) => {
         </div>
         <div className="container text">
           <div className="left text">
-            <header>
-              <h1>{props.blog.title}</h1>
-            </header>
-            <div dangerouslySetInnerHTML={{ __html: props.blog.body }}></div>
+            <article>
+              <header>
+                <h1>{props.blog.title}</h1>
+              </header>
+              <div dangerouslySetInnerHTML={{ __html: props.blog.body }}></div>
+            </article>
           </div>
           <div className="right">
-            <div className="column">
-              <Image
-                src={`/images/${props.imgs[0]}`}
-                alt={props.title}
-                className="images"
-                width={500}
-                height={800}
-                // loading="lazy"
-                // placeholder="blur"
-              />
-            </div>
-            <div className="column">
-              <Image
-                src={`/images/${props.imgs[0]}`}
-                alt={props.title}
-                className="images"
-                width={500}
-                height={800}
-                // loading="lazy"
-                // placeholder="blur"
-              />
+            <div className="gallery">
+              <div className="column">
+                <Image
+                  src={`/images/p3-1-min.png`}
+                  alt={props.title}
+                  className="images"
+                  width={500}
+                  height={800}
+                  // loading="lazy"
+                  // placeholder="blur"
+                />
+                <Image
+                  src={`/images/p3-2-min.png`}
+                  alt={props.title}
+                  className="images"
+                  width={500}
+                  height={800}
+                  // loading="lazy"
+                  // placeholder="blur"
+                />
+                <Image
+                  src={`/images/p3-3-min.png`}
+                  alt={props.title}
+                  className="images"
+                  width={500}
+                  height={800}
+                  // loading="lazy"
+                  // placeholder="blur"
+                />
+              </div>
+              <div className="column">
+                <Image
+                  src={`/images/${props.imgs[0]}`}
+                  alt={props.title}
+                  className="images"
+                  width={500}
+                  height={800}
+                  // loading="lazy"
+                  // placeholder="blur"
+                />
+              </div>
             </div>
           </div>
         </div>
