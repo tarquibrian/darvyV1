@@ -359,7 +359,12 @@ const WrapperContent = ({
   return (
     <motion.article className={`projects__wrapper`} id={id} ref={refView}>
       <div className="wrapper-effect">
-        <Link href={`/project/${id}`} scroll={false}>
+        <a
+          href={links[0].path}
+          // scroll={false}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <motion.div
             className="projects__wrapper-picture"
             initial="hidden"
@@ -404,7 +409,7 @@ const WrapperContent = ({
               </CardEffect>
             </div>
           </motion.div>
-        </Link>
+        </a>
       </div>
 
       <motion.div
