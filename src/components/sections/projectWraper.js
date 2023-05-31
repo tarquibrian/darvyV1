@@ -145,24 +145,23 @@ const ProjectWrapperStyled = styled.section`
       }
 
       .left {
-        padding-top: 4rem;
+        padding-top: 8rem;
         padding-bottom: 12rem;
         overflow-x: hidden;
         width: 100%;
+        display: grid;
+        gap: 4rem;
         /* max-width: 80%; */
         /* &::-webkit-scrollbar {
           display: none;
         } */
         .video-content {
-          max-width: 80%;
-          
+          max-width: 70%;
         }
         article {
           max-width: 80%;
           /* -webkit-backdrop-filter: blur(10px); */
           /* backdrop-filter: blur(10px); */
-          background-color: lightblue;
-
           .header__article-title {
             font-size: var(--fz-subtitle);
             font-weight: 800;
@@ -184,12 +183,25 @@ const ProjectWrapperStyled = styled.section`
           display: flex;
           gap: 1rem;
           width: 100%;
+          .column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
         }
-        .column {
+
+        .box {
+          position: relative;
           display: flex;
-          flex-direction: column;
-          gap: 1rem;
+          border: 2px solid rgba(0, 0, 0, 0.4);
+          border-radius: var(--border-radius);
+          max-width: 920px;
+          padding: 40px;
+          background: rgba(0, 0, 0, 0.1);
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
         }
+
         &::-webkit-scrollbar {
           display: none;
         }
@@ -272,7 +284,8 @@ const ProjectWrapper = (props) => {
             </article>
           </div>
           <div className="right">
-            <div className="gallery">
+            <div className="box"></div>
+            {/* <div className="gallery">
               <div className="column">
                 <Image
                   src={`/images/p3-1-min.png`}
@@ -313,7 +326,7 @@ const ProjectWrapper = (props) => {
                   // placeholder="blur"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

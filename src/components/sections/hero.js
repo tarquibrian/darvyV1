@@ -361,7 +361,7 @@ const Hero = () => {
 
         <div className="hero__container-carousel">
           <div className="carousel-card">
-            {/* <div className="wrapper-carousel">
+            <div className="wrapper-carousel">
               <ColumnCarousel
                 className="column"
                 animationTime={"15s"}
@@ -409,7 +409,7 @@ const Hero = () => {
                 <Image src={imgHero11} alt="img from hero" placeholder="blur" />
                 <Image src={imgHero13} alt="img from hero" placeholder="blur" />
               </ColumnCarousel>
-            </div> */}
+            </div>
           </div>
         </div>
       </motion.div>
