@@ -46,14 +46,34 @@ const Sphere = () => {
   // };
 
   useFrame(({ clock }, delta) => {
-    const time = clock.elapsedTime;
     mesh.current.material.uniforms.time.value += 0.007;
     mesh.current.rotation.z += 0.009;
+      uniforms.color.value.r += clock.elapsedTime * -0.08;
 
-    // if (uniforms.color.value.r > 0.1) {
-    //   mesh.current.material.uniforms.color.value.r += clock.elapsedTime * -0.08;
-    //   console.log(uniforms.color.value.r);
+    if (uniforms.color.value.r < state.threeColors.color[0]) {
+      uniforms.color.value.r += clock.elapsedTime * 0.08;
+    } else {
+      if (uniforms.color.value.r > state.threeColors.color[0]) {
+        uniforms.color.value.r += clock.elapsedTime * -0.08;
+      }
+    }
+
+    // if (uniforms.color.value.g < state.threeColors.color[1]) {
+    //   uniforms.color.value.g += clock.elapsedTime * 0.08;
+    // } else {
+    //   if (uniforms.color.value.g > state.threeColors.color[1]) {
+    //     uniforms.color.value.g += clock.elapsedTime * -0.08;
+    //   }
     // }
+
+    // if (uniforms.color.value.b < state.threeColors.color[1]) {
+    //   uniforms.color.value.b += clock.elapsedTime * 0.08;
+    // } else {
+    //   if (uniforms.color.value.b > state.threeColors.color[1]) {
+    //     uniforms.color.value.b += clock.elapsedTime * -0.08;
+    //   }
+    // }
+
     // uniforms.color.value.b = 0.8;
     // function updateColor(time, cColor, nColor) {
     //   // console.log(nColor);

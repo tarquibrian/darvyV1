@@ -235,7 +235,7 @@ const NavbarContentResponsive = styled.div`
 `;
 
 const Header = () => {
-  const { state, toggleLanguage, changeTheme } = useAppContext();
+  const { state, toggleLanguage, changeTheme, updateColor } = useAppContext();
   const [scrollIsTop, setIscrollIsTop] = useState(true);
   const [scrollIsBottom, setIscrollIsBottom] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -290,6 +290,17 @@ const Header = () => {
         <span className="text">
           {/* <button onClick={() => changeTheme("light")}>ligh</button> */}
           {/* <button onClick={() => changeTheme("dark")}>dark</button> */}
+          <button
+            onClick={() =>
+              updateColor({
+                color: [0.8, 0.95, 0.94],
+                colorBase: [0.38, 0.09, 0.57],
+                colorDeep: [0, 0, 0],
+              })
+            }
+          >
+            UPDATE COLOR
+          </button>
           <LinksContainer>
             <ol>
               <li>
