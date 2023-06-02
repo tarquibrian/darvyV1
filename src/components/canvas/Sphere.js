@@ -11,7 +11,9 @@ const Sphere = () => {
   const mesh = useRef();
 
   const { color, colorBase, colorDeep } = state.threeColors;
-
+  // color: [0.8, 0.95, 0.94],
+  // colorBase: [0.38, 0.09, 0.57],
+  // colorDeep: [0, 0, 0]
   const uniforms = useMemo(
     () => ({
       time: { value: 0 },
@@ -37,18 +39,40 @@ const Sphere = () => {
     },
   });
 
-  useFrame((state, delta) => {
+  // const updateColor = (currentColor, newColor) => {
+  //   if (currentColor < newColor) {
+
+  //   }
+  // };
+
+  useFrame(({ clock }, delta) => {
+    const time = clock.elapsedTime;
     mesh.current.material.uniforms.time.value += 0.007;
     mesh.current.rotation.z += 0.009;
 
-    // if (uniforms.color.value.b <= 0.9) {
-    //   mesh.current.material.uniforms.color.value.b =
-    //     state.clock.elapsedTime * 0.8;
+    // if (uniforms.color.value.r > 0.1) {
+    //   mesh.current.material.uniforms.color.value.r += clock.elapsedTime * -0.08;
+    //   console.log(uniforms.color.value.r);
     // }
+    // uniforms.color.value.b = 0.8;
+    // function updateColor(time, cColor, nColor) {
+    //   // console.log(nColor);
+
+    //   if (cColor <= nColor) {
+    //     cColor = time * 1.8;
+    //     console.log(cColor);
+    //   } else {
+    //     cColor = time * -0.8;
+    //   }
+    // }
+
+    // updateColor(time, uniforms.color.value.b, 0.9);
   });
 
+  console.log(uniforms.color.value.b);
+
   useEffect(() => {}, []);
-  console.log(state);
+  console.log(state.threeColors.color[0]);
 
   return (
     <mesh ref={mesh}>
