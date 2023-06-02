@@ -53,6 +53,23 @@ const Sphere = () => {
     if (uniforms.color.value.r < state.threeColors.color[0]) {
       uniforms.color.value.r += clock.elapsedTime * 0.08;
     }
+    if (uniforms.color.value.r < state.threeColors.color[0]) {
+      uniforms.color.value.r += clock.elapsedTime * -0.08;
+    }
+
+    if (uniforms.color.value.g < state.threeColors.color[1]) {
+      uniforms.color.value.g += clock.elapsedTime * 0.08;
+    }
+    if (uniforms.color.value.g < state.threeColors.color[1]) {
+      uniforms.color.value.g += clock.elapsedTime * -0.08;
+    }
+
+    if (uniforms.color.value.b < state.threeColors.color[2]) {
+      uniforms.color.value.b += clock.elapsedTime * 0.08;
+    }
+    if (uniforms.color.value.b < state.threeColors.color[2]) {
+      uniforms.color.value.b += clock.elapsedTime * -0.08;
+    }
 
     // uniforms.color.value.b = 0.8;
     // function updateColor(time, cColor, nColor) {
