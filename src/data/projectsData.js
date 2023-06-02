@@ -28,10 +28,6 @@
 // import imgProject5 from "../images/project-img5.png";
 // import IconPWA from "src/components/icons/pwa";
 
-const blogContent = `
-
-`;
-
 export const projectsData = {
   es: {
     title: ".Proyectos",
