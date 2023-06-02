@@ -37,13 +37,17 @@ const Sphere = () => {
     },
   });
 
-  useFrame(() => {
+  useFrame((state, delta) => {
     mesh.current.material.uniforms.time.value += 0.007;
     mesh.current.rotation.z += 0.009;
+
+    if (uniforms.color.value.b <= 0.9) {
+      mesh.current.material.uniforms.color.value.b =
+        state.clock.elapsedTime * 0.8;
+    }
   });
-  // useEffect(() => {
-  //   console.log(color);
-  // }, []);
+
+  useEffect(() => {}, []);
 
   return (
     <mesh ref={mesh}>
