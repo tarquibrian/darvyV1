@@ -364,7 +364,7 @@ export const projectsData = {
         id: "3",
         label: "Web Project",
         title: "Ecommerce Website",
-        desc: `Modern <strong>clothing</strong> ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.`,
+        desc: `Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.`,
         blog: {
           title: "Ecommerce Websitee",
           body: `

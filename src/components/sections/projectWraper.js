@@ -238,12 +238,11 @@ const ProjectWrapper = (props) => {
   };
 
   useEffect(() => {
-    updateColor(props.threeColors);
-    changeTheme(props.themeMode);
+    updateColor(props?.threeColors);
+    changeTheme(props?.themeMode);
     window.addEventListener("mousemove", handleOnMouseMove);
   }, []);
 
-  console.log(props);
   return (
     <ProjectWrapperStyled>
       <div
@@ -253,13 +252,13 @@ const ProjectWrapper = (props) => {
       >
         <div className="carouselTitle">
           <div className="carouselColumn">
-            <span className="text">{props.title}</span>
+            <span className="text">{props?.title}</span>
             <span className="text">-</span>
-            <span className="text">{props.label}</span>
+            <span className="text">{props?.label}</span>
             <span className="text">-</span>
-            <span className="text">{props.title}</span>
+            <span className="text">{props?.title}</span>
             <span className="text">-</span>
-            <span className="text">{props.label}</span>
+            <span className="text">{props?.label}</span>
           </div>
         </div>
         <div className="container text">
@@ -278,9 +277,9 @@ const ProjectWrapper = (props) => {
             </CloudinaryContext>
             <article className="">
               <header className="header__article">
-                <h1 className="header__article-title">{props.blog.title}</h1>
+                <h1 className="header__article-title">{props?.blog?.title}</h1>
               </header>
-              <div dangerouslySetInnerHTML={{ __html: props.blog.body }}></div>
+              <div dangerouslySetInnerHTML={{ __html: props?.blog?.body }}></div>
             </article>
           </div>
           <div className="right">
@@ -289,7 +288,7 @@ const ProjectWrapper = (props) => {
               <div className="column">
                 <Image
                   src={`/images/p3-1-min.png`}
-                  alt={props.title}
+                  alt={props?.title}
                   className="images"
                   width={500}
                   height={800}
@@ -298,7 +297,7 @@ const ProjectWrapper = (props) => {
                 />
                 <Image
                   src={`/images/p3-2-min.png`}
-                  alt={props.title}
+                  alt={props?.title}
                   className="images"
                   width={500}
                   height={800}
@@ -307,7 +306,7 @@ const ProjectWrapper = (props) => {
                 />
                 <Image
                   src={`/images/p3-3-min.png`}
-                  alt={props.title}
+                  alt={props?.title}
                   className="images"
                   width={500}
                   height={800}
@@ -317,8 +316,8 @@ const ProjectWrapper = (props) => {
               </div>
               <div className="column">
                 <Image
-                  src={`/images/${props.imgs[0]}`}
-                  alt={props.title}
+                  src={`/images/${props?.imgs[0]}`}
+                  alt={props?.title}
                   className="images"
                   width={500}
                   height={800}
