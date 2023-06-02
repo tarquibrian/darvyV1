@@ -339,7 +339,6 @@ const WrapperContent = ({
   typeProject,
   techStack,
   client,
-  threeColors,
 }) => {
   const controls = useAnimation();
   const [refView, inView] = useInView();
@@ -353,18 +352,12 @@ const WrapperContent = ({
     if (inView) {
       controls.start("visible");
     }
-    console.log(threeColors);
   }, [controls, inView]);
 
   return (
     <motion.article className={`projects__wrapper`} id={id} ref={refView}>
       <div className="wrapper-effect">
-        <a
-          href={links[0].path}
-          // scroll={false}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href={`/project/${id}`} scroll={false}>
           <motion.div
             className="projects__wrapper-picture"
             initial="hidden"
@@ -409,7 +402,7 @@ const WrapperContent = ({
               </CardEffect>
             </div>
           </motion.div>
-        </a>
+        </Link>
       </div>
 
       <motion.div
