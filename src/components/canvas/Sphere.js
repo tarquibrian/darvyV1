@@ -14,20 +14,33 @@ const Sphere = () => {
   // color: [0.8, 0.95, 0.94],
   // colorBase: [0.38, 0.09, 0.57],
   // colorDeep: [0, 0, 0]
-  const uniforms = useMemo(
-    () => ({
-      time: { value: 0 },
-      color: { value: new THREE.Color(color[0], color[1], color[2]) },
-      colorBase: {
-        value: new THREE.Color(colorBase[0], colorBase[1], colorBase[2]),
-      },
-      colorDeep: {
-        value: new THREE.Color(colorDeep[0], colorDeep[1], colorDeep[2]),
-      },
-      resolution: { value: new THREE.Vector4() },
-    }),
-    [color, colorBase, colorDeep]
-  );
+  // const uniforms = useMemo(
+  //   () => ({
+  //     time: { value: 0 },
+  //     color: { value: new THREE.Color(color[0], color[1], color[2]) },
+  //     colorBase: {
+  //       value: new THREE.Color(colorBase[0], colorBase[1], colorBase[2]),
+  //     },
+  //     colorDeep: {
+  //       value: new THREE.Color(colorDeep[0], colorDeep[1], colorDeep[2]),
+  //     },
+  //     resolution: { value: new THREE.Vector4() },
+  //   }),
+  //   [color, colorBase, colorDeep]
+  // );
+
+  const uniforms = {
+    time: { value: 0 },
+    color: { value: [0.8, 0.95, 0.94] },
+    colorBase: {
+      value: [0.38, 0.09, 0.57],
+    },
+    colorDeep: {
+      value: [0, 0, 0],
+    },
+    resolution: { value: new THREE.Vector4() },
+  };
+  console.log(uniforms.color.value[0], state.threeColors.color[0]);
 
   const myShader = new THREE.ShaderMaterial({
     uniforms: uniforms,
@@ -39,57 +52,24 @@ const Sphere = () => {
     },
   });
 
-  // const updateColor = (currentColor, newColor) => {
-  //   if (currentColor < newColor) {
-
-  //   }
-  // };
-
   useFrame(({ clock }, delta) => {
     mesh.current.material.uniforms.time.value += 0.007;
     mesh.current.rotation.z += 0.009;
     // uniforms.color.value.r += clock.elapsedTime * -0.08;
 
-    if (uniforms.color.value.r < state.threeColors.color[0]) {
-      uniforms.color.value.r += clock.elapsedTime * 0.08;
-    }
-    if (uniforms.color.value.r < state.threeColors.color[0]) {
-      uniforms.color.value.r += clock.elapsedTime * -0.08;
-    }
+    // uniforms.color.value[0] = clock.elapsedTime * 0.5;
 
-    if (uniforms.color.value.g < state.threeColors.color[1]) {
-      uniforms.color.value.g += clock.elapsedTime * 0.08;
-    }
-    if (uniforms.color.value.g < state.threeColors.color[1]) {
-      uniforms.color.value.g += clock.elapsedTime * -0.08;
-    }
-
-    if (uniforms.color.value.b < state.threeColors.color[2]) {
-      uniforms.color.value.b += clock.elapsedTime * 0.08;
-    }
-    if (uniforms.color.value.b < state.threeColors.color[2]) {
-      uniforms.color.value.b += clock.elapsedTime * -0.08;
-    }
-
-    // uniforms.color.value.b = 0.8;
-    // function updateColor(time, cColor, nColor) {
-    //   // console.log(nColor);
-
-    //   if (cColor <= nColor) {
-    //     cColor = time * 1.8;
-    //     console.log(cColor);
-    //   } else {
-    //     cColor = time * -0.8;
-    //   }
+    // if (uniforms.color.value[0] < state.threeColors.color[0]) {
+    //   uniforms.color.value[0] += clock.elapsedTime * 0.5;
     // }
-
-    // updateColor(time, uniforms.color.value.b, 0.9);
+    // if (uniforms.color.value[0] > state.threeColors.color[0]) {
+    //   uniforms.color.value[0] += clock.elapsedTime * -0.5;
+    // }
+    // console.log(clock.elapsedTime)
   });
 
-  console.log(uniforms);
-
-  useEffect(() => {}, []);
-  console.log(state.threeColors.color[0]);
+  console.log(uniforms.color.value[0], state.threeColors.color[0]);
+  // useEffect(() => {}, []);
 
   return (
     <mesh ref={mesh}>

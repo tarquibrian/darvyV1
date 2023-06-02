@@ -293,9 +293,9 @@ const Header = () => {
           <button
             onClick={() =>
               updateColor({
-                color: [0.8, 0.95, 0.94],
+                color: [0, 0.14, 0.24],
                 colorBase: [0.38, 0.09, 0.57],
-                colorDeep: [0, 0, 0],
+                colorDeep: [0.86, 0.93, 0.96],
               })
             }
           >
