@@ -27,24 +27,26 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 16px;
+    width: 12px;
     background: transparent;
   }
         
   ::-webkit-scrollbar-track {
     border-radius: 8px;
+    background: transparent;
   }
         
   ::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    border: 4px solid transparent;
+    border: 2px solid transparent;
     background-clip: content-box;
-    background-color: white;
-    background-image: radial-gradient(
+    background-color: rgba(150,150,150,1)
+    /* background-color: transparent; */
+    /* background-image: radial-gradient(
       circle farthest-corner at 10% 20%,
       rgba(255, 229, 168, 1) 0%,
       rgba(251, 174, 222, 1) 100.7%
-    );
+    ); */
   }
 
   body {
