@@ -47,7 +47,7 @@ const Project = () => {
 
   return (
     <Layout>
-      {/* <ProjectWrapper {...project} /> */}
+      <ProjectWrapper {...project} />
     </Layout>
   );
 };

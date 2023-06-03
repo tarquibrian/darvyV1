@@ -238,7 +238,7 @@ const ProjectWrapper = (props) => {
   };
 
   useEffect(() => {
-    // updateColor(props?.threeColors);
+    updateColor(props?.threeColors);
     changeTheme(props?.themeMode);
     window.addEventListener("mousemove", handleOnMouseMove);
   }, []);
@@ -279,7 +279,9 @@ const ProjectWrapper = (props) => {
               <header className="header__article">
                 <h1 className="header__article-title">{props?.blog?.title}</h1>
               </header>
-              <div dangerouslySetInnerHTML={{ __html: props?.blog?.body }}></div>
+              <div
+                dangerouslySetInnerHTML={{ __html: props?.blog?.body }}
+              ></div>
             </article>
           </div>
           <div className="right">

@@ -7,7 +7,7 @@ import { fragment } from "./shaders/fragment";
 import { useAppContext } from "src/context/app.context";
 
 const Sphere = () => {
-  const { state, updateColor } = useAppContext();
+  const { state } = useAppContext();
   const mesh = useRef();
   const { color, colorBase, colorDeep } = state.threeColors;
 
@@ -29,9 +29,6 @@ const Sphere = () => {
     flagThree: null,
   });
 
-  // color: [0.8, 0.95, 0.94],
-  // colorBase: [0.38, 0.09, 0.57],
-  // colorDeep: [0, 0, 0]
   // const uniforms = useMemo(
   //   () => ({
   //     time: { value: 0 },
@@ -47,19 +44,9 @@ const Sphere = () => {
   //   [color, colorBase, colorDeep]
   // );
 
-  // const uniforms = useMemo(()=>( {
-
-  // },}),
   const uniforms = useMemo(
     () => ({
       time: { value: 0 },
-      // color: { value: new THREE.Color(0, 0.95, 0.94) },
-      // colorBase: {
-      //   value: new THREE.Color(0.38, 0.09, 0.57),
-      // },
-      // colorDeep: {
-      //   value: new THREE.Color(0, 0, 0),
-      // },
       color: {
         value: [0.8, 0.95, 0.94],
       },
@@ -73,10 +60,6 @@ const Sphere = () => {
     }),
     []
   );
-
-  // color: [0, 0.95, 0.94],
-  // colorBase: [0.38, 0.09, 0.57],
-  // colorDeep: [0, 0, 0],
 
   const updateUColor = () => {
     if (flagColor.flagOne !== null) {
@@ -251,7 +234,6 @@ const Sphere = () => {
 
     if (uniforms.color.value[1] === color[1]) {
       setFlagColor((prev) => ({ ...prev, flagTwo: null }));
-      console.log(true);
     } else {
       if (uniforms.color.value[1] < color[1]) {
         setFlagColor((prev) => ({ ...prev, flagTwo: [0, 1] }));
@@ -284,7 +266,6 @@ const Sphere = () => {
 
     if (uniforms.colorBase.value[1] === colorBase[1]) {
       setFlagBase((prev) => ({ ...prev, flagTwo: null }));
-      console.log(true);
     } else {
       if (uniforms.colorBase.value[1] < colorBase[1]) {
         setFlagBase((prev) => ({ ...prev, flagTwo: [0, 1] }));
@@ -317,7 +298,6 @@ const Sphere = () => {
 
     if (uniforms.colorDeep.value[1] === colorDeep[1]) {
       setFlagDeep((prev) => ({ ...prev, flagTwo: null }));
-      console.log(true);
     } else {
       if (uniforms.colorDeep.value[1] < colorDeep[1]) {
         setFlagDeep((prev) => ({ ...prev, flagTwo: [0, 1] }));
@@ -343,12 +323,10 @@ const Sphere = () => {
 
   useEffect(() => {
     setUniformColorBaseFlags();
-    console.log(flagBase);
   }, [colorBase]);
 
   useEffect(() => {
     setUniformColorDeep();
-    console.log(flagDeep);
   }, [colorDeep]);
 
   useFrame(() => {
@@ -364,7 +342,6 @@ const Sphere = () => {
       <sphereGeometry args={[1.5, 32, 32]} attach="geometry" />
       {/* <sphereBufferGeometry args={[1, 64, 64]} attach="geometry" /> */}
       <primitive object={myShader} attach="material" />
-
       {/* <shaderMaterial
         // ref={materialRef}
         fragmentShader={fragment}

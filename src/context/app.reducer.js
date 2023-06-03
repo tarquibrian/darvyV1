@@ -6,9 +6,6 @@ export const initialState = {
     color: [0.8, 0.95, 0.94],
     colorBase: [0.38, 0.09, 0.57],
     colorDeep: [0, 0, 0],
-    // color: [0, 0, 0],
-    // colorBase: [0, 0, 0],
-    // colorDeep: [0, 0, 0],
   },
 };
 
