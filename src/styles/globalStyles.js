@@ -82,7 +82,7 @@ export const GlobalStyle = createGlobalStyle`
     /* max-width: 1600px; */
     min-height: 100vh;
     
-    /* overflow: hidden; */
+    overflow-x: hidden;
   }
 
   section {
