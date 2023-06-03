@@ -12,21 +12,21 @@ const Sphere = () => {
   const { color, colorBase, colorDeep } = state.threeColors;
 
   const [flagColor, setFlagColor] = useState({
-    flagOne: [0, 0],
-    flagTwo: [0, 0],
-    flagThree: [0, 0],
+    flagOne: null,
+    flagTwo: null,
+    flagThree: null,
   });
 
   const [flagBase, setFlagBase] = useState({
-    flagOne: [0, 0],
-    flagTwo: [0, 0],
-    flagThree: [0, 0],
+    flagOne: null,
+    flagTwo: null,
+    flagThree: null,
   });
 
   const [flagDeep, setFlagDeep] = useState({
-    flagOne: [0, 0],
-    flagTwo: [0, 0],
-    flagThree: [0, 0],
+    flagOne: null,
+    flagTwo: null,
+    flagThree: null,
   });
 
   // color: [0.8, 0.95, 0.94],
@@ -61,7 +61,7 @@ const Sphere = () => {
       //   value: new THREE.Color(0, 0, 0),
       // },
       color: {
-        value: [0, 1, 0.94],
+        value: [0.8, 0.95, 0.94],
       },
       colorBase: {
         value: [0.38, 0.09, 0.57],
@@ -79,45 +79,51 @@ const Sphere = () => {
   // colorDeep: [0, 0, 0],
 
   const updateUColor = () => {
-    if (flagColor.flagOne[0] < flagColor.flagOne[1]) {
-      if (uniforms.color.value[0] < color[0]) {
-        uniforms.color.value[0] = Number(
-          (uniforms.color.value[0] + 0.02).toFixed(2)
-        );
-      }
-    } else {
-      if (uniforms.color.value[0] > color[0]) {
-        uniforms.color.value[0] = Number(
-          (uniforms.color.value[0] - 0.02).toFixed(2)
-        );
-      }
-    }
-
-    if (flagColor.flagTwo[0] < flagColor.flagTwo[1]) {
-      if (uniforms.color.value[1] < color[1]) {
-        uniforms.color.value[1] = Number(
-          (uniforms.color.value[1] + 0.02).toFixed(2)
-        );
-      }
-    } else {
-      if (uniforms.color.value[1] > color[1]) {
-        uniforms.color.value[1] = Number(
-          (uniforms.color.value[1] - 0.02).toFixed(2)
-        );
+    if (flagColor.flagOne !== null) {
+      if (flagColor.flagOne[0] < flagColor.flagOne[1]) {
+        if (uniforms.color.value[0] < color[0]) {
+          uniforms.color.value[0] = Number(
+            (uniforms.color.value[0] + 0.02).toFixed(2)
+          );
+        }
+      } else {
+        if (uniforms.color.value[0] > color[0]) {
+          uniforms.color.value[0] = Number(
+            (uniforms.color.value[0] - 0.02).toFixed(2)
+          );
+        }
       }
     }
 
-    if (flagColor.flagThree[0] < flagColor.flagThree[1]) {
-      if (uniforms.color.value[2] < color[2]) {
-        uniforms.color.value[2] = Number(
-          (uniforms.color.value[2] + 0.02).toFixed(2)
-        );
+    if (flagColor.flagTwo !== null) {
+      if (flagColor.flagTwo[0] < flagColor.flagTwo[1]) {
+        if (uniforms.color.value[1] < color[1]) {
+          uniforms.color.value[1] = Number(
+            (uniforms.color.value[1] + 0.02).toFixed(2)
+          );
+        }
+      } else {
+        if (uniforms.color.value[1] > color[1]) {
+          uniforms.color.value[1] = Number(
+            (uniforms.color.value[1] - 0.02).toFixed(2)
+          );
+        }
       }
-    } else {
-      if (uniforms.color.value[2] > color[0]) {
-        uniforms.color.value[2] = Number(
-          (uniforms.color.value[2] - 0.02).toFixed(2)
-        );
+    }
+
+    if (flagColor.flagThree !== null) {
+      if (flagColor.flagThree[0] < flagColor.flagThree[1]) {
+        if (uniforms.color.value[2] < color[2]) {
+          uniforms.color.value[2] = Number(
+            (uniforms.color.value[2] + 0.02).toFixed(2)
+          );
+        }
+      } else {
+        if (uniforms.color.value[2] > color[2]) {
+          uniforms.color.value[2] = Number(
+            (uniforms.color.value[2] - 0.02).toFixed(2)
+          );
+        }
       }
     }
   };
@@ -165,20 +171,35 @@ const Sphere = () => {
   });
 
   const setFlagOne = () => {
-    if (uniforms.color.value[0] < color[0]) {
-      setFlagColor((prev) => ({ ...prev, flagOne: [0, 1] }));
+    if (uniforms.color.value[0] === color[0]) {
+      setFlagColor((prev) => ({ ...prev, flagOne: null }));
     } else {
-      setFlagColor((prev) => ({ ...prev, flagOne: [1, 0] }));
+      if (uniforms.color.value[0] < color[0]) {
+        setFlagColor((prev) => ({ ...prev, flagOne: [0, 1] }));
+      } else {
+        setFlagColor((prev) => ({ ...prev, flagOne: [1, 0] }));
+      }
     }
-    if (uniforms.color.value[1] < color[1]) {
-      setFlagColor((prev) => ({ ...prev, flagTwo: [0, 1] }));
+
+    if (uniforms.color.value[1] === color[1]) {
+      setFlagColor((prev) => ({ ...prev, flagTwo: null }));
+      console.log(true);
     } else {
-      setFlagColor((prev) => ({ ...prev, flagTwo: [1, 0] }));
+      if (uniforms.color.value[1] < color[1]) {
+        setFlagColor((prev) => ({ ...prev, flagTwo: [0, 1] }));
+      } else {
+        setFlagColor((prev) => ({ ...prev, flagTwo: [1, 0] }));
+      }
     }
-    if (uniforms.color.value[2] < color[2]) {
-      setFlagColor((prev) => ({ ...prev, flagThree: [0, 1] }));
+
+    if (uniforms.color.value[2] === color[2]) {
+      setFlagColor((prev) => ({ ...prev, flagThree: null }));
     } else {
-      setFlagColor((prev) => ({ ...prev, flagThree: [1, 0] }));
+      if (uniforms.color.value[2] < color[2]) {
+        setFlagColor((prev) => ({ ...prev, flagThree: [0, 1] }));
+      } else {
+        setFlagColor((prev) => ({ ...prev, flagThree: [1, 0] }));
+      }
     }
   };
 
@@ -222,20 +243,21 @@ const Sphere = () => {
     setFlagOne();
   }, [color]);
 
-  useEffect(() => {
-    setFlagTwo();
-  }, [colorBase]);
+  // useEffect(() => {
+  //   setFlagTwo();
+  // }, [colorBase]);
 
-  useEffect(() => {
-    setFlagThree();
-  }, [colorDeep]);
+  // useEffect(() => {
+  //   setFlagThree();
+  // }, [colorDeep]);
 
   useFrame(({ clock }, delta) => {
     mesh.current.material.uniforms.time.value += 0.007;
     mesh.current.rotation.z += 0.009;
 
     updateUColor();
-    // updateUColorBase();
+    // console.log(uniforms.color, color);
+    // console.log(uniforms.color);
   });
 
   return (
