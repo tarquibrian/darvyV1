@@ -342,11 +342,11 @@ const WrapperContent = ({
 }) => {
   const controls = useAnimation();
   const [refView, inView] = useInView();
-  const { updateColor } = useAppContext();
+  // const { updateColor } = useAppContext();
 
-  const update = (nColors) => {
-    updateColor(nColors);
-  };
+  // const update = (nColors) => {
+  //   updateColor(nColors);
+  // };
 
   useEffect(() => {
     if (inView) {

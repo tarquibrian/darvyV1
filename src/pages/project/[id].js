@@ -46,8 +46,8 @@ const Project = () => {
   }
 
   return (
-    <Layout updateBG={false}>
-      <ProjectWrapper {...project} />
+    <Layout>
+      {/* <ProjectWrapper {...project} /> */}
     </Layout>
   );
 };

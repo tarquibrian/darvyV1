@@ -65,8 +65,9 @@ const Sphere = () => {
     // console.log(state.threeColors.color[0]);
 
     if (uniforms.color.value.r < colorI) {
-      mesh.current.material.uniforms.color.value.r =
-        mesh.current.material.uniforms.time.value;
+      // mesh.current.material.uniforms.color.value.r =
+      //   mesh.current.material.uniforms.time.value.toFixed(2);
+      mesh.current.material.uniforms.color.value.r += clock.elapsedTime * 0.01;
       console.log("test", uniforms.color.value.r);
     }
     // console.log(mesh.current.material.uniforms.time);
