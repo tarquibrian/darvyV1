@@ -9,8 +9,26 @@ import { useAppContext } from "src/context/app.context";
 const Sphere = () => {
   const { state, updateColor } = useAppContext();
   const mesh = useRef();
-  const [colorI, setColorI] = useState(0);
   const { color, colorBase, colorDeep } = state.threeColors;
+
+  const [flagColor, setFlagColor] = useState({
+    flagOne: [0, 0],
+    flagTwo: [0, 0],
+    flagThree: [0, 0],
+  });
+
+  const [flagBase, setFlagBase] = useState({
+    flagOne: [0, 0],
+    flagTwo: [0, 0],
+    flagThree: [0, 0],
+  });
+
+  const [flagDeep, setFlagDeep] = useState({
+    flagOne: [0, 0],
+    flagTwo: [0, 0],
+    flagThree: [0, 0],
+  });
+
   // color: [0.8, 0.95, 0.94],
   // colorBase: [0.38, 0.09, 0.57],
   // colorDeep: [0, 0, 0]
@@ -60,6 +78,54 @@ const Sphere = () => {
   // colorBase: [0.38, 0.09, 0.57],
   // colorDeep: [0, 0, 0],
 
+  const updateUColor = () => {
+    if (flagColor.flagOne[0] < flagColor.flagOne[1]) {
+      if (uniforms.color.value[0] < color[0]) {
+        uniforms.color.value[0] = Number(
+          (uniforms.color.value[0] + 0.02).toFixed(2)
+        );
+      }
+    } else {
+      if (uniforms.color.value[0] > color[0]) {
+        uniforms.color.value[0] = Number(
+          (uniforms.color.value[0] - 0.02).toFixed(2)
+        );
+      }
+    }
+  };
+
+  const updateUColorBase = () => {
+    if (flagBase.flagOne[0] < flagBase.flagOne[1]) {
+      if (uniforms.colorBase.value[0] < colorBase[0]) {
+        uniforms.colorBase.value[0] = Number(
+          (uniforms.colorBase.value[0] + 0.02).toFixed(2)
+        );
+      }
+    } else {
+      if (uniforms.colorBase.value[0] > colorBase[0]) {
+        uniforms.colorBase.value[0] = Number(
+          (uniforms.colorBase.value[0] - 0.02).toFixed(2)
+        );
+      }
+    }
+  };
+
+  const updateUColorDeep = () => {
+    if (flagDeep.flagOne[0] < flagDeep.flagOne[1]) {
+      if (uniforms.colorDeep.value[0] < colorDeep[0]) {
+        uniforms.colorDeep.value[0] = Number(
+          (uniforms.colorDeep.value[0] + 0.02).toFixed(2)
+        );
+      }
+    } else {
+      if (uniforms.colorDeep.value[0] > colorDeep[0]) {
+        uniforms.colorDeep.value[0] = Number(
+          (uniforms.colorDeep.value[0] - 0.02).toFixed(2)
+        );
+      }
+    }
+  };
+
   const myShader = new THREE.ShaderMaterial({
     uniforms: uniforms,
     fragmentShader: fragment,
@@ -69,17 +135,79 @@ const Sphere = () => {
       derivatives: "#extension GL_OES_standard_derivatives : enable",
     },
   });
+  // console.log(c1[0]);
+  const setFlagOne = () => {
+    if (uniforms.color.value[0] < color[0]) {
+      setFlagColor((prev) => ({ ...prev, flagOne: [0, 1] }));
+    } else {
+      setFlagColor((prev) => ({ ...prev, flagOne: [1, 0] }));
+    }
+    if (uniforms.color.value[1] < color[1]) {
+      setFlagColor((prev) => ({ ...prev, flagTwo: [0, 1] }));
+    } else {
+      setFlagColor((prev) => ({ ...prev, flagTwo: [1, 0] }));
+    }
+    if (uniforms.color.value[2] < color[2]) {
+      setFlagColor((prev) => ({ ...prev, flagThree: [0, 1] }));
+    } else {
+      setFlagColor((prev) => ({ ...prev, flagThree: [1, 0] }));
+    }
+  };
+
+  const setFlagTwo = () => {
+    if (uniforms.color.value[0] < color[0]) {
+      setFlagColor((prev) => ({ ...prev, flagOne: [0, 1] }));
+    } else {
+      setFlagColor((prev) => ({ ...prev, flagOne: [1, 0] }));
+    }
+    if (uniforms.color.value[1] < color[1]) {
+      setFlagColor((prev) => ({ ...prev, flagTwo: [0, 1] }));
+    } else {
+      setFlagColor((prev) => ({ ...prev, flagTwo: [1, 0] }));
+    }
+    if (uniforms.color.value[2] < color[2]) {
+      setFlagColor((prev) => ({ ...prev, flagThree: [0, 1] }));
+    } else {
+      setFlagColor((prev) => ({ ...prev, flagThree: [1, 0] }));
+    }
+  };
+
+  const setFlagThree = () => {
+    if (uniforms.color.value[0] < color[0]) {
+      setFlagColor((prev) => ({ ...prev, flagOne: [0, 1] }));
+    } else {
+      setFlagColor((prev) => ({ ...prev, flagOne: [1, 0] }));
+    }
+    if (uniforms.color.value[1] < color[1]) {
+      setFlagColor((prev) => ({ ...prev, flagTwo: [0, 1] }));
+    } else {
+      setFlagColor((prev) => ({ ...prev, flagTwo: [1, 0] }));
+    }
+    if (uniforms.color.value[2] < color[2]) {
+      setFlagColor((prev) => ({ ...prev, flagThree: [0, 1] }));
+    } else {
+      setFlagColor((prev) => ({ ...prev, flagThree: [1, 0] }));
+    }
+  };
+  
+  useEffect(() => {
+    setFlagOne();
+  }, [color]);
+
+  useEffect(() => {
+    setFlagTwo();
+  }, [colorBase]);
+
+  useEffect(() => {
+    setFlagThree();
+  }, [colorDeep]);
 
   useFrame(({ clock }, delta) => {
     mesh.current.material.uniforms.time.value += 0.007;
     mesh.current.rotation.z += 0.009;
 
-    if (uniforms.color.value[0] < color[0]) {
-      uniforms.color.value[0] = Number(
-        (uniforms.color.value[0] + clock.elapsedTime * 0.007).toFixed(2)
-      );
-      console.log("test", uniforms.color.value[0]);
-    }
+    updateUColor();
+    // console.log(uniforms.time.value);
   });
 
   return (
