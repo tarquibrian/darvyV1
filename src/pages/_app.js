@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
           <meta name="robots" content="all" />
         </Head>
 
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="sync">
           <GlobalStyle />
           <Component {...pageProps} key={router.asPath} />
         </AnimatePresence>
