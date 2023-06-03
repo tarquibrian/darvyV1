@@ -82,7 +82,7 @@ const ProjectWrapperStyled = styled.section`
       width: calc(180px - 2rem);
     }
     .carouselColumn {
-      transform: rotate(180deg) translateY(115%);
+      transform: rotate(180deg) translateY(105%);
       animation: textCarousel 28s linear infinite;
       .text {
         display: flex;
@@ -215,7 +215,7 @@ const ProjectWrapperStyled = styled.section`
 
   @keyframes textCarousel {
     0% {
-      transform: rotate(180deg) translateY(115%);
+      transform: rotate(180deg) translateY(105%);
     }
     100% {
       transform: rotate(180deg) translateY(-20%);
@@ -262,13 +262,12 @@ const ProjectWrapper = (props) => {
           </div>
         </div>
         <div className="container text">
-          <div className="left text">
+          {/* <div className="left text">
             <CloudinaryContext cloud_name="dskypy0xt">
               <div className="video-content">
                 <Video
                   publicId="samples/Ecommerce-website_qewqxj"
                   width="100%"
-                  // controls
                   innerRef={videoRef}
                   autoPlay
                   loop
@@ -286,49 +285,8 @@ const ProjectWrapper = (props) => {
           </div>
           <div className="right">
             <div className="box"></div>
-            {/* <div className="gallery">
-              <div className="column">
-                <Image
-                  src={`/images/p3-1-min.png`}
-                  alt={props?.title}
-                  className="images"
-                  width={500}
-                  height={800}
-                  // loading="lazy"
-                  // placeholder="blur"
-                />
-                <Image
-                  src={`/images/p3-2-min.png`}
-                  alt={props?.title}
-                  className="images"
-                  width={500}
-                  height={800}
-                  // loading="lazy"
-                  // placeholder="blur"
-                />
-                <Image
-                  src={`/images/p3-3-min.png`}
-                  alt={props?.title}
-                  className="images"
-                  width={500}
-                  height={800}
-                  // loading="lazy"
-                  // placeholder="blur"
-                />
-              </div>
-              <div className="column">
-                <Image
-                  src={`/images/${props?.imgs[0]}`}
-                  alt={props?.title}
-                  className="images"
-                  width={500}
-                  height={800}
-                  // loading="lazy"
-                  // placeholder="blur"
-                />
-              </div>
-            </div> */}
-          </div>
+            
+          </div> */}
         </div>
       </div>
     </ProjectWrapperStyled>

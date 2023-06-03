@@ -290,7 +290,7 @@ const Header = () => {
         <span className="text">
           {/* <button onClick={() => changeTheme("light")}>ligh</button> */}
           {/* <button onClick={() => changeTheme("dark")}>dark</button> */}
-          <button
+          {/* <button
             onClick={() =>
               updateColor({
                 color: [0.8, 0.95, 0.94],
@@ -311,7 +311,7 @@ const Header = () => {
             }
           >
             UPDATE 0
-          </button>
+          </button> */}
           <LinksContainer>
             <ol>
               <li>

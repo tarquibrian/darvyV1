@@ -106,9 +106,7 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
     color: #fff;
   }
-  svg {
-    /* color: ${({ theme }) => theme?.colors.baseColor}; */
-  }
+  
   p {
     font-family: var(--ff-sofia);
     font-size: var(--fz-md);
@@ -149,9 +147,6 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
-  .border {
-    border: 2px solid ${({ theme }) => theme?.colors.border};
-  }
 
   .title-content {
     font-family: var(--ff-oswald);
