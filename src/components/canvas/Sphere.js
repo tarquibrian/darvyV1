@@ -35,12 +35,21 @@ const Sphere = () => {
   const uniforms = useMemo(
     () => ({
       time: { value: 0 },
-      color: { value: new THREE.Color(0, 0.95, 0.94) },
+      // color: { value: new THREE.Color(0, 0.95, 0.94) },
+      // colorBase: {
+      //   value: new THREE.Color(0.38, 0.09, 0.57),
+      // },
+      // colorDeep: {
+      //   value: new THREE.Color(0, 0, 0),
+      // },
+      color: {
+        value: [0, 0.95, 0.94],
+      },
       colorBase: {
-        value: new THREE.Color(0.38, 0.09, 0.57),
+        value: [0.38, 0.09, 0.57],
       },
       colorDeep: {
-        value: new THREE.Color(0, 0, 0),
+        value: [0, 0, 0],
       },
       resolution: { value: new THREE.Vector4() },
     }),
@@ -70,15 +79,16 @@ const Sphere = () => {
     // console.log(uniforms.color.value[0]);
     // console.log(state.threeColors.color[0]);
 
-    if (uniforms.color.value.r < color[0]) {
+    if (uniforms.color.value[0] < color[0]) {
       // mesh.current.material.uniforms.color.value.r =
       //   mesh.current.material.uniforms.time.value.toFixed(2);
-      mesh.current.material.uniforms.color.value.r += clock.elapsedTime * 0.009;
-      console.log("test", uniforms.color.value.r);
+      uniforms.color.value[0] =
+        uniforms.color.value[0] + clock.elapsedTime * 0.007;
+      console.log("test", uniforms.color.value[0]);
     }
     // console.log(mesh.current.material.uniforms.time);
   });
-  console.log(uniforms.color.value.r);
+  // console.log(uniforms.color.value.r);
 
   return (
     <mesh ref={mesh}>
