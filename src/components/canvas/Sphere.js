@@ -61,7 +61,7 @@ const Sphere = () => {
       //   value: new THREE.Color(0, 0, 0),
       // },
       color: {
-        value: [0, 0.95, 0.94],
+        value: [0, 1, 0.94],
       },
       colorBase: {
         value: [0.38, 0.09, 0.57],
@@ -89,6 +89,34 @@ const Sphere = () => {
       if (uniforms.color.value[0] > color[0]) {
         uniforms.color.value[0] = Number(
           (uniforms.color.value[0] - 0.02).toFixed(2)
+        );
+      }
+    }
+
+    if (flagColor.flagTwo[0] < flagColor.flagTwo[1]) {
+      if (uniforms.color.value[1] < color[1]) {
+        uniforms.color.value[1] = Number(
+          (uniforms.color.value[1] + 0.02).toFixed(2)
+        );
+      }
+    } else {
+      if (uniforms.color.value[1] > color[1]) {
+        uniforms.color.value[1] = Number(
+          (uniforms.color.value[1] - 0.02).toFixed(2)
+        );
+      }
+    }
+
+    if (flagColor.flagThree[0] < flagColor.flagThree[1]) {
+      if (uniforms.color.value[2] < color[2]) {
+        uniforms.color.value[2] = Number(
+          (uniforms.color.value[2] + 0.02).toFixed(2)
+        );
+      }
+    } else {
+      if (uniforms.color.value[2] > color[0]) {
+        uniforms.color.value[2] = Number(
+          (uniforms.color.value[2] - 0.02).toFixed(2)
         );
       }
     }
@@ -135,7 +163,7 @@ const Sphere = () => {
       derivatives: "#extension GL_OES_standard_derivatives : enable",
     },
   });
-  // console.log(c1[0]);
+
   const setFlagOne = () => {
     if (uniforms.color.value[0] < color[0]) {
       setFlagColor((prev) => ({ ...prev, flagOne: [0, 1] }));
@@ -189,7 +217,7 @@ const Sphere = () => {
       setFlagColor((prev) => ({ ...prev, flagThree: [1, 0] }));
     }
   };
-  
+
   useEffect(() => {
     setFlagOne();
   }, [color]);
@@ -207,7 +235,7 @@ const Sphere = () => {
     mesh.current.rotation.z += 0.009;
 
     updateUColor();
-    // console.log(uniforms.time.value);
+    // updateUColorBase();
   });
 
   return (
