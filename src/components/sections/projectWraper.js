@@ -238,7 +238,7 @@ const ProjectWrapper = (props) => {
   };
 
   useEffect(() => {
-    updateColor(props?.threeColors);
+    // updateColor(props?.threeColors);
     changeTheme(props?.themeMode);
     window.addEventListener("mousemove", handleOnMouseMove);
   }, []);

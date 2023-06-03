@@ -7,9 +7,9 @@ import { fragment } from "./shaders/fragment";
 import { useAppContext } from "src/context/app.context";
 
 const Sphere = () => {
-  const { state } = useAppContext();
+  const { state, updateColor } = useAppContext();
   const mesh = useRef();
-
+  const [colorI, setColorI] = useState(0);
   const { color, colorBase, colorDeep } = state.threeColors;
   // color: [0.8, 0.95, 0.94],
   // colorBase: [0.38, 0.09, 0.57],
@@ -31,16 +31,19 @@ const Sphere = () => {
 
   const uniforms = {
     time: { value: 0 },
-    color: { value: [0.8, 0.95, 0.94] },
+    color: { value: new THREE.Color(0, 0.95, 0.94) },
     colorBase: {
-      value: [0.38, 0.09, 0.57],
+      value: new THREE.Color(0.38, 0.09, 0.57),
     },
     colorDeep: {
-      value: [0, 0, 0],
+      value: new THREE.Color(0, 0, 0),
     },
     resolution: { value: new THREE.Vector4() },
   };
-  console.log(uniforms.color.value[0], state.threeColors.color[0]);
+
+  // color: [0, 0.95, 0.94],
+  // colorBase: [0.38, 0.09, 0.57],
+  // colorDeep: [0, 0, 0],
 
   const myShader = new THREE.ShaderMaterial({
     uniforms: uniforms,
@@ -58,18 +61,20 @@ const Sphere = () => {
     // uniforms.color.value.r += clock.elapsedTime * -0.08;
 
     // uniforms.color.value[0] = clock.elapsedTime * 0.5;
+    // console.log(uniforms.color.value[0]);
+    // console.log(state.threeColors.color[0]);
 
-    // if (uniforms.color.value[0] < state.threeColors.color[0]) {
-    //   uniforms.color.value[0] += clock.elapsedTime * 0.5;
-    // }
-    // if (uniforms.color.value[0] > state.threeColors.color[0]) {
-    //   uniforms.color.value[0] += clock.elapsedTime * -0.5;
-    // }
-    // console.log(clock.elapsedTime)
+    if (uniforms.color.value.r < colorI) {
+      mesh.current.material.uniforms.color.value.r =
+        mesh.current.material.uniforms.time.value;
+      console.log("test", uniforms.color.value.r);
+    }
+    // console.log(mesh.current.material.uniforms.time);
   });
-
-  console.log(uniforms.color.value[0], state.threeColors.color[0]);
-  // useEffect(() => {}, []);
+  console.log(uniforms.color.value.r);
+  setTimeout(() => {
+    setColorI(1);
+  }, 2000);
 
   return (
     <mesh ref={mesh}>
