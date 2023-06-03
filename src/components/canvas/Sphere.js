@@ -179,17 +179,51 @@ const Sphere = () => {
   };
 
   const updateUColorDeep = () => {
-    if (flagDeep.flagOne[0] < flagDeep.flagOne[1]) {
-      if (uniforms.colorDeep.value[0] < colorDeep[0]) {
-        uniforms.colorDeep.value[0] = Number(
-          (uniforms.colorDeep.value[0] + 0.02).toFixed(2)
-        );
+    if (flagDeep.flagOne !== null) {
+      if (flagDeep.flagOne[0] < flagDeep.flagOne[1]) {
+        if (uniforms.colorDeep.value[0] < colorDeep[0]) {
+          uniforms.colorDeep.value[0] = Number(
+            (uniforms.colorDeep.value[0] + 0.02).toFixed(2)
+          );
+        }
+      } else {
+        if (uniforms.colorDeep.value[0] > colorDeep[0]) {
+          uniforms.colorDeep.value[0] = Number(
+            (uniforms.colorDeep.value[0] - 0.02).toFixed(2)
+          );
+        }
       }
-    } else {
-      if (uniforms.colorDeep.value[0] > colorDeep[0]) {
-        uniforms.colorDeep.value[0] = Number(
-          (uniforms.colorDeep.value[0] - 0.02).toFixed(2)
-        );
+    }
+
+    if (flagDeep.flagTwo !== null) {
+      if (flagDeep.flagTwo[0] < flagDeep.flagTwo[1]) {
+        if (uniforms.colorDeep.value[1] < colorDeep[1]) {
+          uniforms.colorDeep.value[1] = Number(
+            (uniforms.colorDeep.value[1] + 0.02).toFixed(2)
+          );
+        }
+      } else {
+        if (uniforms.colorDeep.value[1] > colorDeep[1]) {
+          uniforms.colorDeep.value[1] = Number(
+            (uniforms.colorDeep.value[1] - 0.02).toFixed(2)
+          );
+        }
+      }
+    }
+
+    if (flagDeep.flagThree !== null) {
+      if (flagDeep.flagThree[0] < flagDeep.flagThree[1]) {
+        if (uniforms.colorDeep.value[2] < colorDeep[2]) {
+          uniforms.colorDeep.value[2] = Number(
+            (uniforms.colorDeep.value[2] + 0.02).toFixed(2)
+          );
+        }
+      } else {
+        if (uniforms.colorDeep.value[2] > colorDeep[2]) {
+          uniforms.colorDeep.value[2] = Number(
+            (uniforms.colorDeep.value[2] - 0.02).toFixed(2)
+          );
+        }
       }
     }
   };
@@ -270,21 +304,36 @@ const Sphere = () => {
     }
   };
 
-  const setFlagThree = () => {
-    if (uniforms.color.value[0] < color[0]) {
-      setFlagColor((prev) => ({ ...prev, flagOne: [0, 1] }));
+  const setUniformColorDeep = () => {
+    if (uniforms.colorDeep.value[0] === colorDeep[0]) {
+      setFlagDeep((prev) => ({ ...prev, flagOne: null }));
     } else {
-      setFlagColor((prev) => ({ ...prev, flagOne: [1, 0] }));
+      if (uniforms.colorDeep.value[0] < colorDeep[0]) {
+        setFlagDeep((prev) => ({ ...prev, flagOne: [0, 1] }));
+      } else {
+        setFlagDeep((prev) => ({ ...prev, flagOne: [1, 0] }));
+      }
     }
-    if (uniforms.color.value[1] < color[1]) {
-      setFlagColor((prev) => ({ ...prev, flagTwo: [0, 1] }));
+
+    if (uniforms.colorDeep.value[1] === colorDeep[1]) {
+      setFlagDeep((prev) => ({ ...prev, flagTwo: null }));
+      console.log(true);
     } else {
-      setFlagColor((prev) => ({ ...prev, flagTwo: [1, 0] }));
+      if (uniforms.colorDeep.value[1] < colorDeep[1]) {
+        setFlagDeep((prev) => ({ ...prev, flagTwo: [0, 1] }));
+      } else {
+        setFlagDeep((prev) => ({ ...prev, flagTwo: [1, 0] }));
+      }
     }
-    if (uniforms.color.value[2] < color[2]) {
-      setFlagColor((prev) => ({ ...prev, flagThree: [0, 1] }));
+
+    if (uniforms.colorDeep.value[2] === colorDeep[2]) {
+      setFlagDeep((prev) => ({ ...prev, flagThree: null }));
     } else {
-      setFlagColor((prev) => ({ ...prev, flagThree: [1, 0] }));
+      if (uniforms.colorDeep.value[2] < colorDeep[2]) {
+        setFlagDeep((prev) => ({ ...prev, flagThree: [0, 1] }));
+      } else {
+        setFlagDeep((prev) => ({ ...prev, flagThree: [1, 0] }));
+      }
     }
   };
 
@@ -292,21 +341,22 @@ const Sphere = () => {
     setUniformColorFlags();
   }, [color]);
 
-  // useEffect(() => {
-  //   setFlagTwo();
-  // }, [colorBase]);
+  useEffect(() => {
+    setUniformColorBaseFlags();
+    console.log(flagBase);
+  }, [colorBase]);
 
-  // useEffect(() => {
-  //   setFlagThree();
-  // }, [colorDeep]);
+  useEffect(() => {
+    setUniformColorDeep();
+    console.log(flagDeep);
+  }, [colorDeep]);
 
-  useFrame(({ clock }, delta) => {
+  useFrame(() => {
     mesh.current.material.uniforms.time.value += 0.007;
     mesh.current.rotation.z += 0.009;
-
     updateUColor();
-    // console.log(uniforms.color, color);
-    // console.log(uniforms.color);
+    updateUColorBase();
+    updateUColorDeep();
   });
 
   return (
