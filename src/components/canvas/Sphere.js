@@ -129,17 +129,51 @@ const Sphere = () => {
   };
 
   const updateUColorBase = () => {
-    if (flagBase.flagOne[0] < flagBase.flagOne[1]) {
-      if (uniforms.colorBase.value[0] < colorBase[0]) {
-        uniforms.colorBase.value[0] = Number(
-          (uniforms.colorBase.value[0] + 0.02).toFixed(2)
-        );
+    if (flagBase.flagOne !== null) {
+      if (flagBase.flagOne[0] < flagBase.flagOne[1]) {
+        if (uniforms.colorBase.value[0] < colorBase[0]) {
+          uniforms.colorBase.value[0] = Number(
+            (uniforms.colorBase.value[0] + 0.02).toFixed(2)
+          );
+        }
+      } else {
+        if (uniforms.colorBase.value[0] > colorBase[0]) {
+          uniforms.colorBase.value[0] = Number(
+            (uniforms.colorBase.value[0] - 0.02).toFixed(2)
+          );
+        }
       }
-    } else {
-      if (uniforms.colorBase.value[0] > colorBase[0]) {
-        uniforms.colorBase.value[0] = Number(
-          (uniforms.colorBase.value[0] - 0.02).toFixed(2)
-        );
+    }
+
+    if (flagBase.flagTwo !== null) {
+      if (flagBase.flagTwo[0] < flagBase.flagTwo[1]) {
+        if (uniforms.colorBase.value[1] < colorBase[1]) {
+          uniforms.colorBase.value[1] = Number(
+            (uniforms.colorBase.value[1] + 0.02).toFixed(2)
+          );
+        }
+      } else {
+        if (uniforms.colorBase.value[1] > colorBase[1]) {
+          uniforms.colorBase.value[1] = Number(
+            (uniforms.colorBase.value[1] - 0.02).toFixed(2)
+          );
+        }
+      }
+    }
+
+    if (flagBase.flagThree !== null) {
+      if (flagBase.flagThree[0] < flagBase.flagThree[1]) {
+        if (uniforms.colorBase.value[2] < colorBase[2]) {
+          uniforms.colorBase.value[2] = Number(
+            (uniforms.colorBase.value[2] + 0.02).toFixed(2)
+          );
+        }
+      } else {
+        if (uniforms.colorBase.value[2] > colorBase[2]) {
+          uniforms.colorBase.value[2] = Number(
+            (uniforms.colorBase.value[2] - 0.02).toFixed(2)
+          );
+        }
       }
     }
   };
@@ -170,7 +204,7 @@ const Sphere = () => {
     },
   });
 
-  const setFlagOne = () => {
+  const setUniformColorFlags = () => {
     if (uniforms.color.value[0] === color[0]) {
       setFlagColor((prev) => ({ ...prev, flagOne: null }));
     } else {
@@ -203,21 +237,36 @@ const Sphere = () => {
     }
   };
 
-  const setFlagTwo = () => {
-    if (uniforms.color.value[0] < color[0]) {
-      setFlagColor((prev) => ({ ...prev, flagOne: [0, 1] }));
+  const setUniformColorBaseFlags = () => {
+    if (uniforms.colorBase.value[0] === colorBase[0]) {
+      setFlagBase((prev) => ({ ...prev, flagOne: null }));
     } else {
-      setFlagColor((prev) => ({ ...prev, flagOne: [1, 0] }));
+      if (uniforms.colorBase.value[0] < colorBase[0]) {
+        setFlagBase((prev) => ({ ...prev, flagOne: [0, 1] }));
+      } else {
+        setFlagBase((prev) => ({ ...prev, flagOne: [1, 0] }));
+      }
     }
-    if (uniforms.color.value[1] < color[1]) {
-      setFlagColor((prev) => ({ ...prev, flagTwo: [0, 1] }));
+
+    if (uniforms.colorBase.value[1] === colorBase[1]) {
+      setFlagBase((prev) => ({ ...prev, flagTwo: null }));
+      console.log(true);
     } else {
-      setFlagColor((prev) => ({ ...prev, flagTwo: [1, 0] }));
+      if (uniforms.colorBase.value[1] < colorBase[1]) {
+        setFlagBase((prev) => ({ ...prev, flagTwo: [0, 1] }));
+      } else {
+        setFlagBase((prev) => ({ ...prev, flagTwo: [1, 0] }));
+      }
     }
-    if (uniforms.color.value[2] < color[2]) {
-      setFlagColor((prev) => ({ ...prev, flagThree: [0, 1] }));
+
+    if (uniforms.colorBase.value[2] === colorBase[2]) {
+      setFlagBase((prev) => ({ ...prev, flagThree: null }));
     } else {
-      setFlagColor((prev) => ({ ...prev, flagThree: [1, 0] }));
+      if (uniforms.colorBase.value[2] < colorBase[2]) {
+        setFlagBase((prev) => ({ ...prev, flagThree: [0, 1] }));
+      } else {
+        setFlagBase((prev) => ({ ...prev, flagThree: [1, 0] }));
+      }
     }
   };
 
@@ -240,7 +289,7 @@ const Sphere = () => {
   };
 
   useEffect(() => {
-    setFlagOne();
+    setUniformColorFlags();
   }, [color]);
 
   // useEffect(() => {
