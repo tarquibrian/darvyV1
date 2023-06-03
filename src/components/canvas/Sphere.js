@@ -73,22 +73,14 @@ const Sphere = () => {
   useFrame(({ clock }, delta) => {
     mesh.current.material.uniforms.time.value += 0.007;
     mesh.current.rotation.z += 0.009;
-    // uniforms.color.value.r += clock.elapsedTime * -0.08;
-
-    // uniforms.color.value[0] = clock.elapsedTime * 0.5;
-    // console.log(uniforms.color.value[0]);
-    // console.log(state.threeColors.color[0]);
 
     if (uniforms.color.value[0] < color[0]) {
-      // mesh.current.material.uniforms.color.value.r =
-      //   mesh.current.material.uniforms.time.value.toFixed(2);
-      uniforms.color.value[0] =
-        uniforms.color.value[0] + clock.elapsedTime * 0.007;
+      uniforms.color.value[0] = Number(
+        (uniforms.color.value[0] + clock.elapsedTime * 0.007).toFixed(2)
+      );
       console.log("test", uniforms.color.value[0]);
     }
-    // console.log(mesh.current.material.uniforms.time);
   });
-  // console.log(uniforms.color.value.r);
 
   return (
     <mesh ref={mesh}>
