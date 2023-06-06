@@ -7,15 +7,17 @@ const Section = styled.section`
   /* min-height: 500px; */
   /* border: 1px solid white; */
   color: white;
-  width: 80%;
+  width: 100%;
+  max-width: 1500px;
   margin-inline: auto;
 
   .projects {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 3fr minmax(300px, 1fr);
-    gap: 1rem;
+    grid-template-columns: 3fr minmax(350px, 1fr);
+    gap: 6vw;
+    padding: 0 2rem;
 
     .projects__list {
       .projects__list-card {

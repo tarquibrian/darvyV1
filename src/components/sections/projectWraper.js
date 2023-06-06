@@ -263,7 +263,7 @@ const ProjectWrapper = (props) => {
         </div>
         <div className="container text">
           this is under construction
-          {/* <div className="left text">
+          <div className="left text">
             <CloudinaryContext cloud_name="dskypy0xt">
               <div className="video-content">
                 <Video
@@ -286,8 +286,7 @@ const ProjectWrapper = (props) => {
           </div>
           <div className="right">
             <div className="box"></div>
-            
-          </div> */}
+          </div>
         </div>
       </div>
     </ProjectWrapperStyled>
