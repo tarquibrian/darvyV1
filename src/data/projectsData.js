@@ -306,6 +306,11 @@ export const projectsData = {
           colorDeep: [0, 0, 0],
         },
         themeMode: "dark",
+        thumbnails: {
+          square: "/images/square1.png",
+          horizontal: "three-min.png",
+          vertical: "three-min.png",
+        },
       },
       {
         id: "2",
@@ -348,6 +353,11 @@ export const projectsData = {
             svg: 3,
           },
         ],
+        thumbnails: {
+          square: "/images/squaresonus.png",
+          horizontal: "three-min.png",
+          vertical: "three-min.png",
+        },
         img: "project-img2",
         imgs: ["p3-min.png", "p3-1-min.png", "p3-2-min.png", "p3-3-min.png"],
         typeProject: ["Type Project", "Web App"],
@@ -465,6 +475,11 @@ export const projectsData = {
           colorDeep: [0.86, 0.93, 0.96],
         },
         themeMode: "light",
+        thumbnails: {
+          square: "/images/squaremodern.png",
+          horizontal: "three-min.png",
+          vertical: "three-min.png",
+        },
       },
       {
         id: "4",
@@ -524,6 +539,11 @@ export const projectsData = {
           colorDeep: [0, 0, 0],
         },
         themeMode: "dark",
+        thumbnails: {
+          square: "/images/squarevilla.png",
+          horizontal: "three-min.png",
+          vertical: "three-min.png",
+        },
       },
       {
         id: "5",
@@ -563,6 +583,11 @@ export const projectsData = {
           colorDeep: [0.9, 0.9, 0.9],
         },
         themeMode: "light",
+        thumbnails: {
+          square: "/images/squarecarls.png",
+          horizontal: "three-min.png",
+          vertical: "three-min.png",
+        },
       },
     ],
     recents: [

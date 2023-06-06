@@ -77,12 +77,12 @@ export const GlobalStyle = createGlobalStyle`
   main {
     position: relative;
     margin: 0 auto;
-    width: 100%;
+    width: 100vw;
     /* max-width: calc(100% - 200px); */
     /* max-width: 1600px; */
     min-height: 100vh;
     
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
 
   section {

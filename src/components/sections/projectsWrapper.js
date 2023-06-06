@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React, { useRef } from "react";
 import styled from "styled-components";
-import img from "../../images/mf11.png";
 import { CloudinaryContext, Video } from "cloudinary-react";
 
 const Section = styled.section`
@@ -133,7 +132,7 @@ const ProjectsWrapper = (props) => {
                 <div className="card__image">
                   <Image
                     className="images"
-                    src={img}
+                    src={project.thumbnails.square}
                     alt="picture img"
                     height={300}
                     width={300}
