@@ -41,6 +41,7 @@ const AboutCard = styled.div`
 
   p {
     font-size: var(--fz-md);
+    font-weight: 400;
   }
 
   &:hover::before {

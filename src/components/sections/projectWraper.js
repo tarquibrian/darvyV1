@@ -7,7 +7,7 @@ import { Video, CloudinaryContext } from "cloudinary-react";
 
 const ProjectWrapperStyled = styled.section`
   padding: 0;
-  min-height: 500px;
+  min-height: 1500px;
   width: 86%;
   /* max-width: calc(100% - 100px); */
   max-width: 1640px;

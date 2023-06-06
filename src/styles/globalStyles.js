@@ -40,7 +40,7 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 8px;
     border: 2px solid transparent;
     background-clip: content-box;
-    background-color: rgba(150,150,150,1)
+    background-color: rgba(100,100,100,1)
     /* background-color: transparent; */
     /* background-image: radial-gradient(
       circle farthest-corner at 10% 20%,
@@ -56,8 +56,8 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     /* overflow: hidden; */
-    overflow-x: hidden;
-    overflow-y: overlay;
+    /* overflow-x: hidden; */
+    /* overflow-y: overlay; */
     
     /* overflow: overlay; */
     /* -moz-osx-font-smoothing: grayscale; */
@@ -82,7 +82,7 @@ export const GlobalStyle = createGlobalStyle`
     /* max-width: 1600px; */
     min-height: 100vh;
     
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
 
   section {

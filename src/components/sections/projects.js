@@ -322,6 +322,7 @@ const Projects = () => {
         })}
       </div>
       <p className="footerTitle">{currentLanguage.lenguage.desc}</p>
+      <Link href={"projects"}>Projects</Link>
     </ProjectsStyled>
   );
 };
@@ -357,7 +358,7 @@ const WrapperContent = ({
   return (
     <motion.article className={`projects__wrapper`} id={id} ref={refView}>
       <div className="wrapper-effect">
-        <Link href={`/project/${id}`} scroll={false}>
+        <Link href={`/projects/${id}`} scroll={false}>
           <motion.div
             className="projects__wrapper-picture"
             initial="hidden"
