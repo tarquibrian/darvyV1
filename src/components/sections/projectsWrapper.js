@@ -111,20 +111,42 @@ const ProjectsWrapper = (props) => {
         <div className="projects__single">
           <div className="projects__single-sticky">
             <div className="card">
-              <header>
-                <h3>title</h3>
-              </header>
-              <CloudinaryContext cloud_name="dskypy0xt">
-                <div className="video-content">
-                  <Video
-                    publicId="portfolio/20230605_222407_dmgtok"
-                    width="100%"
-                    innerRef={videoRef}
-                    autoPlay
-                    loop
-                  />
+              <a
+                href="http://tarquibrian.github.io/noisethreejs/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h3>{props.recents[0].title}</h3>
+
+                <div className="card-video">
+                  <CloudinaryContext cloud_name="dskypy0xt">
+                    <div className="video-content">
+                      <Video
+                        publicId="portfolio/20230605_222407_dmgtok"
+                        width="100%"
+                        innerRef={videoRef}
+                        autoPlay
+                        loop
+                      />
+                    </div>
+                  </CloudinaryContext>
+                  <span>! threejs output preview</span>
                 </div>
-              </CloudinaryContext>
+              </a>
+              <div className="card-content">
+                <div className="card-content-row">
+                  <span>Used:</span>
+                  <ul>
+                    {props.recents[0].features.map((feature, i) => {
+                      return <li key={i}>{feature.name}</li>;
+                    })}
+                  </ul>
+                </div>
+                <div className="card-content-row">
+                  <span>{props.recents[0].typeProject[0]}</span>
+                  <span>{props.recents[0].typeProject[1]}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
