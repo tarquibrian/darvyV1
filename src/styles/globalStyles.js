@@ -56,7 +56,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     /* overflow: hidden; */
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     /* overflow-y: overlay; */
     
     /* overflow: overlay; */
@@ -82,7 +82,7 @@ export const GlobalStyle = createGlobalStyle`
     /* max-width: 1600px; */
     min-height: 100vh;
     
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
   }
 
   section {
