@@ -565,5 +565,43 @@ export const projectsData = {
         themeMode: "light",
       },
     ],
+    recents: [
+      {
+        id: "1",
+        label: "3D Web Project",
+        title: "Noise filter effect for images",
+        desc: "This filter effect provides an EffectPass/threejs which automatically organizes and merges any given combination of effects. This minimizes the amount of render operations and makes it possible to combine many effects without the performance penalties of traditional pass chaining. Additionally, every effect can choose its own blend function.",
+        features: [
+          {
+            name: "ThreeJS",
+          },
+          {
+            name: "React-three/fiber",
+          },
+          { name: "React-three/postprocessing" },
+        ],
+        links: [
+          {
+            path: "https://tarquibrian.github.io/noisethreejs/",
+            svg: 1,
+          },
+        ],
+        thumbnails: [
+          {
+            square: "portfolio/20230605_222407_dmgtok",
+            horizontal: '',
+            vertical: '',
+          },
+        ],
+        typeProject: ["Tipo de Proyecto", "3D"],
+        techStack: "Tecnologías",
+        client: ["Cliente", "Personal"],
+        threeColors: {
+          color: [0.8, 0.95, 0.94],
+          colorBase: [0.38, 0.09, 0.57],
+          colorDeep: [0, 0, 0],
+        },
+      },
+    ],
   },
 };

@@ -61,14 +61,11 @@ const Section = styled.section`
       position: relative;
       padding-top: 2rem;
       &-sticky {
-        border: 1px solid white;
         position: sticky;
-        /* top: 0; */
         top: 2rem;
         display: grid;
         gap: 1rem;
         z-index: 9;
-        /* padding: 2rem 5% 3rem; */
       }
     }
   }
