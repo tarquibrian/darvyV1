@@ -1,7 +1,8 @@
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import img from "../../images/mf11.png";
+import { CloudinaryContext, Video } from "cloudinary-react";
 
 const Section = styled.section`
   /* min-height: 500px; */
@@ -74,6 +75,7 @@ const Section = styled.section`
 `;
 
 const ProjectsWrapper = (props) => {
+  const videoRef = useRef();
   console.log(props.items);
   return (
     <Section>
@@ -111,7 +113,22 @@ const ProjectsWrapper = (props) => {
         </div>
         <div className="projects__single">
           <div className="projects__single-sticky">
-            <div className="card">{props.items[0].desc}</div>
+            <div className="card">
+              <header>
+                <h3>title</h3>
+              </header>
+              <CloudinaryContext cloud_name="dskypy0xt">
+                <div className="video-content">
+                  <Video
+                    publicId="portfolio/20230605_222407_dmgtok"
+                    width="100%"
+                    innerRef={videoRef}
+                    autoPlay
+                    loop
+                  />
+                </div>
+              </CloudinaryContext>
+            </div>
           </div>
         </div>
       </div>
