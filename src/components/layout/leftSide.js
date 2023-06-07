@@ -25,7 +25,6 @@ const SideStyle = styled(motion.div)`
     grid-template-rows: auto max-content auto;
     gap: 1rem;
     height: 100vh;
-
     a {
       font-size: 1.2rem;
       writing-mode: vertical-lr;
@@ -85,6 +84,9 @@ const SideStyle = styled(motion.div)`
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    padding: 0.6rem;
+    border-radius: 8px;
 
     li {
       a {
