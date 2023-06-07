@@ -270,7 +270,7 @@ export const projectsData = {
   },
   en: {
     title: ".Projects",
-    desc: "+12 Projects. Preparing for deployment and preview.",
+    desc: "View More Projects",
     items: [
       {
         id: "1",

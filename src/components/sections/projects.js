@@ -35,27 +35,6 @@ const ProjectsStyled = styled(motion.section)`
   width: 80%;
   max-width: 1280px;
   margin-inline: auto;
-  /* background-color: lightblue; */
-
-  .headerTitle {
-    font-size: var(--fz-header);
-    font-weight: 400;
-    color: #eae2b7;
-    text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
-    margin: 0 0 3rem -4px;
-    display: grid;
-    grid-template-columns: max-content auto;
-    gap: 0.2rem;
-    &::after {
-      content: "";
-      display: block;
-      background: #eae2b7;
-      align-self: end;
-      margin-bottom: 12px;
-      width: auto;
-      height: 3px;
-    }
-  }
 
   .projects__container {
     display: grid;
@@ -238,9 +217,37 @@ const ProjectsStyled = styled(motion.section)`
 
   .footerTitle {
     font-family: var(--ff-sofia);
-    margin-top: 2rem;
+    margin-top: 4rem;
     text-align: center;
-    font-size: var(--fz-sm);
+    font-size: var(--fz-md);
+    display: grid;
+    place-content: center;
+    /* border-bottom: 2px solid rgba(255, 255, 255, 0.4); */
+    a {
+      /* color: rgba(255, 229, 168, 1); */
+      color: white;
+      padding: 10px 18px;
+      border-radius: var(--br-buttns);
+      border: 2px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .3rem;
+      width: fit-content;
+      &:hover {
+        border: 2px solid var(--border-light);
+        /* cursor: pointer; */
+        filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.6));
+        background-color: rgba(255, 255, 255, 0.2);
+        .symbol {
+          transform: scale(1.3);
+        }
+      }
+      /* &:hover {
+        text-shadow: 0 0 5px rgba(0 0 0 / 0.5);
+        transform: scale(1.04);
+      } */
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -294,8 +301,15 @@ const Projects = () => {
         <WrapperContent {...currentLanguage.lenguage.items[2]} />
         <WrapperContent {...currentLanguage.lenguage.items[0]} />
       </div>
-      <p className="footerTitle">{currentLanguage.lenguage.desc}</p>
-      <Link href={"projects"}>Projects</Link>
+
+      <p className="footerTitle">
+        <Link href={"/projects"} scroll={false}>
+          <span>{currentLanguage.lenguage.desc}</span>
+          <span className="symbol">✷</span>
+        </Link>
+      </p>
+
+      {/* <Link href={"projects"}>Projects</Link> */}
     </ProjectsStyled>
   );
 };
