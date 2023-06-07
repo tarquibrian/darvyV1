@@ -34,8 +34,8 @@ import { projectsData } from "src/data/projectsData";
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
   max-width: 1280px;
-  margin: auto;
-  /* overflow: hidden; */
+  margin-inline: auto;
+  /* background-color: lightblue; */
 
   .headerTitle {
     font-size: var(--fz-header);

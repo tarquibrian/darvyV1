@@ -26,7 +26,7 @@ const Section = styled.section`
         margin-bottom: 1rem;
         width: 100%;
         height: 290px;
-        border-bottom: 1px solid #eae2b7;
+        border-bottom: 2px solid #eae2b7;
         padding: 2rem 0;
         .card__image {
           aspect-ratio: 1 / 1;
