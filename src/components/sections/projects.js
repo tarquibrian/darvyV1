@@ -290,10 +290,9 @@ const Projects = () => {
     >
       <h1 className="title-content">{currentLanguage.lenguage.title}</h1>
       <div className="projects__container">
-        {/* {currentLanguage.lenguage.items} */}
-        {currentLanguage.lenguage.items.map((project) => {
-          return <WrapperContent {...project} key={title} />;
-        })}
+        <WrapperContent {...currentLanguage.lenguage.items[4]} />
+        <WrapperContent {...currentLanguage.lenguage.items[2]} />
+        <WrapperContent {...currentLanguage.lenguage.items[0]} />
       </div>
       <p className="footerTitle">{currentLanguage.lenguage.desc}</p>
       <Link href={"projects"}>Projects</Link>
