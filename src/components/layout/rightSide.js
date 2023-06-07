@@ -32,7 +32,7 @@ const EmailStyle = styled(motion.div)`
         writing-mode: vertical-lr;
         transition: 0.2s ease;
         &:hover {
-          text-shadow: 0 0 3px rgba(255 255 255 / 0.8);
+          text-shadow: 0 0 8px rgba(255 255 255 / 0.8);
         }
       }
     }
