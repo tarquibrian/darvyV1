@@ -5,11 +5,15 @@ import {
   Experience,
   Projects,
   Contact,
+  LeftSide,
+  RightSide,
 } from "@components";
 
 export default function Home() {
   return (
     <Layout updateBG={true}>
+      <LeftSide />
+      <RightSide />
       <Hero />
       <About />
       <Experience />
