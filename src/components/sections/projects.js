@@ -301,15 +301,12 @@ const Projects = () => {
         <WrapperContent {...currentLanguage.lenguage.items[2]} />
         <WrapperContent {...currentLanguage.lenguage.items[0]} />
       </div>
-
       <p className="footerTitle">
         <Link href={"/projects"} scroll={false}>
           <span>{currentLanguage.lenguage.desc}</span>
           <span className="symbol">✷</span>
         </Link>
       </p>
-
-      {/* <Link href={"projects"}>Projects</Link> */}
     </ProjectsStyled>
   );
 };
