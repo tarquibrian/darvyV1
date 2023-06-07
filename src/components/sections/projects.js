@@ -229,18 +229,18 @@ const ProjectsStyled = styled(motion.section)`
     /* border-bottom: 2px solid rgba(255, 255, 255, 0.4); */
     a {
       /* color: rgba(255, 229, 168, 1); */
-      color: white;
-      padding: 10px 18px;
+      color: rgba(255, 255, 255, 0.9);
+      padding: 12px 18px;
       border-radius: var(--br-buttns);
       border: 2px solid var(--border-light);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: .3rem;
+      gap: 0.3rem;
       width: fit-content;
       &:hover {
         border: 2px solid var(--border-light);
-        /* cursor: pointer; */
+        /* color: rgba(255, 255, 255, 1); */
         filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.6));
         background-color: rgba(255, 255, 255, 0.2);
         .symbol {
