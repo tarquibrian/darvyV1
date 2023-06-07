@@ -27,19 +27,12 @@ const EmailStyle = styled(motion.div)`
         border: 2px solid rgba(255, 255, 255, 0.4);
         border-radius: 8px;
         padding: 1rem 0.6rem;
-        position: relative;
-        position: relative;
-        text-align: center;
-        text-justify: center;
-        display: inline;
         font-family: "DMSans", sans-serif;
         font-size: 1.2rem;
         writing-mode: vertical-lr;
         transition: 0.2s ease;
-        vertical-align: middle;
         &:hover {
           text-shadow: 0 0 3px rgba(255 255 255 / 0.8);
-          /* transform: scale(1.05); */
         }
       }
     }
