@@ -271,7 +271,7 @@ const languages = {
 };
 
 const Projects = () => {
-  const { state, updateColor } = useAppContext();
+  const { state } = useAppContext();
   const controls = useAnimation();
   const [refView, inView] = useInView();
 
