@@ -26,8 +26,8 @@ export default function App({ Component, pageProps }) {
         </AnimatePresence>
 
         <Header />
-        {/* <LeftSide /> */}
-        {/* <RightSide /> */}
+        <LeftSide />
+        <RightSide />
         <ThreeCanvas />
       </AppProvider>
     </>

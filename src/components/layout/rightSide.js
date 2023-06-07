@@ -40,7 +40,7 @@ const EmailStyle = styled(motion.div)`
     &::before {
       content: "";
       display: block;
-      width: 1px;
+      width: 0px;
       height: 100%;
       margin: 0 auto;
       background-color: ${({ theme }) =>
@@ -49,7 +49,7 @@ const EmailStyle = styled(motion.div)`
     &::after {
       content: "";
       display: block;
-      width: 1px;
+      width: 0px;
       height: 100%;
       margin: 0 auto;
       background-color: ${({ theme }) =>
