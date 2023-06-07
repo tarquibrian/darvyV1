@@ -278,6 +278,7 @@ const Projects = () => {
     }
   }, [controls, inView]);
 
+  console.log(currentLanguage.lenguage.items[0]);
   return (
     <ProjectsStyled
       key={"projects-section"}
@@ -289,6 +290,7 @@ const Projects = () => {
     >
       <h1 className="title-content">{currentLanguage.lenguage.title}</h1>
       <div className="projects__container">
+        {/* {currentLanguage.lenguage.items} */}
         {currentLanguage.lenguage.items.map((project) => {
           const {
             id,
@@ -303,22 +305,7 @@ const Projects = () => {
             client,
             threeColors,
           } = project;
-          return (
-            <WrapperContent
-              id={id}
-              label={label}
-              desc={desc}
-              features={features}
-              title={title}
-              key={title}
-              links={links}
-              img={img}
-              typeProject={typeProject}
-              techStack={techStack}
-              client={client}
-              threeColors={threeColors}
-            />
-          );
+          return <WrapperContent {...project} key={title} />;
         })}
       </div>
       <p className="footerTitle">{currentLanguage.lenguage.desc}</p>
