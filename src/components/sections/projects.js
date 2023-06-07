@@ -292,19 +292,6 @@ const Projects = () => {
       <div className="projects__container">
         {/* {currentLanguage.lenguage.items} */}
         {currentLanguage.lenguage.items.map((project) => {
-          const {
-            id,
-            label,
-            title,
-            desc,
-            features,
-            links,
-            img,
-            typeProject,
-            techStack,
-            client,
-            threeColors,
-          } = project;
           return <WrapperContent {...project} key={title} />;
         })}
       </div>
