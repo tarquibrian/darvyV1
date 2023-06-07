@@ -17,7 +17,10 @@ export default function App({ Component, pageProps }) {
           <meta name="robots" content="all" />
         </Head>
 
-        <AnimatePresence mode="sync">
+        <AnimatePresence
+          mode="sync"
+          // onExitComplete={() => window.scrollTo(0, 0)}
+        >
           <GlobalStyle />
           <Component {...pageProps} key={router.asPath} />
         </AnimatePresence>

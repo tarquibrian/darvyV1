@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { CloudinaryContext, Video } from "cloudinary-react";
 
@@ -122,6 +122,9 @@ const Section = styled.section`
 const ProjectsWrapper = (props) => {
   const videoRef = useRef();
   console.log(props.items);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Section>
       <div className="projects">

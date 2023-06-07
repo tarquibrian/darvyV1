@@ -36,6 +36,10 @@ const ProjectsStyled = styled(motion.section)`
   max-width: 1280px;
   margin-inline: auto;
 
+  .title-content {
+    margin-bottom: 3rem;
+  }
+
   .projects__container {
     display: grid;
     gap: 10rem;
