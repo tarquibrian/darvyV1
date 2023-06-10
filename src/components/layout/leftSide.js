@@ -148,7 +148,7 @@ const LeftSide = () => {
             <IconInstagram />
           </a>
         </li>
-        {/* <li>
+        <li>
           <a
             href="https://medium.com/@tarquibrian"
             target="_blank"
@@ -165,7 +165,7 @@ const LeftSide = () => {
           >
             <IconDribbble />
           </a>
-        </li> */}
+        </li>
       </ul>
     </div>
   );
