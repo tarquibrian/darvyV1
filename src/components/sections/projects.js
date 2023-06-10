@@ -310,8 +310,8 @@ const Projects = () => {
       </div>
       <p className="footerTitle">
         <Link href={"/projects"} scroll={false}>
-          <span>⏤⏤ {currentLanguage.lenguage.desc} ⏤⏤</span>
-          <span className="symbol">✷</span>
+          <span>⏤⏤ ✧{currentLanguage.lenguage.desc} ✧⏤⏤</span>
+          {/* <span className="symbol">✷</span> */}
         </Link>
       </p>
     </ProjectsStyled>
