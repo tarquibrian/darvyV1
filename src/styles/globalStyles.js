@@ -40,13 +40,7 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 8px;
     border: 2px solid transparent;
     background-clip: content-box;
-    background-color: rgba(100,100,100,1)
-    /* background-color: transparent; */
-    /* background-image: radial-gradient(
-      circle farthest-corner at 10% 20%,
-      rgba(255, 229, 168, 1) 0%,
-      rgba(251, 174, 222, 1) 100.7%
-    ); */
+    background-color: rgba(80,80,80,1);
   }
 
   body {
