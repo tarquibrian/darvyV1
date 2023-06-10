@@ -13,6 +13,7 @@ const EmailStyle = styled(motion.div)`
   display: grid;
   place-content: center;
   z-index: 999;
+  right: ${({ isHome }) => (isHome ? "0px" : "-100px")};
   .right {
     display: grid;
     grid-template-rows: auto max-content auto;
@@ -27,7 +28,7 @@ const EmailStyle = styled(motion.div)`
       a {
         border: 2px solid rgba(255, 255, 255, 0.4);
         border-radius: 8px;
-        padding: 1rem .8rem;
+        padding: 1rem 0.8rem;
         font-family: "DMSans", sans-serif;
         font-size: 1.2rem;
         writing-mode: vertical-lr;
@@ -90,7 +91,7 @@ const EmailStyle = styled(motion.div)`
 `;
 
 const RightSide = () => {
-  const router = useRouter()
+  const router = useRouter();
   const { state } = useAppContext();
   const emailName = (
     <div
@@ -107,7 +108,7 @@ const RightSide = () => {
       animate={{ x: 0 }}
       transition={{ duration: 0.6, delay: 0.7 }}
       // theme={state.currentTheme}
-      isHome={router.asPath === '/' ? true : false}
+      isHome={router.asPath === "/" ? true : false}
     >
       {emailName}
     </EmailStyle>

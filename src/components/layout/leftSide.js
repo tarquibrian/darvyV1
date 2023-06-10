@@ -21,7 +21,7 @@ const SideStyle = styled(motion.div)`
   display: grid;
   place-content: center;
   z-index: 999;
-  left: ${({ view }) => (view ? "0px" : "-150px")};
+  left: ${({ view }) => (view ? "0px" : "-100px")};
   .left {
     display: grid;
     grid-template-rows: auto max-content auto;
