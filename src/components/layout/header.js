@@ -170,7 +170,7 @@ export const ResumeLink = styled.div`
   padding: 8px 14px;
   display: grid;
   place-content: center;
-
+  font-size: var(--fz-sm);
   border-radius: 4px;
 
   &:hover {
