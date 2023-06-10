@@ -26,7 +26,7 @@ const EmailStyle = styled(motion.div)`
       a {
         border: 2px solid rgba(255, 255, 255, 0.4);
         border-radius: 8px;
-        padding: 1rem 0.6rem;
+        padding: 1rem .8rem;
         font-family: "DMSans", sans-serif;
         font-size: 1.2rem;
         writing-mode: vertical-lr;
