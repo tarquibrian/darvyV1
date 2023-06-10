@@ -85,7 +85,7 @@ const SideStyle = styled(motion.div)`
     align-items: center;
     gap: 10px;
     border: 2px solid rgba(255, 255, 255, 0.4);
-    padding: 0.6rem;
+    padding: .8rem;
     border-radius: 8px;
 
     li {
