@@ -12,8 +12,6 @@ import {
 export default function Home() {
   return (
     <Layout updateBG={true}>
-      <LeftSide />
-      <RightSide />
       <Hero />
       <About />
       <Experience />
