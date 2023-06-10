@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
+import { useRouter } from "next/router";
 
 const EmailStyle = styled(motion.div)`
   min-width: 100px;
@@ -89,6 +90,7 @@ const EmailStyle = styled(motion.div)`
 `;
 
 const RightSide = () => {
+  const router = useRouter()
   const { state } = useAppContext();
   const emailName = (
     <div
@@ -105,6 +107,7 @@ const RightSide = () => {
       animate={{ x: 0 }}
       transition={{ duration: 0.6, delay: 0.7 }}
       // theme={state.currentTheme}
+      isHome={router.asPath === '/' ? true : false}
     >
       {emailName}
     </EmailStyle>
