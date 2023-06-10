@@ -170,7 +170,6 @@ const LeftSide = () => {
     </div>
   );
   const router = useRouter();
-  console.log(router.asPath);
 
   return (
     <SideStyle

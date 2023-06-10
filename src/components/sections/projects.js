@@ -292,7 +292,6 @@ const Projects = () => {
     }
   }, [controls, inView]);
 
-  console.log(currentLanguage.lenguage.items[0]);
   return (
     <ProjectsStyled
       key={"projects-section"}
