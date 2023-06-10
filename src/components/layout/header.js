@@ -155,6 +155,8 @@ const LinksContainer = styled.div`
     li {
       margin: 0 1rem;
       transition: 0.1s ease;
+      /* font-family: var(--ff-sofia); */
+      font-size: var(--fz-smm);
       &:hover {
         text-shadow: 0 0 5px rgba(255 255 255 / 0.8);
       }
