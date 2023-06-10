@@ -134,6 +134,7 @@ const ImgProfile = styled.div`
 
       .name {
         span {
+          font-family: var(--ff-sofia);
           top: 0rem;
         }
       }
