@@ -10,6 +10,7 @@ import {
 } from "@components";
 import { motion, useAnimation } from "framer-motion";
 import { useAppContext } from "src/context/app.context";
+import { useRouter } from "next/router";
 
 const SideStyle = styled(motion.div)`
   min-width: 100px;
@@ -20,6 +21,7 @@ const SideStyle = styled(motion.div)`
   display: grid;
   place-content: center;
   z-index: 999;
+  left: ${({ view }) => (view ? "0px" : "-150px")};
   .left {
     display: grid;
     grid-template-rows: auto max-content auto;
@@ -76,7 +78,6 @@ const SideStyle = styled(motion.div)`
 
   ul {
     z-index: 999;
-    /* width: 100%; */
     list-style: none;
     display: flex;
     align-items: center;
@@ -85,7 +86,7 @@ const SideStyle = styled(motion.div)`
     align-items: center;
     gap: 10px;
     border: 2px solid rgba(255, 255, 255, 0.4);
-    padding: .8rem;
+    padding: 0.8rem;
     border-radius: 8px;
 
     li {
@@ -168,11 +169,15 @@ const LeftSide = () => {
       </ul>
     </div>
   );
+  const router = useRouter();
+  console.log(router.asPath);
+
   return (
     <SideStyle
       initial={{ x: -100 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.6, delay: 0.7 }}
+      view={router.asPath === "/" ? true : false}
     >
       {social}
     </SideStyle>
