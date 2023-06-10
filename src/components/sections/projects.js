@@ -228,8 +228,12 @@ const ProjectsStyled = styled(motion.section)`
     place-content: center;
     /* border-bottom: 2px solid rgba(255, 255, 255, 0.4); */
     a {
-      /* color: rgba(255, 229, 168, 1); */
-      color: rgba(255, 255, 255, 0.9);
+      color: #000;
+      background-image: radial-gradient(
+        circle farthest-corner at 10% 20%,
+        rgba(255, 229, 168, 1) 0%,
+        rgba(251, 174, 222, 1) 100.7%
+      );
       padding: 12px 18px;
       border-radius: var(--br-buttns);
       border: 2px solid var(--border-light);
@@ -242,7 +246,6 @@ const ProjectsStyled = styled(motion.section)`
         border: 2px solid var(--border-light);
         /* color: rgba(255, 255, 255, 1); */
         filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.6));
-        background-color: rgba(255, 255, 255, 0.2);
         .symbol {
           transform: scale(1.3);
         }
