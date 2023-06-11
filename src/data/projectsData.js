@@ -31,6 +31,7 @@
 import {
   IconExternal,
   IconFigma,
+  IconFigmaImg,
   IconNextjs,
   IconSass,
   ReactIcon,
@@ -1098,7 +1099,7 @@ export const projectsData = {
               {
                 id: "Figma+",
                 label: "Figma+",
-                icon: () => <IconFigma />,
+                icon: () => <IconFigmaImg />,
               },
             ],
           },

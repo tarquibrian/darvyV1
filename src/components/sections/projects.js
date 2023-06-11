@@ -420,27 +420,12 @@ const WrapperContent = ({ id, title, desc, features, thumbnails, links }) => {
             </div>
             <div className="features">
               {features.techStack.values.map((feature, i) => {
-                const { name, bgColor } = feature;
+                console.log(feature);
+                const Icon = feature.icon;
                 return (
-                  <div key={i} className="feature-item" bgColor={bgColor}>
-                    {name === "VS Code" && <IconVS />}
-                    {name === "Vim" && <IconVim />}
-                    {name === "Sublime Text" && <IconST />}
-                    {name === "Atom" && <IconAtom />}
-                    {name === "NextJS" && <IconNextjs />}
-                    {name === "React" && <ReactIcon />}
-                    {name === "Styled Components" && <IconSC />}
-                    {name === "Adobe Illustrator" && <IconAI />}
-                    {name === "Figma+" && <IconFigmaImg />}
-                    {name === "Sass" && <IconSass />}
-                    {name === "Adobe Photoshop" && <IconAP />}
-                    {name === "Redux" && <IconRedux />}
-                    {name === "Express" && <IconExpress />}
-                    {name === "MongoDB" && <IconMongo />}
-                    {name === "Google Maps Platform" && <IconMaps />}
-                    {name === "Push Notifications" && <IconPushNotification />}
-                    {name === "PWA" && <IconPWA />}
-                    <span>{name}</span>
+                  <div key={feature.id} className="feature-item">
+                    <Icon />
+                    <span>{feature.label}</span>
                   </div>
                 );
               })}
