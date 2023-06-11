@@ -120,7 +120,7 @@ const Section = styled.section`
   }
 `;
 
-const ProjectsWrapper = (props) => {
+const ProjectsWrapper = ({ projects, recents }) => {
   const videoRef = useRef();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -129,7 +129,7 @@ const ProjectsWrapper = (props) => {
     <Section>
       <div className="projects">
         <div className="projects__list">
-          {props.projects.map((project, i) => {
+          {projects.map((project, i) => {
             return (
               <div className="projects__list-card" key={i}>
                 <div className="card__image">
@@ -173,7 +173,7 @@ const ProjectsWrapper = (props) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <h3>{props.recents[0].title}</h3>
+                <h3>{recents[0].title}</h3>
 
                 <CloudinaryContext cloud_name="dskypy0xt">
                   <div className="card-video">
@@ -190,17 +190,13 @@ const ProjectsWrapper = (props) => {
               </a>
               <div className="card-content">
                 <div className="card-content-row">
-                  <span className="title">
-                    {props.recents[0].typeProject[0]}
-                  </span>
-                  <span className="desc">
-                    {props.recents[0].typeProject[1]}
-                  </span>
+                  <span className="title">{recents[0].typeProject[0]}</span>
+                  <span className="desc">{recents[0].typeProject[1]}</span>
                 </div>
                 <div className="card-content-row">
-                  <span className="title">{props.recents[0].techStack}</span>
+                  <span className="title">{recents[0].techStack}</span>
                   <ul className="desc">
-                    {props.recents[0].features.map((feature, i) => {
+                    {recents[0].features.map((feature, i) => {
                       return <li key={i}>{feature.name}</li>;
                     })}
                   </ul>
