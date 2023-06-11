@@ -1,11 +1,15 @@
 import {
   IconAI,
   IconAP,
+  IconExpress,
   IconExternal,
   IconFigma,
   IconFigmaImg,
   IconGitHub,
+  IconMaps,
   IconNextjs,
+  IconPushNotification,
+  IconRedux,
   IconSC,
   IconST,
   IconSass,
@@ -13,6 +17,7 @@ import {
   IconVim,
   ReactIcon,
 } from "@components";
+import IconPWA from "src/components/icons/pwa";
 
 export const projectsData = {
   es: {
@@ -989,9 +994,9 @@ export const projectsData = {
     projects: [
       {
         id: 1,
-        label: "modernfashion",
-        title: "Ecommerce Website",
-        desc: `Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.`,
+        label: "darvytheme",
+        title: "Darvy Theme",
+        desc: "Darvy Theme is a color theme for Visual Studio Code and very soon for other editors like Atom or Sublime Text. The color palette is inspired by popular themes like One Dark Pro and Tokyo Night, so you might love this theme.",
         features: {
           typeProject: {
             label: "Type Project",
@@ -999,62 +1004,47 @@ export const projectsData = {
           },
           client: {
             label: "Client",
-            value: "ModernFasion",
+            value: "SonusTech",
           },
           techStack: {
             label: "Tech Stack",
             values: [
               {
-                id: "nextjs",
-                label: "NextJS",
-                icon: () => <IconNextjs />,
+                id: "vscode",
+                label: "VS Code",
+                icon: () => <IconVS />,
               },
               {
-                id: "react",
-                label: "React",
-                icon: () => <ReactIcon />,
+                id: "sublime",
+                label: "Sublime",
+                icon: () => <IconST />,
               },
               {
-                id: "sass",
-                label: "Sass",
-                icon: () => <IconSass />,
-              },
-              {
-                id: "adobe-photoshop",
-                label: "Adobe Photoshop",
-                icon: () => <IconAP />,
-              },
-              {
-                id: "figma",
-                label: "Figma",
-                icon: () => <IconFigmaImg />,
+                id: "vim",
+                label: "Vim",
+                icon: () => <IconVim />,
               },
             ],
           },
         },
         thumbnails: {
-          home: "/images/project-img3.png",
+          home: "/images/project-img1.png",
         },
         links: [
           {
             id: "external-link",
-            href: "https://ecommerce-website-zeta-one.vercel.app/",
+            href: "https://marketplace.visualstudio.com/items?itemName=darvy.darvypro",
             svg: () => <IconExternal />,
           },
           {
             id: "github",
-            href: "https://github.com/tarquibrian/ecommerce-website",
+            href: "https://github.com/tarquibrian/darvypro-theme",
             svg: () => <IconGitHub />,
-          },
-          {
-            id: "github",
-            href: "https://www.figma.com/community/file/1226407145403745837/Ecommerce",
-            svg: () => <IconFigma />,
           },
         ],
       },
       {
-        id: 1,
+        id: 2,
         label: "bussineswebsite",
         title: "Sonustech Bussines Website",
         desc: "Web application on Landing Page of a company that offers its technological services, related to computing, programming and solutions in the systems area.",
@@ -1120,10 +1110,10 @@ export const projectsData = {
         ],
       },
       {
-        id: 1,
-        label: "darvytheme",
-        title: "Darvy Theme",
-        desc: "Darvy Theme is a color theme for Visual Studio Code and very soon for other editors like Atom or Sublime Text. The color palette is inspired by popular themes like One Dark Pro and Tokyo Night, so you might love this theme.",
+        id: 3,
+        label: "modernfashion",
+        title: "Ecommerce Website",
+        desc: `Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.`,
         features: {
           typeProject: {
             label: "Type Project",
@@ -1131,47 +1121,133 @@ export const projectsData = {
           },
           client: {
             label: "Client",
-            value: "SonusTech",
+            value: "ModernFasion",
           },
           techStack: {
             label: "Tech Stack",
             values: [
               {
-                id: "vscode",
-                label: "VS Code",
-                icon: () => <IconVS />,
+                id: "nextjs",
+                label: "NextJS",
+                icon: () => <IconNextjs />,
               },
               {
-                id: "sublime",
-                label: "Sublime",
-                icon: () => <IconST />,
+                id: "react",
+                label: "React",
+                icon: () => <ReactIcon />,
               },
               {
-                id: "vim",
-                label: "Vim",
-                icon: () => <IconVim />,
+                id: "sass",
+                label: "Sass",
+                icon: () => <IconSass />,
+              },
+              {
+                id: "adobe-photoshop",
+                label: "Adobe Photoshop",
+                icon: () => <IconAP />,
+              },
+              {
+                id: "figma",
+                label: "Figma",
+                icon: () => <IconFigmaImg />,
               },
             ],
           },
         },
         thumbnails: {
-          home: "/images/project-img1.png",
+          home: "/images/project-img3.png",
         },
         links: [
           {
             id: "external-link",
-            href: "https://marketplace.visualstudio.com/items?itemName=darvy.darvypro",
+            href: "https://ecommerce-website-zeta-one.vercel.app/",
             svg: () => <IconExternal />,
           },
           {
             id: "github",
-            href: "https://github.com/tarquibrian/darvypro-theme",
+            href: "https://github.com/tarquibrian/ecommerce-website",
+            svg: () => <IconGitHub />,
+          },
+          {
+            id: "github",
+            href: "https://www.figma.com/community/file/1226407145403745837/Ecommerce",
+            svg: () => <IconFigma />,
+          },
+        ],
+      },
+      {
+        id: 4,
+        label: "modernfashion",
+        title: "Tourism Website",
+        desc: "Web application for tourist information management, using modules of Biographical Articles, Management and notification of cultural events, Visualization and addressing of tourist sites through Google Maps based on specific coordinates.",
+        features: {
+          typeProject: {
+            label: "Type Project",
+            value: "Web App",
+          },
+          client: {
+            label: "Client",
+            value: "Villa Rivero",
+          },
+          techStack: {
+            label: "Tech Stack",
+            values: [
+              {
+                id: "react",
+                label: "React",
+                icon: () => <ReactIcon />,
+              },
+              {
+                id: "redux",
+                label: "Redux",
+                icon: () => <IconRedux />,
+              },
+              {
+                id: "express",
+                label: "Express",
+                icon: () => <IconExpress />,
+              },
+              {
+                id: "googlemaps",
+                label: "Google Maps Platform",
+                icon: () => <IconMaps />,
+              },
+              {
+                id: "pwa",
+                label: "PWA",
+                icon: () => <IconPWA />,
+              },
+              {
+                id: "pushnotification",
+                label: "Push Notification",
+                icon: () => <IconPushNotification />,
+              },
+            ],
+          },
+        },
+        thumbnails: {
+          home: "/images/project-img4.png",
+        },
+        links: [
+          {
+            id: "external-link",
+            href: "https://villa-turismo.herokuapp.com/",
+            svg: () => <IconExternal />,
+          },
+          {
+            id: "github",
+            href: "https://github.com/tarquibrian/VT-backend",
+            svg: () => <IconGitHub />,
+          },
+          {
+            id: "github",
+            href: "https://github.com/tarquibrian/proyecto-villa-frontend",
             svg: () => <IconGitHub />,
           },
         ],
       },
       {
-        id: 1,
+        id: 5,
         label: "carlsburger",
         title: "Carls Burger Restaurant",
         desc: "Web application about a hamburger restaurant that provides a satisfying, easy and attractive user experience, and is an excellent marketing tool to attract new customers and keep existing ones.",

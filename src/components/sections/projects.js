@@ -304,6 +304,8 @@ const Projects = () => {
     >
       <h1 className="title-content">{currentLanguage.lenguage.title}</h1>
       <div className="projects__container">
+        <WrapperContent {...currentLanguage.lenguage.projects[4]} />
+        <WrapperContent {...currentLanguage.lenguage.projects[2]} />
         <WrapperContent {...currentLanguage.lenguage.projects[0]} />
       </div>
       <p className="footerTitle">
