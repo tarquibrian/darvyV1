@@ -304,15 +304,11 @@ const Projects = () => {
     >
       <h1 className="title-content">{currentLanguage.lenguage.title}</h1>
       <div className="projects__container">
-        {/* <WrapperContent {...currentLanguage.lenguage.items[4]} /> */}
-        {/* <WrapperContent {...currentLanguage.lenguage.items[2]} /> */}
-        {/* <WrapperContent {...currentLanguage.lenguage.items[0]} /> */}
         <WrapperContent {...currentLanguage.lenguage.projects[0]} />
       </div>
       <p className="footerTitle">
         <Link href={"/projects"} scroll={false}>
           <span>+⏤⏤ {currentLanguage.lenguage.desc} ⏤⏤+</span>
-          {/* <span className="symbol">✷</span> */}
         </Link>
       </p>
     </ProjectsStyled>
@@ -324,12 +320,6 @@ export default Projects;
 const WrapperContent = ({ id, title, desc, features, thumbnails, links }) => {
   const controls = useAnimation();
   const [refView, inView] = useInView();
-  // const { updateColor } = useAppContext();
-
-  // const update = (nColors) => {
-  //   updateColor(nColors);
-  // };
-
   useEffect(() => {
     if (inView) {
       controls.start("visible");
@@ -368,13 +358,6 @@ const WrapperContent = ({ id, title, desc, features, thumbnails, links }) => {
 
             <div className="picture-content">
               <CardEffect>
-                {/* <Image
-                  src={`images/${img}.png`}
-                  width={1000}
-                  height={600}
-                  alt="img picture"
-                  // placeholder="blur"
-                /> */}
                 <Image
                   src={thumbnails.home}
                   width={900}

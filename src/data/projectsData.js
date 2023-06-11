@@ -598,9 +598,9 @@ export const projectsData = {
     projects: [
       {
         id: 1,
-        label: "carsburger",
+        label: "carlsburger",
         title: "Carls Burger Restaurant",
-        desc: "desc",
+        desc: "Web application about a hamburger restaurant that provides a satisfying, easy and attractive user experience, and is an excellent marketing tool to attract new customers and keep existing ones.",
         features: {
           typeProject: {
             label: "Type Project",
@@ -612,7 +612,7 @@ export const projectsData = {
           },
           techStack: {
             label: "Tech Stack",
-            value: [
+            values: [
               {
                 id: "NextJS",
                 label: "NextJS",
@@ -631,69 +631,14 @@ export const projectsData = {
               {
                 id: "Figma+",
                 label: "Figma+",
-                icon: () => <IconFigma />,
+                icon: () => <IconFigmaImg />,
               },
             ],
           },
         },
-        thumbnails: {},
-        links: [
-          {
-            id: "external-link",
-            href: "https://carls-burger.vercel.app/",
-            svg: () => <IconExternal />,
-          },
-        ],
-        threeColors: {
-          color: [0.4, 0.4, 0.4],
-          colorBase: [0.4, 0.4, 0.4],
-          colorDeep: [0.9, 0.9, 0.9],
+        thumbnails: {
+          home: "/images/project-img5.png",
         },
-      },
-      {
-        id: 2,
-        title: "title",
-        desc: "desc",
-        features: [
-          {
-            id: "NextJS",
-            name: "NextJS",
-          },
-          {
-            id: "React",
-            name: "React",
-          },
-          {
-            id: "Sass",
-            name: "Sass",
-          },
-        ],
-        links: [
-          {
-            id: "external-link",
-            href: "https://carls-burger.vercel.app/",
-            svg: () => <IconExternal />,
-          },
-        ],
-      },
-      {
-        id: 3,
-        title: "title",
-        desc: "desc",
-        features: [
-          {
-            id: "NextJS",
-            name: "NextJS",
-          },
-          {
-            id: "React",
-            name: "React",
-          },
-          {
-            id: "Sass",
-            name: "Sass",
-          },
-        ],
         links: [
           {
             id: "external-link",
@@ -1067,7 +1012,8 @@ export const projectsData = {
     projects: [
       {
         id: 1,
-        title: "title",
+        label: "carlsburger",
+        title: "Carls Burger Restaurant",
         desc: "Web application about a hamburger restaurant that provides a satisfying, easy and attractive user experience, and is an excellent marketing tool to attract new customers and keep existing ones.",
         features: {
           typeProject: {
@@ -1107,58 +1053,6 @@ export const projectsData = {
         thumbnails: {
           home: "/images/project-img5.png",
         },
-        links: [
-          {
-            id: "external-link",
-            href: "https://carls-burger.vercel.app/",
-            svg: () => <IconExternal />,
-          },
-        ],
-      },
-      {
-        id: 2,
-        title: "title",
-        desc: "desc",
-        features: [
-          {
-            id: "NextJS",
-            name: "NextJS",
-          },
-          {
-            id: "React",
-            name: "React",
-          },
-          {
-            id: "Sass",
-            name: "Sass",
-          },
-        ],
-        links: [
-          {
-            id: "external-link",
-            href: "https://carls-burger.vercel.app/",
-            svg: () => <IconExternal />,
-          },
-        ],
-      },
-      {
-        id: 3,
-        title: "title",
-        desc: "desc",
-        features: [
-          {
-            id: "NextJS",
-            name: "NextJS",
-          },
-          {
-            id: "React",
-            name: "React",
-          },
-          {
-            id: "Sass",
-            name: "Sass",
-          },
-        ],
         links: [
           {
             id: "external-link",
