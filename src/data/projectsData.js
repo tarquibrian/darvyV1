@@ -1,5 +1,6 @@
 import {
   IconAI,
+  IconAP,
   IconExternal,
   IconFigma,
   IconFigmaImg,
@@ -988,6 +989,72 @@ export const projectsData = {
     projects: [
       {
         id: 1,
+        label: "modernfashion",
+        title: "Ecommerce Website",
+        desc: `Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.`,
+        features: {
+          typeProject: {
+            label: "Type Project",
+            value: "Web App",
+          },
+          client: {
+            label: "Client",
+            value: "ModernFasion",
+          },
+          techStack: {
+            label: "Tech Stack",
+            values: [
+              {
+                id: "nextjs",
+                label: "NextJS",
+                icon: () => <IconNextjs />,
+              },
+              {
+                id: "react",
+                label: "React",
+                icon: () => <ReactIcon />,
+              },
+              {
+                id: "sass",
+                label: "Sass",
+                icon: () => <IconSass />,
+              },
+              {
+                id: "adobe-photoshop",
+                label: "Adobe Photoshop",
+                icon: () => <IconAP />,
+              },
+              {
+                id: "figma",
+                label: "Figma",
+                icon: () => <IconFigmaImg />,
+              },
+            ],
+          },
+        },
+        thumbnails: {
+          home: "/images/project-img3.png",
+        },
+        links: [
+          {
+            id: "external-link",
+            href: "https://ecommerce-website-zeta-one.vercel.app/",
+            svg: () => <IconExternal />,
+          },
+          {
+            id: "github",
+            href: "https://github.com/tarquibrian/ecommerce-website",
+            svg: () => <IconGitHub />,
+          },
+          {
+            id: "github",
+            href: "https://www.figma.com/community/file/1226407145403745837/Ecommerce",
+            svg: () => <IconFigma />,
+          },
+        ],
+      },
+      {
+        id: 1,
         label: "bussineswebsite",
         title: "Sonustech Bussines Website",
         desc: "Web application on Landing Page of a company that offers its technological services, related to computing, programming and solutions in the systems area.",
@@ -1060,11 +1127,11 @@ export const projectsData = {
         features: {
           typeProject: {
             label: "Type Project",
-            value: "Marketplace Extensions",
+            value: "Web App",
           },
           client: {
             label: "Client",
-            value: "Personal",
+            value: "SonusTech",
           },
           techStack: {
             label: "Tech Stack",
