@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { CloudinaryContext, Video } from "cloudinary-react";
+import { IconExternal } from "../icons";
 
 const Section = styled.section`
   /* min-height: 500px; */
@@ -121,12 +122,14 @@ const Section = styled.section`
 
 const ProjectsWrapper = (props) => {
   const videoRef = useRef();
-  console.log(props.items);
+  const Icon = props.projects[0].links[0].svg;
+  console.log(props.projects[0].links[0].svg);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
     <Section>
+      <Icon key={123} />
       <div className="projects">
         <div className="projects__list">
           {props.items.map((project, i) => {
