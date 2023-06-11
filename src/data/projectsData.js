@@ -887,7 +887,6 @@ export const projectsData = {
         label: "Web Project",
         title: "Tourism Website",
         desc: "Web application for tourist information management, using modules of Biographical Articles, Management and notification of cultural events, Visualization and addressing of tourist sites through Google Maps based on specific coordinates.",
-
         features: [
           {
             name: "React",
@@ -1029,6 +1028,7 @@ export const projectsData = {
         },
         thumbnails: {
           home: "/images/project-img1.png",
+          square: "/images/square1.png",
         },
         links: [
           {
@@ -1090,6 +1090,7 @@ export const projectsData = {
         },
         thumbnails: {
           home: "/images/project-img2.png",
+          square: "/images/squaresonus.png",
         },
         links: [
           {
@@ -1156,6 +1157,7 @@ export const projectsData = {
         },
         thumbnails: {
           home: "/images/project-img3.png",
+          square: "/images/squaremodern.png",
         },
         links: [
           {
@@ -1227,6 +1229,7 @@ export const projectsData = {
         },
         thumbnails: {
           home: "/images/project-img4.png",
+          square: "/images/squarevilla.png",
         },
         links: [
           {
@@ -1288,6 +1291,7 @@ export const projectsData = {
         },
         thumbnails: {
           home: "/images/project-img5.png",
+          square: "/images/squarecarls.png",
         },
         links: [
           {

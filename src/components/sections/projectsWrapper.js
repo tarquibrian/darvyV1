@@ -122,17 +122,14 @@ const Section = styled.section`
 
 const ProjectsWrapper = (props) => {
   const videoRef = useRef();
-  const Icon = props.projects[0].links[0].svg;
-  console.log(props.projects[0].links[0].svg);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
     <Section>
-      <Icon key={123} />
       <div className="projects">
         <div className="projects__list">
-          {props.items.map((project, i) => {
+          {props.projects.map((project, i) => {
             return (
               <div className="projects__list-card" key={i}>
                 <div className="card__image">
