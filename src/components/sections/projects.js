@@ -304,9 +304,10 @@ const Projects = () => {
     >
       <h1 className="title-content">{currentLanguage.lenguage.title}</h1>
       <div className="projects__container">
-        <WrapperContent {...currentLanguage.lenguage.items[4]} />
-        <WrapperContent {...currentLanguage.lenguage.items[2]} />
-        <WrapperContent {...currentLanguage.lenguage.items[0]} />
+        {/* <WrapperContent {...currentLanguage.lenguage.items[4]} /> */}
+        {/* <WrapperContent {...currentLanguage.lenguage.items[2]} /> */}
+        {/* <WrapperContent {...currentLanguage.lenguage.items[0]} /> */}
+        <WrapperContent {...currentLanguage.lenguage.projects[0]} />
       </div>
       <p className="footerTitle">
         <Link href={"/projects"} scroll={false}>
@@ -320,18 +321,7 @@ const Projects = () => {
 
 export default Projects;
 
-const WrapperContent = ({
-  id,
-  label,
-  title,
-  desc,
-  features,
-  links,
-  img,
-  typeProject,
-  techStack,
-  client,
-}) => {
+const WrapperContent = ({ id, title, desc, features, thumbnails, links }) => {
   const controls = useAnimation();
   const [refView, inView] = useInView();
   // const { updateColor } = useAppContext();
@@ -386,7 +376,7 @@ const WrapperContent = ({
                   // placeholder="blur"
                 /> */}
                 <Image
-                  src={`/images/${img}.png`}
+                  src={thumbnails.home}
                   width={900}
                   height={700}
                   alt="me"
@@ -414,22 +404,22 @@ const WrapperContent = ({
         <div className="card-details">
           <div className="details-wrapper">
             <div className="title">
-              <span className="symbol">✧</span> {typeProject[0]}
+              <span className="symbol">✧</span> {features.typeProject.label}
             </div>
-            <span className="desc">{typeProject[1]}</span>
+            <span className="desc">{features.typeProject.value}</span>
           </div>
           <div className="details-wrapper">
             <div className="title">
-              <span className="symbol">✦</span> {client[0]}
+              <span className="symbol">✦</span> {features.client.label}
             </div>
-            <span className="desc">{client[1]}</span>
+            <span className="desc">{features.client.value}</span>
           </div>
           <div className="details-wrapper">
             <div className="title">
-              <span className="symbol">✴︎</span> {techStack}
+              <span className="symbol">✴︎</span> {features.techStack.label}
             </div>
             <div className="features">
-              {features.map((feature, i) => {
+              {features.techStack.values.map((feature, i) => {
                 const { name, bgColor } = feature;
                 return (
                   <div key={i} className="feature-item" bgColor={bgColor}>
@@ -458,6 +448,7 @@ const WrapperContent = ({
             <div className="links">
               <ul>
                 {links.map((item, i) => {
+                  const Icon = item.svg;
                   return (
                     <li key={i}>
                       <a
@@ -465,9 +456,7 @@ const WrapperContent = ({
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {item.svg === 1 && <IconExternal />}
-                        {item.svg === 2 && <IconGitHub />}
-                        {item.svg === 3 && <IconFigma />}
+                        <Icon />
                       </a>
                     </li>
                   );

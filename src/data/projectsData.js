@@ -28,7 +28,13 @@
 // import imgProject5 from "../images/project-img5.png";
 // import IconPWA from "src/components/icons/pwa";
 
-import { IconExternal } from "@components";
+import {
+  IconExternal,
+  IconFigma,
+  IconNextjs,
+  IconSass,
+  ReactIcon,
+} from "@components";
 
 export const projectsData = {
   es: {
@@ -591,14 +597,45 @@ export const projectsData = {
     projects: [
       {
         id: 1,
-        title: "title",
+        label: "carsburger",
+        title: "Carls Burger Restaurant",
         desc: "desc",
         features: {
           typeProject: {
             label: "Type Project",
             value: "Web App",
           },
+          client: {
+            label: "Client",
+            value: "Carls Burger",
+          },
+          techStack: {
+            label: "Tech Stack",
+            value: [
+              {
+                id: "NextJS",
+                label: "NextJS",
+                icon: () => <IconNextjs />,
+              },
+              {
+                id: "React",
+                label: "React",
+                icon: () => <ReactIcon />,
+              },
+              {
+                id: "Sass",
+                label: "Sass",
+                icon: () => <IconSass />,
+              },
+              {
+                id: "Figma+",
+                label: "Figma+",
+                icon: () => <IconFigma />,
+              },
+            ],
+          },
         },
+        thumbnails: {},
         links: [
           {
             id: "external-link",
@@ -606,6 +643,11 @@ export const projectsData = {
             svg: () => <IconExternal />,
           },
         ],
+        threeColors: {
+          color: [0.4, 0.4, 0.4],
+          colorBase: [0.4, 0.4, 0.4],
+          colorDeep: [0.9, 0.9, 0.9],
+        },
       },
       {
         id: 2,
@@ -1025,21 +1067,45 @@ export const projectsData = {
       {
         id: 1,
         title: "title",
-        desc: "desc",
-        features: [
-          {
-            id: "NextJS",
-            name: "NextJS",
+        desc: "Web application about a hamburger restaurant that provides a satisfying, easy and attractive user experience, and is an excellent marketing tool to attract new customers and keep existing ones.",
+        features: {
+          typeProject: {
+            label: "Type Project",
+            value: "Web App",
           },
-          {
-            id: "React",
-            name: "React",
+          client: {
+            label: "Client",
+            value: "Carls Burger",
           },
-          {
-            id: "Sass",
-            name: "Sass",
+          techStack: {
+            label: "Tech Stack",
+            values: [
+              {
+                id: "NextJS",
+                label: "NextJS",
+                icon: () => <IconNextjs />,
+              },
+              {
+                id: "React",
+                label: "React",
+                icon: () => <ReactIcon />,
+              },
+              {
+                id: "Sass",
+                label: "Sass",
+                icon: () => <IconSass />,
+              },
+              {
+                id: "Figma+",
+                label: "Figma+",
+                icon: () => <IconFigma />,
+              },
+            ],
           },
-        ],
+        },
+        thumbnails: {
+          home: "/images/project-img5.png",
+        },
         links: [
           {
             id: "external-link",
