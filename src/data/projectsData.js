@@ -1,39 +1,15 @@
-// import {
-//   CardEffect,
-//   IconAI,
-//   IconAP,
-//   IconArrow,
-//   IconAtom,
-//   IconExpress,
-//   IconExternal,
-//   IconFigma,
-//   IconFigmaImg,
-//   IconGitHub,
-//   IconMaps,
-//   IconMongo,
-//   IconNextjs,
-//   IconPushNotification,
-//   IconRedux,
-//   IconSC,
-//   IconST,
-//   IconSass,
-//   IconVS,
-//   IconVim,
-//   ReactIcon,
-// } from "@components";
-// import imgProject from "../images/project-img1.png";
-// import imgProject2 from "../images/project-img2.png";
-// import imgProject3 from "../images/project-img3.png";
-// import imgProject4 from "../images/project-img4.png";
-// import imgProject5 from "../images/project-img5.png";
-// import IconPWA from "src/components/icons/pwa";
-
 import {
+  IconAI,
   IconExternal,
   IconFigma,
   IconFigmaImg,
+  IconGitHub,
   IconNextjs,
+  IconSC,
+  IconST,
   IconSass,
+  IconVS,
+  IconVim,
   ReactIcon,
 } from "@components";
 
@@ -1010,6 +986,123 @@ export const projectsData = {
       },
     ],
     projects: [
+      {
+        id: 1,
+        label: "bussineswebsite",
+        title: "Sonustech Bussines Website",
+        desc: "Web application on Landing Page of a company that offers its technological services, related to computing, programming and solutions in the systems area.",
+        features: {
+          typeProject: {
+            label: "Type Project",
+            value: "Marketplace Extensions",
+          },
+          client: {
+            label: "Client",
+            value: "Personal",
+          },
+          techStack: {
+            label: "Tech Stack",
+            values: [
+              {
+                id: "nextjs",
+                label: "NextJS",
+                icon: () => <IconNextjs />,
+              },
+              {
+                id: "react",
+                label: "React",
+                icon: () => <ReactIcon />,
+              },
+              {
+                id: "styled-components",
+                label: "Styled Components",
+                icon: () => <IconSC />,
+              },
+              {
+                id: "adobe-illustrator",
+                label: "Adobe Illustrator",
+                icon: () => <IconAI />,
+              },
+              {
+                id: "figma",
+                label: "Figma",
+                icon: () => <IconFigmaImg />,
+              },
+            ],
+          },
+        },
+        thumbnails: {
+          home: "/images/project-img2.png",
+        },
+        links: [
+          {
+            id: "external-link",
+            href: "https://sonustech-business-website.vercel.app/",
+            svg: () => <IconExternal />,
+          },
+          {
+            id: "github",
+            href: "https://github.com/tarquibrian/sonustech-business-website",
+            svg: () => <IconGitHub />,
+          },
+          {
+            id: "github",
+            href: "https://github.com/tarquibrian/sonustech-business-website",
+            svg: () => <IconFigma />,
+          },
+        ],
+      },
+      {
+        id: 1,
+        label: "darvytheme",
+        title: "Darvy Theme",
+        desc: "Darvy Theme is a color theme for Visual Studio Code and very soon for other editors like Atom or Sublime Text. The color palette is inspired by popular themes like One Dark Pro and Tokyo Night, so you might love this theme.",
+        features: {
+          typeProject: {
+            label: "Type Project",
+            value: "Marketplace Extensions",
+          },
+          client: {
+            label: "Client",
+            value: "Personal",
+          },
+          techStack: {
+            label: "Tech Stack",
+            values: [
+              {
+                id: "vscode",
+                label: "VS Code",
+                icon: () => <IconVS />,
+              },
+              {
+                id: "sublime",
+                label: "Sublime",
+                icon: () => <IconST />,
+              },
+              {
+                id: "vim",
+                label: "Vim",
+                icon: () => <IconVim />,
+              },
+            ],
+          },
+        },
+        thumbnails: {
+          home: "/images/project-img1.png",
+        },
+        links: [
+          {
+            id: "external-link",
+            href: "https://marketplace.visualstudio.com/items?itemName=darvy.darvypro",
+            svg: () => <IconExternal />,
+          },
+          {
+            id: "github",
+            href: "https://github.com/tarquibrian/darvypro-theme",
+            svg: () => <IconGitHub />,
+          },
+        ],
+      },
       {
         id: 1,
         label: "carlsburger",
