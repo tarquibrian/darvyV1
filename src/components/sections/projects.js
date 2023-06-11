@@ -236,6 +236,7 @@ const ProjectsStyled = styled(motion.section)`
       );
       padding: 12px 18px;
       border-radius: var(--br-buttns);
+      border-radius: 5rem;
       border: 2px solid var(--border-light);
       display: flex;
       align-items: center;
