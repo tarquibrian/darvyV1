@@ -30,6 +30,8 @@ import { useAppContext } from "src/context/app.context";
 import IconPWA from "../icons/pwa";
 import Link from "next/link";
 import { projectsData } from "src/data/projectsData";
+import path from 'path';
+import { promises as fs } from 'fs';
 
 const ProjectsStyled = styled(motion.section)`
   width: 80%;
