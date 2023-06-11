@@ -447,12 +447,12 @@ const WrapperContent = ({ id, title, desc, features, thumbnails, links }) => {
             </div>
             <div className="links">
               <ul>
-                {links.map((item, i) => {
+                {links.map((item) => {
                   const Icon = item.svg;
                   return (
-                    <li key={i}>
+                    <li key={item.id}>
                       <a
-                        href={item.path}
+                        href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
