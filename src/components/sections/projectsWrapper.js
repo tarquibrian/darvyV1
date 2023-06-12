@@ -12,6 +12,15 @@ const Section = styled.section`
   max-width: 1500px;
   margin-inline: auto;
 
+  header {
+    h1 {
+      font-size: var(--fz-title);
+      &::after {
+        height: 0px;
+      }
+    }
+  }
+
   .projects {
     height: 100%;
     width: 100%;
@@ -51,6 +60,7 @@ const Section = styled.section`
           justify-content: space-between;
 
           &-footer {
+            background-color: red;
             ul {
               display: flex;
               gap: 1rem;
@@ -125,6 +135,7 @@ const ProjectsWrapper = ({ projects, recents }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  console.log(projects);
   return (
     <Section>
       <header>
@@ -133,35 +144,42 @@ const ProjectsWrapper = ({ projects, recents }) => {
       <div className="projects">
         <div className="projects__list">
           {projects.map((project, i) => {
+            console.log(project);
             return (
               <div className="projects__list-card" key={i}>
                 <div className="card__image">
-                  <Image
-                    className="images"
-                    src={project.thumbnails.square}
-                    alt="picture img"
-                    height={300}
-                    width={300}
-                  />
+                  <a
+                    href={project.links[0].href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      className="images"
+                      src={project.thumbnails.square}
+                      alt="picture img"
+                      height={300}
+                      width={300}
+                    />
+                  </a>
                 </div>
                 <div className="card__content">
                   <div className="card__content-info">
                     <a
-                      href={project.links[0].path}
+                      href={project.links[0].href}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <h2>{project.title}</h2>
+                      <p>{project.desc}</p>
                     </a>
-                    <p>{project.desc}</p>
                   </div>
                   <div className="card__content-footer">
-                    <ul>
-                      <li>text</li>
-                      <li>text</li>
-                      <li>text</li>
-                      <li>text</li>
-                    </ul>
+                    <div className="footer-feature">
+                      <span>Build With:</span>
+                      {project.features.techStack.values.map((tech) => {
+                        return <span key={tech.id}>{tech.label}</span>;
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
