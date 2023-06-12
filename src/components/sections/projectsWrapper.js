@@ -18,7 +18,7 @@ const Section = styled.section`
     display: grid;
     grid-template-columns: 3fr minmax(350px, 1fr);
     gap: 6vw;
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
 
     .projects__list {
       .projects__list-card {
@@ -127,6 +127,9 @@ const ProjectsWrapper = ({ projects, recents }) => {
   }, []);
   return (
     <Section>
+      <header>
+        <h1 className="title-content">Projects I have worked on</h1>
+      </header>
       <div className="projects">
         <div className="projects__list">
           {projects.map((project, i) => {
