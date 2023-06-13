@@ -30,22 +30,33 @@ const Section = styled.section`
     /* padding: 0 2rem; */
 
     .projects__list {
+      width: 100%;
       .projects__list-card {
-        display: flex;
-        gap: 2rem;
-        margin-bottom: 1rem;
         width: 100%;
-        height: 290px;
+        min-height: 200px;
         border-bottom: 2px solid #eae2b7;
+        display: grid;
+        grid-template-columns: minmax(160px, 220px) 1fr;
+        gap: 2rem;
         padding: 2rem 0;
+        overflow: hidden;
         .card__image {
-          aspect-ratio: 1 / 1;
+          width: 100%;
           height: 100%;
-          overflow: hidden;
-          border-radius: 6px;
+          aspect-ratio: 1 / 1;
+          /* display: flex; */
+          img {
+            border-radius: 6px;
+            vertical-align: middle;
+          }
         }
         .card__content {
+          overflow: hidden;
           height: 100%;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
           h2 {
             font-size: var(--fz-lg);
             color: #eae2b7;
@@ -54,13 +65,37 @@ const Section = styled.section`
           p {
             max-width: 600px;
             font-size: var(--fz-smm);
+            white-space: normal;
           }
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
 
           &-footer {
             background-color: red;
+            .footer-feature {
+              display: flex;
+              gap: 0.4rem;
+
+              .label {
+                font-weight: bold;
+              }
+
+              .features {
+                display: flex;
+                gap: 10px;
+                span {
+                  &:last-of-type {
+                    &::after {
+                      content: "";
+                    }
+                  }
+                  &::after {
+                    content: "·";
+                    position: relative;
+                    left: 5px;
+                  }
+                }
+              }
+            }
+
             ul {
               display: flex;
               gap: 1rem;
@@ -148,19 +183,19 @@ const ProjectsWrapper = ({ projects, recents }) => {
             return (
               <div className="projects__list-card" key={i}>
                 <div className="card__image">
-                  <a
+                  {/* <a
                     href={project.links[0].href}
                     target="_blank"
                     rel="noopener noreferrer"
-                  >
-                    <Image
-                      className="images"
-                      src={project.thumbnails.square}
-                      alt="picture img"
-                      height={300}
-                      width={300}
-                    />
-                  </a>
+                  > */}
+                  <Image
+                    className="images"
+                    src={project.thumbnails.square}
+                    alt="picture img"
+                    height={300}
+                    width={300}
+                  />
+                  {/* </a> */}
                 </div>
                 <div className="card__content">
                   <div className="card__content-info">
@@ -175,10 +210,12 @@ const ProjectsWrapper = ({ projects, recents }) => {
                   </div>
                   <div className="card__content-footer">
                     <div className="footer-feature">
-                      <span>Build With:</span>
-                      {project.features.techStack.values.map((tech) => {
-                        return <span key={tech.id}>{tech.label}</span>;
-                      })}
+                      <span className="label">Build With:</span>
+                      <div className="features">
+                        {project.features.techStack.values.map((tech) => {
+                          return <span key={tech.id}>{tech.label}</span>;
+                        })}
+                      </div>
                     </div>
                   </div>
                 </div>
