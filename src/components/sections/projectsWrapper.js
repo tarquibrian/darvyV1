@@ -27,10 +27,8 @@ const Section = styled.section`
     display: grid;
     grid-template-columns: 3fr minmax(350px, 1fr);
     gap: 6vw;
-    /* padding: 0 2rem; */
 
     .projects__list {
-      width: 100%;
       .projects__list-card {
         width: 100%;
         min-height: 200px;
@@ -39,7 +37,6 @@ const Section = styled.section`
         grid-template-columns: minmax(160px, 220px) 1fr;
         gap: 2rem;
         padding: 2rem 0;
-        overflow: hidden;
         .card__image {
           width: 100%;
           height: 100%;
@@ -183,11 +180,11 @@ const ProjectsWrapper = ({ projects, recents }) => {
             return (
               <div className="projects__list-card" key={i}>
                 <div className="card__image">
-                  {/* <a
+                  <a
                     href={project.links[0].href}
                     target="_blank"
                     rel="noopener noreferrer"
-                  > */}
+                  >
                   <Image
                     className="images"
                     src={project.thumbnails.square}
@@ -195,7 +192,7 @@ const ProjectsWrapper = ({ projects, recents }) => {
                     height={300}
                     width={300}
                   />
-                  {/* </a> */}
+                  </a>
                 </div>
                 <div className="card__content">
                   <div className="card__content-info">
