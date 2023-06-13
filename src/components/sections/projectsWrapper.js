@@ -66,10 +66,13 @@ const Section = styled.section`
           }
 
           &-footer {
-            background-color: red;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
             .footer-feature {
               display: flex;
               gap: 0.4rem;
+              font-size: var(--fz-sm);
 
               .label {
                 font-weight: bold;
@@ -79,6 +82,7 @@ const Section = styled.section`
                 display: flex;
                 gap: 10px;
                 span {
+                  font-weight: 200;
                   &:last-of-type {
                     &::after {
                       content: "";
@@ -185,13 +189,13 @@ const ProjectsWrapper = ({ projects, recents }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                  <Image
-                    className="images"
-                    src={project.thumbnails.square}
-                    alt="picture img"
-                    height={300}
-                    width={300}
-                  />
+                    <Image
+                      className="images"
+                      src={project.thumbnails.square}
+                      alt="picture img"
+                      height={300}
+                      width={300}
+                    />
                   </a>
                 </div>
                 <div className="card__content">
@@ -206,6 +210,12 @@ const ProjectsWrapper = ({ projects, recents }) => {
                     </a>
                   </div>
                   <div className="card__content-footer">
+                    <div className="footer-feature">
+                      <span className="label">Made At:</span>
+                      <div className="features">
+                        <span>Darvy Agency</span>
+                      </div>
+                    </div>
                     <div className="footer-feature">
                       <span className="label">Build With:</span>
                       <div className="features">
