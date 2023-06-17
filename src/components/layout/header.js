@@ -178,9 +178,6 @@ export const ResumeLink = styled.div`
     filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.8));
     cursor: pointer;
   }
-  @media (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const NavbarContentResponsive = styled.div`
@@ -364,7 +361,7 @@ const Header = () => {
             </button>
           </LogoContainer>
           <span className="text">
-            <LinksContainer>
+            {/* <LinksContainer>
               <ol>
                 <li>
                   <a href="#about" onClick={() => toggle()}>
@@ -386,126 +383,43 @@ const Header = () => {
                     .Contact
                   </a>
                 </li>
-                {/* <Link href={"/"}>Adios</Link> */}
               </ol>
-            </LinksContainer>
+            </LinksContainer> */}
             <ResumeLink className="resumelink">
-              <a
-                href="./resumeV1.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Resume &gt;
-              </a>
-            </ResumeLink>
-          </span>
-        </NavbarContentResponsive>
-      </>
-      {/* {router.asPath !== "/" && (
-        <>
-          <NavbarContent
-            initial={{ y: 200 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className={`${state.currentTheme === "dark" ? "dark" : "light"}`}
-          >
-            <LogoContainer>
-              {router.asPath === "/projects" && (
-                <Link onClick={scrollTop} href={`/`} scroll={false}>
-                  <Image src={darvyImg} alt="portfolio icon" />
-                </Link>
-              )}
-              <button onClick={() => toggleLanguage()}>
-                {state.currentLanguage}
-              </button>
-            </LogoContainer>
-
-            <span className="text">
-              <LinksContainer>
-                <ol>
-                  <li>
-                    <a href="#about" onClick={() => toggle()}>
-                      .About
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#experience" onClick={() => toggle()}>
-                      .Experience
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#projects" onClick={() => toggle()}>
-                      .Projects
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#contact" onClick={() => toggle()}>
-                      .Contact
-                    </a>
-                  </li>
-                </ol>
-              </LinksContainer>
-              <ResumeLink className="resumelink">
+              {router.asPath === "/" && (
                 <a
                   href="./resumeV1.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="resume"
                 >
-                  Resume &gt;
+                  Resume →
                 </a>
-              </ResumeLink>
-            </span>
-          </NavbarContent>
-          <NavbarContentResponsive
-            className={`${state.currentTheme === "dark" ? "dark" : "light"}`}
-          >
-            <LogoContainer>
-              <button onClick={() => setIsOpen(!isOpen)}>
-                <Image src={darvyImg} alt="portfolio icon" />
-              </button>
-              <button onClick={() => toggleLanguage()}>
-                {state.currentLanguage}
-              </button>
-            </LogoContainer>
-            <span className="text">
-              <LinksContainer>
-                <ol>
-                  <li>
-                    <a href="#about" onClick={() => toggle()}>
-                      .About
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#experience" onClick={() => toggle()}>
-                      .Experience
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#projects" onClick={() => toggle()}>
-                      .Projects
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#contact" onClick={() => toggle()}>
-                      .Contact
-                    </a>
-                  </li>
-                </ol>
-              </LinksContainer>
-              <ResumeLink className="resumelink">
-                <a
-                  href="./resumeV1.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              )}
+              {router.asPath === "/projects" && (
+                <Link
+                  href="/"
+                  onClick={() => toggle()}
+                  scroll={false}
+                  className="resume"
                 >
-                  Resume &gt;
-                </a>
-              </ResumeLink>
-            </span>
-          </NavbarContentResponsive>
-        </>
-      )} */}
+                  ← Back
+                </Link>
+              )}
+              {router.asPath !== "/" && router.asPath !== "/projects" && (
+                <Link
+                  href="/projects"
+                  onClick={() => toggle()}
+                  scroll={false}
+                  className="resume"
+                >
+                  ← Back
+                </Link>
+              )}
+            </ResumeLink>
+          </span>
+        </NavbarContentResponsive>
+      </>
     </NavbarHeader>
   );
 };
