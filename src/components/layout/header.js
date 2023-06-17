@@ -319,14 +319,25 @@ const Header = () => {
               )}
             </LinksContainer>
             <ResumeLink className="resumelink">
-              <a
-                href="./resumeV1.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="resume"
-              >
-                Resume &gt;
-              </a>
+              {router.asPath === "/" ? (
+                <a
+                  href="./resumeV1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resume"
+                >
+                  Resume →
+                </a>
+              ) : (
+                <Link
+                  href="/"
+                  onClick={() => toggle()}
+                  scroll={false}
+                  className="resume"
+                >
+                  ← Back
+                </Link>
+              )}
             </ResumeLink>
           </span>
         </NavbarContent>
