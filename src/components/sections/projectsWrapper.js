@@ -116,6 +116,7 @@ const ProjectCard = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 2rem;
 
       &-info {
         a {
@@ -157,10 +158,12 @@ const ProjectCard = styled.div`
 
           .label {
             font-weight: bold;
+            white-space: nowrap;
           }
 
           .features {
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             span {
               font-weight: 200;
