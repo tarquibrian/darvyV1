@@ -261,7 +261,7 @@ const ProjectsWrapper = ({ projects, recents }) => {
                   </div>
                   <div className="card__content">
                     <div className="card__content-info">
-                      <Link href={`/projects/${project.id}`}>
+                      <Link href={`/projects/${project.id}`} scroll={false}>
                         <div className="info-content">
                           <h2>
                             <span>✦</span>

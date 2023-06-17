@@ -26,8 +26,6 @@ export const GlobalStyle = createGlobalStyle`
     background: rgba(234,226,183,.5);
   }
 
-  
-
   body {
     font-family: 'Sofia Sans Condensed', sans-serif;
     line-height: 1.3;
