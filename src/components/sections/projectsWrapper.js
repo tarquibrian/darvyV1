@@ -135,6 +135,9 @@ const ProjectCard = styled.div`
         font-size: var(--fz-lg);
         color: #eae2b7;
         margin-bottom: 0.3rem;
+        span {
+          margin-right: 0.7rem;
+        }
       }
       p {
         max-width: 600px;
@@ -235,7 +238,10 @@ const ProjectsWrapper = ({ projects, recents }) => {
                         rel="noopener noreferrer"
                       >
                         <div className="info-content">
-                          <h2>✦ {project.title}</h2>
+                          <h2>
+                            <span>✦</span>
+                            {project.title}
+                          </h2>
                           <p>{project.desc}</p>
                         </div>
                         <div className="info-link">
