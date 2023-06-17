@@ -71,12 +71,7 @@ export const GlobalStyle = createGlobalStyle`
   main {
     position: relative;
     margin: 0 auto;
-    /* width: 100vw; */
-    /* max-width: calc(100% - 200px); */
-    /* max-width: 1600px; */
     min-height: 100vh;
-    
-    /* overflow-x: hidden; */
   }
 
   section {
@@ -113,8 +108,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   h1, h2,h3,h4,h5 {
-    /* color: #fff; */
-    /* font-size: 1rem; */
+    
   }
   button {
     color: #fff;
