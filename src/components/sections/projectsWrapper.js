@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { CloudinaryContext, Video } from "cloudinary-react";
 import { IconArrow, IconExternal } from "../icons";
+import Link from "next/link";
 
 const Section = styled.section`
   /* min-height: 500px; */
@@ -260,11 +261,7 @@ const ProjectsWrapper = ({ projects, recents }) => {
                   </div>
                   <div className="card__content">
                     <div className="card__content-info">
-                      <a
-                        href={project.links[0].href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <Link href={`/projects/${project.id}`}>
                         <div className="info-content">
                           <h2>
                             <span>✦</span>
@@ -275,7 +272,7 @@ const ProjectsWrapper = ({ projects, recents }) => {
                         <div className="info-link">
                           <IconArrow />
                         </div>
-                      </a>
+                      </Link>
                     </div>
                     <div className="card__content-footer">
                       <div className="footer-features">
