@@ -194,7 +194,7 @@ const ProjectCard = styled.div`
             vertical-align: middle;
 
             &:hover {
-              filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+              filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
               transform: scale(1.1);
             }
           }
@@ -300,7 +300,13 @@ const ProjectsWrapper = ({ projects, recents }) => {
                           const Icon = link.svg;
                           return (
                             <span key={link.id}>
-                              <Icon />
+                              <a
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <Icon />
+                              </a>
                             </span>
                           );
                         })}
