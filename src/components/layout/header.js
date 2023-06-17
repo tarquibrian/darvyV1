@@ -319,7 +319,7 @@ const Header = () => {
               )}
             </LinksContainer>
             <ResumeLink className="resumelink">
-              {router.asPath === "/" ? (
+              {router.asPath === "/" && (
                 <a
                   href="./resumeV1.pdf"
                   target="_blank"
@@ -328,9 +328,20 @@ const Header = () => {
                 >
                   Resume →
                 </a>
-              ) : (
+              )}
+              {router.asPath === "/projects" && (
                 <Link
                   href="/"
+                  onClick={() => toggle()}
+                  scroll={false}
+                  className="resume"
+                >
+                  ← Back
+                </Link>
+              )}
+              {router.asPath !== "/" && router.asPath !== "/projects" && (
+                <Link
+                  href="/projects"
                   onClick={() => toggle()}
                   scroll={false}
                   className="resume"
