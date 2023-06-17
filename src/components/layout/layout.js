@@ -38,15 +38,15 @@ const Layout = ({ children, updateBG }) => {
       // }
     }
     // setTimeout(() => {
-    //   window.scroll({ top: 0, left: 0});
+    window.scroll({ top: 0, left: 0 });
     // }, 100);
   }, [router.asPath, updateBG]);
 
-    // const Element = document.getElementById("threejsBG");
-    // new Sketch({
-    //   dom: Element,
-    //   color: color,
-    // });
+  // const Element = document.getElementById("threejsBG");
+  // new Sketch({
+  //   dom: Element,
+  //   color: color,
+  // });
 
   return (
     <ThemeProvider theme={theme}>
