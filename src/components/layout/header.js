@@ -162,7 +162,7 @@ const LinksContainer = styled.div`
       }
     }
   }
-  @media (max-width: 550px) {
+  @media (max-width: 900px) {
     display: none;
   }
 `;
@@ -229,7 +229,7 @@ const NavbarContentResponsive = styled.div`
 
   @media screen and (max-width: 640px) {
     width: 90%;
-    justify-content: center;
+    /* justify-content: center; */
   }
 `;
 
@@ -360,31 +360,35 @@ const Header = () => {
               {state.currentLanguage}
             </button>
           </LogoContainer>
+
           <span className="text">
-            {/* <LinksContainer>
-              <ol>
-                <li>
-                  <a href="#about" onClick={() => toggle()}>
-                    .About
-                  </a>
-                </li>
-                <li>
-                  <a href="#experience" onClick={() => toggle()}>
-                    .Experience
-                  </a>
-                </li>
-                <li>
-                  <a href="#projects" onClick={() => toggle()}>
-                    .Projects
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact" onClick={() => toggle()}>
-                    .Contact
-                  </a>
-                </li>
-              </ol>
-            </LinksContainer> */}
+            {router.asPath === "/" && (
+              <LinksContainer>
+                <ol>
+                  <li>
+                    <a href="#about" onClick={() => toggle()}>
+                      .About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#experience" onClick={() => toggle()}>
+                      .Experience
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#projects" onClick={() => toggle()}>
+                      .Projects
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" onClick={() => toggle()}>
+                      .Contact
+                    </a>
+                  </li>
+                </ol>
+              </LinksContainer>
+            )}
+
             <ResumeLink className="resumelink">
               {router.asPath === "/" && (
                 <a
