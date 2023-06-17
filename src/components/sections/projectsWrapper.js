@@ -235,7 +235,7 @@ const ProjectsWrapper = ({ projects, recents }) => {
                         rel="noopener noreferrer"
                       >
                         <div className="info-content">
-                          <h2>{project.title}</h2>
+                          <h2>✦ {project.title}</h2>
                           <p>{project.desc}</p>
                         </div>
                         <div className="info-link">
