@@ -16,8 +16,8 @@ const AuthorSection = styled.section`
 const Author = () => {
   return (
     <AuthorSection>
-      <span>Made with Love💖 and Work💪</span>
       <span>Designed & Build by Brian Tarqui</span>
+      <span>Made with Love💖 and Work💪</span>
     </AuthorSection>
   );
 };
