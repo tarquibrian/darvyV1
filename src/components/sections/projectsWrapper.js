@@ -148,40 +148,54 @@ const ProjectCard = styled.div`
 
       &-footer {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
         flex-wrap: wrap;
         gap: 0.2rem;
-        .footer-feature {
-          display: flex;
-          gap: 0.4rem;
-          font-size: var(--fz-sm);
-
-          .label {
-            font-weight: bold;
-            white-space: nowrap;
-          }
-
-          .features {
+        .footer-features {
+          .footer-feature {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            span {
-              font-weight: 200;
-              &:last-of-type {
-                &::after {
-                  content: "";
+            gap: 0.4rem;
+            font-size: var(--fz-sm);
+
+            .label {
+              font-weight: bold;
+              white-space: nowrap;
+            }
+
+            .features {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              span {
+                font-weight: 200;
+                &:last-of-type {
+                  &::after {
+                    content: "";
+                  }
                 }
-              }
-              &::after {
-                content: "·";
-                position: relative;
-                left: 5px;
+                &::after {
+                  content: "·";
+                  position: relative;
+                  left: 5px;
+                }
               }
             }
           }
         }
 
-        .footer-link {
+        .footer-links {
+          svg {
+            width: 24px;
+            height: 24px;
+            color: var(--c-light);
+            vertical-align: middle;
+
+            &:hover {
+              filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+              transform: scale(1.1);
+            }
+          }
         }
 
         ul {
@@ -193,8 +207,10 @@ const ProjectCard = styled.div`
 
     &:hover {
       transform: translateX(1rem);
-      svg {
-        transform: rotate(45deg);
+      .info-link {
+        svg {
+          transform: rotate(45deg);
+        }
       }
     }
   }
@@ -260,19 +276,32 @@ const ProjectsWrapper = ({ projects, recents }) => {
                       </a>
                     </div>
                     <div className="card__content-footer">
-                      <div className="footer-feature">
-                        <span className="label">Made At:</span>
-                        <div className="features">
-                          <span>Darvy Agency</span>
+                      <div className="footer-features">
+                        <div className="footer-feature">
+                          <span className="label">Made At:</span>
+                          <div className="features">
+                            <span>Darvy Agency</span>
+                          </div>
+                        </div>
+                        <div className="footer-feature">
+                          <span className="label">Build With:</span>
+                          <div className="features">
+                            {project.features.techStack.values.map((tech) => {
+                              return <span key={tech.id}>{tech.label}</span>;
+                            })}
+                          </div>
                         </div>
                       </div>
-                      <div className="footer-feature">
-                        <span className="label">Build With:</span>
-                        <div className="features">
-                          {project.features.techStack.values.map((tech) => {
-                            return <span key={tech.id}>{tech.label}</span>;
-                          })}
-                        </div>
+
+                      <div className="footer-links">
+                        {project.links.map((link) => {
+                          const Icon = link.svg;
+                          return (
+                            <span key={link.id}>
+                              <Icon />
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
