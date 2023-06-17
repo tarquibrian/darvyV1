@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useAppContext } from "src/context/app.context";
 import { contactData } from "@data";
+import Author from "./author";
 
 const ContactStyled = styled(motion.section)``;
 

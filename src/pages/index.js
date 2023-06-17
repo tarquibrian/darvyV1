@@ -5,8 +5,7 @@ import {
   Experience,
   Projects,
   Contact,
-  LeftSide,
-  RightSide,
+  Author,
 } from "@components";
 
 export default function Home() {
@@ -17,6 +16,7 @@ export default function Home() {
       <Experience />
       <Projects />
       <Contact />
+      <Author />
     </Layout>
   );
 }
