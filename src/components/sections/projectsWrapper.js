@@ -92,10 +92,10 @@ const Section = styled.section`
 `;
 
 const ProjectCard = styled.div`
-  background-color: rgba(1, 1, 1, 0.1);
   width: 100%;
   min-height: 200px;
   border-bottom: 2px solid #eae2b7;
+  transition: 1s ease;
   .projects__list-card {
     display: grid;
     grid-template-columns: minmax(160px, 220px) 1fr;
@@ -182,6 +182,13 @@ const ProjectCard = styled.div`
           display: flex;
           gap: 1rem;
         }
+      }
+    }
+
+    &:hover {
+      transform: translateX(1rem);
+      svg {
+        transform: rotate(45deg);
       }
     }
   }
