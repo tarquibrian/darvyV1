@@ -4,10 +4,22 @@ import styled from "styled-components";
 const AuthorSection = styled.section`
   padding: 0rem;
   color: white;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: var(--fz-smm);
 `;
 
 const Author = () => {
-  return <AuthorSection>Author</AuthorSection>;
+  return (
+    <AuthorSection>
+      <span>Made with Love🧡 and Work💪</span>
+      <span>Designed & Build by Brian Tarqui</span>
+    </AuthorSection>
+  );
 };
 
 export default Author;

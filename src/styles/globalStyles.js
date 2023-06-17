@@ -88,7 +88,7 @@ export const GlobalStyle = createGlobalStyle`
       padding-bottom: 5rem;
     }
     &:last-of-type {
-      padding-bottom: 16rem;
+      padding-bottom: 14.5rem;
     }
   }
 
