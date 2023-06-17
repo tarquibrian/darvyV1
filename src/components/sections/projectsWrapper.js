@@ -185,6 +185,8 @@ const ProjectCard = styled.div`
         }
 
         .footer-links {
+          display: flex;
+          gap: 0.5rem;
           svg {
             width: 24px;
             height: 24px;
