@@ -242,6 +242,7 @@ const Header = () => {
   const [scrollIsBottom, setIscrollIsBottom] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const scrollDirection = useScrollDirection("up");
+  const router = useRouter();
 
   const scrollTop = () => {
     window.scrollTo({
@@ -274,102 +275,215 @@ const Header = () => {
       scrollDirection={scrollDirection}
       isOpen={isOpen}
     >
-      <NavbarContent
-        initial={{ y: 200 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, delay: 0.7 }}
-        className={`${state.currentTheme === "dark" ? "dark" : "light"}`}
-      >
-        <LogoContainer>
-          <Link onClick={scrollTop} href={`/`}>
-            <Image src={darvyImg} alt="portfolio icon" />
-          </Link>
-          <button onClick={() => toggleLanguage()}>
-            {state.currentLanguage}
-          </button>
-        </LogoContainer>
+      {router.asPath === "/" && (
+        <>
+          <NavbarContent
+            initial={{ y: 200 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className={`${state.currentTheme === "dark" ? "dark" : "light"}`}
+          >
+            <LogoContainer>
+              <Link onClick={scrollTop} href={`/`}>
+                <Image src={darvyImg} alt="portfolio icon" />
+              </Link>
+              <button onClick={() => toggleLanguage()}>
+                {state.currentLanguage}
+              </button>
+            </LogoContainer>
 
-        <span className="text">
-          <LinksContainer>
-            <ol>
-              <li>
-                <a href="#about" onClick={() => toggle()}>
-                  .About
+            <span className="text">
+              <LinksContainer>
+                <ol>
+                  <li>
+                    <a href="#about" onClick={() => toggle()}>
+                      .About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#experience" onClick={() => toggle()}>
+                      .Experience
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#projects" onClick={() => toggle()}>
+                      .Projects
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" onClick={() => toggle()}>
+                      .Contact
+                    </a>
+                  </li>
+                </ol>
+              </LinksContainer>
+              <ResumeLink className="resumelink">
+                <a
+                  href="./resumeV1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resume"
+                >
+                  Resume &gt;
                 </a>
-              </li>
-              <li>
-                <a href="#experience" onClick={() => toggle()}>
-                  .Experience
+              </ResumeLink>
+            </span>
+          </NavbarContent>
+          <NavbarContentResponsive
+            className={`${state.currentTheme === "dark" ? "dark" : "light"}`}
+          >
+            <LogoContainer>
+              <button onClick={() => setIsOpen(!isOpen)}>
+                <Image src={darvyImg} alt="portfolio icon" />
+              </button>
+              <button onClick={() => toggleLanguage()}>
+                {state.currentLanguage}
+              </button>
+            </LogoContainer>
+            <span className="text">
+              <LinksContainer>
+                <ol>
+                  <li>
+                    <a href="#about" onClick={() => toggle()}>
+                      .About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#experience" onClick={() => toggle()}>
+                      .Experience
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#projects" onClick={() => toggle()}>
+                      .Projects
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" onClick={() => toggle()}>
+                      .Contact
+                    </a>
+                  </li>
+                  {/* <Link href={"/"}>Adios</Link> */}
+                </ol>
+              </LinksContainer>
+              <ResumeLink className="resumelink">
+                <a
+                  href="./resumeV1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Resume &gt;
                 </a>
-              </li>
-              <li>
-                <a href="#projects" onClick={() => toggle()}>
-                  .Projects
+              </ResumeLink>
+            </span>
+          </NavbarContentResponsive>
+        </>
+      )}
+      {router.asPath !== "/" && (
+        <>
+          <NavbarContent
+            initial={{ y: 200 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className={`${state.currentTheme === "dark" ? "dark" : "light"}`}
+          >
+            <LogoContainer>
+              {router.asPath === "/projects" && (
+                <Link onClick={scrollTop} href={`/`} scroll={false}>
+                  <Image src={darvyImg} alt="portfolio icon" />
+                </Link>
+              )}
+              <button onClick={() => toggleLanguage()}>
+                {state.currentLanguage}
+              </button>
+            </LogoContainer>
+
+            <span className="text">
+              <LinksContainer>
+                <ol>
+                  <li>
+                    <a href="#about" onClick={() => toggle()}>
+                      .About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#experience" onClick={() => toggle()}>
+                      .Experience
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#projects" onClick={() => toggle()}>
+                      .Projects
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" onClick={() => toggle()}>
+                      .Contact
+                    </a>
+                  </li>
+                </ol>
+              </LinksContainer>
+              <ResumeLink className="resumelink">
+                <a
+                  href="./resumeV1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resume"
+                >
+                  Resume &gt;
                 </a>
-              </li>
-              <li>
-                <a href="#contact" onClick={() => toggle()}>
-                  .Contact
+              </ResumeLink>
+            </span>
+          </NavbarContent>
+          <NavbarContentResponsive
+            className={`${state.currentTheme === "dark" ? "dark" : "light"}`}
+          >
+            <LogoContainer>
+              <button onClick={() => setIsOpen(!isOpen)}>
+                <Image src={darvyImg} alt="portfolio icon" />
+              </button>
+              <button onClick={() => toggleLanguage()}>
+                {state.currentLanguage}
+              </button>
+            </LogoContainer>
+            <span className="text">
+              <LinksContainer>
+                <ol>
+                  <li>
+                    <a href="#about" onClick={() => toggle()}>
+                      .About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#experience" onClick={() => toggle()}>
+                      .Experience
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#projects" onClick={() => toggle()}>
+                      .Projects
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" onClick={() => toggle()}>
+                      .Contact
+                    </a>
+                  </li>
+                </ol>
+              </LinksContainer>
+              <ResumeLink className="resumelink">
+                <a
+                  href="./resumeV1.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Resume &gt;
                 </a>
-              </li>
-            </ol>
-          </LinksContainer>
-          <ResumeLink className="resumelink">
-            <a
-              href="./resumeV1.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resume"
-            >
-              Resume &gt;
-            </a>
-          </ResumeLink>
-        </span>
-      </NavbarContent>
-      <NavbarContentResponsive
-        className={`${state.currentTheme === "dark" ? "dark" : "light"}`}
-      >
-        <LogoContainer>
-          <button onClick={() => setIsOpen(!isOpen)}>
-            <Image src={darvyImg} alt="portfolio icon" />
-          </button>
-          <button onClick={() => toggleLanguage()}>
-            {state.currentLanguage}
-          </button>
-        </LogoContainer>
-        <span className="text">
-          <LinksContainer>
-            <ol>
-              <li>
-                <a href="#about" onClick={() => toggle()}>
-                  .About
-                </a>
-              </li>
-              <li>
-                <a href="#experience" onClick={() => toggle()}>
-                  .Experience
-                </a>
-              </li>
-              <li>
-                <a href="#projects" onClick={() => toggle()}>
-                  .Projects
-                </a>
-              </li>
-              <li>
-                <a href="#contact" onClick={() => toggle()}>
-                  .Contact
-                </a>
-              </li>
-              {/* <Link href={"/"}>Adios</Link> */}
-            </ol>
-          </LinksContainer>
-          <ResumeLink className="resumelink">
-            <a href="./resumeV1.pdf" target="_blank" rel="noopener noreferrer">
-              Resume &gt;
-            </a>
-          </ResumeLink>
-        </span>
-      </NavbarContentResponsive>
+              </ResumeLink>
+            </span>
+          </NavbarContentResponsive>
+        </>
+      )}
     </NavbarHeader>
   );
 };
