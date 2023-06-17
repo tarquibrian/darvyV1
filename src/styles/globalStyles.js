@@ -26,22 +26,7 @@ export const GlobalStyle = createGlobalStyle`
     background: rgba(234,226,183,.5);
   }
 
-  ::-webkit-scrollbar {
-    width: 12px;
-    background: transparent;
-  }
-        
-  ::-webkit-scrollbar-track {
-    border-radius: 8px;
-    background: transparent;
-  }
-        
-  ::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    border: 2px solid transparent;
-    background-clip: content-box;
-    background-color: rgba(80,80,80,1);
-  }
+  
 
   body {
     font-family: 'Sofia Sans Condensed', sans-serif;
