@@ -152,7 +152,6 @@ export const GlobalStyle = createGlobalStyle`
     display: grid;
     grid-template-columns: max-content auto;
     gap: 0.2rem;
-    /* line-height: 1; */
     &::after {
       content: "";
       display: block;
@@ -160,7 +159,6 @@ export const GlobalStyle = createGlobalStyle`
       margin-bottom: 12px;
       width: auto;
       height: 4px;
-      /* border-radius: 2px; */
       background: #eae2b7;
       box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     }
