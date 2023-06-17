@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { CloudinaryContext, Video } from "cloudinary-react";
-import { IconExternal } from "../icons";
+import { IconArrow, IconExternal } from "../icons";
 
 const Section = styled.section`
   /* min-height: 500px; */
@@ -29,81 +29,6 @@ const Section = styled.section`
     gap: 6vw;
 
     .projects__list {
-      .projects__list-card {
-        width: 100%;
-        min-height: 200px;
-        border-bottom: 2px solid #eae2b7;
-        display: grid;
-        grid-template-columns: minmax(160px, 220px) 1fr;
-        gap: 2rem;
-        padding: 2rem 0;
-        .card__image {
-          width: 100%;
-          height: 100%;
-          aspect-ratio: 1 / 1;
-          /* display: flex; */
-          img {
-            border-radius: 6px;
-            vertical-align: middle;
-          }
-        }
-        .card__content {
-          overflow: hidden;
-          height: 100%;
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          h2 {
-            font-size: var(--fz-lg);
-            color: #eae2b7;
-            margin-bottom: 0.3rem;
-          }
-          p {
-            max-width: 600px;
-            font-size: var(--fz-smm);
-            white-space: normal;
-          }
-
-          &-footer {
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-            .footer-feature {
-              display: flex;
-              gap: 0.4rem;
-              font-size: var(--fz-sm);
-
-              .label {
-                font-weight: bold;
-              }
-
-              .features {
-                display: flex;
-                gap: 10px;
-                span {
-                  font-weight: 200;
-                  &:last-of-type {
-                    &::after {
-                      content: "";
-                    }
-                  }
-                  &::after {
-                    content: "·";
-                    position: relative;
-                    left: 5px;
-                  }
-                }
-              }
-            }
-
-            ul {
-              display: flex;
-              gap: 1rem;
-            }
-          }
-        }
-      }
     }
 
     .projects__single {
@@ -166,6 +91,102 @@ const Section = styled.section`
   }
 `;
 
+const ProjectCard = styled.div`
+  background-color: rgba(1, 1, 1, 0.1);
+  width: 100%;
+  min-height: 200px;
+  border-bottom: 2px solid #eae2b7;
+  .projects__list-card {
+    display: grid;
+    grid-template-columns: minmax(160px, 220px) 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    .card__image {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+      img {
+        border-radius: 6px;
+        vertical-align: middle;
+      }
+    }
+    .card__content {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-info {
+        a {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          gap: 2rem;
+
+          svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--c-light);
+          }
+        }
+      }
+      h2 {
+        font-size: var(--fz-lg);
+        color: #eae2b7;
+        margin-bottom: 0.3rem;
+      }
+      p {
+        max-width: 600px;
+        font-size: var(--fz-smm);
+        white-space: normal;
+      }
+
+      &-footer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 0.2rem;
+        .footer-feature {
+          display: flex;
+          gap: 0.4rem;
+          font-size: var(--fz-sm);
+
+          .label {
+            font-weight: bold;
+          }
+
+          .features {
+            display: flex;
+            gap: 10px;
+            span {
+              font-weight: 200;
+              &:last-of-type {
+                &::after {
+                  content: "";
+                }
+              }
+              &::after {
+                content: "·";
+                position: relative;
+                left: 5px;
+              }
+            }
+          }
+        }
+
+        .footer-link {
+        }
+
+        ul {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+    }
+  }
+`;
+
 const ProjectsWrapper = ({ projects, recents }) => {
   const videoRef = useRef();
   useEffect(() => {
@@ -182,51 +203,56 @@ const ProjectsWrapper = ({ projects, recents }) => {
           {projects.map((project, i) => {
             console.log(project);
             return (
-              <div className="projects__list-card" key={i}>
-                <div className="card__image">
-                  <a
-                    href={project.links[0].href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Image
-                      className="images"
-                      src={project.thumbnails.square}
-                      alt="picture img"
-                      height={300}
-                      width={300}
-                    />
-                  </a>
-                </div>
-                <div className="card__content">
-                  <div className="card__content-info">
+              <ProjectCard key={i}>
+                <div className="projects__list-card">
+                  <div className="card__image">
                     <a
                       href={project.links[0].href}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <h2>{project.title}</h2>
-                      <p>{project.desc}</p>
+                      <Image
+                        className="images"
+                        src={project.thumbnails.square}
+                        alt="picture img"
+                        height={300}
+                        width={300}
+                      />
                     </a>
                   </div>
-                  <div className="card__content-footer">
-                    <div className="footer-feature">
-                      <span className="label">Made At:</span>
-                      <div className="features">
-                        <span>Darvy Agency</span>
-                      </div>
+                  <div className="card__content">
+                    <div className="card__content-info">
+                      <a
+                        href={project.links[0].href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div className="info-content">
+                          <h2>{project.title}</h2>
+                          <p>{project.desc}</p>
+                        </div>
+                        <div className="info-link">
+                          <IconArrow />
+                        </div>
+                      </a>
                     </div>
-                    <div className="footer-feature">
-                      <span className="label">Build With:</span>
-                      <div className="features">
-                        {project.features.techStack.values.map((tech) => {
-                          return <span key={tech.id}>{tech.label}</span>;
-                        })}
+                    <div className="card__content-footer">
+                      <div className="footer-feature">
+                        <span className="label">Made At:</span>
+                        <div className="features">
+                          <span>Darvy Agency</span>
+                        </div>
+                        <span className="label">Build With:</span>
+                        <div className="features">
+                          {project.features.techStack.values.map((tech) => {
+                            return <span key={tech.id}>{tech.label}</span>;
+                          })}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </ProjectCard>
             );
           })}
         </div>
