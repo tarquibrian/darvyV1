@@ -195,6 +195,13 @@ const ProjectCard = styled.div`
       }
     }
   }
+
+  &:hover {
+    .projects__list-card {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+  }
 `;
 
 const ProjectsWrapper = ({ projects, recents }) => {
@@ -255,6 +262,8 @@ const ProjectsWrapper = ({ projects, recents }) => {
                         <div className="features">
                           <span>Darvy Agency</span>
                         </div>
+                      </div>
+                      <div className="footer-feature">
                         <span className="label">Build With:</span>
                         <div className="features">
                           {project.features.techStack.values.map((tech) => {
