@@ -95,12 +95,12 @@ const ProjectCard = styled.div`
   width: 100%;
   min-height: 200px;
   border-bottom: 2px solid #eae2b7;
-  transition: 1s ease;
   .projects__list-card {
     display: grid;
     grid-template-columns: minmax(160px, 220px) 1fr;
     gap: 2rem;
     padding: 2rem 0;
+    transition: 600ms ease;
     .card__image {
       width: 100%;
       height: 100%;
