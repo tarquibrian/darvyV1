@@ -58,16 +58,6 @@ export const GlobalStyle = createGlobalStyle`
     /* -webkit-font-smoothing: antialiased; */
   }
 
-  /* canvas {
-    position: fixed;
-  inset: 0;
-  transform-style: preserve-3d;
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-} */
-
   main {
     position: relative;
     margin: 0 auto;
