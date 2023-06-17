@@ -27,7 +27,7 @@ const Projects = () => {
     //   colorBase: [0.9, 0.09, 0.57],
     //   colorDeep: [0, 0, 0],
     // });
-    // changeTheme("light");
+    changeTheme("dark");
   }, []);
 
   return (
