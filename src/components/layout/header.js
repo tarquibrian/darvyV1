@@ -167,11 +167,14 @@ const LinksContainer = styled.div`
   }
 `;
 export const ResumeLink = styled.div`
-  padding: 8px 14px;
   display: grid;
   place-content: center;
   font-size: var(--fz-sm);
   border-radius: 4px;
+
+  a {
+    padding: 8px 14px;
+  }
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);
