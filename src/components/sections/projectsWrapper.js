@@ -62,8 +62,18 @@ const Section = styled.section`
             border: 2px solid var(--border-light);
             display: flex;
             overflow: hidden;
-            margin-bottom: 0.5rem;
+            margin-bottom: 2rem;
           }
+          a {
+            span {
+              svg {
+                width: 20px;
+                height: 20px;
+                margin-right: 0.4rem;
+              }
+            }
+          }
+
           .card-content {
             display: flex;
             flex-direction: column;
@@ -87,13 +97,6 @@ const Section = styled.section`
               .desc {
                 font-size: var(--fz-smm);
               }
-            }
-          }
-          span {
-            svg {
-              width: 20px;
-              height: 20px;
-              margin-right: 0.4rem;
             }
           }
         }
