@@ -9,9 +9,11 @@ const Section = styled.section`
   /* min-height: 500px; */
   /* border: 1px solid white; */
   color: white;
-  width: 100%;
+  width: 90%;
   max-width: 1500px;
   margin-inline: auto;
+  /* padding-right: 2rem; */
+  /* padding-left: 2rem; */
 
   header {
     h1 {
@@ -44,16 +46,17 @@ const Section = styled.section`
         display: grid;
         gap: 1rem;
         z-index: 9;
+        h3 {
+          color: #eae2b7;
+          font-size: var(--fz-lg);
+          margin-bottom: 0.5rem;
+        }
 
         .card {
           display: flex;
           flex-direction: column;
           gap: 2rem;
-          h3 {
-            color: #eae2b7;
-            font-size: var(--fz-lg);
-            margin-bottom: 0.5rem;
-          }
+
           .card-video {
             border-radius: var(--border-radius);
             border: 2px solid var(--border-light);
@@ -85,6 +88,48 @@ const Section = styled.section`
                 font-size: var(--fz-smm);
               }
             }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      grid-template-columns: 1fr;
+
+      .projects__single {
+        order: 1;
+        &-sticky {
+          .card {
+            display: grid;
+            grid-template-columns: minmax(200px, 1fr) 2fr;
+            a {
+              .card-video {
+                background-color: red;
+                display: flex;
+              }
+              span {
+                /* display: none; */
+              }
+            }
+            .card-content {
+              /* height: fit-content; */
+              background-color: red;
+            }
+          }
+        }
+      }
+
+      .projects__list {
+        order: 2;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .projects__single {
+        &-sticky {
+          .card {
+            display: grid;
+            grid-template-columns: minmax(100px, 1fr) 2fr;
           }
         }
       }
@@ -313,14 +358,13 @@ const ProjectsWrapper = ({ projects, recents }) => {
         </div>
         <div className="projects__single">
           <div className="projects__single-sticky">
+            <h3>{recents[0].title}</h3>
             <div className="card">
               <a
                 href="http://tarquibrian.github.io/noisethreejs/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <h3>{recents[0].title}</h3>
-
                 <CloudinaryContext cloud_name="dskypy0xt">
                   <div className="card-video">
                     <Video
