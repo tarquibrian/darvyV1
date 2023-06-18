@@ -245,11 +245,7 @@ const ProjectsWrapper = ({ projects, recents }) => {
               <ProjectCard key={i}>
                 <div className="projects__list-card">
                   <div className="card__image">
-                    <a
-                      href={project.links[0].href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <Link href={`/projects/${project.id}`} scroll={false}>
                       <Image
                         className="images"
                         src={project.thumbnails.square}
@@ -257,7 +253,7 @@ const ProjectsWrapper = ({ projects, recents }) => {
                         height={300}
                         width={300}
                       />
-                    </a>
+                    </Link>
                   </div>
                   <div className="card__content">
                     <div className="card__content-info">
