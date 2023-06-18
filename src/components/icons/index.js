@@ -25,3 +25,4 @@ export { default as IconST } from "./st";
 export { default as IconArrow } from "./arrow";
 export { default as IconMedium } from "./medium";
 export { default as IconDribbble } from "./dribbble";
+export { default as IconCaution } from "./caution";

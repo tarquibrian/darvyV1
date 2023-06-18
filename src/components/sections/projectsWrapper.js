@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { CloudinaryContext, Video } from "cloudinary-react";
-import { IconArrow, IconExternal } from "../icons";
+import { IconArrow, IconCaution, IconExternal } from "../icons";
 import Link from "next/link";
 
 const Section = styled.section`
@@ -391,7 +391,9 @@ const ProjectsWrapper = ({ projects, recents }) => {
                     />
                   </div>
                 </CloudinaryContext>
-                <span>! threejs output preview</span>
+                <span>
+                  <IconCaution /> threejs output preview
+                </span>
               </a>
               <div className="card-content">
                 <div className="card-content-row">
