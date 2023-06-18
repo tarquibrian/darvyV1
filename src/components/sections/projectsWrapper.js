@@ -269,6 +269,17 @@ const ProjectCard = styled.div`
       backdrop-filter: blur(10px);
     }
   }
+
+  @media screen and (max-width: 600px) {
+    .projects__list-card {
+      grid-template-columns: 1fr;
+      .card__image {
+        height: fit-content;
+        width: fit-content;
+        width: 50vw;
+      }
+    }
+  }
 `;
 
 const ProjectsWrapper = ({ projects, recents }) => {
