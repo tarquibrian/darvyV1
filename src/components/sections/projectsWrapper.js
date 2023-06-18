@@ -278,6 +278,10 @@ const ProjectCard = styled.div`
         width: fit-content;
         width: 50vw;
       }
+
+      &:hover {
+        transform: initial;
+      }
     }
   }
 `;
