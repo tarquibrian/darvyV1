@@ -89,6 +89,13 @@ const Section = styled.section`
               }
             }
           }
+          span {
+            svg {
+              width: 20px;
+              height: 20px;
+              margin-right: 0.4rem;
+            }
+          }
         }
       }
     }
