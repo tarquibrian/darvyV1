@@ -594,6 +594,7 @@ export const projectsData = {
           },
           techStack: {
             label: "Tech Stack",
+            label2: "Hecho con",
             values: [
               {
                 id: "vscode",
@@ -611,6 +612,10 @@ export const projectsData = {
                 icon: () => <IconVim />,
               },
             ],
+          },
+          made: {
+            label: "Hecho en",
+            value: "Darvy Agency",
           },
         },
         thumbnails: {
@@ -646,6 +651,7 @@ export const projectsData = {
           },
           techStack: {
             label: "Tech Stack",
+            label2: "Hecho con",
             values: [
               {
                 id: "nextjs",
@@ -673,6 +679,10 @@ export const projectsData = {
                 icon: () => <IconFigmaImg />,
               },
             ],
+          },
+          made: {
+            label: "Hecho en",
+            value: "Darvy Agency",
           },
         },
         thumbnails: {
@@ -713,6 +723,7 @@ export const projectsData = {
           },
           techStack: {
             label: "Tech Stack",
+            label2: "Hecho con",
             values: [
               {
                 id: "nextjs",
@@ -740,6 +751,10 @@ export const projectsData = {
                 icon: () => <IconFigmaImg />,
               },
             ],
+          },
+          made: {
+            label: "Hecho en",
+            value: "Darvy Agency",
           },
         },
         thumbnails: {
@@ -780,6 +795,7 @@ export const projectsData = {
           },
           techStack: {
             label: "Tech Stack",
+            label2: "Hecho con",
             values: [
               {
                 id: "react",
@@ -812,6 +828,10 @@ export const projectsData = {
                 icon: () => <IconPushNotification />,
               },
             ],
+          },
+          made: {
+            label: "Hecho en",
+            value: "Darvy Agency",
           },
         },
         thumbnails: {
@@ -852,6 +872,7 @@ export const projectsData = {
           },
           techStack: {
             label: "Tech Stack",
+            label2: "Hecho con",
             values: [
               {
                 id: "NextJS",
@@ -874,6 +895,10 @@ export const projectsData = {
                 icon: () => <IconFigmaImg />,
               },
             ],
+          },
+          made: {
+            label: "Hecho en",
+            value: "Darvy Agency",
           },
         },
         thumbnails: {

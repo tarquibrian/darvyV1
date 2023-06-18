@@ -343,13 +343,17 @@ const ProjectsWrapper = ({ projects, recents }) => {
                     <div className="card__content-footer">
                       <div className="footer-features">
                         <div className="footer-feature">
-                          <span className="label">Made At:</span>
+                          <span className="label">
+                            {project.features.made.label}:
+                          </span>
                           <div className="features">
-                            <span>Darvy Agency</span>
+                            <span>{project.features.made.value}</span>
                           </div>
                         </div>
                         <div className="footer-feature">
-                          <span className="label">Build With:</span>
+                          <span className="label">
+                            {project.features.techStack.label2}:
+                          </span>
                           <div className="features">
                             {project.features.techStack.values.map((tech) => {
                               return <span key={tech.id}>{tech.label}</span>;
