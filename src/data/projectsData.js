@@ -22,7 +22,7 @@ import IconPWA from "src/components/icons/pwa";
 export const projectsData = {
   es: {
     title: ".Proyectos",
-    desc: "+12 Proyectos. Preparando el despliegue y previsualización.",
+    desc: "Ver más proyectos",
     items: [
       {
         id: "1",
