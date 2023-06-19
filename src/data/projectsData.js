@@ -23,6 +23,7 @@ export const projectsData = {
   es: {
     title: ".Proyectos",
     desc: "Ver más proyectos",
+    desc2: "Projects I have worked on",
     items: [
       {
         id: "1",
@@ -956,6 +957,7 @@ export const projectsData = {
   en: {
     title: ".Projects",
     desc: "View More Projects",
+    desc2: "Projects I have worked on",
     items: [
       {
         id: "1",

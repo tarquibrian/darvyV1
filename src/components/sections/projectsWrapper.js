@@ -296,21 +296,20 @@ const ProjectCard = styled.div`
   }
 `;
 
-const ProjectsWrapper = ({ projects, recents }) => {
+const ProjectsWrapper = ({ projects, recents,title }) => {
   const videoRef = useRef();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  console.log(projects);
+  console.log(title)
   return (
     <Section>
       <header>
-        <h1 className="title-content">Projects I have worked on</h1>
+        <h1 className="title-content">{projects.desc2}</h1>
       </header>
       <div className="projects">
         <div className="projects__list">
           {projects.map((project, i) => {
-            console.log(project);
             return (
               <ProjectCard key={i}>
                 <div className="projects__list-card">

@@ -32,7 +32,10 @@ const Projects = () => {
 
   return (
     <Layout>
-      <ProjectsWrapper {...currentLanguage.lenguage} />
+      <ProjectsWrapper
+        {...currentLanguage.lenguage}
+        title={currentLanguage.lenguage.desc2}
+      />
     </Layout>
   );
 };
