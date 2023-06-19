@@ -863,7 +863,7 @@ export const projectsData = {
         desc: "Aplicación web sobre un restaurante de hamburguesas que proporciona una experiencia de usuario satisfactoria, fácil y atractiva, y es una excelente herramienta de marketing para atraer nuevos clientes y mantener a los ya existentes.",
         features: {
           typeProject: {
-            label: "Type Project",
+            label: "Tipo de proyecto",
             value: "Web App",
           },
           client: {
