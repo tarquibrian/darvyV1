@@ -51,7 +51,7 @@ export const projectsData = {
         imgs: ["p3-min.png", "p3-1-min.png", "p3-2-min.png", "p3-3-min.png"],
         typeProject: ["Type Project", "Marketplace Extensions"],
         techStack: "Tech Stack",
-        client: ["Client", "Personal"],
+        client: ["Cliente", "Personal"],
         threeColors: {
           color: [0.48, 0.53, 1],
           colorBase: [1, 1, 1],
@@ -585,15 +585,15 @@ export const projectsData = {
         desc: "Darvy Theme is a color theme for Visual Studio Code and very soon for other editors like Atom or Sublime Text. The color palette is inspired by popular themes like One Dark Pro and Tokyo Night, so you might love this theme.",
         features: {
           typeProject: {
-            label: "Type Project",
+            label: "Tipo de proyecto",
             value: "Web App",
           },
           client: {
-            label: "Client",
-            value: "SonusTech",
+            label: "Cliente",
+            value: "Personal",
           },
           techStack: {
-            label: "Tech Stack",
+            label: "Tecnologías",
             label2: "Hecho con",
             values: [
               {
@@ -642,15 +642,15 @@ export const projectsData = {
         desc: "Web application on Landing Page of a company that offers its technological services, related to computing, programming and solutions in the systems area.",
         features: {
           typeProject: {
-            label: "Type Project",
+            label: "Tipo de proyecto",
             value: "Marketplace Extensions",
           },
           client: {
-            label: "Client",
+            label: "Cliente",
             value: "Personal",
           },
           techStack: {
-            label: "Tech Stack",
+            label: "Tecnologías",
             label2: "Hecho con",
             values: [
               {
