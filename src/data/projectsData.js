@@ -582,7 +582,7 @@ export const projectsData = {
         id: 1,
         label: "darvytheme",
         title: "Darvy Theme",
-        desc: "Darvy Theme is a color theme for Visual Studio Code and very soon for other editors like Atom or Sublime Text. The color palette is inspired by popular themes like One Dark Pro and Tokyo Night, so you might love this theme.",
+        desc: "Darvy Theme es un tema de color para Visual Estudio Code y muy pronto para otros editores como Atom o Sublime Text. La paleta de colores esta inspirado en temas populares como One Dark Pro y Tokyo Night, por lo que puede que éste tema vaya a encantarte.",
         features: {
           typeProject: {
             label: "Tipo de proyecto",
@@ -638,8 +638,8 @@ export const projectsData = {
       {
         id: 2,
         label: "bussineswebsite",
+        desc: "Aplicación web sobre Landing Page de una empresa que ofrece sus servicios tecnológicos, relacionados con la informática, programación y soluciones en el área de sistemas.",
         title: "Sonustech Bussines Website",
-        desc: "Web application on Landing Page of a company that offers its technological services, related to computing, programming and solutions in the systems area.",
         features: {
           typeProject: {
             label: "Tipo de proyecto",
@@ -711,18 +711,18 @@ export const projectsData = {
         id: 3,
         label: "modernfashion",
         title: "Ecommerce Website",
-        desc: `Modern clothing ecommerce web application that offers a wide selection of clothing and fashion accessories for demanding customers, with options to easily filter and find what they are looking for and is updated with the latest trends.`,
+        desc: "Aplicación web de ecommerce de ropa moderna que ofrece una amplia selección de ropa y accesorios de moda para clientes exigentes, con opciones para filtrar y encontrar fácilmente lo que están buscando y se actualiza con las últimas tendencias.",
         features: {
           typeProject: {
-            label: "Type Project",
+            label: "Tipo de proyecto",
             value: "Web App",
           },
           client: {
-            label: "Client",
+            label: "Cliente",
             value: "ModernFasion",
           },
           techStack: {
-            label: "Tech Stack",
+            label: "Tecnologías",
             label2: "Hecho con",
             values: [
               {
@@ -783,18 +783,18 @@ export const projectsData = {
         id: 4,
         label: "modernfashion",
         title: "Tourism Website",
-        desc: "Web application for tourist information management, using modules of Biographical Articles, Management and notification of cultural events, Visualization and addressing of tourist sites through Google Maps based on specific coordinates.",
+        desc: "Aplicacion web de gestión de información turistica, empleando modulos de Artículos Biográficos, Gestión y notificación de eventos culturales, Visualizacion y direccionamiento de sitios turísticos mediante Google Maps en base a coordenadas específicas.",
         features: {
           typeProject: {
-            label: "Type Project",
+            label: "Tipo de proyecto",
             value: "Web App",
           },
           client: {
-            label: "Client",
+            label: "Cliente",
             value: "Villa Rivero",
           },
           techStack: {
-            label: "Tech Stack",
+            label: "Tecnologías",
             label2: "Hecho con",
             values: [
               {
@@ -860,18 +860,18 @@ export const projectsData = {
         id: 5,
         label: "carlsburger",
         title: "Carls Burger Restaurant",
-        desc: "Web application about a hamburger restaurant that provides a satisfying, easy and attractive user experience, and is an excellent marketing tool to attract new customers and keep existing ones.",
+        desc: "Aplicación web sobre un restaurante de hamburguesas que proporciona una experiencia de usuario satisfactoria, fácil y atractiva, y es una excelente herramienta de marketing para atraer nuevos clientes y mantener a los ya existentes.",
         features: {
           typeProject: {
             label: "Type Project",
             value: "Web App",
           },
           client: {
-            label: "Client",
+            label: "Cliente",
             value: "Carls Burger",
           },
           techStack: {
-            label: "Tech Stack",
+            label: "Tecnologías",
             label2: "Hecho con",
             values: [
               {
