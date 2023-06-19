@@ -296,16 +296,15 @@ const ProjectCard = styled.div`
   }
 `;
 
-const ProjectsWrapper = ({ projects, recents,title }) => {
+const ProjectsWrapper = ({ projects, recents, title }) => {
   const videoRef = useRef();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  console.log(title)
   return (
     <Section>
       <header>
-        <h1 className="title-content">{projects.desc2}</h1>
+        <h1 className="title-content">{title}</h1>
       </header>
       <div className="projects">
         <div className="projects__list">
